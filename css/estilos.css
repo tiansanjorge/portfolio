@@ -1,0 +1,1452 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Days+One&family=Inter:wght@100;200;300;400;500;600;700;800&display=swap');
+
+/* ------etiquetas base----- */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    min-height: 100%;
+    width: 100%;
+  }
+  
+body {
+    font-family: 'inter', sans-serif;
+    height: 100%;
+    min-height: 100%;
+    width: 100%;
+    background: #FFF;
+    color: #f4f4f4;
+}
+body p{
+    font-size: 16px;
+    letter-spacing: 2px;
+    line-height: 25px;
+}
+
+/* ------ encabezado ----- */
+/* se repite en todas las paginas */
+
+header {
+    height:50px;
+    background: #E7D3B1;
+    position: absolute;
+    width: 100%;
+    box-shadow: 0px 20px 50px #0000003f;
+    z-index:1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+header h2{
+    width: 20%;
+    font-weight: 400;
+    font-size: 30px;
+    text-shadow: 0px 4px 10px #00000033;
+    padding-top: 6px;
+    padding-left: 12%;
+}
+
+header h2 a{
+    text-decoration: none;
+    color:#f4f4f4
+}
+header ul{
+    padding-top: 8px;
+    text-align: center;
+    width:18%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding-right: 7%;
+    
+}
+
+header ul i{
+    color: #f4f4f4;
+    font-size: 30px;
+    text-shadow: 0px 4px 10px #00000033;
+}
+
+header ul:hover i{
+    color: #666666;
+    
+}
+
+header ul li{
+    display: none;
+    text-decoration: none;
+}
+
+header ul .menu4{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+header ul:hover li{
+    display: block;
+    background: #E7D3B1;
+    padding:5% 0;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+header ul:hover .menu4{
+    padding:5% 0 10%;
+}
+
+header ul:hover .menu1{
+    padding:16% 0 5%;
+}
+
+header ul li a{
+    text-decoration: none;
+    color: #f4f4f4;
+}
+
+header ul li a:hover{
+    color: #666666;
+    transition: ease 300ms;
+}
+
+/* ----- Grid Layout */
+
+.gridIndex{
+    display: grid;
+    height:100%;
+    grid-template-columns: 10% 32% 48% 10%;
+    grid-template-rows: 80% 60% 10%;
+}
+
+/* ----- portada ---- */
+/* la clase .portada esta compartida en todas las paginas*/
+
+.portada{
+    grid-column: 1/5;
+    grid-row:1/2;
+    background-image: url("../img/madera.jpg");
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+
+.portada h1{
+    width:40%;
+    display: flex;
+    flex-direction: column;
+    font-weight: 100;
+    color:#606060;
+    font-size:80px;
+    letter-spacing: 4px;
+    padding-bottom: 6%;
+}
+
+
+.portada .developer{
+    width:28%;
+    padding-bottom:7%;
+    text-align: center;
+}
+
+.portada .developer h2{
+    font-weight: 400;
+    color:#66666680;
+    font-size:35px;
+    text-shadow: 0px 2px 10px #00000033;
+    letter-spacing: 5px;
+}
+
+/* ----- cuerpo de index.html ----- */
+
+
+.foto{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.foto img{
+    width:180px;
+    border-radius: 40px;
+}
+
+.foto .foto3{
+    display: none;
+}
+
+.descripcion{
+    grid-column: 3/4;
+    grid-row: 2/3;
+    width:100%;
+    margin:0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color:#7E7E7E;
+    text-align: center;
+    padding: 5% 0;
+}
+
+.descripcion p{
+    padding: 0 4%;
+    font-size: 16px;
+    letter-spacing: 1px;
+    line-height: 25px;
+}
+
+.descripcion .p3{
+    margin-bottom: 3%;;
+}
+
+.descripcion .botonContacto{
+    margin: 0 auto;
+    text-align: center;
+}
+
+.descripcion a{
+    font-size: 16px;
+    text-decoration: none;
+    color: #fff;
+    background: #E7D3B1;
+    padding: 10px 35px;
+    border-radius: 20px;
+}
+
+.descripcion a:hover{
+    color: #666666;
+    border:solid 1px #666666 ;
+    transition: ease 300ms;
+    background: #f7e9ce;
+    ;
+}
+
+/* ------ pie de pagina ------ */
+/* se repite en todas las paginas */
+
+footer{
+    grid-column: 1/5;
+    grid-row: 3/4;
+    background: #bdbdbd;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+footer .infoContacto{
+    width:65%;
+    padding-left: 3%;
+}
+
+footer .redes{
+    width:25%;
+    text-align: right;
+    padding-right: 3%;
+}
+
+
+footer p{
+    display: inline-block;
+    font-size: 18px;
+    text-decoration: none;
+    line-height: 20px;
+    padding-right: 5%;
+}
+
+footer a{
+    display: inline-block;
+    font-size: 35px;
+    text-decoration: none;
+    color:#f4f4f4;
+    letter-spacing: 15px;
+}
+
+footer a:hover{
+    color: #666666;
+    transition: ease 300ms;
+}
+
+/* -------- Estilos perfil.html --------- */
+
+/* ----- portada de perfil.html ----- */
+
+.gridPerfil{
+    display: grid;
+    height:100%;
+    grid-template-columns: 8% 42% 42% 8%;
+    grid-template-rows: 50px auto auto auto;
+}
+
+.perfil{
+    grid-row:2/3;
+    background-image: url("../img/lineas.png");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: start;
+    box-shadow: inset 5px 5px 1000px #a6a6a6;
+}
+
+.perfil h1{
+    font-size:70px;
+    text-shadow: 10px 15px 10px #00000033;
+    padding:0 0 1% 8%;
+
+}
+
+.perfil .cajaPerfil{
+    text-align: center;
+    padding-top: 2%;
+    width:100%;
+}
+
+.perfil .cajaPerfil img{
+    border-radius: 40px;
+    width: 15%;
+    box-shadow: 10px 15px 10px #00000033;
+}
+
+.perfil .cajaPerfil p{
+    font-size: 16px;
+    font-weight: 500;
+    color: #666666;
+    width: 60%;
+    margin:2% auto;
+    text-shadow: 10px 15px 10px #00000033;
+}
+
+/* ----- cuerpo de perfil.html ----- */
+
+.perfilIzq{
+    text-align: center;
+    grid-column: 2/3;
+    grid-row:4/5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 8% 0;
+}
+
+.perfilIzq p{
+    color: #666666;
+    letter-spacing: 1px;
+    width: 90%;
+    margin: 0 auto;
+} 
+
+.perfilDer{
+    text-align: center;
+    grid-column: 3/4;
+    grid-row:4/5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-bottom: 5%;
+}
+
+.perfilDer img{
+    width: 30%;
+    margin: 0 auto;
+} 
+
+.perfilDer p{
+    color: #666666;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.footPerfil{
+    grid-row: 5/6;
+}
+
+/* ------------------- Estilos trabajo.html ------------------- */
+
+/* ----- portada de trabajo.html ----- */
+
+.gridTrabajo{
+    display: grid;
+    height:100%;
+    grid-template-columns: 10% 40% 40% 10%;
+    grid-template-rows: 90% 40% 40% 10%;
+}
+
+.trabajo{
+    background-image: url("../img/fibras.jpg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: start;
+}
+
+.trabajo .cajaTrabajo{
+    width:100%;
+    min-height:350px;
+    text-align: center;
+    padding-top: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.trabajo .cajaTrabajo p{
+    width: 65%;
+    font-size: 18px;
+    font-weight: 400;
+    color: #8C8C8C;
+    line-height: 30px;
+    letter-spacing: 2px;
+    text-shadow: 10px 15px 10px #00000033;
+}
+.trabajo .cajaTrabajo a{
+    text-decoration: none;
+    color: #8C8C8C;
+    background: #000;
+    padding: 10px 35px;
+    border-radius: 20px;
+}
+
+.trabajo .cajaTrabajo a:hover{
+    color: #fff;
+    border:solid 1px #E7D3B1 ;
+    background: #2C2C2C;
+    transition: ease 300ms;
+}
+
+.trabajo h1{
+    color:#999999;
+    font-size:70px;
+    text-shadow: 10px 15px 10px #00000066;
+    padding:0 0 0 8%;
+}
+
+/* ----- cuerpo de trabajo.html ----- */
+
+.tacobox{
+    grid-column:2/4;
+    grid-row: 2/3;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 4%;
+}
+
+.tacobox .historiaTaco{
+    width:65%;
+    text-align: center;
+}
+
+.tacobox .historiaTaco p{
+    color: #666666;
+}
+
+.tacobox .taco{
+    background: #E7D3B1;
+    border-radius: 500px;
+}
+
+.tacobox .taco img{
+    padding:40px;
+    width: 100%;
+}
+
+.elac{
+    grid-column: 2/4;
+    grid-row:3/4;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-bottom: 4%;
+}
+
+.elac .logoElac{
+    background: #C4C4C4;
+    border-radius: 1000px;
+}
+
+.elac .logoElac img{
+    width: 165px;
+    padding:20px;
+}
+
+.elac .historiaElac{
+    text-align: center;
+    width:65%;
+}
+
+.elac .historiaElac p{
+    color: #666666;
+}
+
+.footTrabajo{
+    grid-row:4/5;
+}
+
+
+/* ------------------- Estilos estudio.html ------------------- */
+
+/* ----- portada de estudio.html ----- */
+
+.gridEstudio{
+    display: grid;
+    height:100%;
+    grid-template-columns: 8% 42% 42% 8%;
+    grid-template-rows: auto auto auto auto auto auto auto;
+}
+
+.estudio{
+    background-image: url("../img/estudio.png");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.estudio .cajaEstudio{
+    width:70%;
+    padding: 3% 8% 0 0;
+    text-align: center;
+}
+
+.estudio .cajaEstudio p{
+    font-size: 16px;
+    font-weight: 500;
+    color: #D0CECE;
+    margin:5% 0;
+    line-height: 30px;
+    letter-spacing: 2px;
+}
+
+.estudio h1{
+    text-align: end;
+    padding: 0 5% 4% 0;
+    color:#E7D3B1;
+    font-size:70px;
+    text-shadow: 10px 15px 10px #00000033;
+}
+
+/* ----- cuerpo de estudio.html ----- */
+
+.lenguajes{
+    grid-column: 1/5;
+    grid-row: 2/3;
+    background: #E7D3B1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 2% 0;
+}
+
+.lenguajes h2{
+    color:#303030;
+    padding-bottom: 2%;
+}
+
+.lenguajes .logos1{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.lenguajes .logos1 img{
+    width:160px;
+    height: 160px;
+}
+
+.lenguajes .logos1 .css{
+    width:170px;
+    height: 170px;
+}
+
+.aprendiendo{
+    background: #C4C4C4;
+    grid-column: 1/5;
+    grid-row: 3/4;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 2% 0;
+}
+
+.aprendiendo h2{
+    color:#303030;
+    font-weight: 700;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-bottom: 2%;
+}
+.aprendiendo .logos2{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.aprendiendo .logos2 img{
+    width: 160px;
+    height: 160px;
+}
+
+.aprendiendo .logos2 .mongo{
+    width: 150px;
+    height: 150px;
+}
+
+.otrosEstudios {
+    grid-column: 1/5;
+    grid-row: 4/5;
+    text-align: center;
+    color:#303030;
+    font-size: 24px;
+    margin:auto;
+    padding: 1% 0;
+
+}
+
+.uba{
+    grid-column: 2/4;
+    grid-row: 5/6;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 2% 0;
+}
+
+.uba img{
+    width:15%;
+}
+.uba .infoUba{
+    width: 70%;
+    font-size: 14px;
+    color:#303030;
+}
+
+.uba .infoUba p{
+    font-size: 14px;    
+}
+
+.emba{
+    grid-column: 2/4;
+    grid-row: 6/7;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 2% 0;
+}
+
+.emba .infoEmba{
+    width: 70%;
+    color:#303030;
+}
+
+.emba .infoEmba p{
+    font-size: 14px;
+}
+
+.emba img{
+    width: 14%;
+}
+
+.lider{
+    grid-column: 2/4;
+    grid-row: 7/8;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 2% 0;
+}
+
+.lider img{
+    width:14%;
+}
+.lider .infoElac{
+    width: 70%;
+    color:#303030;
+}
+
+.lider .infoElac p{
+    font-size: 14px;
+}
+
+.footerEstudio{
+    grid-column: 1/5;
+    grid-row: 8/9;
+    padding:1% 0;
+}
+
+/* ------------------- Estilos contacto.html ------------------- */
+
+/* ----- portada/cuerpo de contacto.html ----- */
+.headerContacto{
+    z-index: 2;
+}
+
+.gridContacto {
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    grid-template-rows: 50px auto 10%;
+    height: 100%;
+}
+.contacto{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    background-image: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: start;
+    z-index: 1;
+    margin: 5% 0 5% 15%;
+}
+
+.contacto h1{
+    font-size:70px;
+    text-shadow: 10px 15px 10px #00000033;
+    padding-bottom: 0;
+}
+
+.contacto .formulario{
+    width:50%;
+    padding-bottom: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.contacto .formulario input {
+    background: none;
+    border: none;
+    border-bottom: 2px solid #666;
+    color:#666;
+    margin: 2% 0;
+    padding: 1% 0;
+    font-size: 18px;
+    outline: none;
+    width: 70%;
+}
+
+.contacto .formulario input::placeholder {
+    color:#fff;
+}
+
+.contacto .formulario select {
+    width: 45%;
+    background: none;
+    border: none;
+    border: 2px solid #666;
+    color:#fff;
+    margin: 3% 0 3%;
+    font-size: 18px;
+    padding: 3px;
+    cursor: pointer;
+}
+
+.contacto .formulario textarea {
+    width: 70%;
+    height: 20%;
+    background: none;
+    border: none;
+    border-bottom: 2px solid #666;
+    color:#666;
+    margin: 2% 0;
+    font-size: 18px;
+    padding: 2% 0 2% 1%;
+    outline: none;
+}
+
+.contacto .formulario textarea::placeholder {
+    color:#fff;
+}
+
+.contacto .formulario .enviar {
+    width:40%;
+    background: none;
+    padding: 5px 0;
+    border: 2px solid #666;
+    color:#fff;
+    cursor: pointer;
+}
+
+.contacto .formulario .enviar:hover,.contacto .formulario select:hover{
+    color:#666;
+    background: #ffffff4C;
+    transition: ease 300ms;
+}
+
+.fondoContacto{
+    grid-column: 2/3;
+    grid-row: 2/3 ;
+    padding: 5% 0;
+    margin: auto;
+    width: 80%;
+}
+
+.fondoContacto2{
+    display: none;
+}
+
+.fondoContacto3{
+    display: none;
+}
+
+.footContacto{
+    grid-column:1/5 ;
+    grid-row: 3/4 ;
+    z-index: 2;
+}
+
+/* ----- fin contacto.html ----- */
+
+/* ----- DISEÑO RESPONSIVE ----- */
+/* --- Desde desktop a mobile --- */
+
+/* --- Primer punto de quiebre 1000px --- */
+
+@media screen and (max-width: 1000px) {
+    /* ----- index.html ----- */
+    header{
+        justify-content: space-between;
+    }
+
+    header h2{
+        padding-left: 8%;
+    }
+
+    header ul{
+        width: 20%;
+        padding-right: 5%;
+    }
+
+    .gridIndex{
+        grid-template-columns: 2.5% 35% 60% 2.5%;
+        grid-template-rows: 90% 50% 8%;
+    }
+
+    .portada h1{
+        font-size:60px;
+    }
+
+    .portada .developer{
+        padding-bottom: 7%;
+    }
+    .portada .developer h2{
+        font-size: 30px;
+    }
+
+    .foto img{
+        width: 160px;
+    }
+    .descripcion p{
+        font-size: 13px;
+        line-height: 20px;
+    }
+
+    .descripcion a{
+        font-size: 13px;
+    }
+
+    footer p{
+        font-size: 13px;
+        line-height: 21px;
+    }
+    footer a{
+        font-size: 25px;
+    }
+    /* ----- fin Index ----- */
+
+    /* ----- Perfil.html ----- */
+
+    .gridPerfil{
+        grid-template-columns: 10% 40% 40% 10%;
+        grid-template-rows: 50px auto auto auto auto;
+    }
+
+    .perfil{
+        grid-row:2/3;
+    }
+
+    .perfil h1{
+        font-size:50px;
+    }
+
+    .perfil .cajaPerfil img{
+        width: 18%;
+        margin-bottom: 2%;
+    }
+
+    .perfil .cajaPerfil p{
+        font-size: 14px;
+        width: 80%;
+    }
+
+    .perfilIzq{
+        grid-column: 2/4;
+        grid-row:3/4;
+    }
+
+    .perfilIzq p{
+        font-size:14px;
+        margin-bottom: 2%;
+    }
+    
+    .perfilDer{
+        grid-column: 2/4;
+        grid-row:4/5;
+    }
+
+    .perfilDer img{
+        width: 20%;
+    }
+
+    .perfilDer p{
+        font-size: 14px;
+        padding-top: 3%;
+    }
+
+    .footPerfil{
+        grid-row:5/6;
+    }
+
+    /* ---- fin perfil.html ----- */
+    /* ---- inicio trabajo.html ---- */
+
+    .gridTrabajo{
+        display: grid;
+        height:100%;
+        grid-template-columns: 6% 44% 44% 6%;
+        grid-template-rows: 90% 40% 40% 10%;
+    }
+
+    .trabajo .cajaTrabajo{
+        padding-top: 8%;
+    }
+    
+    .trabajo .cajaTrabajo p{
+        font-size: 14px;
+        line-height: 20px;
+        width: 80%;
+    }
+
+    .trabajo .cajaTrabajo a{
+        font-size: 14px;
+    }
+
+    .trabajo h1{
+        font-size: 45px;
+    }
+
+    .tacobox .historiaTaco p{
+        font-size: 14px;
+    }
+
+    .elac .historiaElac p{
+        font-size: 14px;
+    }
+
+    /* ----- fin trabajo.html ----- */
+    /* ----- Inicio estudio.html ----- */
+    .estudio .cajaEstudio{
+        width:70%;
+        padding: 8% 10% 0 0;
+        text-align: center;
+    }
+    
+    .estudio .cajaEstudio p{
+        font-size: 14px;
+    }
+    
+    .estudio h1{
+        padding: 0 5% 4% 0;
+        font-size:50px;
+    }
+
+    .lenguajes .logos1 img{
+        width:130px;
+        height: 130px;
+    }
+    
+    .lenguajes .logos1 .css{
+        width:135px;
+        height: 135px;
+    }
+
+    .aprendiendo .logos2 img{
+        width: 130px;
+        height: 130px;
+    }
+    
+    .aprendiendo .logos2 .mongo{
+        width: 125px;
+        height: 125px;
+    }
+
+    .uba{
+        margin: 4% 0;
+    }
+
+    .uba img{
+        width:20%;
+    }
+
+    .uba .infoUba p{
+        font-size: 12px;    
+    }
+
+    .emba{
+        margin: 4% 0;
+    }
+
+    .emba .infoEmba p{
+        font-size: 12px;
+    }
+
+    .emba img{
+        width:20%;
+    }
+
+    .lider{
+        margin: 4% 0;
+    }
+    
+    .lider .infoElac p{
+        font-size: 12px;
+    }
+
+    .lider img{
+        width:20%;
+    }
+
+    /* ----- fin estudio.html ----- */
+    /* ----- inicio contacto.html ----- */
+
+    .contacto .formulario {
+        width: 70%;
+    }
+
+    .fondoContacto2{
+        display: block;
+        grid-column: 2/3;
+        grid-row: 2/3 ;
+        z-index: 0;
+        padding: 5% 0;
+        margin: auto;
+        width: 100%;
+    }
+    
+    .fondoContacto{
+        display: none;
+    }
+
+    /* ----- fin contacto.html ----- */
+}
+
+@media screen and (max-width: 700px) {
+
+    /* ----- index ----- */
+
+
+    .gridIndex{
+        grid-template-rows: 65% 40% 50% 7%;
+        grid-template-columns: 2.5% 35% 60% 2.5%;
+    }
+
+    header ul{
+        width: 30%;
+    }
+    .portada h1{
+        font-size:50px;
+        padding-bottom: 28%;
+        width:50%;
+    }
+
+    .portada .developer{
+        width:30%;
+    }
+    .portada .developer h2{
+        font-size: 20px;
+    }
+
+    .foto{
+        grid-column: 2/4;
+        grid-row: 2/3;
+    }
+
+    .foto .foto1{
+        display: none;
+    }
+
+    .foto .foto3{
+        display: block;
+    }
+
+    .foto img{
+        width: 150px;
+        border-radius: 150px;
+    }
+    
+    .descripcion{
+        grid-column: 2/4;
+        grid-row: 3/4;
+        padding:0 0 5%;
+    }
+
+    .descripcion p{
+        font-size: 10px;
+    }
+
+    .descripcion a{
+        font-size: 10px;
+    }
+
+    footer{
+        grid-column: 1/5;
+        grid-row: 4/5;
+    }
+
+    footer p{
+        font-size: 10px;
+        line-height: 0px;
+        letter-spacing: 1px;
+    }
+    footer a{
+        font-size: 20px;
+    }
+
+    footer .infoContacto{
+        width:60%;
+    }
+
+    footer .redes{
+        width:40%;
+    }
+    /* ----- fin Index ----- */
+    
+    /* ----- Inicio perfil.html ----- */
+
+    .gridPerfil{
+        grid-template-columns: 10% 40% 40% 10%;
+        grid-template-rows: 50px auto auto auto auto;
+    }
+
+    .perfil h1{
+        font-size:35px;
+        padding:0 0 0 5%;
+    }
+
+    .perfil .cajaPerfil img{
+        width: 18%;
+        margin-bottom: 2%;
+    }
+
+    .perfil .cajaPerfil p{
+        font-size: 12px;
+        width: 80%;
+    }
+
+    .perfilIzq{
+        grid-column: 2/4;
+        grid-row:3/4;
+        padding-top: 5%;
+        justify-content: space-around;
+    }
+
+    .perfilIzq p{
+        font-size:12px;
+    }
+    
+    .perfilDer{
+        grid-column: 2/4;
+        grid-row:4/5;
+        justify-content: space-around;
+    }
+
+    .perfilDer img{
+        width: 20%;
+    }
+
+    .perfilDer p{
+        font-size: 12px;
+    }
+
+    .footPerfil{
+        grid-row:5/6;
+    }
+
+    /* ---- fin perfil.html ---- */
+    /* ----- inicio trabajo.html ----- */
+
+    .gridTrabajo{
+        grid-template-rows: 90% 80% 80% 10%;
+    }
+
+    .trabajo .cajaTrabajo{
+        padding-top: 10%;
+    }
+    
+    .trabajo .cajaTrabajo p{
+        font-size: 14px;
+        line-height: 20px;
+        width: 80%;
+    }
+
+    .trabajo .cajaTrabajo a{
+        font-size: 14px;
+    }
+
+    .trabajo h1{
+        font-size: 45px;
+        padding: 0 0 0 8%;
+    }
+
+    .tacobox{
+        flex-direction: column;
+    }
+
+    .tacobox .historiaTaco{
+        order:2;
+    }
+
+    .tacobox .historiaTaco p{
+        font-size: 12px;
+    }
+
+    .tacobox .taco{
+        order: 1;
+    }
+
+    .elac{
+        flex-direction: column;
+    }
+
+    .elac .historiaElac p{
+        font-size: 12px;
+    }
+
+    /* ----- Fin trabajo.html ----- */
+    /* ----- Inicio estudio.html ----- */
+
+    .gridEstudio{
+        grid-template-columns: 4% 46% 46% 4%;
+        grid-template-rows: auto auto auto auto auto auto auto;
+    }
+
+    .estudio .cajaEstudio{
+        width:90%;
+        margin:0 auto;
+        padding: 12% 0;
+    }
+    
+    .estudio .cajaEstudio p{
+        font-size: 14px;
+        color: #D0CECE;
+        margin:5% 0;
+        letter-spacing: 1px;
+    }
+    
+    .estudio h1{
+        padding: 0 5% 4% 0;
+        font-size:35px;
+    }
+    .lenguajes h2{
+        font-size: 18px;
+    }
+
+    .lenguajes .logos1 {
+        width:95%;
+    }
+
+    .lenguajes .logos1 img{
+        width:65px;
+        height: 65px;
+    }
+    
+    .lenguajes .logos1 .css{
+        width:70px;
+        height: 70px;
+    }
+
+    .lenguajes .logos2 {
+        width:95%;
+    }
+
+    .aprendiendo h2{
+        font-size: 18px;
+    }
+
+    .aprendiendo .logos2 img{
+        width:70px;
+        height: 70px;
+    }
+    
+    .aprendiendo .logos2 .mongo{
+        width: 65px;
+        height: 65px;
+    }
+
+    .uba{
+        margin: 4% 0;
+    }
+
+    .uba img{
+        width:20%;
+    }
+
+    .uba .infoUba p{
+        font-size: 12px;    
+    }
+
+    .emba{
+        margin: 4% 0;
+    }
+
+    .emba .infoEmba p{
+        font-size: 12px;
+    }
+
+    .emba img{
+        width:20%;
+    }
+
+    .lider{
+        margin: 4% 0;
+    }
+    
+    .lider .infoElac p{
+        font-size: 12px;
+    }
+
+    .lider img{
+        width:20%;
+    }
+
+    /* ----- fin estudio.html ----- */
+    /* ----- inicio contacto.html ----- */
+
+    .contacto{
+        margin: 0 0 0 10%;
+    }
+
+    .contacto h1 {
+        font-size: 45px;
+    }
+
+    .contacto .formulario input, .contacto .formulario select, .contacto .formulario textarea {
+        font-size: 14px;
+    }
+
+    .contacto .formulario {
+        width: 90%;
+    }
+
+    .contacto h1{
+        padding-bottom: 0;
+    }
+
+    .fondoContacto3{
+        display: block;
+        grid-column: 2/3;
+        grid-row: 2/3 ;
+        z-index: 0;
+        padding: 5% 0;
+        margin: auto;
+        width: 100%;
+    }
+    
+
+    .fondoContacto2{
+        display: none;
+    }
+
+    /* ----- fin contacto.html ----- */
+}
+
+@media screen and (max-width: 400px){
+    .gridIndex{
+        grid-template-rows: 65% 40% 70% 10%;
+    }
+
+    .portada h1{
+        font-size:30px;
+    }
+
+    .portada .developer{
+        width: 40%;
+    }
+    .portada .developer h2{
+        font-size:14px;
+    }
+
+    .gridTrabajo{
+        grid-template-rows: 100% 110% 110% 10%;
+    }
+
+    .trabajo .cajaTrabajo p{
+        width: 90%;
+    }
+
+    .lenguajes .logos1 img{
+        width:50px;
+        height:50px;
+    }
+
+    .lenguajes .logos1 .css{
+        width:55px;
+        height:55px ;
+    }
+
+    .aprendiendo .logos2 img{
+        width:60px;
+        height:60px ;
+    }
+    
+    .aprendiendo .logos2 .mongo{
+        width:55px;
+        height:55px;
+    }
+
+    .otrosEstudios {
+        font-size: 18px;
+    }
+
+    .uba{
+        flex-direction: column;
+        margin: 4% 0;
+    }
+    .emba{
+        flex-direction: column;
+        margin: 4% 0;
+    }
+
+    .emba .infoEmba{
+        order:2
+    }
+    .lider{
+        flex-direction: column;
+        margin: 4% 0;
+    }
+}
