@@ -20,514 +20,208 @@ body {
     min-height: 100%;
     width: 100%;
     background: #FFF;
-    color: #f4f4f4;
-}
-body p{
-    font-size: 16px;
-    letter-spacing: 2px;
-    line-height: 25px;
+    color: #7E7E7E;
 }
 
-/* ------ encabezado ----- */
-/* se repite en todas las paginas */
+/* clases genéricas */
 
-header {
-    height:50px;
-    background: #E7D3B1;
-    position: absolute;
-    width: 100%;
-    box-shadow: 0px 20px 50px #0000003f;
-    z-index:1;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-header h2{
-    width: 20%;
-    font-weight: 400;
-    font-size: 30px;
-    text-shadow: 0px 4px 10px #00000033;
-    padding-top: 6px;
-    padding-left: 12%;
-    transition: all 300ms;
-}
-
-header h2:hover{
-    transform: scale(1.2);
-}
-
-header h2 a{
-    text-decoration: none;
-    color:#f4f4f4;  
-}
-
-header ul{
-    padding-top: 8px;
-    text-align: center;
-    width:18%;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    padding-right: 7%;
-    
-}
-
-header ul i{
-    color: #f4f4f4;
-    font-size: 30px;
-    text-shadow: 0px 4px 10px #00000033;
-}
-
-header ul:hover i{
-    color: #666666;
-    
-}
-
-header ul li{
-    display: none;
-    text-decoration: none;
-}
-
-header ul .menu4{
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
-header ul:hover li{
-    display: block;
-    background: #E7D3B1;
-    padding:5% 0;
-    font-size: 18px;
-    font-weight: 300;
-}
-
-header ul li:hover{
-    animation: headShake;
-    animation-duration:1s;
-}
-
-header ul:hover .menu4{
-    padding:5% 0 10%;
-}
-
-header ul:hover .menu1{
-    padding:16% 0 5%;
-}
-
-header ul li a{
-    text-decoration: none;
-    color: #f4f4f4;
-}
-
-header ul li a:hover{
-    color: #666666;
-    transition: ease 300ms;
-}
-
-/* ----- Grid Layout */
-
-.gridIndex{
-    display: grid;
-    height:100%;
-    grid-template-columns: 10% 32% 48% 10%;
-    grid-template-rows: 80% 60% 10%;
-}
-
-/* ----- portada ---- */
-/* la clase .portada esta compartida en todas las paginas*/
-
-.portada{
-    grid-column: 1/5;
-    grid-row:1/2;
-    background-image: url("../img/madera.jpg");
-    background-size: cover;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: flex-end;
-}
-
-.portada h1{
-    width:40%;
-    display: flex;
-    flex-direction: column;
+h1{
     font-weight: 100;
     color:#606060;
-    font-size:80px;
+    font-size:50px;
     letter-spacing: 4px;
-    padding-bottom: 6%;
+    z-index: 0;
+}
+
+.fondoBeige{
+    background: #E7D3B1;
+}
+
+.fondoGris{
+    background: #bdbdbd;
+}
+
+.blanco{
+    color:#fff;
+}
+
+.blanco:hover{
+    color: #fff;
+}
+
+.negro{
+    color:#000;
+}
+
+.negro:hover{
+    color: #000;
+}
+
+.gris{
+    color:#7E7E7E;
+}
+
+.sinBorde{
+    border: none;
+}
+
+.redondo{
+    border-radius: 500px;
+}
+
+.hovShake:hover{
+    animation: headShake;
+    animation-duration:1.5s;
+}
+
+.fadeInLeft{
     animation: fadeInLeft;
     animation-duration:2s;
 }
 
-
-.portada .developer{
-    width:28%;
-    padding-bottom:7%;
-    text-align: center;
+.fadeInRight{
+    animation: fadeInRight;
+    animation-duration:2s;
 }
 
-.portada .developer h2{
+.fadeInDown{
+    animation: fadeInDown;
+    animation-duration:2s;
+}
+
+.fadeIn{
+    animation: fadeIn;
+    animation-duration:6s;
+}
+
+.boxShad{
+    box-shadow: 0px 20px 50px #0000003f;
+    z-index: 1;
+}
+.textShad{
+    text-shadow: 0px 2px 10px #00000033;
+}
+.textShad2{
+    text-shadow: 10px 15px 10px #00000033;
+}
+.boxShad{
+    box-shadow: 0px 15px 10px #00000033
+}
+
+.boxShad2{
+    box-shadow: 10px 15px 10px #00000033
+}
+
+/* ----- Inicio Index.html ----- */
+
+/* ----- portada Index ---- */
+.logo{
+    font-size: 30px;
+}
+.portadaIndex{
+    background-image: url("../img/madera.jpg");
+    background-size: cover;
+    height: 50%;
+}
+
+.portadaIndex h1{
+    font-weight: 100;
+    letter-spacing: 4px;
+    z-index: 0;
+}
+
+.portadaIndex .developer h2{
     font-weight: 400;
     color:#66666680;
-    font-size:35px;
+    font-size:22px;
     text-shadow: 0px 2px 10px #00000033;
     letter-spacing: 5px;
-    animation: fadeIn;
-    animation-duration:5s;
+    
 }
 
-/* ----- cuerpo de index.html ----- */
-
-
-.foto{
-    grid-column: 2/3;
-    grid-row: 2/3;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.foto img{
-    width:180px;
-    border-radius: 40px;
-}
-
-.foto .foto3{
-    display: none;
-}
-
-.descripcion{
-    grid-column: 3/4;
-    grid-row: 2/3;
-    width:100%;
-    margin:0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    color:#7E7E7E;
-    text-align: center;
-    padding: 5% 0;
-}
+/* ----- cuerpo Index ----- */
 
 .descripcion p{
-    padding: 0 4%;
-    font-size: 16px;
     letter-spacing: 1px;
-    line-height: 25px;
-}
-
-.descripcion .p3{
-    margin-bottom: 3%;;
-}
-
-.descripcion .botonContacto{
-    margin: 0 auto;
-    text-align: center;
 }
 
 .descripcion a{
-    font-size: 16px;
     text-decoration: none;
-    color: #fff;
-    background: #E7D3B1;
     padding: 10px 35px;
-    border-radius: 20px;
+    transition: ease 500ms;
 }
 
 .descripcion a:hover{
-    color: #666666;
-    border:solid 1px #666666 ;
-    transition: ease 300ms;
-    background: #f7e9ce;
-    ;
+    background: #ffeed2;
+    color:#7E7E7E;
 }
 
 /* ------ pie de pagina ------ */
-/* se repite en todas las paginas */
-
-footer{
-    grid-column: 1/5;
-    grid-row: 3/4;
-    background: #bdbdbd;
-    display:flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-footer .infoContacto{
-    width:65%;
-    padding-left: 3%;
-}
-
-footer .redes{
-    width:25%;
-    text-align: right;
-    padding-right: 3%;
-}
-
-
-footer p{
-    display: inline-block;
-    font-size: 18px;
-    text-decoration: none;
-    line-height: 20px;
-    padding-right: 5%;
-}
 
 footer a{
-    display: inline-block;
     font-size: 35px;
     text-decoration: none;
-    color:#f4f4f4;
+    color:#fff;
     letter-spacing: 15px;
 }
 
 footer a:hover{
     color: #666666;
-    transition: ease 300ms;
+    transition: ease-in 500ms;
 }
 
-/* -------- Estilos perfil.html --------- */
+/* -------- Inicio perfil.html --------- */
 
 /* ----- portada de perfil.html ----- */
 
-.gridPerfil{
-    display: grid;
-    height:100%;
-    grid-template-columns: 8% 42% 42% 8%;
-    grid-template-rows: 50px auto auto auto;
-}
-
-.perfil{
-    grid-row:2/3;
+.portadaPerfil{
     background-image: url("../img/lineas.png");
     background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: start;
     box-shadow: inset 5px 5px 1000px #a6a6a6;
 }
 
-.perfil h1{
-    font-size:70px;
+.portadaPerfil h1{
     text-shadow: 10px 15px 10px #00000033;
-    padding:0 0 1% 8%;
-    animation: fadeInLeft;
-    animation-duration:2s;
-
-}
-
-.perfil .cajaPerfil{
-    text-align: center;
-    padding-top: 2%;
-    width:100%;
-}
-
-.perfil .cajaPerfil img{
-    border-radius: 40px;
-    width: 15%;
-    box-shadow: 10px 15px 10px #00000033;
-    animation: fadeInDown;
-    animation-duration:3s;
-
-}
-
-.perfil .cajaPerfil p{
-    font-size: 16px;
-    font-weight: 500;
-    color: #666666;
-    width: 60%;
-    margin:2% auto;
-    text-shadow: 10px 15px 10px #00000033;
-    animation: fadeIn;
-    animation-duration:6s;
 }
 
 /* ----- cuerpo de perfil.html ----- */
 
-.perfilIzq{
-    text-align: center;
-    grid-column: 2/3;
-    grid-row:4/5;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    margin: 8% 0;
-}
-
-.perfilIzq p{
-    color: #666666;
-    letter-spacing: 1px;
-    width: 90%;
-    margin: 0 auto;
-} 
-
-.perfilDer{
-    text-align: center;
-    grid-column: 3/4;
-    grid-row:4/5;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    padding-bottom: 5%;
-}
-
-.perfilDer img{
-    width: 30%;
-    margin: 0 auto;
+.lamparita{
     animation: flash;
     animation-duration:550ms;
     animation-delay: 8s;
 } 
 
-.perfilDer p{
-    color: #666666;
-    width: 90%;
-    margin: 0 auto;
-}
-
-.footPerfil{
-    grid-row: 5/6;
-}
-
 /* ------------------- Estilos trabajo.html ------------------- */
 
 /* ----- portada de trabajo.html ----- */
 
-.gridTrabajo{
-    display: grid;
-    height:100%;
-    grid-template-columns: 10% 40% 40% 10%;
-    grid-template-rows: 90% 40% 40% 10%;
-}
 
-.trabajo{
-    background-image: url("../img/fibras.jpg");
+.portadaTrabajo{
+    background-image: url("../img/trabajo.png");
     background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: start;
-    box-shadow: inset 105px 105px 1000px #000000;
+    background-position: center;
+    box-shadow: inset 5px 5px 1000px #4a4a4a;
+    height:600px;
 }
 
-.trabajo .cajaTrabajo{
-    width:100%;
-    min-height:350px;
-    text-align: center;
-    padding-top: 5%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.trabajo .cajaTrabajo p{
-    width: 65%;
-    font-size: 18px;
-    font-weight: 400;
-    color: #8C8C8C;
-    line-height: 30px;
-    letter-spacing: 2px;
-    text-shadow: 10px 15px 10px #00000033;
-    animation: fadeIn;
-    animation-duration:6s;
-}
-.trabajo .cajaTrabajo a{
+.portadaTrabajo a{
     text-decoration: none;
-    color: #8C8C8C;
-    background: #000;
     padding: 10px 35px;
-    border-radius: 20px;
-    animation: fadeIn;
-    animation-duration:6s;
+    transition: ease 500ms;
+    background: #000;
 }
 
-.trabajo .cajaTrabajo a:hover{
-    color: #fff;
-    border:solid 1px #E7D3B1 ;
-    background: #2C2C2C;
-    transition: ease 300ms;
-}
-
-.trabajo h1{
-    color:#999999;
-    font-size:70px;
-    text-shadow: 10px 15px 10px #00000066;
-    padding:0 0 0 8%;
-    animation: fadeInLeft;
-    animation-duration:2s;
+.portadaTrabajo a:hover{
+    color: #5e5e5e;
+    background: #E7D3B1;
 }
 
 /* ----- cuerpo de trabajo.html ----- */
-
-.tacobox{
-    grid-column:2/4;
-    grid-row: 2/3;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    padding-top: 4%;
+.cuerpoTrabajo img{
+    border-radius:1000px;
+    padding:10px;
 }
-
-.tacobox .historiaTaco{
-    width:65%;
-    text-align: center;
-}
-
-.tacobox .historiaTaco p{
-    color: #666666;
-}
-
-.tacobox .taco{
-    background: #E7D3B1;
-    border-radius: 500px;
-}
-
-.tacobox .taco img{
-    padding:40px;
-    width: 100%;
-}
-
-.elac{
-    grid-column: 2/4;
-    grid-row:3/4;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    padding-bottom: 4%;
-}
-
-.elac .logoElac{
-    background: #C4C4C4;
-    border-radius: 1000px;
-}
-
-.elac .logoElac img{
-    width: 165px;
-    padding:20px; 
-}
-
-.elac .historiaElac{
-    text-align: center;
-    width:65%;
-}
-
-.elac .historiaElac p{
-    color: #666666;
-}
-
-.footTrabajo{
-    grid-row:4/5;
-}
-
-
 /* ------------------- Estilos estudio.html ------------------- */
 
 /* ----- portada de estudio.html ----- */
@@ -550,7 +244,6 @@ footer a:hover{
 .estudio .cajaEstudio{
     width:70%;
     padding: 3% 8% 0 0;
-    text-align: center;
 }
 
 .estudio .cajaEstudio p{
@@ -579,8 +272,7 @@ footer a:hover{
 .lenguajes{
     grid-column: 1/5;
     grid-row: 2/3;
-    background: #E7D3B1;
-    text-align: center;
+    background: #E7D3B1; 
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -619,7 +311,6 @@ footer a:hover{
     background: #C4C4C4;
     grid-column: 1/5;
     grid-row: 3/4;
-    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -658,8 +349,7 @@ footer a:hover{
 
 .otrosEstudios {
     grid-column: 1/5;
-    grid-row: 4/5;
-    text-align: center;
+    grid-row: 4/5;  
     color:#303030;
     font-size: 24px;
     margin:auto;
@@ -670,7 +360,6 @@ footer a:hover{
 .uba{
     grid-column: 2/4;
     grid-row: 5/6;
-    text-align: center;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -694,7 +383,6 @@ footer a:hover{
 .emba{
     grid-column: 2/4;
     grid-row: 6/7;
-    text-align: center;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -717,8 +405,7 @@ footer a:hover{
 
 .lider{
     grid-column: 2/4;
-    grid-row: 7/8;
-    text-align: center;
+    grid-row: 7/8; 
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -871,10 +558,9 @@ footer a:hover{
 /* --- Desde desktop a mobile --- */
 
 /* --- Primer punto de quiebre 1000px --- */
-
-@media screen and (max-width: 1000px) {
+/* @media screen and (max-width: 1000px) { */
     /* ----- index.html ----- */
-    header{
+    /* header{
         justify-content: space-between;
     }
 
@@ -921,12 +607,12 @@ footer a:hover{
     }
     footer a{
         font-size: 25px;
-    }
+    } */
     /* ----- fin Index ----- */
 
     /* ----- Perfil.html ----- */
 
-    .gridPerfil{
+    /* .gridPerfil{
         grid-template-columns: 10% 40% 40% 10%;
         grid-template-rows: 50px auto auto auto auto;
     }
@@ -975,11 +661,11 @@ footer a:hover{
 
     .footPerfil{
         grid-row:5/6;
-    }
+    } */
 
     /* ---- fin perfil.html ----- */
     /* ---- inicio trabajo.html ---- */
-
+/* 
     .gridTrabajo{
         display: grid;
         height:100%;
@@ -1011,14 +697,13 @@ footer a:hover{
 
     .elac .historiaElac p{
         font-size: 14px;
-    }
+    } */
 
     /* ----- fin trabajo.html ----- */
     /* ----- Inicio estudio.html ----- */
-    .estudio .cajaEstudio{
+    /* .estudio .cajaEstudio{
         width:70%;
-        padding: 8% 10% 0 0;
-        text-align: center;
+        padding: 8% 10% 0 0;    
     }
     
     .estudio .cajaEstudio p{
@@ -1084,12 +769,12 @@ footer a:hover{
 
     .lider img{
         width:20%;
-    }
+    } */
 
     /* ----- fin estudio.html ----- */
     /* ----- inicio contacto.html ----- */
 
-    .contacto .formulario {
+    /* .contacto .formulario {
         width: 70%;
     }
 
@@ -1106,16 +791,14 @@ footer a:hover{
     .fondoContacto{
         display: none;
     }
+} */
 
-    /* ----- fin contacto.html ----- */
-}
-
-@media screen and (max-width: 700px) {
+/* @media screen and (max-width: 700px) { */
 
     /* ----- index ----- */
 
 
-    .gridIndex{
+    /* .gridIndex{
         grid-template-rows: 65% 40% 50% 7%;
         grid-template-columns: 2.5% 35% 60% 2.5%;
     }
@@ -1188,12 +871,12 @@ footer a:hover{
 
     footer .redes{
         width:40%;
-    }
+    } */
     /* ----- fin Index ----- */
     
     /* ----- Inicio perfil.html ----- */
 
-    .gridPerfil{
+    /* .gridPerfil{
         grid-template-columns: 10% 40% 40% 10%;
         grid-template-rows: 50px auto auto auto auto;
     }
@@ -1240,12 +923,12 @@ footer a:hover{
 
     .footPerfil{
         grid-row:5/6;
-    }
+    } */
 
     /* ---- fin perfil.html ---- */
     /* ----- inicio trabajo.html ----- */
 
-    .gridTrabajo{
+    /* .gridTrabajo{
         grid-template-rows: 90% 80% 80% 10%;
     }
 
@@ -1290,12 +973,12 @@ footer a:hover{
 
     .elac .historiaElac p{
         font-size: 12px;
-    }
+    } */
 
     /* ----- Fin trabajo.html ----- */
     /* ----- Inicio estudio.html ----- */
 
-    .gridEstudio{
+    /* .gridEstudio{
         grid-template-columns: 4% 46% 46% 4%;
         grid-template-rows: auto auto auto auto auto auto auto;
     }
@@ -1387,12 +1070,12 @@ footer a:hover{
 
     .lider img{
         width:20%;
-    }
+    } */
 
     /* ----- fin estudio.html ----- */
     /* ----- inicio contacto.html ----- */
 
-    .contacto{
+    /* .contacto{
         margin: 0 0 0 10%;
     }
 
@@ -1426,11 +1109,9 @@ footer a:hover{
     .fondoContacto2{
         display: none;
     }
+} */
 
-    /* ----- fin contacto.html ----- */
-}
-
-@media screen and (max-width: 400px){
+/* @media screen and (max-width: 400px){
     .gridIndex{
         grid-template-rows: 65% 40% 70% 10%;
     }
@@ -1493,5 +1174,36 @@ footer a:hover{
     .lider{
         flex-direction: column;
         margin: 4% 0;
+    }
+} */
+
+@media screen and (min-width: 576px){
+    .portadaIndex h1{
+        font-size:70px; 
+    }
+}
+@media screen and (min-width: 768px){
+    h1{
+        font-size:70px; 
+    }
+
+    .portadaIndex{
+        height: 75%;
+    }
+    
+    .portadaIndex h1{
+        font-size:80px;
+    }
+    .portadaIndex .developer h2{
+        font-size:35px;
+    }
+
+    .cuerpoPerfil{
+        height: 60%;
+        overflow: auto;
+    }
+
+    .portadaTrabajo{
+        height: 75%;
     }
 }
