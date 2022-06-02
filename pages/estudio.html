@@ -16,47 +16,56 @@
 
     <!-- encabezado -->
 
-    <header>
+    <nav class="navbar fondoBeige navbar-dark boxShad">
 
-        <h2><a href="../index.html">SS</a></h2>
-
-        <ul class="TACenter"><i class="fa-solid fa-angle-down"></i>
-
-            <li class="menu1"><a href="../index.html">Inicio</a></li>
-
-            <li class="menu2"><a href="perfil.html">Perfil</a></li>
-
-            <li class="menu3"><a href="trabajo.html">Trabajo</a></li>
-
-            <li class="menu4"><a href="contacto.html">Contacto</a></li>
-        
-        </ul>
-
-    </header>
-
-    <div class="gridEstudio">
+        <div class="container">
+          <a class="navbar-brand logo" href="../index.html">SS</a>
+          <button class="navbar-toggler sinBorde" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <i class="fa-solid fa-angle-down blanco"></i>
+          </button>
+  
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav offset-9 col-3 text-end">
+              <li class="nav-item hovShake">
+                <a class="nav-link blanco" href="../index.html">Inicio</a>
+              </li>
+              <li class="nav-item hovShake">
+                <a class="nav-link blanco" href="estudio.html">Estudio</a>
+              </li>
+              <li class="nav-item hovShake">
+                <a class="nav-link blanco" href="trabajo.html">Trabajo</a>
+              </li>
+              <li class="nav-item hovShake">
+                <a class="nav-link blanco" href="contacto.html">Contacto</a>
+              </li>
+            </ul>
+          </div>
+  
+        </div>
+  
+    </nav>
 
         <!-- portada estudio.html --> 
 
-        <section class="portada estudio">
+        <section class="container-fluid portadaEstudio py-3">
 
-            <div class="cajaEstudio TACenter">
+            <div class="row h-100 flex-column justify-content-evenly align-items-center align-items-md-end pe-md-5 py-2">
+    
+                <p class="col-10 col-md-7 col-lg-6 text-center pe-lg-5 textShad fadeIn">A mediados del 2020 me introduje en el desarrollo web a través de un curso de front end de Udemy. En la actualidad estoy realizando la carrera full stack de Coder House, y por lo pronto incorporando herramientas básicas. </p>
+    
+                <p class="col-10 col-md-7 col-lg-6 text-center textShad fadeIn pe-lg-5">Herramientas que voy complementando con mi noción del diseño y la estética, adquiridas en la secundaria (que tenía modalidad de diseño) y en la UBA. </p>
 
-                <p>A mediados del 2020 me introduje en el desarrollo web a través de un curso de front end de Udemy. En la actualidad estoy realizando la carrera full stack de Coder House, y por lo pronto incorporando herramientas básicas. </p>
-
-                <p>Herramientas que voy complementando con mi noción del diseño y la estética, adquiridas en la secundaria (que tenía modalidad de diseño) y en la UBA. </p>
-
-                <p>Mi ingles de nivel First Certificate (sin examen) facilita mi curva de aprendizaje.</p>
-
+                <p class="col-10 col-md-7 col-lg-6 text-center textShad fadeIn pe-lg-5">Mi ingles de nivel First Certificate (sin examen) facilita mi curva de aprendizaje.</p>
+    
+                <h1 class="col-8 col-md-4 align-self-end textShad fadeInRightpe-md-0 text-center">Estudio</h1>
+            
             </div>
-
-            <h1>Estudio</h1>
-
+    
         </section>
 
         <!-- cuerpo estudio.html --> 
 
-        <section class="lenguajes TACenter">
+        <!-- <section class="lenguajes TACenter">
 
             <h2>Lenguajes / Herramientas</h2>
 
@@ -129,11 +138,11 @@
                 <p>Realice los 2 años de la formación de Liderazgo y Coaching en la Escuela Latinoamericana de Coaching. Etapa en la que hubo mucho tiempo de introspección, de gestión de emociones y de trabajo en equipo. Mas que para formarme como profesional, fue una formación en busca de crecimiento personal que me dejo grandes aprendizajes</p>
             </div>
 
-        </div>
+        </div> -->
 
         <!-- pie de pagina --> 
 
-        <footer class="footerEstudio">
+        <!-- <footer class="footerEstudio">
 
             <div class="infoContacto">
 
@@ -153,7 +162,7 @@
 
             </div>
 
-        </footer>
+        </footer> -->
 
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
