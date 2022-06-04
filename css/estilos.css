@@ -27,12 +27,17 @@ body {
 
 h1{
     font-weight: 100;
-    color:#606060;
     font-size:50px;
     letter-spacing: 4px;
     z-index: 0;
 }
 
+h2{
+    color:#303030
+}
+h3{
+    color:#303030
+}
 .fondoBeige{
     background: #E7D3B1;
     z-index: 1;
@@ -118,7 +123,7 @@ h1{
 .portadaIndex{
     background-image: url("../img/madera.jpg");
     background-size: cover;
-    height: 50%;
+    height: 500px;
 }
 
 .portadaIndex h1{
@@ -133,7 +138,6 @@ h1{
     font-size:22px;
     text-shadow: 0px 2px 10px #00000033;
     letter-spacing: 5px;
-    
 }
 
 /* ----- cuerpo Index ----- */
@@ -226,211 +230,27 @@ footer a:hover{
     background-image: url("../img/estudio.png");
     background-size: cover;
     height:600px;
+    color:#a4a4a4;
 }
-/* .gridEstudio{
-    display: grid;
-    height:100%;
-    grid-template-columns: 8% 42% 42% 8%;
-    grid-template-rows: auto auto auto auto auto auto auto;
-}
-
-.estudio{
-    background-image: url("../img/estudio.png");
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
-
-.estudio .cajaEstudio{
-    width:70%;
-    padding: 3% 8% 0 0;
-}
-
-.estudio .cajaEstudio p{
-    font-size: 16px;
-    font-weight: 500;
-    color: #D0CECE;
-    margin:5% 0;
-    line-height: 30px;
-    letter-spacing: 2px;
-    animation: fadeIn;
-    animation-duration:6s;
-}
-
-.estudio h1{
-    text-align: end;
-    padding: 0 5% 4% 0;
-    color:#E7D3B1;
-    font-size:70px;
-    text-shadow: 10px 15px 10px #00000033;
-    animation: fadeInRight;
-    animation-duration:2s;
-} */
 
 /* ----- cuerpo de estudio.html ----- */
 
-/* .lenguajes{
-    grid-column: 1/5;
-    grid-row: 2/3;
-    background: #E7D3B1; 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    padding: 2% 0;
+.lenguajes{
+    height: 305px;
 }
 
-.lenguajes h2{
-    color:#303030;
-    padding-bottom: 2%;
-}
-
-.lenguajes .logos1{
-    width: 80%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
-
-.lenguajes .logos1 img{
-    width:160px;
-    height: 160px;
-    transition: all 300ms;
-}
-
-.lenguajes .logos1 img:hover{
-    transform: scale(1.2);
-}
-
-.lenguajes .logos1 .css{
-    width:170px;
-    height: 170px;
-}
-
-.aprendiendo{
-    background: #C4C4C4;
-    grid-column: 1/5;
-    grid-row: 3/4;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    padding: 2% 0;
-}
-
-.aprendiendo h2{
-    color:#303030;
-    font-weight: 700;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    padding-bottom: 2%;
-}
-.aprendiendo .logos2{
-    width: 80%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
-
-.aprendiendo .logos2 img{
-    width: 160px;
-    height: 160px;
-    transition: all 300ms;   
-}
-
-.aprendiendo .logos2 img:hover{
-    transform: scale(1.2);
-}
-.aprendiendo .logos2 .mongo{
-    width: 150px;
-    height: 150px;
-}
-
-.otrosEstudios {
-    grid-column: 1/5;
-    grid-row: 4/5;  
-    color:#303030;
-    font-size: 24px;
-    margin:auto;
-    padding: 1% 0;
-
-}
-
-.uba{
-    grid-column: 2/4;
-    grid-row: 5/6;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    margin: 2% 0;
-}
-
-.uba img{
-    width:15%;
-}
-.uba .infoUba{
-    width: 70%;
-    font-size: 14px;
+.fondoBeige h2{
     color:#303030;
 }
 
-.uba .infoUba p{
-    font-size: 14px;    
+.logos{
+    height: 100%;
+    width: 100%;
 }
 
-.emba{
-    grid-column: 2/4;
-    grid-row: 6/7;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    margin: 2% 0;
+.logos2{
+    height: 54%;
 }
-
-.emba .infoEmba{
-    width: 70%;
-    color:#303030;
-}
-
-.emba .infoEmba p{
-    font-size: 14px;
-}
-
-.emba img{
-    width: 14%;
-}
-
-.lider{
-    grid-column: 2/4;
-    grid-row: 7/8; 
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    margin: 2% 0;
-}
-
-.lider img{
-    width:14%;
-}
-.lider .infoElac{
-    width: 70%;
-    color:#303030;
-}
-
-.lider .infoElac p{
-    font-size: 14px;
-}
-
-.footerEstudio{
-    grid-column: 1/5;
-    grid-row: 8/9;
-    padding:1% 0;
-} */
 
 /* ------------------- Estilos contacto.html ------------------- */
 
@@ -1179,24 +999,25 @@ footer a:hover{
 } */
 
 @media screen and (min-width: 576px){
+    .portadaIndex{
+        height: 600px;
+    }
+    
     .portadaIndex h1{
         font-size:70px; 
     }
+
+    .portadaIndex .developer h2{
+        font-size:35px;
+    }
 }
 @media screen and (min-width: 768px){
-    h1{
-        font-size:70px; 
-    }
-
     .portadaIndex{
         height: 75%;
     }
     
     .portadaIndex h1{
         font-size:80px;
-    }
-    .portadaIndex .developer h2{
-        font-size:35px;
     }
 
     .cuerpoPerfil{
