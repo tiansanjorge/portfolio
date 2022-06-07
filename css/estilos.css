@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Days+One&family=Inter:wght@100;200;300;400;500;600;700;800&display=swap');
 
 /* ------etiquetas base----- */
+
 *{
     margin: 0;
     padding: 0;
@@ -21,6 +22,10 @@ body {
     width: 100%;
     background: #FFF;
     color: #7E7E7E;
+}
+
+main{
+    min-height: 90%;
 }
 
 /* clases genéricas */
@@ -55,8 +60,8 @@ h3{
     color: #fff;
 }
 
-.negro{
-    color:#000;
+.grisOscuro{
+    color: #666;
 }
 
 .beige{
@@ -214,5 +219,4 @@ footer a:hover{
     .portadaIndex h1{
         font-size:80px;
     }
-
 }
