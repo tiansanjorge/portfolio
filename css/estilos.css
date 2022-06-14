@@ -1,17 +1,14 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Days+One&family=Inter:wght@100;200;300;400;500;600;700;800&display=swap");
-
 /* ------ Estilos base ----- */
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-html,
-body,
-.logos {
+html, body, .logos {
   height: 100%;
   width: 100%;
 }
@@ -72,44 +69,44 @@ h3 {
 
 .hovShake:hover {
   -webkit-animation: headShake;
-  animation: headShake;
+          animation: headShake;
   -webkit-animation-duration: 1.5s;
-  animation-duration: 1.5s;
+          animation-duration: 1.5s;
 }
 
 .pulse:hover {
   -webkit-animation: pulse;
-  animation: pulse;
+          animation: pulse;
   -webkit-animation-duration: 0.5s;
-  animation-duration: 0.5s;
+          animation-duration: 0.5s;
 }
 
 .fadeInLeft {
   -webkit-animation: fadeInLeft;
-  animation: fadeInLeft;
+          animation: fadeInLeft;
   -webkit-animation-duration: 2s;
-  animation-duration: 2s;
+          animation-duration: 2s;
 }
 
 .fadeInRight {
   -webkit-animation: fadeInRight;
-  animation: fadeInRight;
+          animation: fadeInRight;
   -webkit-animation-duration: 2s;
-  animation-duration: 2s;
+          animation-duration: 2s;
 }
 
 .fadeInDown {
   -webkit-animation: fadeInDown;
-  animation: fadeInDown;
+          animation: fadeInDown;
   -webkit-animation-duration: 2s;
-  animation-duration: 2s;
+          animation-duration: 2s;
 }
 
 .fadeIn {
   -webkit-animation: fadeIn;
-  animation: fadeIn;
+          animation: fadeIn;
   -webkit-animation-duration: 2s;
-  animation-duration: 2s;
+          animation-duration: 2s;
 }
 
 /* ----- header y footer de todas las paginas ----- */
@@ -118,6 +115,10 @@ h3 {
   -webkit-box-shadow: 0px 15px 10px #00000033;
   box-shadow: 0px 15px 10px #00000033;
   z-index: 1;
+}
+
+.logo {
+  width: 50px;
 }
 
 /* ------ footer ------ */
@@ -136,10 +137,6 @@ footer a:hover {
 
 /* ----- Estilos Index.html ----- */
 /* ----- portada Index ---- */
-.logo {
-  font-size: 30px;
-}
-
 .portadaIndex {
   background-image: url("../img/madera.jpg");
   background-size: cover;
@@ -178,7 +175,7 @@ footer a:hover {
   background-size: cover;
   height: auto;
   -webkit-box-shadow: inset 5px 5px 1000px #a6a6a6;
-  box-shadow: inset 5px 5px 1000px #a6a6a6;
+          box-shadow: inset 5px 5px 1000px #a6a6a6;
 }
 
 .portadaPerfil h1 {
@@ -188,11 +185,11 @@ footer a:hover {
 /* ----- cuerpo de perfil.html ----- */
 .lamparita {
   -webkit-animation: flash;
-  animation: flash;
+          animation: flash;
   -webkit-animation-duration: 0.55s;
-  animation-duration: 0.55s;
+          animation-duration: 0.55s;
   -webkit-animation-delay: 8s;
-  animation-delay: 8s;
+          animation-delay: 8s;
 }
 
 /* ------------------- Estilos estudio.html ------------------- */
@@ -221,7 +218,7 @@ footer a:hover {
   height: 600px;
   background-position: center;
   -webkit-box-shadow: inset 5px 5px 1000px #4a4a4a;
-  box-shadow: inset 5px 5px 1000px #4a4a4a;
+          box-shadow: inset 5px 5px 1000px #4a4a4a;
 }
 
 .portadaTrabajo a {
@@ -265,10 +262,7 @@ form {
   height: 480px;
 }
 
-form input,
-form select,
-form textarea,
-form .enviar {
+form input, form select, form textarea, form .enviar {
   background: none;
   border: none;
   border-bottom: 2px solid #666;
@@ -276,42 +270,23 @@ form .enviar {
   color: #666;
 }
 
-form input::-webkit-input-placeholder,
-form select::-webkit-input-placeholder,
-form textarea::-webkit-input-placeholder,
-form .enviar::-webkit-input-placeholder {
+form input::-webkit-input-placeholder, form select::-webkit-input-placeholder, form textarea::-webkit-input-placeholder, form .enviar::-webkit-input-placeholder {
   color: #fff;
 }
 
-form input:-ms-input-placeholder,
-form select:-ms-input-placeholder,
-form textarea:-ms-input-placeholder,
-form .enviar:-ms-input-placeholder {
+form input:-ms-input-placeholder, form select:-ms-input-placeholder, form textarea:-ms-input-placeholder, form .enviar:-ms-input-placeholder {
   color: #fff;
 }
 
-form input::-ms-input-placeholder,
-form select::-ms-input-placeholder,
-form textarea::-ms-input-placeholder,
-form .enviar::-ms-input-placeholder {
+form input::-ms-input-placeholder, form select::-ms-input-placeholder, form textarea::-ms-input-placeholder, form .enviar::-ms-input-placeholder {
   color: #fff;
 }
 
-form input::placeholder,
-form select::placeholder,
-form textarea::placeholder,
-form .enviar::placeholder {
+form input::placeholder, form select::placeholder, form textarea::placeholder, form .enviar::placeholder {
   color: #fff;
 }
 
-form input::-webkit-outer-spin-button,
-form select::-webkit-outer-spin-button,
-form textarea::-webkit-outer-spin-button,
-form .enviar::-webkit-outer-spin-button,
-form input::-webkit-inner-spin-button,
-form select::-webkit-inner-spin-button,
-form textarea::-webkit-inner-spin-button,
-form .enviar::-webkit-inner-spin-button {
+form input::-webkit-outer-spin-button, form select::-webkit-outer-spin-button, form textarea::-webkit-outer-spin-button, form .enviar::-webkit-outer-spin-button, form input::-webkit-inner-spin-button, form select::-webkit-inner-spin-button, form textarea::-webkit-inner-spin-button, form .enviar::-webkit-inner-spin-button {
   /* Para borrar las flechas arriba y abajo en el input "telefono" */
   -webkit-appearance: none;
   margin: 0;
@@ -360,23 +335,18 @@ form textarea::placeholder {
   .portadaIndex {
     height: 600px;
   }
-
   .portadaIndex h1 {
     font-size: 70px;
   }
-
   .portadaIndex h2 {
     font-size: 35px;
   }
-
   .portadaContacto {
     background-image: url("../img/contenedor2.png");
   }
-
   .portadaContacto .row {
     margin-left: 20%;
   }
-
   .portadaContacto h1 {
     font-size: 50px;
   }
@@ -386,19 +356,15 @@ form textarea::placeholder {
   .portadaIndex h1 {
     font-size: 80px;
   }
-
   .cuerpoPerfil {
     height: 400px;
   }
-
   .portadaContacto .row {
     margin-left: 27%;
   }
-
   form select {
     width: 55%;
   }
-
   .enviar {
     width: 30%;
   }
@@ -408,7 +374,6 @@ form textarea::placeholder {
   .portadaContacto {
     background-image: url("../img/contenedor1.png");
   }
-
   .portadaContacto .row {
     margin-left: 15%;
   }
@@ -431,5 +396,4 @@ form textarea::placeholder {
     margin-left: 30%;
   }
 }
-
 /*# sourceMappingURL=estilos.css.map */

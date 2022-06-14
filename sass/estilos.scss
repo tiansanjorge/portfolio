@@ -53,6 +53,10 @@ main {
     z-index: 1;
 }
 
+.logo{
+    width: 45px;
+}
+
 /* ------ footer ------ */
 
 footer a {
@@ -71,10 +75,6 @@ footer a:hover {
 /* ----- Estilos Index.html ----- */
 
 /* ----- portada Index ---- */
-
-.logo {
-    font-size: 30px;
-}
 
 .portadaIndex {
     @include portada (url("../img/madera.jpg"), cover, 500px);
