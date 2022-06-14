@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Days+One&family=Inter:wght@100;200;300;400;500;600;700;800&display=swap");
 
-/* ------etiquetas base----- */
+/* ------ Estilos base ----- */
 * {
   margin: 0;
   padding: 0;
@@ -26,7 +26,7 @@ main {
   min-height: 90%;
 }
 
-/* clases genéricas */
+/* Clases genéricas */
 h1 {
   font-weight: 100;
   font-size: 50px;
@@ -112,7 +112,7 @@ h3 {
   animation-duration: 2s;
 }
 
-/* ----- Inicio Index.html ----- */
+/* ----- header y footer de todas las paginas ----- */
 /* ----- header ----- */
 .navbar {
   -webkit-box-shadow: 0px 15px 10px #00000033;
@@ -120,6 +120,21 @@ h3 {
   z-index: 1;
 }
 
+/* ------ footer ------ */
+footer a {
+  font-size: 35px;
+  text-decoration: none;
+  color: #fff;
+  letter-spacing: 15px;
+}
+
+footer a:hover {
+  color: #666;
+  -webkit-transition: ease-in 500ms;
+  transition: ease-in 500ms;
+}
+
+/* ----- Estilos Index.html ----- */
 /* ----- portada Index ---- */
 .logo {
   font-size: 30px;
@@ -156,21 +171,7 @@ h3 {
   color: #7E7E7E;
 }
 
-/* ------ pie de pagina ------ */
-footer a {
-  font-size: 35px;
-  text-decoration: none;
-  color: #fff;
-  letter-spacing: 15px;
-}
-
-footer a:hover {
-  color: #666;
-  -webkit-transition: ease-in 500ms;
-  transition: ease-in 500ms;
-}
-
-/* -------- Inicio perfil.html --------- */
+/* -------- Estilos perfil.html --------- */
 /* ----- portada de perfil.html ----- */
 .portadaPerfil {
   background-image: url("../img/poligonos.jpg");
@@ -212,7 +213,7 @@ footer a:hover {
   height: 54%;
 }
 
-/* ------------------- Inicio trabajo.html ------------------- */
+/* ------------------- Estilos trabajo.html ------------------- */
 /* ----- portada de trabajo.html ----- */
 .portadaTrabajo {
   background-image: url("../img/trabajo.jpg");
@@ -421,7 +422,13 @@ form textarea::placeholder {
 
 @media screen and (min-width: 1400px) {
   .portadaContacto .row {
-    margin-left: 26%;
+    margin-left: 24%;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .portadaContacto .row {
+    margin-left: 30%;
   }
 }
 

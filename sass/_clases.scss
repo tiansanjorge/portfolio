@@ -1,0 +1,77 @@
+// mapa de colores
+$colores:(blanco: #fff,
+    grisClaro: #bdbdbd,
+    grisOscuro: #666,
+    grisMuyOscuro:#303030,
+    negro:#000,
+    beige:#e7d3b1,
+);
+
+/* Clases genéricas */
+
+h1 {
+    font-weight: 100;
+    font-size: 50px;
+    letter-spacing: 4px;
+}
+
+h2,
+h3 {
+    color: map-get($colores, grisMuyOscuro);
+}
+
+.blanco {
+    color: map-get($colores, blanco);
+}
+
+.blanco:hover {
+    color: map-get($colores, blanco);
+}
+
+.grisOscuro {
+    color: map-get($colores, grisOscuro);
+}
+
+.beige {
+    color: map-get($colores, beige);
+}
+
+.fondoGris {
+    background: map-get($colores, grisClaro);
+}
+
+.fondoBeige {
+    background: map-get($colores, beige);
+}
+
+.redondo {
+    border-radius: 500px;
+}
+
+.textShad {
+    text-shadow: 0px 2px 10px #00000033;
+}
+
+.hovShake:hover {
+    animation: headShake;
+    animation-duration: 1.5s;
+}
+
+.pulse:hover {
+    animation: pulse;
+    animation-duration: 0.5s
+}
+
+$fades:(fadeInLeft: fadeInLeft,
+    fadeInRight: fadeInRight,
+    fadeInDown:fadeInDown,
+    fadeIn:fadeIn,
+);
+
+@each $clase,
+$fade in $fades {
+    .#{$clase} {
+        animation: $fade;
+        animation-duration: 2s,
+    }
+}

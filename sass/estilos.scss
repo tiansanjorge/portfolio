@@ -13,12 +13,11 @@ $colores:(blanco: #fff,
     grisClaro: #bdbdbd,
     gris:#7e7e7e,
     grisOscuro: #666,
-    grisMuyOscuro:#303030,
     negro:#000,
     beige:#e7d3b1,
 );
 
-/* ------etiquetas base----- */
+/* ------ Estilos base ----- */
 
 * {
     margin: 0;
@@ -42,84 +41,34 @@ main {
     min-height: 90%;
 }
 
-/* clases genéricas */
+@import "_clases";
 
-h1 {
-    font-weight: 100;
-    font-size: 50px;
-    letter-spacing: 4px;
-}
-
-h2,
-h3 {
-    color: map-get($colores, grisMuyOscuro);
-}
-
-.blanco {
-    color: map-get($colores, blanco);
-}
-
-.blanco:hover {
-    color: map-get($colores, blanco);
-}
-
-.grisOscuro {
-    color: map-get($colores, grisOscuro);
-}
-
-.beige {
-    color: map-get($colores, beige);
-}
-
-.fondoGris {
-    background: map-get($colores, grisClaro);
-}
-
-.fondoBeige {
-    background: map-get($colores, beige);
-}
-
-
-
-.redondo {
-    border-radius: 500px;
-}
-
-.textShad {
-    text-shadow: 0px 2px 10px #00000033;
-}
-
-.hovShake:hover {
-    animation: headShake;
-    animation-duration: 1.5s;
-}
-
-.pulse:hover {
-    animation: pulse;
-    animation-duration: 0.5s
-}
-
-$fades:(fadeInLeft: fadeInLeft,
-    fadeInRight: fadeInRight,
-    fadeInDown:fadeInDown,
-    fadeIn:fadeIn,
-);
-
-@each $clase,
-$fade in $fades {
-    .#{$clase} {
-        animation: $fade;
-        animation-duration: 2s,
-    }
-}
-
-/* ----- Inicio Index.html ----- */
+/* ----- header y footer de todas las paginas ----- */
 
 /* ----- header ----- */
+
 .navbar {
+    -webkit-box-shadow: 0px 15px 10px #00000033;
     box-shadow: 0px 15px 10px #00000033;
     z-index: 1;
 }
+
+/* ------ footer ------ */
+
+footer a {
+    font-size: 35px;
+    text-decoration: none;
+    color: #fff;
+    letter-spacing: 15px;
+}
+
+footer a:hover {
+    color: #666;
+    -webkit-transition: ease-in 500ms;
+    transition: ease-in 500ms;
+}
+
+/* ----- Estilos Index.html ----- */
 
 /* ----- portada Index ---- */
 
@@ -129,52 +78,35 @@ $fade in $fades {
 
 .portadaIndex {
     @include portada (url("../img/madera.jpg"), cover, 500px);
+}
 
-    h2 {
-        font-weight: 400;
-        color: #66666680;
-        font-size: 22px;
-        text-shadow: 0px 2px 10px #00000033;
-        letter-spacing: 5px;
-    }
+.portadaIndex h2 {
+    font-weight: 400;
+    color: #66666680;
+    font-size: 22px;
+    text-shadow: 0px 2px 10px #00000033;
+    letter-spacing: 5px;
 }
 
 /* ----- cuerpo Index ----- */
 
-.descripcion {
-    p {
-        letter-spacing: 1px;
-    }
-
-    a {
-        text-decoration: none;
-        padding: 10px 35px;
-        transition: ease 500ms;
-
-        &:hover {
-            background: #ffeed2;
-            color: #7E7E7E;
-        }
-    }
+.descripcion p {
+    letter-spacing: 1px;
 }
 
-/* ------ pie de pagina ------ */
-
-footer {
-    a {
-        font-size: 35px;
-        text-decoration: none;
-        color: map-get($colores, blanco);
-        letter-spacing: 15px;
-
-        &:hover {
-            color: map-get($colores, grisOscuro);
-            transition: ease-in 500ms;
-        }
-    }
+.descripcion a {
+    text-decoration: none;
+    padding: 10px 35px;
+    -webkit-transition: ease 500ms;
+    transition: ease 500ms;
 }
 
-/* -------- Inicio perfil.html --------- */
+.descripcion a:hover {
+    background: #ffeed2;
+    color: #7E7E7E;
+}
+
+/* -------- Estilos perfil.html --------- */
 
 /* ----- portada de perfil.html ----- */
 
@@ -198,6 +130,7 @@ footer {
 /* ------------------- Estilos estudio.html ------------------- */
 
 /* ----- portada de estudio.html ----- */
+
 .portadaEstudio {
     @include portada (url("../img/estudio.jpg"), cover, 600px);
     color: map-get($colores, grisClaro);
@@ -217,7 +150,7 @@ footer {
     height: 54%;
 }
 
-/* ------------------- Inicio trabajo.html ------------------- */
+/* ------------------- Estilos trabajo.html ------------------- */
 
 /* ----- portada de trabajo.html ----- */
 
@@ -394,7 +327,15 @@ form {
 @media screen and (min-width: 1400px) {
     .portadaContacto {
         .row {
-            margin-left: 26%;
+            margin-left: 24%;
+        }
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .portadaContacto {
+        .row {
+            margin-left: 30%;
         }
     }
 }
