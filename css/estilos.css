@@ -118,7 +118,7 @@ h3 {
 }
 
 .logo {
-  width: 50px;
+  width: 45px;
 }
 
 /* ------ footer ------ */
@@ -152,6 +152,11 @@ footer a:hover {
 }
 
 /* ----- cuerpo Index ----- */
+.cuerpoIndex {
+  background-image: url("../img/index4.jpg");
+  background-size: cover;
+}
+
 .descripcion p {
   letter-spacing: 1px;
 }
@@ -183,6 +188,11 @@ footer a:hover {
 }
 
 /* ----- cuerpo de perfil.html ----- */
+.cuerpoPerfil {
+  background-image: url("../img/perfil4.jpg");
+  background-size: cover;
+}
+
 .lamparita {
   -webkit-animation: flash;
           animation: flash;
@@ -210,6 +220,21 @@ footer a:hover {
   height: 54%;
 }
 
+.fondoEstudioA {
+  background-image: url("../img/estudioa5.jpg");
+  background-size: cover;
+}
+
+.fondoEstudioB {
+  background-image: url("../img/estudiob5.jpg");
+  background-size: cover;
+}
+
+.fondoEstudioC {
+  background-image: url("../img/estudioc5.jpg");
+  background-size: cover;
+}
+
 /* ------------------- Estilos trabajo.html ------------------- */
 /* ----- portada de trabajo.html ----- */
 .portadaTrabajo {
@@ -235,6 +260,11 @@ footer a:hover {
 }
 
 /* ----- cuerpo de trabajo.html ----- */
+.fondoTrabajo {
+  background-image: url("../img/trabajo5.jpg");
+  background-size: cover;
+}
+
 .cuerpoTrabajo img {
   padding: 10px;
 }
@@ -341,6 +371,18 @@ form textarea::placeholder {
   .portadaIndex h2 {
     font-size: 35px;
   }
+  .fondoEstudioA {
+    background-image: url("../img/estudioa4.jpg");
+  }
+  .fondoEstudioB {
+    background-image: url("../img/estudiob4.jpg");
+  }
+  .fondoEstudioC {
+    background-image: url("../img/estudioc4.jpg");
+  }
+  .fondoTrabajo {
+    background-image: url("../img/trabajo4.jpg");
+  }
   .portadaContacto {
     background-image: url("../img/contenedor2.png");
   }
@@ -356,8 +398,24 @@ form textarea::placeholder {
   .portadaIndex h1 {
     font-size: 80px;
   }
+  .cuerpoIndex {
+    background-image: url("../img/index3.jpg");
+  }
   .cuerpoPerfil {
     height: 400px;
+    background-image: url("../img/perfil3.jpg");
+  }
+  .fondoEstudioA {
+    background-image: url("../img/estudioa3.jpg");
+  }
+  .fondoEstudioB {
+    background-image: url("../img/estudiob3.jpg");
+  }
+  .fondoEstudioC {
+    background-image: url("../img/estudioc3.jpg");
+  }
+  .fondoTrabajo {
+    background-image: url("../img/trabajo3.jpg");
   }
   .portadaContacto .row {
     margin-left: 27%;
@@ -371,6 +429,24 @@ form textarea::placeholder {
 }
 
 @media screen and (min-width: 992px) {
+  .cuerpoIndex {
+    background-image: url("../img/index2.jpg");
+  }
+  .cuerpoPerfil {
+    background-image: url("../img/perfil2.jpg");
+  }
+  .fondoEstudioA {
+    background-image: url("../img/estudioa2.jpg");
+  }
+  .fondoEstudioB {
+    background-image: url("../img/estudiob2.jpg");
+  }
+  .fondoEstudioC {
+    background-image: url("../img/estudioc2.jpg");
+  }
+  .fondoTrabajo {
+    background-image: url("../img/trabajo2.jpg");
+  }
   .portadaContacto {
     background-image: url("../img/contenedor1.png");
   }
@@ -380,6 +456,24 @@ form textarea::placeholder {
 }
 
 @media screen and (min-width: 1200px) {
+  .cuerpoIndex {
+    background-image: url("../img/index1.jpg");
+  }
+  .cuerpoPerfil {
+    background-image: url("../img/perfil1.jpg");
+  }
+  .fondoTrabajo {
+    background-image: url("../img/trabajo1.jpg");
+  }
+  .fondoEstudioA {
+    background-image: url("../img/estudioa1.jpg");
+  }
+  .fondoEstudioB {
+    background-image: url("../img/estudiob1.jpg");
+  }
+  .fondoEstudioC {
+    background-image: url("../img/estudioc1.jpg");
+  }
   .portadaContacto .row {
     margin-left: 22%;
   }
