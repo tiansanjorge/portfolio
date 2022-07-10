@@ -238,10 +238,10 @@ footer a:hover {
 /* ------------------- Estilos trabajo.html ------------------- */
 /* ----- portada de trabajo.html ----- */
 .portadaTrabajo {
-  background-image: url("../img/trabajo.jpg");
+  background-image: url("../img/trabajo2.jpg");
   background-size: cover;
   height: 600px;
-  background-position: center;
+  background-position: right;
   -webkit-box-shadow: inset 5px 5px 1000px #4a4a4a;
           box-shadow: inset 5px 5px 1000px #4a4a4a;
 }
@@ -292,7 +292,7 @@ form {
   height: 480px;
 }
 
-form input, form select, form textarea, form .enviar {
+form input, form select, form textarea {
   background: none;
   border: none;
   border-bottom: 2px solid #666;
@@ -300,26 +300,31 @@ form input, form select, form textarea, form .enviar {
   color: #666;
 }
 
-form input::-webkit-input-placeholder, form select::-webkit-input-placeholder, form textarea::-webkit-input-placeholder, form .enviar::-webkit-input-placeholder {
+form input::-webkit-input-placeholder, form select::-webkit-input-placeholder, form textarea::-webkit-input-placeholder {
   color: #fff;
 }
 
-form input:-ms-input-placeholder, form select:-ms-input-placeholder, form textarea:-ms-input-placeholder, form .enviar:-ms-input-placeholder {
+form input:-ms-input-placeholder, form select:-ms-input-placeholder, form textarea:-ms-input-placeholder {
   color: #fff;
 }
 
-form input::-ms-input-placeholder, form select::-ms-input-placeholder, form textarea::-ms-input-placeholder, form .enviar::-ms-input-placeholder {
+form input::-ms-input-placeholder, form select::-ms-input-placeholder, form textarea::-ms-input-placeholder {
   color: #fff;
 }
 
-form input::placeholder, form select::placeholder, form textarea::placeholder, form .enviar::placeholder {
+form input::placeholder, form select::placeholder, form textarea::placeholder {
   color: #fff;
 }
 
-form input::-webkit-outer-spin-button, form select::-webkit-outer-spin-button, form textarea::-webkit-outer-spin-button, form .enviar::-webkit-outer-spin-button, form input::-webkit-inner-spin-button, form select::-webkit-inner-spin-button, form textarea::-webkit-inner-spin-button, form .enviar::-webkit-inner-spin-button {
+form input::-webkit-outer-spin-button, form select::-webkit-outer-spin-button, form textarea::-webkit-outer-spin-button, form input::-webkit-inner-spin-button, form select::-webkit-inner-spin-button, form textarea::-webkit-inner-spin-button {
   /* Para borrar las flechas arriba y abajo en el input "telefono" */
   -webkit-appearance: none;
   margin: 0;
+}
+
+form input[type=number], form select[type=number], form textarea[type=number] {
+  /* Para borrar las flechas arriba y abajo en el input "telefono" en Firefox */
+  -moz-appearance: textfield;
 }
 
 form select {
@@ -331,6 +336,10 @@ form select:hover {
   -webkit-transition: ease 500ms;
   transition: ease 500ms;
   color: #666;
+}
+
+form textarea {
+  resize: none;
 }
 
 form textarea::-webkit-input-placeholder {
@@ -351,7 +360,8 @@ form textarea::placeholder {
 
 .enviar {
   color: #fff;
-  width: 80%;
+  width: 100%;
+  border: 2px solid #666;
 }
 
 .enviar:hover {
@@ -413,6 +423,10 @@ form textarea::placeholder {
   }
   .fondoEstudioC {
     background-image: url("../img/estudioc3.jpg");
+  }
+  .portadaTrabajo {
+    background-image: url("../img/trabajo.jpg");
+    background-position: center;
   }
   .fondoTrabajo {
     background-image: url("../img/trabajo3.jpg");

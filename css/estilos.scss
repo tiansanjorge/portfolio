@@ -178,8 +178,8 @@ footer a:hover {
 /* ----- portada de trabajo.html ----- */
 
 .portadaTrabajo {
-    @include portada (url("../img/trabajo.jpg"), cover, 600px);
-    background-position: center;
+    @include portada (url("../img/trabajo2.jpg"), cover, 600px);
+    background-position: right;
     box-shadow: inset 5px 5px 1000px #4a4a4a;
 
     a {
@@ -249,6 +249,11 @@ form {
         }
     }
 
+    input[type=number] {
+        /* Para borrar las flechas arriba y abajo en el input "telefono" en Firefox */
+        -moz-appearance: textfield;
+    }
+
     select {
         @extend input;
         width: 100%;
@@ -262,6 +267,7 @@ form {
 
     textarea {
         @extend input;
+        resize: none;
 
         &::placeholder {
             color: map-get($colores, blanco);
@@ -270,9 +276,9 @@ form {
 }
 
 .enviar {
-    @extend input;
     color: map-get($colores, blanco);
-    width: 80%;
+    width: 100%;
+    border:2px solid map-get($colores, grisOscuro);
 
     &:hover {
         background: #ffffff4C;
@@ -350,6 +356,11 @@ form {
     
     .fondoEstudioC{
         background-image: url("../img/estudioc3.jpg");
+    }
+
+    .portadaTrabajo{
+        background-image: url("../img/trabajo.jpg");
+        background-position: center;
     }
 
     .fondoTrabajo{
