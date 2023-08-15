@@ -1,84 +1,57 @@
 <!DOCTYPE html>
-
 <html lang="es">
 
 <head>
-
   <meta charset="UTF-8">
-
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <meta name="description"
     content="Junior developer Sebastian Sanjorge diseña su sitio web en función de sus aspiraciones. Desarrollo Profesional con las ultimas herramientas. Asesoramiento Personalizado.">
-
   <meta name="keywords"
     content="sitio web, html, css, javascript, js, junior developer, front end, diseño, desarrollo web, git hub">
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-
   <link rel="stylesheet" href="css/animate.css">
-
-  <link rel="stylesheet" href="css/estilos.css">
-
+  <link rel="stylesheet" href="sass/estilos.css">
   <link rel="icon" type="image/png" href="img/favicon.png">
-
   <title>Sanjorge • Web developer</title>
-
 </head>
 
 <body>
-
   <!-------- encabezado ------->
   <header class="navbar fondoBeige navbar-dark boxShad">
 
     <div class="container">
 
-      <a class="navbar-brand logo gris p-0 m-0" href="index.html"><img class="logo" src="img/logo.png" alt="Sebastián Sanjorge"></a>
+      <a class="navbar-brand logo gris p-0 m-0" href="index.html"><img class="logo" src="img/logo.png"
+          alt="Sebastián Sanjorge"></a>
 
-      <button class="navbar-toggler sinBorde" type="button" data-bs-toggle="collapse"
+      <div class="d-none d-lg-flex justify-content-evenly col-10 text-decoration-none">
+        <a class="text-decoration-none blanco" href="#">Inicio</a>
+        <a class="text-decoration-none hovShake gris" href="pages/estudio.html">Formación</a>
+        <a class="text-decoration-none hovShake gris" href="pages/trabajo.html">Experiencia</a>
+        <a class="text-decoration-none hovShake gris" href="pages/contacto.html">Contacto</a>
+      </div>
+
+      <button class="d-lg-none navbar-toggler sinBorde" type="button" data-bs-toggle="collapse"
         data-bs-target="#collapsibleNavbar">
-
-        <i class="fa-solid fa-bars blanco"></i>
-
+        <i class="fa-solid fa-bars gris"></i>
       </button>
 
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
-
         <ul class="navbar-nav offset-9 col-3 text-end">
-
           <li class="nav-item hovShake">
-
-            <a class="nav-link blanco" href="pages/perfil.html">Perfil</a>
-
+            <a class="nav-link gris" href="pages/estudio.html">Formación</a>
           </li>
-
           <li class="nav-item hovShake">
-
-            <a class="nav-link blanco" href="pages/estudio.html">Estudio</a>
-
+            <a class="nav-link gris" href="pages/trabajo.html">Experiencia</a>
           </li>
-
           <li class="nav-item hovShake">
-
-            <a class="nav-link blanco" href="pages/trabajo.html">Trabajo</a>
-
+            <a class="nav-link gris" href="pages/contacto.html">Contacto</a>
           </li>
-
-          <li class="nav-item hovShake">
-
-            <a class="nav-link blanco" href="pages/contacto.html">Contacto</a>
-
-          </li>
-
-        </ul>
-
       </div>
 
     </div>
@@ -92,16 +65,11 @@
     <section class="portadaIndex container-fluid">
 
       <div class="row justify-content-evenly h-100">
-
         <h1 class="col-md-5 d-flex flex-column align-self-center text-start ps-4 textShad fadeInLeft">
           Sebastián<span>Sanjorge</span></h1>
-
-        <div class="col-md-4 developer align-self-end text-end text-md-center mb-3 pe-4 fadeIn">
-
-          <h2>Web developer</h2>
-
+        <div class="col-md-7 col-lg-5 developer align-self-end text-end text-md-center mb-3 pe-4 fadeIn">
+          <h2>Front End Developer</h2>
         </div>
-
       </div>
 
     </section>
@@ -109,73 +77,53 @@
     <!-- cuerpo index.html -->
 
     <section class="cuerpoIndex container-fluid">
-
       <div class="row justify-content-evenly py-5">
 
         <div class="col-6 col-md-3 col-xl-2">
-
-          <img class="d-none d-md-block img-fluid rounded-5" src="img/foto1.jpg" alt="Sebastián Sanjorge">
-
-          <img class="redondo d-block d-md-none img-fluid" src="img/foto3.jpg" alt="Sebastián Sanjorge">
-
+          <img class="d-none d-md-block img-fluid rounded-5 ms-3 mt-5" src="img/perfil.jpeg" alt="Sebastián Sanjorge">
+          <img class="redondo d-block d-md-none img-fluid" src="img/perfil.jpeg" alt="Sebastián Sanjorge">
         </div>
 
         <div class="col-md-7 col-xl-6 descripcion text-center d-flex flex-column justify-content-evenly  py-3">
-
-          <p class="pt-3 pt-md-0">Buenas! Soy Sebastián, desarrollador web. Actualmente estoy cursando la carrera de
-            Full Stack en CoderHouse (Front end + Back end).</p>
-
-          <p>Con el inicio de la pandemia decidí introducirme en este mundo del desarrollo web y la programación. Hoy,
-            con 26 años, sigo formándome y busco construir mi futuro trabajando en el área empresarial e
-            independientemente.</p>
-
-          <p class="pb-3">Tenes un proyecto? Hablemos!</p>
+          <p class="pt-3 pt-md-0">Hola! Soy <b>Sebastián Sanjorge,</b> en 2020 comencé mi viaje por este mundo del desarrollo web y desde entonces he estado inmerso en la creación de interfaces atractivas y funcionales que combinan mi pasión por el diseño con mis habilidades técnicas.</p>
+          <p>Mis experiencias educativas y prácticas me han dotado de un sólido dominio de <b> HTML, CSS y JavaScript,</b> así como de frameworks populares como <b>ReactJs.</b> Cada proyecto en el que trabajo es una oportunidad para aprender y mejorar, y estoy entusiasmado por seguir creciendo como profesional.</p>
+          <p>Navegá por mi portfolio para ver ejemplos de mi trabajo! <br>
+            Si queres saber más sobre mí y mis proyectos, no dudes en ponerte en contacto.
+            </p>
+          <p class="pb-3"><b>Buen viaje, Sebastián.</b></p>
           <a class="min-w-25 mx-auto rounded-5 blanco fondoBeige" href="pages/contacto.html">CONTACTO</a>
-
         </div>
 
       </div>
-
     </section>
 
   </main>
 
   <!-- pie de pagina -->
-
   <footer class="container-fluid fondoGris">
-
     <div class="row justify-content-evenly py-2">
 
       <div
-        class="col-sm-7 d-flex flex-column flex-md-row justify-content-evenly align-items-md-center ps-sm-5 ps-0 ps-md-0 text-center text-sm-start blanco">
-
-        <p class="m-0"><i class="fa-brands fa-whatsapp"></i>&nbsp; +54 9 11 6006 9979</p>
-
-        <p class="m-0"><i class="fa-solid fa-envelope"></i>&nbsp; tiansanjorge13@gmail.com</p>
-
+        class="col-8 d-flex flex-column flex-md-row justify-content-evenly align-items-md-center ps-sm-5 ps-0 ps-md-0 text-center text-sm-start blanco">
+        <a class="m-0 size16" href="https://wa.link/rehzl5" target="_blank"><i class="fa-brands fa-whatsapp" ></i>&nbsp; +54 9 11 6006 9979</a>
+        <p class="m-0"><i class="fa-solid fa-envelope"></i>&nbsp; sanjorgesebastian@gmail.com</p>
       </div>
 
-      <div class="text-center text-sm-end col-md-3 col-sm-5">
-
-        <a href="https://www.instagram.com/tiansanjorge/?hl=es"><i class="fa-brands fa-instagram"></i></a>
-
-        <a href="https://www.facebook.com/tian.sanjorge"><i class="fa-brands fa-facebook"></i></a>
-
-        <a href="https://wa.me/5491160069979" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-
+      <div class="text-center col-3">
+        <a href="https://www.linkedin.com/in/sebasti%C3%A1n-sanjorge-60a943130/" target="_blank"><i class="fa-brands fa-linkedin me-sm-4"></i></a>
+        <a href="https://github.com/tiansanjorge" target="_blank"><i class="fa-brands fa-github"></i></i></a>
       </div>
 
     </div>
-
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
     integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous">
-  </script>
+    </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
     integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous">
-  </script>
+    </script>
 
 </body>
 

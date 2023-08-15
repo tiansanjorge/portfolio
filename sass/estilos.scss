@@ -17,6 +17,29 @@ $colores:(blanco: #fff,
     beige:#e7d3b1,
 );
 
+.gris{
+    color:#7e7e7e;
+    &:hover {
+        color:#fff;
+        transition: .5s;
+    }
+}
+
+.hoverGrisClarito{
+    color: #666;
+    &:hover {
+        color:#9b9b9b;
+        transition: .5s;
+    }
+}
+.size16{
+    font-size: 16px
+}
+
+.size18{
+    font-size: 18px;
+}
+
 /* ------ Estilos base ----- */
 
 * {
@@ -63,7 +86,6 @@ footer a {
     font-size: 35px;
     text-decoration: none;
     color: #fff;
-    letter-spacing: 15px;
 }
 
 footer a:hover {
@@ -180,7 +202,6 @@ footer a:hover {
 .portadaTrabajo {
     @include portada (url("../img/trabajo2.jpg"), cover, 600px);
     background-position: right;
-    box-shadow: inset 5px 5px 1000px #4a4a4a;
 
     a {
         text-decoration: none;
@@ -404,7 +425,7 @@ form {
     }
 
     .fondoTrabajo{
-        background-image: url("../img/trabajo2.jpg");
+        background-image: url("../img/trabajo1.jpg");
     }
 
     .portadaContacto {

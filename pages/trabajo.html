@@ -1,90 +1,60 @@
 <!DOCTYPE html>
-
 <html lang="eS">
 
 <head>
-
   <meta charset="UTF-8">
-
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <meta name="description"
     content="Junior developer Sebastian Sanjorge diseña su sitio web en función de sus aspiraciones. Rica trayectoria laboral, experiencia con equipos y logro de objetivos. ">
-
   <meta name="keywords"
     content="sitio web, html, css, javascript, js, junior developer, front end, diseño, desarrollo web, git hub">
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-
   <link rel="stylesheet" href="../css/animate.css">
-
-  <link rel="stylesheet" href="../css/estilos.css">
-
+  <link rel="stylesheet" href="../sass/estilos.css">
   <link rel="icon" type="image/png" href="../img/favicon.png">
-
   <title>Dev. Sanjorge • Trabajo</title>
-
 </head>
 
 <body>
 
   <!-- encabezado -->
-
   <header class="navbar fondoBeige navbar-dark boxShad">
-
     <div class="container">
 
       <a class="navbar-brand logo gris p-0 m-0" href="../index.html"><img class="logo" src="../img/logo.png"
           alt="Sebastián Sanjorge"></a>
 
-      <button class="navbar-toggler sinBorde" type="button" data-bs-toggle="collapse"
+      <div class="d-none d-lg-flex justify-content-evenly col-10 text-decoration-none">
+        <a class="text-decoration-none hovShake gris" href="../index.html">Inicio</a>
+        <a class="text-decoration-none hovShake gris" href="estudio.html">Formación</a>
+        <a class="text-decoration-none blanco" href="#">Experiencia</a>
+        <a class="text-decoration-none hovShake gris" href="contacto.html">Contacto</a>
+      </div>
+
+      <button class="d-lg-none navbar-toggler sinBorde" type="button" data-bs-toggle="collapse"
         data-bs-target="#collapsibleNavbar">
-
-        <i class="fa-solid fa-bars blanco"></i>
-
+        <i class="fa-solid fa-bars gris"></i>
       </button>
 
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
-
         <ul class="navbar-nav offset-9 col-3 text-end">
-
           <li class="nav-item hovShake">
-
-            <a class="nav-link blanco" href="../index.html">Inicio</a>
-
+            <a class="nav-link gris" href="../index.html">Inicio</a>
           </li>
-
           <li class="nav-item hovShake">
-
-            <a class="nav-link blanco" href="perfil.html">Perfil</a>
-
+            <a class="nav-link gris" href="estudio.html">Formación</a>
           </li>
-
           <li class="nav-item hovShake">
-
-            <a class="nav-link blanco" href="estudio.html">Estudio</a>
-
+            <a class="nav-link gris" href="contacto.html">Contacto</a>
           </li>
-
-          <li class="nav-item hovShake">
-
-            <a class="nav-link blanco" href="contacto.html">Contacto</a>
-
-          </li>
-
-        </ul>
-
       </div>
 
     </div>
-
   </header>
 
   <!-- portada trabajo.html -->
@@ -93,22 +63,15 @@
 
     <section class="portadaTrabajo container-fluid py-3">
 
-      <div class="row offset-1 h-100 flex-column justify-content-evenly align-items-start text-center textShad">
+      <div class="row offset-sm-1 h-100 flex-column justify-content-evenly align-items-start text-center textShad">
 
-        <p class="col-10 col-sm-8 col-md-6 text-center weight500 fadeIn grisOscuro">Si bien a nivel laboral aún no tuve
-          muchas experiencias en ésta industria, desde el egreso de secundaria mantuve una rutina laboral fija. El
-          trabajo es un pilar principal en mi vida y esa es una de las razones por las cuales emprendi este camino. </p>
+        <p class="col-12 col-sm-10 col-md-8 col-lg-6 text-center weight500 fadeIn grisOscuro">A lo largo de mi recorrido, participé en diversos proyectos que enriquecieron mi experiencia en el desarrollo front-end. Entre ellos destaco un trabajo independiente para el estudio jurídico EJER, donde atendí sus necesidades con soluciones prácticas y estéticas.</p>
 
-        <p class="col-10 col-sm-8 col-md-6 text-center weight500 fadeIn grisOscuro">Por el momento, el único trabajo
-          serio de desarrollo web que realice fue a un estudio jurídico. Acá el enlace.</p>
+        <p class="col-12 col-sm-10 col-md-8 col-lg-6 text-center weight500 fadeIn grisOscuro">Además, he llevado a cabo un emocionante proyecto personal: la creación de un e-commerce ficticio llamado ArTech. En este trabajo demostre habilidades sólidas en diseño de interfaces y desarrollo. </p>
 
-        <div class="col-10 col-sm-8 col-md-6">
+        <p class="col-12 col-sm-10 col-md-8 col-lg-6 text-center weight500 fadeIn grisOscuro">Estas experiencias fortalecieron mi capacidad para enfrentar desafíos y aumentaron mi entusiasmo por el desarrollo front-end, inspirándome a seguir creciendo y prosperando en esta industria.</p>
 
-          <a class="w-auto min-w-25 mx-auto blanco rounded-5 fadeIn" href="http://www.ejer.com.ar">EJER.COM.AR</a>
-
-        </div>
-
-        <h1 class="col-3 text-start px-0 pt-2 m-0 fadeInLeft grisOscuro">Trabajo</h1>
+        <h1 class="text-start ps-3 ps-sm-0 pt-2 m-0 fadeInLeft grisOscuro">Experiencia</h1>
 
       </div>
 
@@ -121,15 +84,21 @@
 
         <div class="row h-100 flex-column flex-sm-row justify-content-evenly align-items-center text-center ">
 
-          <img class="col-5 col-sm-3 col-md-2 img-fluid fondoBeige order-sm-2 mb-4 mb-sm-0 redondo" src="../img/taco.png"
-            alt="Taco Box">
+          <div class="col-5 col-sm-3 col-md-2 fondoBeige order-sm-2 mb-4 mb-sm-0 rounded-circle p-2">
+            <a href="https://ejer.com.ar" target="_blank">
+              <img class="img-fluid"
+            src="../img/ejer.png" alt="EJER">
+            </a>
+            
+          </div>
+          
 
           <div class="col-10 col-sm-7 order-sm-1">
 
-            <p>En cuanto a mi trayectoria laboral, luego de pasar por un callcenter 6 meses, trabaje 3 años como camarero
-              de Taco Box.</p>
-
-            <p>Labor que demandaba velocidad, memoria, lucidez y buen trato (tanto con clientes como con el equipo).</p>
+            <a class="text-decoration-none size18 hoverGrisClarito" href="https://ejer.com.ar" target="_blank"><b><u> Visitar EJER.com.ar</u></b></a>
+            <p class="mt-2">
+              Trabajé para el Estudio Jurídico Epelbaum-Rothstein diseñando y desarrollando un <b>sitio web efectivo y elegante que aborda sus necesidades clave.</b> Creé un sitio tipo "one-page" que combina una estética sofisticada con una estructura práctica, facilitando el contacto y proporcionando información esencial de manera intuitiva.
+              </p>
 
           </div>
 
@@ -140,63 +109,58 @@
       <section class="cuerpoTrabajo container-fluid pb-5">
 
         <div class="row h-100 flex-column flex-sm-row justify-content-evenly align-items-center text-center ">
-
-          <img class="col-5 col-sm-3 col-md-2 img-fluid fondoGris mb-4 mb-sm-0 redondo" src="../img/elac.png"
-            alt="Escuela Latinoamericana de Coaching">
+          
+            <div class="col-5 col-sm-3 col-md-2 p-4 img-fluid fondoGris mb-4 mb-sm-0 rounded-circle">
+              <a href="https://artechstore.netlify.app/" target="_blank">
+                <img class="img-fluid"
+                src="../img/artech.png"
+                
+                alt="ArTech">
+              </a>
+            </div>
 
           <div class="col-10 col-sm-7 ">
 
-            <p>Posteriormente, a fines de 2018, me incorporé como administrativo en la Escuela Latinoamericana de
-              Coaching. Puesto que sigo ejerciendo en la actualidad. </p>
-
-            <p>Requiere resolución de tareas contables, buena organización y mejor comunicación.</p>
+            <a class="text-decoration-none size18 hoverGrisClarito" href="https://artechstore.netlify.app/" target="_blank"><b><u>Visitar ArTech • E-commerce</u></b></a>
+            <p class="mt-2">
+              Diseñé y construí ArTech, un <b>e-commerce ficticio</b> que simula una tienda de tecnología. Implementado con <b>ReactJs,</b> este proyecto fue un vehículo valioso para la expansión de mis habilidades. Introduje funciones profesionales, como un <b>catálogo de productos, carrito de compras, registro de usuarios y conectividad en tiempo real a través de Firebase,</b> ofreciendo así una experiencia completa y práctica.
+              </p>
 
           </div>
 
         </div>
 
       </section>
-      
+
     </section>
 
   </main>
 
   <!-- pie de pagina -->
-
   <footer class="container-fluid fondoGris">
-
     <div class="row justify-content-evenly py-2">
 
       <div
-        class="col-sm-7 d-flex flex-column flex-md-row justify-content-evenly align-items-md-center ps-sm-5 ps-0 ps-md-0 text-center text-sm-start blanco">
-
-        <p class="m-0"><i class="fa-brands fa-whatsapp"></i>&nbsp; +54 9 11 6006 9979</p>
-
-        <p class="m-0"><i class="fa-solid fa-envelope"></i>&nbsp; tiansanjorge13@gmail.com</p>
-
+        class="col-8 d-flex flex-column flex-md-row justify-content-evenly align-items-md-center ps-sm-5 ps-0 ps-md-0 text-center text-sm-start blanco">
+        <a class="m-0 size16" href="https://wa.link/rehzl5" target="_blank"><i class="fa-brands fa-whatsapp" ></i>&nbsp; +54 9 11 6006 9979</a>
+        <p class="m-0"><i class="fa-solid fa-envelope"></i>&nbsp; sanjorgesebastian@gmail.com</p>
       </div>
 
-      <div class="text-center text-sm-end col-md-3 col-sm-5">
-
-        <a href="https://www.instagram.com/tiansanjorge/?hl=es"><i class="fa-brands fa-instagram"></i></a>
-
-        <a href="https://www.facebook.com/tian.sanjorge"><i class="fa-brands fa-facebook"></i></a>
-
-        <a href="https://wa.me/5491160069979" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-
+      <div class="text-center col-3">
+        <a href="https://www.linkedin.com/in/sebasti%C3%A1n-sanjorge-60a943130/" target="_blank"><i class="fa-brands fa-linkedin me-sm-4"></i></a>
+        <a href="https://github.com/tiansanjorge" target="_blank"><i class="fa-brands fa-github"></i></i></a>
       </div>
 
     </div>
-
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
     integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous">
-  </script>
+    </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
     integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous">
-  </script>
+    </script>
 
 </body>
 
