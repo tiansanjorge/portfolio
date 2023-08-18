@@ -215,7 +215,8 @@ footer a:hover {
 
 /* ----- cuerpo de estudio.html ----- */
 .lenguajes {
-  height: 305px;
+  height: auto;
+  min-height: 400px;
 }
 
 .logos2 {
