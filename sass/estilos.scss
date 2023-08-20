@@ -25,10 +25,27 @@ $colores:(blanco: #fff,
     }
 }
 
+.fondoGrisOscuro{
+    background: #666;
+}
+
+.fondoBeige{
+    background: #e7d3b1;
+}
+
 .hoverGrisClarito{
     color: #666;
     &:hover {
         color:#9b9b9b;
+        transition: .5s;
+    }
+}
+
+.hoverOscuro{
+    color:#666;
+    &:hover {
+        background: #666;
+        color:#fff;
         transition: .5s;
     }
 }
@@ -38,6 +55,25 @@ $colores:(blanco: #fff,
 
 .size18{
     font-size: 18px;
+}
+.size20 {
+    font-size: 20px;
+}
+
+.size40{
+    font-size: 40px;
+}
+
+.minHeight{
+    min-height: 90%;
+}
+
+.h-90{
+    height: 120%;
+}
+
+.resize-none{
+    resize:none
 }
 
 /* ------ Estilos base ----- */
@@ -250,51 +286,7 @@ footer a:hover {
 }
 
 form {
-    height: 480px;
-
-    input {
-        background: none;
-        border: none;
-        border-bottom: 2px solid map-get($colores, grisOscuro);
-        outline: none;
-        color: map-get($colores, grisOscuro);
-
-        &::placeholder {
-            color: map-get($colores, blanco);
-        }
-
-        &::-webkit-outer-spin-button,
-        &::-webkit-inner-spin-button {
-            /* Para borrar las flechas arriba y abajo en el input "telefono" */
-            -webkit-appearance: none;
-            margin: 0;
-        }
-    }
-
-    input[type=number] {
-        /* Para borrar las flechas arriba y abajo en el input "telefono" en Firefox */
-        -moz-appearance: textfield;
-    }
-
-    select {
-        @extend input;
-        width: 100%;
-
-        &:hover {
-            background: #ffffff4C;
-            transition: ease 500ms;
-            color: map-get($colores, grisOscuro);
-        }
-    }
-
-    textarea {
-        @extend input;
-        resize: none;
-
-        &::placeholder {
-            color: map-get($colores, blanco);
-        }
-    }
+    min-height:150px;
 }
 
 .enviar {
@@ -350,6 +342,10 @@ form {
             font-size: 50px;
         }
     }
+
+    .h-90{
+        height: 120%;
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -395,12 +391,12 @@ form {
         }
     }
 
-    form select {
-        width: 55%;
-    }
-
     .enviar {
         width: 30%;
+    }
+
+    .h-90{
+        height: 90%;
     }
 }
 

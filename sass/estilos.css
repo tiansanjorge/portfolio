@@ -8,11 +8,28 @@
   transition: 0.5s;
 }
 
+.fondoGrisOscuro {
+  background: #666;
+}
+
+.fondoBeige {
+  background: #e7d3b1;
+}
+
 .hoverGrisClarito {
   color: #666;
 }
 .hoverGrisClarito:hover {
   color: #9b9b9b;
+  transition: 0.5s;
+}
+
+.hoverOscuro {
+  color: #666;
+}
+.hoverOscuro:hover {
+  background: #666;
+  color: #fff;
   transition: 0.5s;
 }
 
@@ -22,6 +39,26 @@
 
 .size18 {
   font-size: 18px;
+}
+
+.size20 {
+  font-size: 20px;
+}
+
+.size40 {
+  font-size: 40px;
+}
+
+.minHeight {
+  min-height: 90%;
+}
+
+.h-90 {
+  height: 120%;
+}
+
+.resize-none {
+  resize: none;
 }
 
 /* ------ Estilos base ----- */
@@ -285,46 +322,7 @@ footer a:hover {
 }
 
 form {
-  height: 480px;
-}
-form input, form textarea, form select {
-  background: none;
-  border: none;
-  border-bottom: 2px solid #666;
-  outline: none;
-  color: #666;
-}
-form input::-moz-placeholder, form textarea::-moz-placeholder, form select::-moz-placeholder {
-  color: #fff;
-}
-form input::placeholder, form textarea::placeholder, form select::placeholder {
-  color: #fff;
-}
-form input::-webkit-outer-spin-button, form textarea::-webkit-outer-spin-button, form select::-webkit-outer-spin-button, form input::-webkit-inner-spin-button, form textarea::-webkit-inner-spin-button, form select::-webkit-inner-spin-button {
-  /* Para borrar las flechas arriba y abajo en el input "telefono" */
-  -webkit-appearance: none;
-  margin: 0;
-}
-form input[type=number], form textarea[type=number], form select[type=number] {
-  /* Para borrar las flechas arriba y abajo en el input "telefono" en Firefox */
-  -moz-appearance: textfield;
-}
-form select {
-  width: 100%;
-}
-form select:hover {
-  background: rgba(255, 255, 255, 0.2980392157);
-  transition: ease 500ms;
-  color: #666;
-}
-form textarea {
-  resize: none;
-}
-form textarea::-moz-placeholder {
-  color: #fff;
-}
-form textarea::placeholder {
-  color: #fff;
+  min-height: 150px;
 }
 
 .enviar {
@@ -369,6 +367,9 @@ form textarea::placeholder {
   .portadaContacto h1 {
     font-size: 50px;
   }
+  .h-90 {
+    height: 120%;
+  }
 }
 @media screen and (min-width: 768px) {
   .portadaIndex h1 {
@@ -400,11 +401,11 @@ form textarea::placeholder {
   .portadaContacto .row {
     margin-left: 27%;
   }
-  form select {
-    width: 55%;
-  }
   .enviar {
     width: 30%;
+  }
+  .h-90 {
+    height: 90%;
   }
 }
 @media screen and (min-width: 992px) {
