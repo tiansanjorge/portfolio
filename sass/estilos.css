@@ -24,6 +24,14 @@
   transition: 0.5s;
 }
 
+.hoverBeige {
+  color: #fff;
+}
+.hoverBeige:hover {
+  color: #e7d3b1;
+  transition: 0.5s;
+}
+
 .hoverOscuro {
   color: #666;
 }
@@ -39,10 +47,6 @@
 
 .size18 {
   font-size: 18px;
-}
-
-.size20 {
-  font-size: 20px;
 }
 
 .size40 {
@@ -208,7 +212,6 @@ footer a:hover {
 
 .descripcion a {
   text-decoration: none;
-  padding: 10px 35px;
   transition: ease 500ms;
 }
 
@@ -306,23 +309,14 @@ footer a:hover {
 
 /* ------------------- Estilos contacto.html ------------------- */
 /* ----- portada/cuerpo de contacto.html ----- */
-.portadaContacto {
-  background-image: url("../img/contenedor2.png");
-  background-size: auto;
-  height: 680px;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.portadaContacto h1 {
-  font-size: 40px;
-  color: #666;
-}
-.portadaContacto .row {
-  margin-left: 7%;
+.contacto {
+  background-image: url("../img/contacto2.jpg");
+  background-size: cover;
 }
 
 form {
   min-height: 150px;
+  z-index: 0;
 }
 
 .enviar {
@@ -369,6 +363,9 @@ form {
   }
   .h-90 {
     height: 120%;
+  }
+  .size20 {
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 768px) {
@@ -432,6 +429,9 @@ form {
   }
   .portadaContacto .row {
     margin-left: 15%;
+  }
+  .size20 {
+    font-size: 20px;
   }
 }
 @media screen and (min-width: 1200px) {
