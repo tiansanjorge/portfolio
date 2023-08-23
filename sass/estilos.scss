@@ -9,78 +9,14 @@
 }
 
 // mapa de colores
-$colores:(blanco: #fff,
+$colores: (
+    blanco: #fff,
     grisClaro: #bdbdbd,
     gris:#7e7e7e,
     grisOscuro: #666,
     negro:#000,
     beige:#e7d3b1,
 );
-
-.gris{
-    color:#7e7e7e;
-    &:hover {
-        color:#fff;
-        transition: .5s;
-    }
-}
-
-.fondoGrisOscuro{
-    background: #666;
-}
-
-.fondoBeige{
-    background: #e7d3b1;
-}
-
-.hoverGrisClarito{
-    color: #666;
-    &:hover {
-        color:#9b9b9b;
-        transition: .5s;
-    }
-}
-
-.hoverBeige{
-    color: #fff;
-    &:hover {
-        color:#e7d3b1;
-        transition: .5s;
-    }
-}
-
-.hoverOscuro{
-    color:#666;
-    &:hover {
-        background: #666;
-        color:#fff;
-        transition: .5s;
-    }
-}
-.size16{
-    font-size: 16px
-}
-
-.size18{
-    font-size: 18px;
-}
-
-
-.size40{
-    font-size: 40px;
-}
-
-.minHeight{
-    min-height: 90%;
-}
-
-.h-90{
-    height: 120%;
-}
-
-.resize-none{
-    resize:none
-}
 
 /* ------ Estilos base ----- */
 
@@ -108,6 +44,137 @@ main {
 
 @import "_clases";
 
+/* Clases genéricas */
+
+h1 {
+    font-weight: 100;
+    font-size: 50px;
+    letter-spacing: 4px;
+}
+
+h2,
+h3 {
+    color: #303030;
+}
+
+/* ---- colores y bg color ------ */
+
+.blanco {
+    color: #fff;
+    &:hover {
+        color: #fff;
+    }
+}
+
+.gris {
+    color: #7e7e7e;
+    &:hover {
+        color: #fff;
+        transition: .5s;
+    }
+}
+
+.grisOscuro {
+    color: #666;
+}
+
+.beige {
+    color: #e7d3b1;
+}
+
+.fondoGris {
+    background: #bdbdbd;
+}
+
+.fondoBeige {
+    background: #e7d3b1;
+}
+
+.fondoGrisOscuro {
+    background: #666;
+}
+
+.hoverGrisClarito {
+    color: #666;
+    &:hover {
+        color: #9b9b9b;
+        transition: .5s;
+    }
+}
+
+.hoverBeige {
+    color: #fff;
+
+    &:hover {
+        color: #e7d3b1;
+        transition: .5s;
+    }
+}
+
+.hoverOscuro {
+    color: #666;
+
+    &:hover {
+        background: #666;
+        color: #fff;
+        transition: .5s;
+    }
+}
+
+/* ----- Clases de tamaños de fuentes ------*/
+
+.size16 {
+    font-size: 16px
+}
+
+.size18 {
+    font-size: 18px;
+}
+
+.size40 {
+    font-size: 40px;
+}
+
+/* ----- otras clases genericas ----- */
+
+.redondo {
+    border-radius: 500px;
+}
+
+.textShad {
+    text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hovShake:hover {
+    animation: headShake;
+    animation-duration: 1.5s;
+}
+
+.pulse:hover {
+    animation: pulse;
+    animation-duration: 0.5s;
+}
+
+.fadeInLeft {
+    animation: fadeInLeft;
+    animation-duration: 2s;
+}
+
+.fadeInRight {
+    animation: fadeInRight;
+    animation-duration: 2s;
+}
+
+.fadeInDown {
+    animation: fadeInDown;
+    animation-duration: 2s;
+}
+
+.fadeIn {
+    animation: fadeIn;
+    animation-duration: 2s;
+}
+
 /* ----- header y footer de todas las paginas ----- */
 
 /* ----- header ----- */
@@ -118,7 +185,7 @@ main {
     z-index: 1;
 }
 
-.logo{
+.logo {
     width: 45px;
 }
 
@@ -138,8 +205,6 @@ footer a:hover {
 
 /* ----- Estilos Index.html ----- */
 
-/* ----- portada Index ---- */
-
 .portadaIndex {
     @include portada (url("../img/madera.jpg"), cover, 500px);
 }
@@ -152,8 +217,7 @@ footer a:hover {
     letter-spacing: 5px;
 }
 
-/* ----- cuerpo Index ----- */
-.cuerpoIndex{
+.cuerpoIndex {
     background-image: url("../img/index4.jpg");
     background-size: cover;
 }
@@ -173,129 +237,52 @@ footer a:hover {
     color: #7E7E7E;
 }
 
-/* -------- Estilos perfil.html --------- */
+/* ------------------- Estilos formacion.html ------------------- */
 
-/* ----- portada de perfil.html ----- */
-
-.portadaPerfil {
-    @include portada (url("../img/poligonos.jpg"), cover, auto);
-    box-shadow: inset 5px 5px 1000px #a6a6a6;
-
-    h1 {
-        text-shadow: 10px 15px 10px #00000033;
-    }
-}
-
-/* ----- cuerpo de perfil.html ----- */
-
-.cuerpoPerfil{
-    background-image: url("../img/perfil4.jpg");
-    background-size: cover;
-}
-
-.lamparita {
-    animation: flash;
-    animation-duration: 0.55s;
-    animation-delay: 8s;
-}
-
-/* ------------------- Estilos estudio.html ------------------- */
-
-/* ----- portada de estudio.html ----- */
-
-.portadaEstudio {
-    @include portada (url("../img/estudio.jpg"), cover, 600px);
+.portadaFormación {
+    @include portada (url("../img/formacion.jpg"), cover, 600px);
     color: map-get($colores, grisClaro);
 }
 
-/* ----- cuerpo de estudio.html ----- */
-
 .lenguajes {
-    height:auto;
+    height: auto;
     min-height: 400px;
 }
 
-.logos {
-    @extend html
-}
-
-.logos2 {
-    height: 54%;
-}
-
-.fondoEstudioA{
-    background-image: url("../img/estudioa5.jpg");
-    background-size: cover;
-
-}
-.fondoEstudioB{
-    background-image: url("../img/estudiob5.jpg");
-    background-size: cover;
-}
-.fondoEstudioC{
-    background-image: url("../img/estudioc5.jpg");
-    background-size: cover;
-}
-
-/* ------------------- Estilos trabajo.html ------------------- */
-
-/* ----- portada de trabajo.html ----- */
+/* ------------------- Estilos experiencia.html ------------------- */
 
 .portadaTrabajo {
-    @include portada (url("../img/trabajo2.jpg"), cover, 600px);
+    @include portada (url("../img/experienciab.jpg"), cover, 600px);
     background-position: right;
-
-    a {
-        text-decoration: none;
-        padding: 10px 35px;
-        transition: ease 500ms;
-        background: map-get($colores, negro);
-
-        &:hover {
-            color: #5e5e5e;
-            background: map-get($colores, beige);
-        }
-    }
 }
 
-/* ----- cuerpo de trabajo.html ----- */
-
-.fondoTrabajo{
-    background-image: url("../img/trabajo5.jpg");
+.fondoTrabajo {
+    background-image: url("../img/experiencia4.jpg");
     background-size: cover;
-}
-
-.cuerpoTrabajo {
-    img {
-        padding: 10px;
-    }
 }
 
 /* ------------------- Estilos contacto.html ------------------- */
 
-/* ----- portada/cuerpo de contacto.html ----- */
-
-.contacto{
+.contacto {
     background-image: url("../img/contacto2.jpg");
     background-size: cover;
 }
 
-form {
-    min-height:150px;
-    z-index:0
+.mainContacto {
+    height: 120%;
 }
 
-.enviar {
-    color: map-get($colores, blanco);
-    width: 100%;
-    border:2px solid map-get($colores, grisOscuro);
+.labelsForm {
+    font-size: 16px;
+}
 
-    &:hover {
-        background: #ffffff4C;
-        transition: ease 500ms;
-        color: map-get($colores, grisOscuro);
-    }
+form {
+    min-height: 150px;
+    z-index: 0
+}
 
+textarea {
+    resize: none
 }
 
 @media screen and (min-width: 576px) {
@@ -311,40 +298,8 @@ form {
         }
     }
 
-    .fondoEstudioA{
-        background-image: url("../img/estudioa4.jpg");
-    }
-
-    .fondoEstudioB{
-        background-image: url("../img/estudiob4.jpg");
-    }
-    
-    .fondoEstudioC{
-        background-image: url("../img/estudioc4.jpg");
-    }
-
-    .fondoTrabajo{
-        background-image: url("../img/trabajo4.jpg");
-    }
-
-    .portadaContacto {
-        background-image: url("../img/contenedor2.png");
-
-        .row {
-            margin-left: 20%;
-        }
-
-        h1 {
-            font-size: 50px;
-        }
-    }
-
-    .h-90{
-        height: 120%;
-    }
-
-    .size20 {
-        font-size: 16px;
+    .fondoTrabajo {
+        background-image: url("../img/experiencia3.jpg");
     }
 }
 
@@ -355,132 +310,44 @@ form {
         }
     }
 
-    .cuerpoIndex{
+    .cuerpoIndex {
         background-image: url("../img/index3.jpg");
     }
 
-    .cuerpoPerfil {
-        height: 400px;
-        background-image: url("../img/perfil3.jpg");
-    }
-
-    .fondoEstudioA{
-        background-image: url("../img/estudioa3.jpg");
-    }
-
-    .fondoEstudioB{
-        background-image: url("../img/estudiob3.jpg");
-    }
-    
-    .fondoEstudioC{
-        background-image: url("../img/estudioc3.jpg");
-    }
-
-    .portadaTrabajo{
-        background-image: url("../img/trabajo.jpg");
+    .portadaTrabajo {
+        background-image: url("../img/experiencia.jpg");
         background-position: center;
     }
 
-    .fondoTrabajo{
-        background-image: url("../img/trabajo3.jpg");
+    .fondoTrabajo {
+        background-image: url("../img/experiencia2.jpg");
     }
 
-    .portadaContacto {
-        .row {
-            margin-left: 27%;
-        }
-    }
-
-    .enviar {
-        width: 30%;
-    }
-
-    .h-90{
+    .mainContacto {
         height: 90%;
     }
 }
 
 @media screen and (min-width: 992px) {
-    .cuerpoIndex{
+    .cuerpoIndex {
         background-image: url("../img/index2.jpg");
     }
 
-    .cuerpoPerfil{
-        background-image: url("../img/perfil2.jpg");
+    .fondoTrabajo {
+        background-image: url("../img/experiencia2.jpg");
     }
 
-    .fondoEstudioA{
-        background-image: url("../img/estudioa2.jpg");
-    }
-
-    .fondoEstudioB{
-        background-image: url("../img/estudiob2.jpg");
-    }
-    
-    .fondoEstudioC{
-        background-image: url("../img/estudioc2.jpg");
-    }
-
-    .fondoTrabajo{
-        background-image: url("../img/trabajo1.jpg");
-    }
-
-    .portadaContacto {
-        background-image: url("../img/contenedor1.png");
-
-        .row {
-            margin-left: 15%;
-        }
-    }
-    .size20 {
+    .labelsForm {
         font-size: 20px;
     }
 }
 
 @media screen and (min-width: 1200px) {
-    .cuerpoIndex{
+    .cuerpoIndex {
         background-image: url("../img/index1.jpg");
     }
 
-    .cuerpoPerfil{
-        background-image: url("../img/perfil1.jpg");
-    }
-
-    .fondoTrabajo{
-        background-image: url("../img/trabajo1.jpg");
-    }
-
-    .fondoEstudioA{
-        background-image: url("../img/estudioa1.jpg");
-    }
-
-    .fondoEstudioB{
-        background-image: url("../img/estudiob1.jpg");
-    }
-
-    .fondoEstudioC{
-        background-image: url("../img/estudioc1.jpg");
-    }
-
-    .portadaContacto {
-        .row {
-            margin-left: 22%;
-        }
-    }
-}
-
-@media screen and (min-width: 1400px) {
-    .portadaContacto {
-        .row {
-            margin-left: 24%;
-        }
-    }
-}
-
-@media screen and (min-width: 1600px) {
-    .portadaContacto {
-        .row {
-            margin-left: 30%;
-        }
+    .fondoTrabajo {
+        background-image: url("../img/experiencia1.jpg");
     }
 }

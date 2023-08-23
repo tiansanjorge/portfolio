@@ -1,12 +1,5 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Days+One&family=Inter:wght@100;200;300;400;500;600;700;800&display=swap");
-.gris {
-  color: #7e7e7e;
-}
-.gris:hover {
-  color: #666;
-}
-
 /* ------ Estilos base ----- */
 * {
   margin: 0;
@@ -14,7 +7,7 @@
   box-sizing: border-box;
 }
 
-html, .logos, body {
+html, body {
   height: 100%;
   width: 100%;
 }
@@ -103,6 +96,131 @@ h3 {
   animation-duration: 2s;
 }
 
+/* Clases genéricas */
+h1 {
+  font-weight: 100;
+  font-size: 50px;
+  letter-spacing: 4px;
+}
+
+h2,
+h3 {
+  color: #303030;
+}
+
+/* ---- colores y bg color ------ */
+.blanco {
+  color: #fff;
+}
+.blanco:hover {
+  color: #fff;
+}
+
+.gris {
+  color: #7e7e7e;
+}
+.gris:hover {
+  color: #fff;
+  transition: 0.5s;
+}
+
+.grisOscuro {
+  color: #666;
+}
+
+.beige {
+  color: #e7d3b1;
+}
+
+.fondoGris {
+  background: #bdbdbd;
+}
+
+.fondoBeige {
+  background: #e7d3b1;
+}
+
+.fondoGrisOscuro {
+  background: #666;
+}
+
+.hoverGrisClarito {
+  color: #666;
+}
+.hoverGrisClarito:hover {
+  color: #9b9b9b;
+  transition: 0.5s;
+}
+
+.hoverBeige {
+  color: #fff;
+}
+.hoverBeige:hover {
+  color: #e7d3b1;
+  transition: 0.5s;
+}
+
+.hoverOscuro {
+  color: #666;
+}
+.hoverOscuro:hover {
+  background: #666;
+  color: #fff;
+  transition: 0.5s;
+}
+
+/* ----- Clases de tamaños de fuentes ------*/
+.size16 {
+  font-size: 16px;
+}
+
+.size18 {
+  font-size: 18px;
+}
+
+.size40 {
+  font-size: 40px;
+}
+
+/* ----- otras clases genericas ----- */
+.redondo {
+  border-radius: 500px;
+}
+
+.textShad {
+  text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hovShake:hover {
+  animation: headShake;
+  animation-duration: 1.5s;
+}
+
+.pulse:hover {
+  animation: pulse;
+  animation-duration: 0.5s;
+}
+
+.fadeInLeft {
+  animation: fadeInLeft;
+  animation-duration: 2s;
+}
+
+.fadeInRight {
+  animation: fadeInRight;
+  animation-duration: 2s;
+}
+
+.fadeInDown {
+  animation: fadeInDown;
+  animation-duration: 2s;
+}
+
+.fadeIn {
+  animation: fadeIn;
+  animation-duration: 2s;
+}
+
 /* ----- header y footer de todas las paginas ----- */
 /* ----- header ----- */
 .navbar {
@@ -119,7 +237,6 @@ footer a {
   font-size: 35px;
   text-decoration: none;
   color: #fff;
-  letter-spacing: 15px;
 }
 
 footer a:hover {
@@ -128,7 +245,6 @@ footer a:hover {
 }
 
 /* ----- Estilos Index.html ----- */
-/* ----- portada Index ---- */
 .portadaIndex {
   background-image: url("../img/madera.jpg");
   background-size: cover;
@@ -143,7 +259,6 @@ footer a:hover {
   letter-spacing: 5px;
 }
 
-/* ----- cuerpo Index ----- */
 .cuerpoIndex {
   background-image: url("../img/index4.jpg");
   background-size: cover;
@@ -155,7 +270,6 @@ footer a:hover {
 
 .descripcion a {
   text-decoration: none;
-  padding: 10px 35px;
   transition: ease 500ms;
 }
 
@@ -164,162 +278,53 @@ footer a:hover {
   color: #7E7E7E;
 }
 
-/* -------- Estilos perfil.html --------- */
-/* ----- portada de perfil.html ----- */
-.portadaPerfil {
-  background-image: url("../img/poligonos.jpg");
-  background-size: cover;
-  height: auto;
-  box-shadow: inset 5px 5px 1000px #a6a6a6;
-}
-.portadaPerfil h1 {
-  text-shadow: 10px 15px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* ----- cuerpo de perfil.html ----- */
-.cuerpoPerfil {
-  background-image: url("../img/perfil4.jpg");
-  background-size: cover;
-}
-
-.lamparita {
-  animation: flash;
-  animation-duration: 0.55s;
-  animation-delay: 8s;
-}
-
-/* ------------------- Estilos estudio.html ------------------- */
-/* ----- portada de estudio.html ----- */
-.portadaEstudio {
-  background-image: url("../img/estudio.jpg");
+/* ------------------- Estilos formacion.html ------------------- */
+.portadaFormación {
+  background-image: url("../img/formacion.jpg");
   background-size: cover;
   height: 600px;
   color: #bdbdbd;
 }
 
-/* ----- cuerpo de estudio.html ----- */
 .lenguajes {
-  height: 305px;
+  height: auto;
+  min-height: 400px;
 }
 
-.logos2 {
-  height: 54%;
-}
-
-.fondoEstudioA {
-  background-image: url("../img/estudioa5.jpg");
-  background-size: cover;
-}
-
-.fondoEstudioB {
-  background-image: url("../img/estudiob5.jpg");
-  background-size: cover;
-}
-
-.fondoEstudioC {
-  background-image: url("../img/estudioc5.jpg");
-  background-size: cover;
-}
-
-/* ------------------- Estilos trabajo.html ------------------- */
-/* ----- portada de trabajo.html ----- */
+/* ------------------- Estilos experiencia.html ------------------- */
 .portadaTrabajo {
-  background-image: url("../img/trabajo2.jpg");
+  background-image: url("../img/experienciab.jpg");
   background-size: cover;
   height: 600px;
   background-position: right;
-  box-shadow: inset 5px 5px 1000px #4a4a4a;
-}
-.portadaTrabajo a {
-  text-decoration: none;
-  padding: 10px 35px;
-  transition: ease 500ms;
-  background: #000;
-}
-.portadaTrabajo a:hover {
-  color: #5e5e5e;
-  background: #e7d3b1;
 }
 
-/* ----- cuerpo de trabajo.html ----- */
 .fondoTrabajo {
-  background-image: url("../img/trabajo5.jpg");
+  background-image: url("../img/experiencia4.jpg");
   background-size: cover;
 }
 
-.cuerpoTrabajo img {
-  padding: 10px;
+/* ------------------- Estilos contacto.html ------------------- */
+.contacto {
+  background-image: url("../img/contacto2.jpg");
+  background-size: cover;
 }
 
-/* ------------------- Estilos contacto.html ------------------- */
-/* ----- portada/cuerpo de contacto.html ----- */
-.portadaContacto {
-  background-image: url("../img/contenedor2.png");
-  background-size: auto;
-  height: 680px;
-  background-position: center;
-  background-repeat: no-repeat;
+.mainContacto {
+  height: 120%;
 }
-.portadaContacto h1 {
-  font-size: 40px;
-  color: #666;
-}
-.portadaContacto .row {
-  margin-left: 7%;
+
+.labelsForm {
+  font-size: 16px;
 }
 
 form {
-  height: 480px;
-}
-form input, form textarea, form select {
-  background: none;
-  border: none;
-  border-bottom: 2px solid #666;
-  outline: none;
-  color: #666;
-}
-form input::-moz-placeholder, form textarea::-moz-placeholder, form select::-moz-placeholder {
-  color: #fff;
-}
-form input::placeholder, form textarea::placeholder, form select::placeholder {
-  color: #fff;
-}
-form input::-webkit-outer-spin-button, form textarea::-webkit-outer-spin-button, form select::-webkit-outer-spin-button, form input::-webkit-inner-spin-button, form textarea::-webkit-inner-spin-button, form select::-webkit-inner-spin-button {
-  /* Para borrar las flechas arriba y abajo en el input "telefono" */
-  -webkit-appearance: none;
-  margin: 0;
-}
-form input[type=number], form textarea[type=number], form select[type=number] {
-  /* Para borrar las flechas arriba y abajo en el input "telefono" en Firefox */
-  -moz-appearance: textfield;
-}
-form select {
-  width: 100%;
-}
-form select:hover {
-  background: rgba(255, 255, 255, 0.2980392157);
-  transition: ease 500ms;
-  color: #666;
-}
-form textarea {
-  resize: none;
-}
-form textarea::-moz-placeholder {
-  color: #fff;
-}
-form textarea::placeholder {
-  color: #fff;
+  min-height: 150px;
+  z-index: 0;
 }
 
-.enviar {
-  color: #fff;
-  width: 100%;
-  border: 2px solid #666;
-}
-.enviar:hover {
-  background: rgba(255, 255, 255, 0.2980392157);
-  transition: ease 500ms;
-  color: #666;
+textarea {
+  resize: none;
 }
 
 @media screen and (min-width: 576px) {
@@ -332,26 +337,8 @@ form textarea::placeholder {
   .portadaIndex h2 {
     font-size: 35px;
   }
-  .fondoEstudioA {
-    background-image: url("../img/estudioa4.jpg");
-  }
-  .fondoEstudioB {
-    background-image: url("../img/estudiob4.jpg");
-  }
-  .fondoEstudioC {
-    background-image: url("../img/estudioc4.jpg");
-  }
   .fondoTrabajo {
-    background-image: url("../img/trabajo4.jpg");
-  }
-  .portadaContacto {
-    background-image: url("../img/contenedor2.png");
-  }
-  .portadaContacto .row {
-    margin-left: 20%;
-  }
-  .portadaContacto h1 {
-    font-size: 50px;
+    background-image: url("../img/experiencia3.jpg");
   }
 }
 @media screen and (min-width: 768px) {
@@ -361,92 +348,33 @@ form textarea::placeholder {
   .cuerpoIndex {
     background-image: url("../img/index3.jpg");
   }
-  .cuerpoPerfil {
-    height: 400px;
-    background-image: url("../img/perfil3.jpg");
-  }
-  .fondoEstudioA {
-    background-image: url("../img/estudioa3.jpg");
-  }
-  .fondoEstudioB {
-    background-image: url("../img/estudiob3.jpg");
-  }
-  .fondoEstudioC {
-    background-image: url("../img/estudioc3.jpg");
-  }
   .portadaTrabajo {
-    background-image: url("../img/trabajo.jpg");
+    background-image: url("../img/experiencia.jpg");
     background-position: center;
   }
   .fondoTrabajo {
-    background-image: url("../img/trabajo3.jpg");
+    background-image: url("../img/experiencia2.jpg");
   }
-  .portadaContacto .row {
-    margin-left: 27%;
-  }
-  form select {
-    width: 55%;
-  }
-  .enviar {
-    width: 30%;
+  .mainContacto {
+    height: 90%;
   }
 }
 @media screen and (min-width: 992px) {
   .cuerpoIndex {
     background-image: url("../img/index2.jpg");
   }
-  .cuerpoPerfil {
-    background-image: url("../img/perfil2.jpg");
-  }
-  .fondoEstudioA {
-    background-image: url("../img/estudioa2.jpg");
-  }
-  .fondoEstudioB {
-    background-image: url("../img/estudiob2.jpg");
-  }
-  .fondoEstudioC {
-    background-image: url("../img/estudioc2.jpg");
-  }
   .fondoTrabajo {
-    background-image: url("../img/trabajo2.jpg");
+    background-image: url("../img/experiencia2.jpg");
   }
-  .portadaContacto {
-    background-image: url("../img/contenedor1.png");
-  }
-  .portadaContacto .row {
-    margin-left: 15%;
+  .labelsForm {
+    font-size: 20px;
   }
 }
 @media screen and (min-width: 1200px) {
   .cuerpoIndex {
     background-image: url("../img/index1.jpg");
   }
-  .cuerpoPerfil {
-    background-image: url("../img/perfil1.jpg");
-  }
   .fondoTrabajo {
-    background-image: url("../img/trabajo1.jpg");
-  }
-  .fondoEstudioA {
-    background-image: url("../img/estudioa1.jpg");
-  }
-  .fondoEstudioB {
-    background-image: url("../img/estudiob1.jpg");
-  }
-  .fondoEstudioC {
-    background-image: url("../img/estudioc1.jpg");
-  }
-  .portadaContacto .row {
-    margin-left: 22%;
-  }
-}
-@media screen and (min-width: 1400px) {
-  .portadaContacto .row {
-    margin-left: 24%;
-  }
-}
-@media screen and (min-width: 1600px) {
-  .portadaContacto .row {
-    margin-left: 30%;
+    background-image: url("../img/experiencia1.jpg");
   }
 }/*# sourceMappingURL=estilos.css.map */
