@@ -237,7 +237,7 @@ footer a:hover {
     color: #7E7E7E;
 }
 
-/* ------------------- Estilos formacion.html ------------------- */
+/* ------------------- Estilos education.html ------------------- */
 
 .portadaFormación {
     @include portada (url("../img/formacion.jpg"), cover, 600px);
@@ -249,11 +249,11 @@ footer a:hover {
     min-height: 400px;
 }
 
-/* ------------------- Estilos experiencia.html ------------------- */
+/* ------------------- Estilos experiencie.html ------------------- */
 
 .portadaTrabajo {
-    @include portada (url("../img/experienciab.jpg"), cover, 600px);
-    background-position: right;
+    @include portada (url("../img/experience4.jpg"), cover, 600px);
+    background-position: center;
 }
 
 .fondoTrabajo {
@@ -261,7 +261,7 @@ footer a:hover {
     background-size: cover;
 }
 
-/* ------------------- Estilos contacto.html ------------------- */
+/* ------------------- Estilos contact.html ------------------- */
 
 .contacto {
     background-image: url("../img/contacto2.jpg");
@@ -315,8 +315,8 @@ textarea {
     }
 
     .portadaTrabajo {
-        background-image: url("../img/experiencia.jpg");
-        background-position: center;
+        background-image: url("../img/experience2.jpg");
+        background-position: left;
     }
 
     .fondoTrabajo {
