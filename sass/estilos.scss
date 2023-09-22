@@ -206,13 +206,18 @@ footer a:hover {
 /* ----- Estilos Index.html ----- */
 
 .portadaIndex {
-    @include portada (url("../img/madera.jpg"), cover, 500px);
+    @include portada (url("../img/portadaMobile.png"), cover, 500px);
+}
+
+.portadaIndex h1 {
+    font-size: 35px;
+    font-weight: 200;
 }
 
 .portadaIndex h2 {
     font-weight: 400;
     color: #66666680;
-    font-size: 22px;
+    font-size: 18px;
     text-shadow: 0px 2px 10px #00000033;
     letter-spacing: 5px;
 }
@@ -288,13 +293,14 @@ textarea {
 @media screen and (min-width: 576px) {
     .portadaIndex {
         height: 600px;
+        background-image: url("../img/portadaMobile2.png");
 
         h1 {
-            font-size: 70px;
+            font-size: 55px;
+            font-weight: 100;
         }
-
         h2 {
-            font-size: 35px;
+            font-size: 22px;
         }
     }
 
@@ -305,8 +311,12 @@ textarea {
 
 @media screen and (min-width: 768px) {
     .portadaIndex {
+        background-image: url("../img/portadaMobile3.png");
         h1 {
-            font-size: 80px;
+            font-size: 60px;
+        }
+        h2 {
+            font-size: 25px;
         }
     }
 
@@ -329,6 +339,12 @@ textarea {
 }
 
 @media screen and (min-width: 992px) {
+    .portadaIndex {
+        background-image: url("../img/portadaMobile3.png");
+        h1 {
+            font-size: 70px;
+        }
+    }
     .cuerpoIndex {
         background-image: url("../img/index2.jpg");
     }
@@ -342,6 +358,18 @@ textarea {
     }
 }
 
+@media screen and (min-width: 1050px) {
+    .portadaIndex {
+        background-image: url("../img/portada4.png");
+    }
+}
+
+@media screen and (min-width: 1150px) {
+    .portadaIndex {
+        background-image: url("../img/portada3.png");
+    }
+}
+
 @media screen and (min-width: 1200px) {
     .cuerpoIndex {
         background-image: url("../img/index1.jpg");
@@ -349,5 +377,18 @@ textarea {
 
     .fondoTrabajo {
         background-image: url("../img/experiencia1.jpg");
+    }
+    
+}
+
+@media screen and (min-width: 1300px) {
+    .portadaIndex {
+        background-image: url("../img/portada2.png");
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    .portadaIndex {
+        background-image: url("../img/portada.png");
     }
 }
