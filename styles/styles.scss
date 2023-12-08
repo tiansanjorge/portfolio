@@ -1,0 +1,172 @@
+/* ------ Importing fonts ----- */
+
+@font-face {
+  font-family: "Satoshi-Variable";
+  src: url("../fonts/Satoshi-Variable.woff2") format("woff2"),
+    url("../fonts/Satoshi-Variable.woff") format("woff"),
+    url("../fonts/Satoshi-Variable.ttf") format("truetype");
+  font-weight: 300 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Satoshi-VariableItalic";
+  src: url("../fonts/Satoshi-VariableItalic.woff2") format("woff2"),
+    url("../fonts/Satoshi-VariableItalic.woff") format("woff"),
+    url("../fonts/Satoshi-VariableItalic.ttf") format("truetype");
+  font-weight: 300 900;
+  font-display: swap;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Magilio";
+  src: url("../fonts/Magilio.woff2") format("woff2"),
+    url("../fonts/Magilio.woff") format("woff"),
+    url("../fonts/Magilio.ttf") format("truetype");
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Magilio-slant";
+  src: url("../fonts/Magilio-slant.woff2") format("woff2"),
+    url("../fonts/Magilio-slant.woff") format("woff"),
+    url("../fonts/Magilio-slant.ttf") format("truetype");
+  font-display: swap;
+  font-style: normal;
+}
+
+/* ------ Font Classes ----- */
+.fw-400{
+  font-weight: 400;
+}
+
+.fw-600{
+  font-weight: 600;
+}
+
+
+/* ------ Colors ----- */
+
+/*
+White: #E7E7E7
+Black: #121212
+Grey: #333333
+Blue: #354052
+Green: #226348
+Aqua: #9BC1BC
+*/
+
+.white{
+  color:#E7E7E7;
+}
+
+.black{
+  color:#121212;
+  &:hover{
+    color: #17784F;
+    transition: 0.3s
+  }
+}
+.grey{
+  color:#333333;
+}
+.blue{
+  color:#354052;
+}
+.green{
+  color:#17784F;
+  &:hover{
+    color: #17784F;
+    transition: 0.3s
+  }
+}
+.aqua{
+  color:#9BC1BC;
+}
+
+/* ------ DOM Styles ----- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Satoshi-Variable", sans-serif;
+  background: #E7E7E7;
+  color: #121212;
+}
+
+// Header
+
+.logo{
+  cursor:pointer;
+  font-size: 40px;
+  &:hover{
+    color:#9BC1BC
+  }
+}
+
+.subrayado {
+  position: relative;
+}
+
+.subrayado::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  bottom:0;
+  left: 0;
+  z-index:2;
+  border-bottom: 1px solid transparent;
+  transition: width 0.3s ease-in-out;
+}
+
+.subrayado:hover::after {
+  width: 100%;
+  border-bottom: 2px solid #9BC1BC;
+  animation: fadeInRight 0.1s;
+}
+
+// Presentation
+
+.presentation{
+  font-family: "Magilio", sans-serif;
+  
+}
+
+.presentation-heading{
+  font-size: 160px;
+}
+
+.presentation-description{
+  font-family: "Satoshi-Variable", sans-serif;
+}
+
+
+.s-behind {
+  position: relative;
+  z-index: 1;
+}
+
+.s-front {
+  position: absolute;
+  left: 8px;
+  z-index: 2; 
+}
+
+// Text banner
+
+.text-banner{
+  background-color: #121212;
+  color:#E7E7E7;
+  font-weight: 600;
+  white-space: nowrap
+}
