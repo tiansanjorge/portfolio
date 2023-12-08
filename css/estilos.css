@@ -121,7 +121,7 @@ h3 {
 }
 .gris:hover {
   color: #fff;
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
 .grisOscuro {
@@ -149,7 +149,7 @@ h3 {
 }
 .hoverGrisClarito:hover {
   color: #9b9b9b;
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
 .hoverBeige {
@@ -157,7 +157,7 @@ h3 {
 }
 .hoverBeige:hover {
   color: #e7d3b1;
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
 .hoverOscuro {
@@ -166,7 +166,7 @@ h3 {
 .hoverOscuro:hover {
   background: #666;
   color: #fff;
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
 /* ----- Clases de tamaños de fuentes ------*/
@@ -183,6 +183,54 @@ h3 {
 }
 
 /* ----- otras clases genericas ----- */
+
+
+.subrayado {
+  position: relative;
+}
+
+.subrayado::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  bottom:0;
+  left: 0;
+  z-index:2;
+  border-bottom: 2px solid transparent;
+  transition: width 0.3s ease-in-out;
+}
+
+.subrayado:hover::after {
+  width: 100%;
+  border-bottom: 1px solid #ffffff;
+  animation: fadeInLeft 0.1s;
+}
+
+.subrayado2 {
+  position: relative;
+}
+
+.subrayado2::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  bottom:0;
+  left: 0;
+  z-index:2;
+  border-bottom: 2px solid transparent;
+  transition: width 0.3s ease-in-out;
+}
+
+.subrayado2:hover::after {
+  width: 100%;
+  border-bottom: 1px solid #ffffff;
+  animation: fadeInRight 0.1s;
+}
+
+.ps-10{
+  padding-left: 60px;
+}
+
 .redondo {
   border-radius: 500px;
 }
@@ -241,7 +289,7 @@ footer a {
 
 footer a:hover {
   color: #666;
-  transition: ease-in 500ms;
+  transition: ease-in 0.3s;
 }
 
 /* ----- Estilos Index.html ----- */
