@@ -50,10 +50,6 @@ Aqua: #9BC1BC
 .black {
   color: #121212;
 }
-.black:hover {
-  color: #17784F;
-  transition: 0.3s;
-}
 
 .grey {
   color: #333333;
@@ -65,10 +61,6 @@ Aqua: #9BC1BC
 
 .green {
   color: #17784F;
-}
-.green:hover {
-  color: #17784F;
-  transition: 0.3s;
 }
 
 .aqua {
@@ -91,11 +83,27 @@ body {
   color: #121212;
 }
 
-.logo {
+a.black:hover, a.green:hover {
+  color: #17784F;
+  transition: 0.3s;
+}
+
+a.logo {
   cursor: pointer;
   font-size: 40px;
+  font-weight: 600;
 }
-.logo:hover {
+a.logo:hover {
+  color: #9BC1BC;
+}
+
+.home-link {
+  position: relative;
+}
+
+.active-dot {
+  position: absolute;
+  bottom: 10px;
   color: #9BC1BC;
 }
 
@@ -140,12 +148,41 @@ body {
 .s-front {
   position: absolute;
   left: 8px;
+  top: -19px;
   z-index: 2;
+}
+
+.scroll {
+  font-family: "Satoshi-Variable", sans-serif;
+  font-size: 20px;
+  font-weight: 400px;
+}
+
+.scroll-button {
+  background: #17784F;
+  width: 40px;
+  height: 40px;
+  box-shadow: 3px 3px 10px 2px #9BC1BC;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+.scroll-button:hover {
+  background: #9BC1BC;
+  box-shadow: 3px 3px 10px 2px #17784F;
+}
+
+.text-banner-container {
+  width: 100%;
+  background-color: #121212;
+  color: #E7E7E7;
+  overflow: hidden;
+  height: 60px;
+  position: relative;
 }
 
 .text-banner {
   background-color: #121212;
-  color: #E7E7E7;
   font-weight: 600;
   white-space: nowrap;
+  display: inline-block;
+  position: absolute;
 }/*# sourceMappingURL=styles.css.map */
