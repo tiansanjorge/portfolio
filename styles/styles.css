@@ -37,6 +37,7 @@
 /* ------ Colors ----- */
 /*
 White: #E7E7E7
+Darker white: #A5A5A5
 Black: #121212
 Grey: #333333
 Blue: #354052
@@ -45,6 +46,10 @@ Aqua: #9BC1BC
 */
 .white {
   color: #E7E7E7;
+}
+
+.darker-white {
+  color: #A5A5A5;
 }
 
 .black {
@@ -86,6 +91,11 @@ body {
 a.black:hover, a.green:hover {
   color: #17784F;
   transition: 0.3s;
+}
+
+.main-background {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1494%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='rgba(231%2c 231%2c 231%2c 1)'%3e%3c/rect%3e%3cpath d='M-94.66 135.42 a141.73 141.73 0 1 0 283.46 0 a141.73 141.73 0 1 0 -283.46 0z' fill='rgba(165%2c 165%2c 165%2c 0.06)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M228.44 443.1 a156.26 156.26 0 1 0 312.52 0 a156.26 156.26 0 1 0 -312.52 0z' fill='rgba(165%2c 165%2c 165%2c 0.06)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M301.11 4.61 a141.98 141.98 0 1 0 283.96 0 a141.98 141.98 0 1 0 -283.96 0z' fill='rgba(165%2c 165%2c 165%2c 0.06)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1195.6 488.15 a99.17 99.17 0 1 0 198.34 0 a99.17 99.17 0 1 0 -198.34 0z' fill='rgba(165%2c 165%2c 165%2c 0.06)' class='triangle-float1'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1494'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-30px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-15px%2c -15px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -30px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
+  background-size: cover;
 }
 
 a.logo {
@@ -185,4 +195,9 @@ a.logo:hover {
   white-space: nowrap;
   display: inline-block;
   position: absolute;
+}
+
+.description {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1374%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='url(%26quot%3b%23SvgjsRadialGradient1375%26quot%3b)'%3e%3c/rect%3e%3cpath d='M1076.9 285.41 a116 116 0 1 0 232 0 a116 116 0 1 0 -232 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M-66.42 298.63 a115.81 115.81 0 1 0 231.62 0 a115.81 115.81 0 1 0 -231.62 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M64.8 166.08 a107.95 107.95 0 1 0 215.9 0 a107.95 107.95 0 1 0 -215.9 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M319.63 158.71 a128.19 128.19 0 1 0 256.38 0 a128.19 128.19 0 1 0 -256.38 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1374'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cradialGradient cx='50%25' cy='100%25' r='912.14' gradientUnits='userSpaceOnUse' id='SvgjsRadialGradient1375'%3e%3cstop stop-color='rgba(53%2c 64%2c 82%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(0%2c 0%2c 0%2c 1)' offset='1'%3e%3c/stop%3e%3c/radialGradient%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-20px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -20px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
+  background-size: cover;
 }/*# sourceMappingURL=styles.css.map */
