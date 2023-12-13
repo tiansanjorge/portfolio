@@ -29,7 +29,7 @@
 
   <body>
     <!-------- Header ------->
-    <div class="main-background">
+    <div class="header-background">
       <header class="container-fluid py-2">
         <div class="row">
           <div class="col-10 mx-auto d-flex justify-content-between">
@@ -81,11 +81,11 @@
                 >
               </h2>
               <div class="col-1 scroll d-flex flex-column text-center my-auto">
-                <button
+                <a href="#about"
                   class="scroll-button rounded-circle border-0 mx-auto mb-4"
                 >
                   <i class="fa-solid fa-arrow-down white"></i>
-                </button>
+              </a>
                 SCROLL
               </div>
             </div>
@@ -106,54 +106,108 @@
 
     <!-- About Me -->
 
-    <section class="container-fluid description darker-white py-5">
-      <div class="row justify-content-evenly py-5">
-        <div class="col-10 d-flex">
-          <div class="col-3 white">About Me</div>
-          <div class="col-1 text-end pe-4 pt-1">
-            &lt;h3&gt;
-          </div>
-          <div class="col-4">
-            <h3 class="d-flex flex-column">
-              <b class="white">Innovator at heart, architect of ideas.</b>
-              <span class="mt-4"
-                >Over the years, my focus has been on converting designs into
-                <b class="white"
-                  >pixel-perfect, high-performing, accessible, and responsive
-                  websites.</b
-                >
-                I´m constantly seeking challenges and building towards the
-                future.
-              </span>
-            </h3>
-          </div>
-          <div class="col-1 ps-3 pb-2 align-self-end">
-            &lt;h3&#47;&gt;
+    <div class="body-background" id="about">
+      <section class="description container-fluid darker-white py-5">
+        <div class="row justify-content-evenly py-5">
+          <div class="col-10 d-flex p-0">
+            <div class="col-3">
+              <img
+                src="img/perfil.jpg"
+                class="col-8 img-fluid rounded-circle mb-3"
+                alt="Sebastian Sanjorge"
+              />
+            </div>
+            <div class="col-1 text-end pe-4 pt-1">
+              &lt;h3&gt;
+            </div>
+            <div class="col-4">
+              <h3 class="d-flex flex-column">
+                <b class="white">Innovator at heart, architect of ideas.</b>
+                <span class="mt-4"
+                  >Over the years, my focus has been on converting designs into
+                  <b class="white"
+                    >pixel-perfect, high-performing, accessible, and responsive
+                    websites.</b
+                  >
+                  I´m constantly seeking challenges and building towards the
+                  future.
+                </span>
+              </h3>
+            </div>
+            <div class="col-1 ps-3 pb-2 align-self-end">
+              &lt;h3&#47;&gt;
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Featured Works -->
+      <!-- Featured Works -->
 
-    <section class="container-fluid">
-      <div class="row justify-content-evenly"></div>
-    </section>
+      <section class="works container-fluid">
+        <div class="row justify-content-evenly py-5">
+          <div class="col-10 d-flex">
+            <div class="col-2 white">
+              Featured Works
+            </div>
 
-    <!-- Skills -->
+            <div class="col-10 d-flex">
+              <div class="col-5 pe-3">
+                <div class="works-margin-top">
+                <a href="https://artechstore.netlify.app/"
+                  ><img
+                    class="img-fluid grayscale-on-hover"
+                    src="img/artech.png"
+                    alt="Artech - Technology E-Commerce"
+                  />
+                </a>
+              </div>
+              </div>
 
-    <section class="container-fluid">
-      <div class="row justify-content-evenly"></div>
-    </section>
+              <div class="col-1 d-flex flex-column white text-center">
+                <h4 class="mb-0">01/03</h4>
+                <h4 class="mb-0 works-margin-top2">02/03</h4>
+                <h4 class="mb-0 works-margin-top2">03/03</h4>
+              </div>
 
-    <!-- Text Banner 2 -->
+              <div class="col-5 d-flex flex-column ps-3">
+                <div class="work1">
+                  <a href="https://psicologosanjorge.netlify.app/">
+                    <img
+                      class="img-fluid grayscale-on-hover"
+                      src="img/jps.png"
+                      alt="Juan Pablo Sanjorge´s Website"
+                    />
+                  </a>
+                </div>
+                <div class="works-margin-top3">
+                  <a href="https://ejer.com.ar/">
+                    <img
+                      class="img-fluid grayscale-on-hover"
+                      src="img/ejer.png"
+                      alt="EJER´s Website"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    <!-- Contact -->
+      <!-- Skills -->
 
-    <section class="container-fluid">
-      <div class="row justify-content-evenly"></div>
-    </section>
+      <section class="container-fluid">
+        <div class="row justify-content-evenly"></div>
+      </section>
 
+      <!-- Text Banner 2 -->
+
+      <!-- Contact -->
+
+      <section class="container-fluid">
+        <div class="row justify-content-evenly"></div>
+      </section>
+    </div>
     <!-- Footer -->
     <!-- <footer class="container-fluid fondoGris">
     <div class="row justify-content-evenly py-2">
