@@ -18,3 +18,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
   animateScroll();
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const textBanner2 = document.querySelector(".text-banner-2");
+  const originalHTML2 = textBanner2.innerHTML;
+  const screenWidth2 = window.innerWidth;
+  const repeatedHTML2 = originalHTML2.repeat(1000);
+  textBanner2.innerHTML = repeatedHTML2;
+
+  function animateScroll2() {
+    requestAnimationFrame(animateScroll2);
+    const scrollPos2 = performance.now() / 15;
+
+    const displacement2 = (scrollPos2 % screenWidth2) - screenWidth2;
+
+    textBanner2.style.transform = `translateX(${displacement2}px)`;
+  }
+
+  animateScroll2();
+});

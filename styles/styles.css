@@ -101,7 +101,6 @@ a.black:hover, a.green:hover {
 
 .body-background {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='3000' preserveAspectRatio='none' viewBox='0 0 1440 3000'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1599%26quot%3b)' fill='none'%3e%3crect width='1440' height='3000' x='0' y='0' fill='url(%26quot%3b%23SvgjsRadialGradient1600%26quot%3b)'%3e%3c/rect%3e%3cpath d='M831.32 2742.55 a251.38 251.38 0 1 0 502.76 0 a251.38 251.38 0 1 0 -502.76 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M-135.99 2163.51 a280.24 280.24 0 1 0 560.48 0 a280.24 280.24 0 1 0 -560.48 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M672.94 1469.44 a319.61 319.61 0 1 0 639.22 0 a319.61 319.61 0 1 0 -639.22 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M46.5 530.56 a410.37 410.37 0 1 0 820.74 0 a410.37 410.37 0 1 0 -820.74 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float3'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1599'%3e%3crect width='1440' height='3000' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cradialGradient cx='50%25' cy='0%25' r='3085.19' gradientUnits='userSpaceOnUse' id='SvgjsRadialGradient1600'%3e%3cstop stop-color='rgba(53%2c 64%2c 82%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(0%2c 0%2c 0%2c 1)' offset='1'%3e%3c/stop%3e%3c/radialGradient%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
-  background-size: cover;
 }
 
 a.logo {
@@ -207,8 +206,12 @@ a.logo:hover {
   position: absolute;
 }
 
-.works {
-  height: 3000px;
+.text-banner-2 {
+  background-color: #121212;
+  font-weight: 600;
+  white-space: nowrap;
+  display: inline-block;
+  position: absolute;
 }
 
 .work1 {
