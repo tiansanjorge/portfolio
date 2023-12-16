@@ -1,260 +1,379 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Professional Portfolio • Sebastián Sanjorge Front End Developer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles/animate.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+    <title>Sanjorge • Front End Developer</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Professional Portfolio • Sebastián Sanjorge Front End Developer" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
-  <link rel="stylesheet" href="styles/animate.css" />
-  <link rel="stylesheet" href="styles/styles.css" />
-  <link rel="icon" type="image/png" href="img/favicon.png" />
-  <title>Sanjorge • Front End Developer</title>
-</head>
-
-<body>
-  <!-------- Header ------->
-  <div class="header-background">
-    <header class="container-fluid py-2">
-      <div class="row">
-        <div class="col-10 mx-auto d-flex justify-content-between">
-          <div class="col-2">
-            <a class="logo text-decoration-none black" href="#"><b>SS<span class="green">.</span></b></a>
-          </div>
-          <div class="col-3 d-flex justify-content-between align-items-center">
-            <a class="text-decoration-none green fw-600 home-link" href="#">Home <span class="active-dot">•</span></a>
-            <a class="text-decoration-none subrayado black fw-600" href="pages/works.html">Works</a>
-            <a class="text-decoration-none subrayado black fw-600" href="pages/contact.html">Contact</a>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <!-- Presentation -->
-
-    <section class="presentation container-fluid py-5">
-      <div class="row justify-content-evenly">
-        <div class="col-10 d-flex flex-column justify-content-evenly">
-          <h1 class="d-flex flex-column text-end presentation-heading m-0">
-            Hello<span>I´m
-              <span class="green s-behind">S<span class="aqua s-front">S</span></span>ebastian</span>
-          </h1>
-          <div class="col-12 d-flex justify-content-between">
-            <h2 class="col-6 presentation-description green m-0">
-              <b>I am a front-end developer</b><span class="black fw-400">
-                dedicated to seeking inventive solutions for daily
-                challenges.</span>
-            </h2>
-            <div class="col-1 scroll d-flex flex-column text-center my-auto">
-              <a href="#about" class="scroll-button rounded-circle border-0 mx-auto mb-4">
-                <i class="fa-solid fa-arrow-down white"></i>
-              </a>
-              SCROLL
+  <body>
+    <!-------- Header ------->
+    <div class="header-background">
+      <header class="container-fluid py-2">
+        <div class="row">
+          <div class="col-10 mx-auto d-flex justify-content-between">
+            <div class="col-2">
+              <a class="logo text-decoration-none black" href="#"
+                ><b>SS<span class="green">.</span></b></a
+              >
+            </div>
+            <div
+              class="col-3 d-flex justify-content-between align-items-center"
+            >
+              <a class="text-decoration-none green fw-600 home-link" href="#"
+                >Home <span class="active-dot">•</span></a
+              >
+              <a
+                class="text-decoration-none subrayado black fw-600"
+                href="pages/works.html"
+                >Works</a
+              >
+              <a
+                class="text-decoration-none subrayado black fw-600"
+                href="pages/contact.html"
+                >Contact</a
+              >
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  </div>
+      </header>
 
-  <!-- Text Banner -->
+      <!-- Presentation -->
 
-  <section class="text-banner-container">
-    <div class="text-banner py-3">
-      <i class="fa-solid fa-minus ms-2"></i>
-      <i class="fa-solid fa-minus"></i>
-      <i class="fa-solid fa-minus me-2"></i> CRAFTING DIGITAL MAGIC
+      <section class="presentation container-fluid py-5">
+        <div class="row justify-content-evenly">
+          <div class="col-10 d-flex flex-column justify-content-evenly">
+            <h1 class="presentation-heading d-flex flex-column text-end m-0">
+              Hello<span
+                >I´m
+                <span class="green s-behind"
+                  >S<span class="aqua s-front">S</span></span
+                >ebastian</span
+              >
+            </h1>
+            <div class="col-12 d-flex justify-content-between">
+              <h2 class="col-6 presentation-description green m-0">
+                <b>I am a front-end developer</b
+                ><span class="black fw-400">
+                  dedicated to seeking inventive solutions for daily
+                  challenges.</span
+                >
+              </h2>
+              <div class="col-1 scroll d-flex flex-column text-center my-auto">
+                <a
+                  href="#about"
+                  class="scroll-button rounded-circle border-0 mx-auto mb-4"
+                >
+                  <i class="fa-solid fa-arrow-down white"></i>
+                </a>
+                SCROLL
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-  </section>
 
-  <!-- About Me -->
+    <!-- Text Banner -->
 
-  <div class="body-background" id="about">
-    <section class="description container-fluid darker-white py-5">
-      <div class="row justify-content-evenly py-5">
-        <div class="col-10 d-flex p-0">
-          <div class="col-3">
-            <img src="img/perfil.jpg" class="col-8 img-fluid rounded-circle mb-3" alt="Sebastian Sanjorge" />
-          </div>
-          <div class="col-6 d-flex ms-5">
-          <div class="col-2 text-end pe-4 pt-1">
-            &lt;h3&gt;
-          </div>
-          <div class="col-8">
-            <h3 class="d-flex flex-column">
-              <b class="white">Innovator at heart, architect of ideas.</b>
-              <span class="mt-4">Over this 3 years, my focus has been on converting designs
-                into
-                <b class="white">pixel-perfect, high-performing, accessible, and responsive
-                  websites.</b>
-                I´m constantly seeking challenges and building towards the
-                future.
-              </span>
-            </h3>
-          </div>
-          <div class="col-2 ps-3 pb-2 align-self-end">
-            &lt;h3&#47;&gt;
-          </div>
-        </div>
-        </div>
+    <section class="text-banner-container">
+      <div class="text-banner py-3">
+        <i class="fa-solid fa-minus ms-2"></i>
+        <i class="fa-solid fa-minus"></i>
+        <i class="fa-solid fa-minus me-2"></i> CRAFTING DIGITAL MAGIC
       </div>
     </section>
 
-    <!-- Featured Works -->
+    <!-- About Me -->
 
-    <section class="works container-fluid pb-5">
+    <div class="body-background" id="about">
+      <section class="description container-fluid darker-white py-5">
+        <div class="row justify-content-evenly py-5">
+          <div class="col-10 d-flex p-0">
+            <div class="col-3">
+              <img
+                src="img/perfil.jpg"
+                class="col-8 img-fluid rounded-circle mb-3"
+                alt="Sebastian Sanjorge"
+              />
+            </div>
+            <div class="col-6 d-flex ms-5">
+              <div class="col-2 text-end pe-4 pt-1">
+                &lt;h3&gt;
+              </div>
+              <div class="col-8">
+                <h3 class="d-flex flex-column">
+                  <b class="white">Innovator at heart, architect of ideas.</b>
+                  <span class="mt-4"
+                    >Over this 3 years, my focus has been on converting designs
+                    into
+                    <b class="white"
+                      >pixel-perfect, high-performing, accessible, and
+                      responsive websites.</b
+                    >
+                    I´m constantly seeking challenges and building towards the
+                    future.
+                  </span>
+                </h3>
+              </div>
+              <div class="col-2 ps-3 pb-2 align-self-end">
+                &lt;h3&#47;&gt;
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Works -->
+
+      <section class="works container-fluid pb-5">
+        <div class="row justify-content-evenly py-5">
+          <div class="col-10 d-flex">
+            <div class="col-2 white"><b>
+              Featured Works</b>
+            </div>
+
+            <div class="col-10 d-flex">
+              <div class="col-5 pe-3">
+                <div class="works-margin-top">
+                  <a href="https://artechstore.netlify.app/"
+                    ><img
+                      class="img-fluid grayscale-on-hover"
+                      src="img/artech.png"
+                      alt="Artech - Technology E-Commerce"
+                    />
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-1 d-flex flex-column white text-center">
+                <h4 class="mb-0">01/03</h4>
+                <h4 class="mb-0 works-margin-top2">02/03</h4>
+                <h4 class="mb-0 works-margin-top2">03/03</h4>
+              </div>
+
+              <div class="col-5 d-flex flex-column ps-3">
+                <div class="work1">
+                  <a href="https://psicologosanjorge.netlify.app/">
+                    <img
+                      class="img-fluid grayscale-on-hover"
+                      src="img/jps.png"
+                      alt="Juan Pablo Sanjorge´s Website"
+                    />
+                  </a>
+                </div>
+                <div class="works-margin-top3">
+                  <a href="https://ejer.com.ar/">
+                    <img
+                      class="img-fluid grayscale-on-hover"
+                      src="img/ejer.png"
+                      alt="EJER´s Website"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- Skills -->
+
+    <section class="skills-background container-fluid pt-5">
       <div class="row justify-content-evenly py-5">
         <div class="col-10 d-flex">
-          <div class="col-2 white">
-            Featured Works
+          <div class="col-2 d-flex flex-column justify-content-between">
+            <b>Skills</b>
+            <div class="col-4 scroll d-flex flex-column text-center mb-5">
+              <a
+                href="#footer-background"
+                class="scroll-button-skills rounded-circle border-0 mx-auto mb-5"
+              >
+                <i class="fa-solid fa-arrow-down white"></i>
+              </a>
+            </div>
           </div>
-
-          <div class="col-10 d-flex">
-            <div class="col-5 pe-3">
-              <div class="works-margin-top">
-                <a href="https://artechstore.netlify.app/"><img class="img-fluid grayscale-on-hover"
-                    src="img/artech.png" alt="Artech - Technology E-Commerce" />
-                </a>
+          <div class="col-9 mx-auto d-flex flex-wrap">
+            <div class="col-3 d-flex flex-column">
+              <div class="col-4 mb-5">
+                <img class="img-fluid" src="img/html.png" alt="HTML5" />
+                <p class="text-center mb-0 pt-2">HTML5</p>
               </div>
             </div>
-
-            <div class="col-1 d-flex flex-column white text-center">
-              <h4 class="mb-0">01/03</h4>
-              <h4 class="mb-0 works-margin-top2">02/03</h4>
-              <h4 class="mb-0 works-margin-top2">03/03</h4>
-            </div>
-
-            <div class="col-5 d-flex flex-column ps-3">
-              <div class="work1">
-                <a href="https://psicologosanjorge.netlify.app/">
-                  <img class="img-fluid grayscale-on-hover" src="img/jps.png" alt="Juan Pablo Sanjorge´s Website" />
-                </a>
+            <div class="col-3 d-flex flex-column">
+              <div class="col-4 mb-5">
+                <img class="img-fluid" src="img/css.png" alt="CSS3" />
+                <p class="text-center mb-0 pt-2">CSS3</p>
               </div>
-              <div class="works-margin-top3">
-                <a href="https://ejer.com.ar/">
-                  <img class="img-fluid grayscale-on-hover" src="img/ejer.png" alt="EJER´s Website" />
-                </a>
+            </div>
+            <div class="col-3 d-flex flex-column">
+              <div class="col-4 mb-5">
+                <img class="img-fluid" src="img/sass.png" alt="SASS" />
+                <p class="text-center mb-0 pt-2">SASS</p>
+              </div>
+            </div>
+            <div class="col-3 d-flex flex-column">
+              <div class="col-4 mb-5">
+                <img
+                  class="img-fluid"
+                  src="img/bootstrap.png"
+                  alt="Bootstrap"
+                />
+                <p class="text-center mb-0 pt-2">Bootstrap</p>
+              </div>
+            </div>
+            <div class="col-3 d-flex flex-column">
+              <div class="col-4 mb-5">
+                <img
+                  class="img-fluid"
+                  src="img/javascript.png"
+                  alt="JavaScript"
+                />
+                <p class="text-center mb-0 pt-2">JavaScript</p>
+              </div>
+            </div>
+            <div class="col-3 d-flex flex-column justify-content-end">
+              <div class="col-4 mb-5">
+                <img class="img-fluid" src="img/jquery.png" alt="jQuery" />
+                <p class="text-center mb-0 pt-2">jQuery</p>
+              </div>
+            </div>
+            <div class="col-3 d-flex flex-column">
+              <div class="col-4 mb-5">
+                <img class="img-fluid" src="img/react.png" alt="ReactJS" />
+                <p class="text-center mb-0 pt-2">ReactJS</p>
+              </div>
+            </div>
+            <div class="col-3 d-flex flex-column">
+              <div class="col-4 mb-5">
+                <img class="img-fluid" src="img/redux.png" alt="Redux" />
+                <p class="text-center mb-0 pt-2">Redux</p>
+              </div>
+            </div>
+            <div class="col-3 d-flex flex-column">
+              <div class="col-4 mb-5">
+                <img
+                  class="img-fluid"
+                  src="img/typescript.png"
+                  alt="Typescript"
+                />
+                <p class="text-center mb-0 pt-2">TypeScript</p>
+              </div>
+            </div>
+            <div class="col-3 d-flex flex-column">
+              <div class="col-4 mb-5">
+                <img class="img-fluid" src="img/git.png" alt="Git Flow" />
+                <p class="text-center mb-0 pt-2">Git Flow</p>
+              </div>
+            </div>
+            <div class="col-3 d-flex flex-column">
+              <div class="col-4 mb-5">
+                <img class="img-fluid" src="img/agile.png" alt="Agile Method" />
+                <p class="text-center mb-0 pt-2">Agile Method</p>
+              </div>
+            </div>
+            <div class="col-3 d-flex flex-column justify-content-center">
+              <div class="col-4 mb-5">
+                <img
+                  class="img-fluid"
+                  src="img/inglesB2.jpg"
+                  alt="English B2"
+                />
+                <p class="text-center mb-0 pt-2">B2 English</p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-  </div>
-  <!-- Skills -->
 
-  <section class="container-fluid pt-5">
-    <div class="row justify-content-evenly py-5">
-      <div class="col-10 d-flex">
-        <div class="col-2 d-flex flex-column justify-content-between">
-          Skills
-          <div class=" col-4 scroll d-flex flex-column text-center mb-5">
-            <a href="#contact" class="scroll-button rounded-circle border-0 mx-auto mb-4">
-              <i class="fa-solid fa-arrow-down white"></i>
-            </a>
-          </div>
-        </div>
-        <div class="col-9 mx-auto d-flex flex-wrap">
-          <div class="col-3 d-flex flex-column">
-            <div class="col-4 mb-5">
-              <img class="img-fluid" src="img/html.png" alt="HTML5" />
-              <p class="text-center mb-0 pt-2">HTML5</p>
-            </div>
-          </div>
-          <div class="col-3 d-flex flex-column">
-            <div class="col-4 mb-5">
-              <img class="img-fluid" src="img/css.png" alt="CSS3" />
-              <p class="text-center mb-0 pt-2">CSS3</p>
-            </div>
-          </div>
-          <div class="col-3 d-flex flex-column">
-            <div class="col-4 mb-5">
-              <img class="img-fluid" src="img/sass.png" alt="SASS" />
-              <p class="text-center mb-0 pt-2">SASS</p>
-            </div>
-          </div>
-          <div class="col-3 d-flex flex-column">
-            <div class="col-4 mb-5">
-              <img class="img-fluid" src="img/bootstrap.png" alt="Bootstrap" />
-              <p class="text-center mb-0 pt-2">Bootstrap</p>
-            </div>
-          </div>
-          <div class="col-3 d-flex flex-column">
-            <div class="col-4 mb-5">
-              <img class="img-fluid" src="img/javascript.png" alt="JavaScript" />
-              <p class="text-center mb-0 pt-2">JavaScript</p>
-            </div>
-          </div>
-          <div class="col-3 d-flex flex-column justify-content-end">
-            <div class="col-4 mb-5">
-              <img class="img-fluid" src="img/jquery.png" alt="jQuery" />
-              <p class="text-center mb-0 pt-2">jQuery</p>
-            </div>
-          </div>
-          <div class="col-3 d-flex flex-column">
-            <div class="col-4 mb-5">
-              <img class="img-fluid" src="img/react.png" alt="ReactJS" />
-              <p class="text-center mb-0 pt-2">ReactJS</p>
-            </div>
-          </div>
-          <div class="col-3 d-flex flex-column">
-            <div class="col-4 mb-5">
-              <img class="img-fluid" src="img/redux.png" alt="Redux" />
-              <p class="text-center mb-0 pt-2">Redux</p>
-            </div>
-          </div>
-          <div class="col-3 d-flex flex-column">
-            <div class="col-4 mb-5">
-              <img class="img-fluid" src="img/typescript.png" alt="Typescript" />
-              <p class="text-center mb-0 pt-2">TypeScript</p>
-            </div>
-          </div>
-          <div class="col-3 d-flex flex-column">
-            <div class="col-4 mb-5">
-              <img class="img-fluid" src="img/git.png" alt="Git Flow" />
-              <p class="text-center mb-0 pt-2">Git Flow</p>
-            </div>
-          </div>
-          <div class="col-3 d-flex flex-column">
-            <div class="col-4 mb-5">
-              <img class="img-fluid" src="img/agile.png" alt="Agile Method" />
-              <p class="text-center mb-0 pt-2">Agile Method</p>
-            </div>
-          </div>
-          <div class="col-3 d-flex flex-column justify-content-center">
-            <div class="col-4 mb-5">
-              <img class="img-fluid" src="img/inglesB2.jpg" alt="English B2" />
-              <p class="text-center mb-0 pt-2">B2 English</p>
-            </div>
-          </div>
-        </div>
+    <!-- Text Banner 2 -->
+
+    <section class="text-banner-container">
+      <div class="text-banner-2 py-3">
+        <i class="fa-solid fa-minus ms-2"></i>
+        <i class="fa-solid fa-minus"></i>
+        <i class="fa-solid fa-minus me-2"></i> CRAFTING DIGITAL MAGIC
       </div>
+    </section>
+
+    <!-- Contact -->
+
+    <div class="footer-background">
+      <section class="container-fluid white">
+        <div class="row justify-content-evenly pt-5 pb-3">
+          <div class="col-10 d-flex">
+            <p class="index-contact-text m-0">Let´s Talk</p>
+            <div
+              class="col-4 d-flex flex-column justify-content-center text-center mt-5"
+            >
+              <a
+                href="#"
+                class="contact-button text-decoration-none rounded-5 border-0 mx-auto p-1 px-4 white"
+              >
+                <b>CONTACT</b>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="container-fluid">
+        <div class="row justify-content-evenly pb-3">
+          <div class="col-10 d-flex justify-content-between align-items-center">
+            <div class="col-2">
+              <a class="logo text-decoration-none white" href="#"
+                ><b>SS<span class="green">.</span></b></a
+              >
+            </div>
+            <div class="col-4 d-flex justify-content-evenly text-decoration-none">
+              <a
+                class="white footer-link"
+                href="https://wa.link/rehzl5"
+                target="_blank"
+                ><i class="fa-brands fa-whatsapp"></i>
+              </a>
+              <a class="white footer-link" href="mailto:sanjorgesebastian@gmail.com"
+                ><i class="fa-solid fa-envelope"></i
+              ></a>
+              <a class="white footer-link"
+                href="https://www.linkedin.com/in/sebasti%C3%A1n-sanjorge-60a943130/"
+                ><i
+                  class="fa-brands fa-linkedin"
+                  target="_blank"
+                ></i
+              ></a>
+              <a class="white footer-link" href="https://github.com/tiansanjorge" target="_blank"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-  </section>
 
-  <!-- Text Banner 2 -->
-
-  <section class="text-banner-container">
-    <div class="text-banner-2 py-3">
-      <i class="fa-solid fa-minus ms-2"></i>
-      <i class="fa-solid fa-minus"></i>
-      <i class="fa-solid fa-minus me-2"></i> CRAFTING DIGITAL MAGIC
-    </div>
-  </section>
-
-  <!-- Contact -->
-
-  <section class="container-fluid">
-    <div class="row justify-content-evenly"></div>
-  </section>
-
-  <!-- Footer -->
-  <!-- <footer class="container-fluid fondoGris">
+    <!-- Footer -->
+    <!-- <footer class="container-fluid fondoGris">
     <div class="row justify-content-evenly py-2">
 
       <div
@@ -272,7 +391,6 @@
 
     </div>
   </footer> -->
-  <script src="script.js"></script>
-</body>
-
+    <script src="script.js"></script>
+  </body>
 </html>

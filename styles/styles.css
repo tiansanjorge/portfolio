@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* ------ Importing fonts ----- */
 @font-face {
   font-family: "Satoshi-Variable";
@@ -100,7 +99,8 @@ a.black:hover, a.green:hover {
 }
 
 .body-background {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='3000' preserveAspectRatio='none' viewBox='0 0 1440 3000'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1599%26quot%3b)' fill='none'%3e%3crect width='1440' height='3000' x='0' y='0' fill='url(%26quot%3b%23SvgjsRadialGradient1600%26quot%3b)'%3e%3c/rect%3e%3cpath d='M831.32 2742.55 a251.38 251.38 0 1 0 502.76 0 a251.38 251.38 0 1 0 -502.76 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M-135.99 2163.51 a280.24 280.24 0 1 0 560.48 0 a280.24 280.24 0 1 0 -560.48 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M672.94 1469.44 a319.61 319.61 0 1 0 639.22 0 a319.61 319.61 0 1 0 -639.22 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M46.5 530.56 a410.37 410.37 0 1 0 820.74 0 a410.37 410.37 0 1 0 -820.74 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float3'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1599'%3e%3crect width='1440' height='3000' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cradialGradient cx='50%25' cy='0%25' r='3085.19' gradientUnits='userSpaceOnUse' id='SvgjsRadialGradient1600'%3e%3cstop stop-color='rgba(53%2c 64%2c 82%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(0%2c 0%2c 0%2c 1)' offset='1'%3e%3c/stop%3e%3c/radialGradient%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1600' height='1600' preserveAspectRatio='none' viewBox='0 0 1600 1600'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1402%26quot%3b)' fill='none'%3e%3crect width='1600' height='1600' x='0' y='0' fill='url(%26quot%3b%23SvgjsRadialGradient1403%26quot%3b)'%3e%3c/rect%3e%3cpath d='M-112.51 5.52 a296.04 296.04 0 1 0 592.08 0 a296.04 296.04 0 1 0 -592.08 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M7.42 317.21 a325.35 325.35 0 1 0 650.7 0 a325.35 325.35 0 1 0 -650.7 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M252.11 499.59 a312.15 312.15 0 1 0 624.3 0 a312.15 312.15 0 1 0 -624.3 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M730.86 1079.59 a340.64 340.64 0 1 0 681.28 0 a340.64 340.64 0 1 0 -681.28 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1402'%3e%3crect width='1600' height='1600' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cradialGradient cx='50%25' cy='0%25' r='1788.85' gradientUnits='userSpaceOnUse' id='SvgjsRadialGradient1403'%3e%3cstop stop-color='rgba(1%2c 16%2c 0%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(0%2c 0%2c 0%2c 1)' offset='1'%3e%3c/stop%3e%3c/radialGradient%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
+  background-size: cover;
 }
 
 a.logo {
@@ -134,7 +134,7 @@ a.logo:hover {
   left: 0;
   z-index: 2;
   border-bottom: 1px solid transparent;
-  transition: width 0.3s ease-in-out;
+  transition: width 0.2s ease-in-out;
 }
 
 .subrayado:hover::after {
@@ -178,7 +178,7 @@ a.logo:hover {
   width: 40px;
   height: 40px;
   box-shadow: 3px 3px 10px 2px #9BC1BC;
-  transition: background 0.3s, box-shadow 0.3s;
+  transition: 0.2s;
 }
 .scroll-button:hover {
   background: #9BC1BC;
@@ -238,7 +238,49 @@ a.logo:hover {
   filter: grayscale(0%);
 }
 
-/* Al pasar el cursor sobre la imagen, cambiará a color */
 .grayscale-on-hover:hover {
   filter: grayscale(0%);
+}
+
+.skills-background {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1600' height='600' preserveAspectRatio='none' viewBox='0 0 1600 600'%3e%3cg mask='url(%26quot%3b%23SvgjsMask2516%26quot%3b)' fill='none'%3e%3crect width='1600' height='600' x='0' y='0' fill='url(%26quot%3b%23SvgjsLinearGradient2517%26quot%3b)'%3e%3c/rect%3e%3cpath d='M-109.6 242.25 a186.53 186.53 0 1 0 373.06 0 a186.53 186.53 0 1 0 -373.06 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M409.12 578.03 a151.16 151.16 0 1 0 302.32 0 a151.16 151.16 0 1 0 -302.32 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M147.42 298.94 a137.78 137.78 0 1 0 275.56 0 a137.78 137.78 0 1 0 -275.56 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1263.38 209.36 a185.62 185.62 0 1 0 371.24 0 a185.62 185.62 0 1 0 -371.24 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float1'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask2516'%3e%3crect width='1600' height='600' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='50%25' y1='100%25' x2='50%25' y2='0%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient2517'%3e%3cstop stop-color='rgba(213%2c 226%2c 225%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(233%2c 233%2c 233%2c 1)' offset='1'%3e%3c/stop%3e%3c/linearGradient%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
+  background-size: cover;
+}
+
+.scroll-button-skills {
+  background: #354052;
+  width: 40px;
+  height: 40px;
+  transition: 0.2s;
+}
+.scroll-button-skills:hover {
+  background: #226348;
+}
+
+.index-contact-text {
+  font-family: "Magilio", sans-serif;
+  font-size: 160px;
+}
+
+.contact-button {
+  letter-spacing: 2px;
+  background-color: #17784F;
+  transition: 0.2s;
+}
+.contact-button:hover {
+  background-color: #9BC1BC;
+  color: #333333;
+}
+
+.footer-background {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1600' height='400' preserveAspectRatio='none' viewBox='0 0 1600 400'%3e%3cg mask='url(%26quot%3b%23SvgjsMask2638%26quot%3b)' fill='none'%3e%3crect width='1600' height='400' x='0' y='0' fill='url(%26quot%3b%23SvgjsLinearGradient2639%26quot%3b)'%3e%3c/rect%3e%3cpath d='M1132.5 126.28 a124.44 124.44 0 1 0 248.88 0 a124.44 124.44 0 1 0 -248.88 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M799.82 255.92 a88.75 88.75 0 1 0 177.5 0 a88.75 88.75 0 1 0 -177.5 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1155.59 70.47 a104.86 104.86 0 1 0 209.72 0 a104.86 104.86 0 1 0 -209.72 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M909.71 48.83 a87.23 87.23 0 1 0 174.46 0 a87.23 87.23 0 1 0 -174.46 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask2638'%3e%3crect width='1600' height='400' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='50%25' y1='100%25' x2='50%25' y2='0%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient2639'%3e%3cstop stop-color='rgba(0%2c 0%2c 0%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(0%2c 48%2c 23%2c 1)' offset='1'%3e%3c/stop%3e%3c/linearGradient%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
+  background-size: cover;
+}
+
+.footer-link {
+  font-size: 30px;
+  transition: 0.2s;
+}
+.footer-link:hover {
+  color: #17784F;
 }/*# sourceMappingURL=styles.css.map */
