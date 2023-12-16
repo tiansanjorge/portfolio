@@ -39,14 +39,13 @@
 }
 
 /* ------ Font Classes ----- */
-.fw-400{
+.fw-400 {
   font-weight: 400;
 }
 
-.fw-600{
+.fw-600 {
   font-weight: 600;
 }
-
 
 /* ------ Colors ----- */
 
@@ -60,28 +59,28 @@ Green: #226348
 Aqua: #9BC1BC
 */
 
-.white{
-  color:#E7E7E7;
+.white {
+  color: #e7e7e7;
 }
 
-.darker-white{
-  color:#A5A5A5;
+.darker-white {
+  color: #a5a5a5;
 }
 
-.black{
-  color:#121212;
+.black {
+  color: #121212;
 }
-.grey{
-  color:#333333;
+.grey {
+  color: #333333;
 }
-.blue{
-  color:#354052;
+.blue {
+  color: #354052;
 }
-.green{
-  color:#17784F;
+.green {
+  color: #17784f;
 }
-.aqua{
-  color:#9BC1BC;
+.aqua {
+  color: #9bc1bc;
 }
 
 /* ------ DOM Styles ----- */
@@ -97,49 +96,72 @@ body {
   height: 100%;
   width: 100%;
   font-family: "Satoshi-Variable", sans-serif;
-  background: #E7E7E7;
+  background: #e7e7e7;
   color: #121212;
 }
 
-a.black, a.green{
-  &:hover{
-    color: #17784F;
-    transition: 0.3s
+a.black,
+a.green {
+  &:hover {
+    color: #17784f;
+    transition: 0.3s;
   }
 }
 
 // Main Background
 
-.header-background{
+.header-background {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1494%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='rgba(231%2c 231%2c 231%2c 1)'%3e%3c/rect%3e%3cpath d='M-94.66 135.42 a141.73 141.73 0 1 0 283.46 0 a141.73 141.73 0 1 0 -283.46 0z' fill='rgba(165%2c 165%2c 165%2c 0.06)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M228.44 443.1 a156.26 156.26 0 1 0 312.52 0 a156.26 156.26 0 1 0 -312.52 0z' fill='rgba(165%2c 165%2c 165%2c 0.06)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M301.11 4.61 a141.98 141.98 0 1 0 283.96 0 a141.98 141.98 0 1 0 -283.96 0z' fill='rgba(165%2c 165%2c 165%2c 0.06)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1195.6 488.15 a99.17 99.17 0 1 0 198.34 0 a99.17 99.17 0 1 0 -198.34 0z' fill='rgba(165%2c 165%2c 165%2c 0.06)' class='triangle-float1'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1494'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-30px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-15px%2c -15px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -30px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
-  background-size:cover;
-  
+  background-size: cover;
 }
 
-.body-background{
+.body-background {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1600' height='1600' preserveAspectRatio='none' viewBox='0 0 1600 1600'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1402%26quot%3b)' fill='none'%3e%3crect width='1600' height='1600' x='0' y='0' fill='url(%26quot%3b%23SvgjsRadialGradient1403%26quot%3b)'%3e%3c/rect%3e%3cpath d='M-112.51 5.52 a296.04 296.04 0 1 0 592.08 0 a296.04 296.04 0 1 0 -592.08 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M7.42 317.21 a325.35 325.35 0 1 0 650.7 0 a325.35 325.35 0 1 0 -650.7 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M252.11 499.59 a312.15 312.15 0 1 0 624.3 0 a312.15 312.15 0 1 0 -624.3 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M730.86 1079.59 a340.64 340.64 0 1 0 681.28 0 a340.64 340.64 0 1 0 -681.28 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1402'%3e%3crect width='1600' height='1600' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cradialGradient cx='50%25' cy='0%25' r='1788.85' gradientUnits='userSpaceOnUse' id='SvgjsRadialGradient1403'%3e%3cstop stop-color='rgba(1%2c 16%2c 0%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(0%2c 0%2c 0%2c 1)' offset='1'%3e%3c/stop%3e%3c/radialGradient%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
   background-size: cover;
 }
 
 // Header
 
-a.logo{
-  cursor:pointer;
-  font-size: 40px;
+a.logo {
+  cursor: pointer;
+  font-size: 23px;
   font-weight: 600;
-  &:hover{
-    color:#9BC1BC
+  &:hover {
+    color: #9bc1bc;
   }
 }
 
-.home-link{
+.nav-button {
+  background-color: transparent;
+  &:hover {
+    color: #17784f;
+  }
+}
+
+.link{
+  font-size: 13px;
+}
+
+.dd-menu {
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background-color: transparent;
+  transition: 0.3s ease-in-out;
+}
+
+.dd-menu.active {
+  height: 90px;
+}
+
+.home-link {
   position: relative;
 }
 
-.active-dot{
+.active-dot {
   position: absolute;
-  bottom:10px;
-  color: #9BC1BC;
+  bottom: 8px;
+  color: #9bc1bc;
 }
 
 .subrayado {
@@ -150,32 +172,29 @@ a.logo{
   content: "";
   position: absolute;
   width: 0;
-  bottom:0;
+  bottom: 0;
   left: 0;
-  z-index:2;
+  z-index: 2;
   border-bottom: 1px solid transparent;
   transition: width 0.2s ease-in-out;
 }
 
 .subrayado:hover::after {
   width: 100%;
-  border-bottom: 2px solid #9BC1BC;
+  border-bottom: 2px solid #9bc1bc;
   animation: fadeInRight 0.1s;
 }
 
 // Presentation
 
-.presentation{
+.magilio-heading {
   font-family: "Magilio", sans-serif;
-  
+  font-size: 50px;
 }
 
-.presentation-heading{
-  font-size: 160px;
-}
-
-.presentation-description{
+.presentation-description {
   font-family: "Satoshi-Variable", sans-serif;
+  font-size: 15px;
 }
 
 .s-behind {
@@ -185,30 +204,28 @@ a.logo{
 
 .s-front {
   position: absolute;
-  left: 8px;
-  top:-19px;
-  z-index: 2; 
+  z-index: 2;
+  left: 3px;
+  top: -6px;
 }
 
-.scroll{
-  font-family: "Satoshi-Variable", sans-serif;
+.scroll {
   font-size: 20px;
-  font-weight: 400px;
 }
 
-.scroll-button{
-  background: #17784F;
+.scroll-button {
+  background: #17784f;
   width: 40px;
   height: 40px;
-  box-shadow: 3px 3px 10px 2px #9BC1BC;
+  box-shadow: 3px 3px 10px 2px #9bc1bc;
   transition: 0.2s;
-  &:hover{
-    background: #9BC1BC;
-    box-shadow: 3px 3px 10px 2px #17784F;
+  &:hover {
+    background: #9bc1bc;
+    box-shadow: 3px 3px 10px 2px #17784f;
   }
 }
 
-.fa-arrow-down{
+.fa-arrow-down {
   margin-top: 9px;
 }
 
@@ -217,7 +234,7 @@ a.logo{
 .text-banner-container {
   width: 100%;
   background-color: #121212;
-  color: #E7E7E7;
+  color: #e7e7e7;
   overflow: hidden;
   height: 60px;
   position: relative;
@@ -241,26 +258,26 @@ a.logo{
 
 // Works
 
-.work1{
+.work1 {
   min-height: 290.138px;
 }
 
-.works-margin-top{
-  margin-top:325px;
+.works-margin-top {
+  margin-top: 325px;
 }
 
-.works-margin-top2{
-  margin-top:296.2px;
+.works-margin-top2 {
+  margin-top: 296.2px;
 }
 
-.works-margin-top3{
-  margin-top:359.862px;
+.works-margin-top3 {
+  margin-top: 359.862px;
 }
 
 .grayscale-on-hover {
   filter: grayscale(100%);
-  transition: filter 0.5s ease;
-  &:hover{
+  transition: filter 0.2s ease-in-out;
+  &:hover {
     filter: grayscale(0%);
   }
 }
@@ -271,48 +288,159 @@ a.logo{
 
 // Skills
 
-.skills-background{
+.skills-background {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1600' height='600' preserveAspectRatio='none' viewBox='0 0 1600 600'%3e%3cg mask='url(%26quot%3b%23SvgjsMask2516%26quot%3b)' fill='none'%3e%3crect width='1600' height='600' x='0' y='0' fill='url(%26quot%3b%23SvgjsLinearGradient2517%26quot%3b)'%3e%3c/rect%3e%3cpath d='M-109.6 242.25 a186.53 186.53 0 1 0 373.06 0 a186.53 186.53 0 1 0 -373.06 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M409.12 578.03 a151.16 151.16 0 1 0 302.32 0 a151.16 151.16 0 1 0 -302.32 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M147.42 298.94 a137.78 137.78 0 1 0 275.56 0 a137.78 137.78 0 1 0 -275.56 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1263.38 209.36 a185.62 185.62 0 1 0 371.24 0 a185.62 185.62 0 1 0 -371.24 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float1'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask2516'%3e%3crect width='1600' height='600' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='50%25' y1='100%25' x2='50%25' y2='0%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient2517'%3e%3cstop stop-color='rgba(213%2c 226%2c 225%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(233%2c 233%2c 233%2c 1)' offset='1'%3e%3c/stop%3e%3c/linearGradient%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
   background-size: cover;
 }
 
-.scroll-button-skills{
+.scroll-button-skills {
   background: #354052;
   width: 40px;
   height: 40px;
   transition: 0.2s;
-  &:hover{
+  &:hover {
     background: #226348;
   }
 }
 
 // Contact
-.index-contact-text{
-  font-family: "Magilio", sans-serif;
-  font-size: 160px;
-}
 
-.contact-button{
+.contact-button {
   letter-spacing: 2px;
-  background-color: #17784F;
+  background-color: #17784f;
   transition: 0.2s;
-  &:hover{
-    background-color:#9BC1BC;
-    color:#333333;
+  &:hover {
+    background-color: #9bc1bc;
+    color: #333333;
   }
 }
 
 // Footer
 
-.footer-background{
+.footer-background {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1600' height='400' preserveAspectRatio='none' viewBox='0 0 1600 400'%3e%3cg mask='url(%26quot%3b%23SvgjsMask2638%26quot%3b)' fill='none'%3e%3crect width='1600' height='400' x='0' y='0' fill='url(%26quot%3b%23SvgjsLinearGradient2639%26quot%3b)'%3e%3c/rect%3e%3cpath d='M1132.5 126.28 a124.44 124.44 0 1 0 248.88 0 a124.44 124.44 0 1 0 -248.88 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M799.82 255.92 a88.75 88.75 0 1 0 177.5 0 a88.75 88.75 0 1 0 -177.5 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1155.59 70.47 a104.86 104.86 0 1 0 209.72 0 a104.86 104.86 0 1 0 -209.72 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M909.71 48.83 a87.23 87.23 0 1 0 174.46 0 a87.23 87.23 0 1 0 -174.46 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask2638'%3e%3crect width='1600' height='400' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='50%25' y1='100%25' x2='50%25' y2='0%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient2639'%3e%3cstop stop-color='rgba(0%2c 0%2c 0%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(0%2c 48%2c 23%2c 1)' offset='1'%3e%3c/stop%3e%3c/linearGradient%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
-  background-size:cover;
+  background-size: cover;
 }
 
-.footer-link{
+.footer-link {
   font-size: 30px;
   transition: 0.2s;
-  &:hover{
-    color:#17784F;
+  &:hover {
+    color: #17784f;
+  }
+}
+
+// Responsive adjustments
+
+@media screen and (min-width: 468px) {
+  .magilio-heading {
+    font-size: 60px;
+  }
+
+  .s-front {
+    left: 4px;
+    top: -7px;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  a.logo {
+    font-size: 25px;
+  }
+
+  .magilio-heading {
+    font-size: 80px;
+  }
+
+  .s-front {
+    left: 4px;
+    top: -9px;
+  }
+
+  .presentation-description {
+    font-size: 17px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  a.logo {
+    font-size: 27px;
+  }
+
+  .magilio-heading {
+    font-size: 90px;
+  }
+
+  .s-front {
+    left: 5px;
+    top: -9px;
+  }
+
+  .presentation-description {
+    font-size: 19px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  a.logo {
+    font-size: 30px;
+  }
+
+  .link{
+    font-size: 15px;
+  }
+
+  .magilio-heading {
+    font-size: 110px;
+  }
+  .s-front {
+    left: 6px;
+    top: -12px;
+  }
+
+  .presentation-description {
+    font-size: 22px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  a.logo {
+    font-size: 35px;
+  }
+
+  .magilio-heading {
+    font-size: 140px;
+  }
+
+  .s-front {
+    left: 7px;
+    top: -16px;
+  }
+
+  .presentation-description {
+    font-size: 25px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  a.logo {
+    font-size: 40px;
+  }
+
+  .link{
+    font-size: 17px;
+  }
+
+  .magilio-heading {
+    font-size: 160px;
+  }
+
+  .s-front {
+    left: 8px;
+    top: -19px;
+  }
+
+  .presentation-description {
+    font-size: 27px;
   }
 }

@@ -45,11 +45,11 @@ Green: #226348
 Aqua: #9BC1BC
 */
 .white {
-  color: #E7E7E7;
+  color: #e7e7e7;
 }
 
 .darker-white {
-  color: #A5A5A5;
+  color: #a5a5a5;
 }
 
 .black {
@@ -65,11 +65,11 @@ Aqua: #9BC1BC
 }
 
 .green {
-  color: #17784F;
+  color: #17784f;
 }
 
 .aqua {
-  color: #9BC1BC;
+  color: #9bc1bc;
 }
 
 /* ------ DOM Styles ----- */
@@ -84,12 +84,13 @@ body {
   height: 100%;
   width: 100%;
   font-family: "Satoshi-Variable", sans-serif;
-  background: #E7E7E7;
+  background: #e7e7e7;
   color: #121212;
 }
 
-a.black:hover, a.green:hover {
-  color: #17784F;
+a.black:hover,
+a.green:hover {
+  color: #17784f;
   transition: 0.3s;
 }
 
@@ -105,11 +106,34 @@ a.black:hover, a.green:hover {
 
 a.logo {
   cursor: pointer;
-  font-size: 40px;
+  font-size: 23px;
   font-weight: 600;
 }
 a.logo:hover {
-  color: #9BC1BC;
+  color: #9bc1bc;
+}
+
+.nav-button {
+  background-color: transparent;
+}
+.nav-button:hover {
+  color: #17784f;
+}
+
+.link {
+  font-size: 13px;
+}
+
+.dd-menu {
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background-color: transparent;
+  transition: 0.3s ease-in-out;
+}
+
+.dd-menu.active {
+  height: 90px;
 }
 
 .home-link {
@@ -118,8 +142,8 @@ a.logo:hover {
 
 .active-dot {
   position: absolute;
-  bottom: 10px;
-  color: #9BC1BC;
+  bottom: 8px;
+  color: #9bc1bc;
 }
 
 .subrayado {
@@ -139,20 +163,18 @@ a.logo:hover {
 
 .subrayado:hover::after {
   width: 100%;
-  border-bottom: 2px solid #9BC1BC;
+  border-bottom: 2px solid #9bc1bc;
   animation: fadeInRight 0.1s;
 }
 
-.presentation {
+.magilio-heading {
   font-family: "Magilio", sans-serif;
-}
-
-.presentation-heading {
-  font-size: 160px;
+  font-size: 50px;
 }
 
 .presentation-description {
   font-family: "Satoshi-Variable", sans-serif;
+  font-size: 15px;
 }
 
 .s-behind {
@@ -162,27 +184,25 @@ a.logo:hover {
 
 .s-front {
   position: absolute;
-  left: 8px;
-  top: -19px;
   z-index: 2;
+  left: 3px;
+  top: -6px;
 }
 
 .scroll {
-  font-family: "Satoshi-Variable", sans-serif;
   font-size: 20px;
-  font-weight: 400px;
 }
 
 .scroll-button {
-  background: #17784F;
+  background: #17784f;
   width: 40px;
   height: 40px;
-  box-shadow: 3px 3px 10px 2px #9BC1BC;
+  box-shadow: 3px 3px 10px 2px #9bc1bc;
   transition: 0.2s;
 }
 .scroll-button:hover {
-  background: #9BC1BC;
-  box-shadow: 3px 3px 10px 2px #17784F;
+  background: #9bc1bc;
+  box-shadow: 3px 3px 10px 2px #17784f;
 }
 
 .fa-arrow-down {
@@ -192,7 +212,7 @@ a.logo:hover {
 .text-banner-container {
   width: 100%;
   background-color: #121212;
-  color: #E7E7E7;
+  color: #e7e7e7;
   overflow: hidden;
   height: 60px;
   position: relative;
@@ -232,7 +252,7 @@ a.logo:hover {
 
 .grayscale-on-hover {
   filter: grayscale(100%);
-  transition: filter 0.5s ease;
+  transition: filter 0.2s ease-in-out;
 }
 .grayscale-on-hover:hover {
   filter: grayscale(0%);
@@ -257,18 +277,13 @@ a.logo:hover {
   background: #226348;
 }
 
-.index-contact-text {
-  font-family: "Magilio", sans-serif;
-  font-size: 160px;
-}
-
 .contact-button {
   letter-spacing: 2px;
-  background-color: #17784F;
+  background-color: #17784f;
   transition: 0.2s;
 }
 .contact-button:hover {
-  background-color: #9BC1BC;
+  background-color: #9bc1bc;
   color: #333333;
 }
 
@@ -282,5 +297,96 @@ a.logo:hover {
   transition: 0.2s;
 }
 .footer-link:hover {
-  color: #17784F;
+  color: #17784f;
+}
+
+@media screen and (min-width: 468px) {
+  .magilio-heading {
+    font-size: 60px;
+  }
+  .s-front {
+    left: 4px;
+    top: -7px;
+  }
+}
+@media screen and (min-width: 576px) {
+  a.logo {
+    font-size: 25px;
+  }
+  .magilio-heading {
+    font-size: 80px;
+  }
+  .s-front {
+    left: 4px;
+    top: -9px;
+  }
+  .presentation-description {
+    font-size: 17px;
+  }
+}
+@media screen and (min-width: 768px) {
+  a.logo {
+    font-size: 27px;
+  }
+  .magilio-heading {
+    font-size: 90px;
+  }
+  .s-front {
+    left: 5px;
+    top: -9px;
+  }
+  .presentation-description {
+    font-size: 19px;
+  }
+}
+@media screen and (min-width: 992px) {
+  a.logo {
+    font-size: 30px;
+  }
+  .link {
+    font-size: 15px;
+  }
+  .magilio-heading {
+    font-size: 110px;
+  }
+  .s-front {
+    left: 6px;
+    top: -12px;
+  }
+  .presentation-description {
+    font-size: 22px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  a.logo {
+    font-size: 35px;
+  }
+  .magilio-heading {
+    font-size: 140px;
+  }
+  .s-front {
+    left: 7px;
+    top: -16px;
+  }
+  .presentation-description {
+    font-size: 25px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  a.logo {
+    font-size: 40px;
+  }
+  .link {
+    font-size: 17px;
+  }
+  .magilio-heading {
+    font-size: 160px;
+  }
+  .s-front {
+    left: 8px;
+    top: -19px;
+  }
+  .presentation-description {
+    font-size: 27px;
+  }
 }/*# sourceMappingURL=styles.css.map */
