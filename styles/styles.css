@@ -34,6 +34,18 @@
   font-weight: 600;
 }
 
+.fs-small {
+  font-size: 10px;
+}
+
+.fs-medium {
+  font-size: 13px;
+}
+
+.fs-big {
+  font-size: 15px;
+}
+
 /* ------ Colors ----- */
 /*
 White: #E7E7E7
@@ -118,10 +130,6 @@ a.logo:hover {
 }
 .nav-button:hover {
   color: #17784f;
-}
-
-.link {
-  font-size: 13px;
 }
 
 .dd-menu {
@@ -214,7 +222,7 @@ a.logo:hover {
   background-color: #121212;
   color: #e7e7e7;
   overflow: hidden;
-  height: 60px;
+  height: 23px;
   position: relative;
 }
 
@@ -224,30 +232,6 @@ a.logo:hover {
   white-space: nowrap;
   display: inline-block;
   position: absolute;
-}
-
-.text-banner-2 {
-  background-color: #121212;
-  font-weight: 600;
-  white-space: nowrap;
-  display: inline-block;
-  position: absolute;
-}
-
-.work1 {
-  min-height: 290.138px;
-}
-
-.works-margin-top {
-  margin-top: 325px;
-}
-
-.works-margin-top2 {
-  margin-top: 296.2px;
-}
-
-.works-margin-top3 {
-  margin-top: 359.862px;
 }
 
 .grayscale-on-hover {
@@ -310,6 +294,9 @@ a.logo:hover {
   }
 }
 @media screen and (min-width: 576px) {
+  .fs-small {
+    font-size: 12px;
+  }
   a.logo {
     font-size: 25px;
   }
@@ -320,11 +307,17 @@ a.logo:hover {
     left: 4px;
     top: -9px;
   }
-  .presentation-description {
-    font-size: 17px;
+  .text-banner-container {
+    height: 34px;
   }
 }
 @media screen and (min-width: 768px) {
+  .fs-small {
+    font-size: 14px;
+  }
+  .fs-big {
+    font-size: 18px;
+  }
   a.logo {
     font-size: 27px;
   }
@@ -335,16 +328,19 @@ a.logo:hover {
     left: 5px;
     top: -9px;
   }
-  .presentation-description {
-    font-size: 19px;
+  .text-banner-container {
+    height: 53px;
   }
 }
 @media screen and (min-width: 992px) {
+  .fs-medium {
+    font-size: 15px;
+  }
+  .fs-big {
+    font-size: 20px;
+  }
   a.logo {
     font-size: 30px;
-  }
-  .link {
-    font-size: 15px;
   }
   .magilio-heading {
     font-size: 110px;
@@ -353,11 +349,14 @@ a.logo:hover {
     left: 6px;
     top: -12px;
   }
-  .presentation-description {
-    font-size: 22px;
-  }
 }
 @media screen and (min-width: 1200px) {
+  .fs-small {
+    font-size: 16px;
+  }
+  .fs-big {
+    font-size: 22px;
+  }
   a.logo {
     font-size: 35px;
   }
@@ -368,16 +367,19 @@ a.logo:hover {
     left: 7px;
     top: -16px;
   }
-  .presentation-description {
-    font-size: 25px;
+  .text-banner-container {
+    height: 56px;
   }
 }
 @media screen and (min-width: 1400px) {
+  .fs-medium {
+    font-size: 17px;
+  }
+  .fs-big {
+    font-size: 25px;
+  }
   a.logo {
     font-size: 40px;
-  }
-  .link {
-    font-size: 17px;
   }
   .magilio-heading {
     font-size: 160px;
@@ -385,8 +387,5 @@ a.logo:hover {
   .s-front {
     left: 8px;
     top: -19px;
-  }
-  .presentation-description {
-    font-size: 27px;
   }
 }/*# sourceMappingURL=styles.css.map */
