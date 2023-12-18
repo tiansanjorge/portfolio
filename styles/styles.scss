@@ -121,6 +121,10 @@ a.green {
   }
 }
 
+.h-100{
+  min-height: 400px;
+}
+
 // Main Background
 
 .header-background {
@@ -151,7 +155,6 @@ a.logo {
   }
 }
 
-
 .dd-menu {
   height: 0px;
   overflow: hidden;
@@ -164,7 +167,7 @@ a.logo {
   height: 90px;
 }
 
-.home-link {
+.active-link {
   position: relative;
 }
 
@@ -243,7 +246,7 @@ a.logo {
 
 .text-banner-container {
   width: 100%;
-  background-color: #121212;
+  background-color: #04160f;
   color: #e7e7e7;
   overflow: hidden;
   height: 23px;
@@ -251,25 +254,11 @@ a.logo {
 }
 
 .text-banner {
-  background-color: #121212;
+  background-color:#04160f;
   font-weight: 600;
   white-space: nowrap;
   display: inline-block;
   position: absolute;
-}
-
-// Works
-
-.grayscale-on-hover {
-  filter: grayscale(100%);
-  transition: filter 0.2s ease-in-out;
-  &:hover {
-    filter: grayscale(0%);
-  }
-}
-
-.grayscale-on-hover:hover {
-  filter: grayscale(0%);
 }
 
 // Skills
@@ -292,8 +281,8 @@ a.logo {
 // Contact
 
 .contact-button {
-  letter-spacing: 2px;
   background-color: #17784f;
+  color:#e7e7e7;
   transition: 0.2s;
   &:hover {
     background-color: #9bc1bc;
@@ -377,6 +366,18 @@ a.logo {
 
   .text-banner-container{
     height: 53px;
+  }
+
+  .grayscale-on-hover {
+    filter: grayscale(100%);
+    transition: filter 0.2s ease-in-out;
+    &:hover {
+      filter: grayscale(0%);
+    }
+  }
+  
+  .grayscale-on-hover:hover {
+    filter: grayscale(0%);
   }
 }
 

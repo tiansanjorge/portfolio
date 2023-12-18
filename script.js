@@ -47,6 +47,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   animateScroll();
 
+  
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+
   const textBanner2 = document.getElementById("text-banner-2");
   const originalHTML2 = textBanner2.innerHTML;
   const screenWidth2 = window.innerWidth;
@@ -63,7 +68,11 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   animateScroll2();
+
+  
 });
+
+
 
 
 
