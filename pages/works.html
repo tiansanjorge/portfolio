@@ -30,41 +30,49 @@
   <body>
     <!-------- Header ------->
 
-    <div class="header-background">
+    <div class="works-background">
       <header class="container-fluid py-2">
         <div class="row">
-
           <!-- Mobile -->
 
-          <div class="col-10 d-flex d-md-none justify-content-between flex-wrap mx-auto">
+          <div
+            class="col-10 d-flex d-md-none justify-content-between flex-wrap mx-auto p-0"
+          >
             <div class="col-2">
-              <a class="logo text-decoration-none black" href="../index.html"
+              <a class="logo text-decoration-none white" href="../index.html"
                 ><b>SS<span class="green">.</span></b></a
               >
             </div>
             <div class="col-2 d-flex justify-content-end pe-2">
               <button class="border-0 nav-button" onclick="dropdown()">
-                <i class="d-block fa-solid fa-bars fs-5 black" id="bar-icon"></i>
+                <i
+                  class="d-block fa-solid fa-bars fs-5 white"
+                  id="bar-icon"
+                ></i>
                 <i class="d-none fa-solid fa-xmark fs-5 green" id="x-icon"></i>
               </button>
             </div>
-            <div class="dd-menu col-12 d-flex flex-column text-end" id="dropdown-menu">
-
+            <div
+              class="dd-menu col-12 d-flex flex-column text-end"
+              id="dropdown-menu"
+            >
               <div class="pe-2 my-1">
-                <a class="fs-medium text-decoration-none subrayado black fw-600" href="../index.html"
+                <a
+                  class="works-header-link header-link fs-medium text-decoration-none subrayado-works white fw-600"
+                  href="../index.html"
                   >Home</a
                 >
               </div>
               <div class="pe-2 my-1">
                 <a
-                  class="fs-medium text-decoration-none green fw-600 active-link"
+                  class="works-header-link fs-medium text-decoration-none aqua fw-600 active-link"
                   href="#"
-                  >Works <span class="active-dot">•</span></a
+                  >Works <span class="active-dot-works">•</span></a
                 >
               </div>
               <div class="pe-2 mt-1">
                 <a
-                  class="fs-medium text-decoration-none subrayado black fw-600"
+                  class="works-header-link header-link fs-medium text-decoration-none subrayado-works white fw-600"
                   href="contact.html"
                   >Contact</a
                 >
@@ -74,89 +82,171 @@
 
           <!-- Desktop -->
 
-          <div class="col-10 d-none d-md-flex justify-content-between mx-auto">
+          <div
+            class="col-10 d-none d-md-flex justify-content-between mx-auto p-0"
+          >
             <div class="col-2">
-              <a class="logo text-decoration-none black" href="../index.html"
+              <a class="logo text-decoration-none white" href="../index.html"
                 ><b>SS<span class="green">.</span></b></a
               >
             </div>
             <div
               class="col-6 col-lg-5 col-xl-4 d-flex justify-content-between align-items-center"
             >
-              <a class="fs-medium text-decoration-none subrayado black fw-600" href="../index.html"
+              <a
+                class="works-header-link fs-medium text-decoration-none subrayado-works white fw-600"
+                href="../index.html"
                 >Home</a
               >
               <a
-                class="fs-medium text-decoration-none green fw-600 active-link"
+                class="works-header-link active-link fs-medium text-decoration-none aqua fw-600"
                 href="#"
-                >Works <span class="active-dot">•</span></a
+                >Works <span class="active-dot-works">•</span></a
               >
               <a
-                class="fs-medium text-decoration-none subrayado black fw-600"
+                class="works-header-link fs-medium text-decoration-none subrayado-works white fw-600"
                 href="contact.html"
                 >Contact</a
               >
             </div>
           </div>
-
-          
         </div>
       </header>
 
-      <!-- Presentation -->
+      <!-- Works -->
 
-      <section class="container-fluid">
-        <div class="row justify-content-evenly py-5">
-          <div class="col-10 h-100 d-flex flex-column justify-content-evenly align-items-center py-5">
-            <h1 class="magilio-heading d-flex flex-column text-center mx-0 mb-2">
-              Page under<span><span class="green s-behind">C<span class="aqua s-front">C</span></span
-                >onstruction</span
-              >
-            </h1>
-          </div>
-        </div>
-      </section>
-    </div>
+      <section class="container-fluid white pb-4">
+        <div class="row justify-content-evenly py-3">
+          <div class="col-10 col-xxl-9 d-flex flex-column flex-lg-row px-0">
 
-    
-    <!-- Text Banner 2 -->
+            <div class="col-12 col-lg-5 col-xl-6 d-flex flex-column justify-content-between">
+              <div class="col-12 magilio-heading">
+                Works<span class="aqua">.</span>
+              </div>
+            </div>
 
-    <section class="text-banner-container">
-      <div class="text-banner fs-small py-1 py-sm-2 py-md-3" id="text-banner-2">
-        <i class="fa-solid fa-minus ms-2"></i>
-        <i class="fa-solid fa-minus"></i>
-        <i class="fa-solid fa-minus me-2"></i> CRAFTING DIGITAL MAGIC
-      </div>
-    </section>
+            <div class="works-overflow col-12 col-lg-7 col-xl-6 d-flex flex-column rounded-4 py-4 py-md-5 px-4 px-md-5">
+              <div class="col-12 d-flex flex-column">
+                  <p class="fs-medium fw-600 darker-white p-0">
+                    When approaching my projects, I place significant emphasis
+                    on understanding the
+                    <span class="white">client's needs</span> and identifying
+                    the most critical aspects.
+                  </p>
+                  <p class="fs-medium fw-600 darker-white pt-2">
+                    With a clear understanding of these requirements, I
+                    meticulously design and develop websites to ensure they are
+                    not only
+                    <span class="white">practical and fully functional</span>
+                    but also
+                    <span class="white"> aesthetically aligned </span> with the
+                    client's specifications.
+                  </p>
 
-    <!-- Contact -->
+                <div class="col-12 d-flex flex-column flex-xl-row justify-content-between align-items-center mt-4 mt-xl-3">
+                  <div class="col-10 col-sm-6 col-lg-8 col-xl-4 mt-xl-1">
+                    <img
+                      class="img-fluid"
+                      src="../img/jps.png"
+                      alt="Juan Pablo Sanjorge´s Website"
+                    />
+                  </div>
+                  <div class="col-12 col-xl-7 text-center">
+                    <div class="d-flex justify-content-center mt-3 mb-2">
+                      <p class="fs-medium fw-bolder align-self-center m-0 me-3">
+                        Psychologist Sanjorge
+                      </p>
+                      <div>
+                        <a
+                          href="https://psicologosanjorge.netlify.app/"
+                          class="works-button rounded-circle border-0 d-flex flex-column text-decoration-none py-1 px-2"
+                        >
+                          <i class="fa-solid fa-arrow-right m-0 py-1"></i>
+                        </a>
+                      </div>
+                    </div>
+                    <p class="col-10 col-xl-12 darker-white fs-small m-0 mx-auto">
+                      This work manages to meet the requirements of psychologist
+                      Juan Pablo Sanjorge by seamlessly blending sophistication
+                      and functionality.
+                    </p>
+                  </div>
+                </div>
 
-    <div class="footer-background" id="footer">
-      <section class="container-fluid white">
-        <div class="row justify-content-evenly pt-4 pt-md-5 pb-md-3">
-          <div class="col-10 d-flex p-0">
-            <p class="magilio-heading m-0">Let´s Talk</p>
-            <div class="scroll col-2 col-md-1 d-flex flex-column justify-content-center align-items-end text-center fw-400">
-              <a
-                href="https://wa.link/rehzl5"
-                class="contact-button rounded-circle border-0 d-flex flex-column fs-big text-decoration-none p-1 p-sm-2 mt-1 mt-sm-2 mt-md-3 mt-lg-4"
-              >
-                <i class="fa-solid fa-arrow-right m-0"></i>
-              </a>
+                <div class="col-12 d-flex flex-column flex-xl-row justify-content-between mt-5">
+                  <div class="col-10 col-sm-6 col-lg-8 col-xl-4 mt-xl-1 align-self-center">
+                    <img
+                      class="img-fluid"
+                      src="../img/artech.png"
+                      alt="Artech - Technology E-Commerce"
+                    />
+                  </div>
+                  <div class="col-12 col-xl-7 text-center">
+                    <div class="d-flex justify-content-center mt-3 mb-2">
+                      <p class="fs-medium fw-bolder align-self-center m-0 me-3">
+                        ArTech • E-commerce
+                      </p>
+                      <div>
+                        <a
+                          href="https://artechstore.netlify.app/"
+                          class="works-button rounded-circle border-0 d-flex flex-column text-decoration-none py-1 px-2"
+                        >
+                          <i class="fa-solid fa-arrow-right m-0 py-1"></i>
+                        </a>
+                      </div>
+                    </div>
+                    <p class="col-10 col-xl-12 darker-white fs-small m-0 mx-auto">
+                      ArTech is a fictitious technology store e-commerce that I
+                      created using ReactJs. This project served as a valuable
+                      platform for expanding my skill set.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="col-12 d-flex flex-column flex-xl-row justify-content-between mt-5">
+                  <div class="col-10 col-sm-6 col-lg-8 col-xl-4 mt-xl-1 align-self-center">
+                    <img
+                      class="img-fluid"
+                      src="../img/ejer.png"
+                      alt="EJER´s Website"
+                    />
+                  </div>
+                  <div class="col-12 col-xl-7 text-center">
+                    <div class="d-flex justify-content-center mt-3 mb-2">
+                      <p class="fs-medium fw-bolder align-self-center m-0 me-3">EJER Law Firm</p>
+                      <div>
+                        <a
+                          href="https://ejer.com.ar/"
+                          class="works-button rounded-circle border-0 d-flex flex-column text-decoration-none py-1 px-2"
+                        >
+                          <i class="fa-solid fa-arrow-right m-0 py-1"></i>
+                        </a>
+                      </div>
+                    </div>
+                    <p class="col-10 col-xl-12 darker-white fs-small m-0 mx-auto">
+                      I designed and developed an effective and elegant website
+                      that addressed the key needs for the legal firm
+                      Epelbaum-Rothstein.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
       <section class="container-fluid">
-        <div class="row justify-content-evenly pb-2 pb-md-3">
-          <div class="col-10 d-flex justify-content-between align-items-center p-0">
+        <div class="row justify-content-evenly pb-2 pb-lg-3">
+          <div
+            class="col-10 d-flex justify-content-between align-items-center p-0"
+          >
             <div class="col-2">
               <a class="logo text-decoration-none white" href="#"
                 ><b>SS<span class="green">.</span></b></a
               >
             </div>
             <div
-              class="col-5 col-md- 4 d-flex justify-content-between text-decoration-none"
+              class="col-5 col-lg-4 d-flex justify-content-between text-decoration-none"
             >
               <a
                 class="white footer-link"
