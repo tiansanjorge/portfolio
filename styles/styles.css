@@ -151,7 +151,7 @@ a.green:hover {
 }
 
 .header-background {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1494%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='rgba(231%2c 231%2c 231%2c 1)'%3e%3c/rect%3e%3cpath d='M-94.66 135.42 a141.73 141.73 0 1 0 283.46 0 a141.73 141.73 0 1 0 -283.46 0z' fill='rgba(165%2c 165%2c 165%2c 0.06)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M228.44 443.1 a156.26 156.26 0 1 0 312.52 0 a156.26 156.26 0 1 0 -312.52 0z' fill='rgba(165%2c 165%2c 165%2c 0.06)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M301.11 4.61 a141.98 141.98 0 1 0 283.96 0 a141.98 141.98 0 1 0 -283.96 0z' fill='rgba(165%2c 165%2c 165%2c 0.06)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1195.6 488.15 a99.17 99.17 0 1 0 198.34 0 a99.17 99.17 0 1 0 -198.34 0z' fill='rgba(165%2c 165%2c 165%2c 0.06)' class='triangle-float1'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1494'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-30px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-15px%2c -15px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -30px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask2168%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='url(%26quot%3b%23SvgjsRadialGradient2169%26quot%3b)'%3e%3c/rect%3e%3cpath d='M187.16 419.03 a102.22 102.22 0 1 0 204.44 0 a102.22 102.22 0 1 0 -204.44 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1070.58 68.83 a122.44 122.44 0 1 0 244.88 0 a122.44 122.44 0 1 0 -244.88 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M272.15 301.31 a150.53 150.53 0 1 0 301.06 0 a150.53 150.53 0 1 0 -301.06 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M-81.67 532.98 a106.69 106.69 0 1 0 213.38 0 a106.69 106.69 0 1 0 -213.38 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask2168'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cradialGradient cx='0%25' cy='50%25' r='1466.97' gradientUnits='userSpaceOnUse' id='SvgjsRadialGradient2169'%3e%3cstop stop-color='rgba(255%2c 255%2c 255%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(231%2c 231%2c 231%2c 1)' offset='0.78'%3e%3c/stop%3e%3c/radialGradient%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
   background-size: cover;
 }
 
@@ -164,6 +164,7 @@ a.logo {
   cursor: pointer;
   font-size: 23px;
   font-weight: 600;
+  transition: 0.2s;
 }
 a.logo:hover {
   color: #9bc1bc;
@@ -376,6 +377,7 @@ a.logo:hover {
   cursor: pointer;
   font-size: 23px;
   font-weight: 600;
+  transition: 0.2s;
 }
 .contact-logo:hover {
   color: #e7e7e7;
