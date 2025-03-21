@@ -1,27 +1,35 @@
 /* ------ Importing fonts ----- */
 @font-face {
   font-family: "Satoshi-Variable";
-  src: url("../fonts/Satoshi-Variable.woff2") format("woff2"), url("../fonts/Satoshi-Variable.woff") format("woff"), url("../fonts/Satoshi-Variable.ttf") format("truetype");
+  src: url("../fonts/Satoshi-Variable.woff2") format("woff2"),
+    url("../fonts/Satoshi-Variable.woff") format("woff"),
+    url("../fonts/Satoshi-Variable.ttf") format("truetype");
   font-weight: 300 900;
   font-display: swap;
   font-style: normal;
 }
 @font-face {
   font-family: "Satoshi-VariableItalic";
-  src: url("../fonts/Satoshi-VariableItalic.woff2") format("woff2"), url("../fonts/Satoshi-VariableItalic.woff") format("woff"), url("../fonts/Satoshi-VariableItalic.ttf") format("truetype");
+  src: url("../fonts/Satoshi-VariableItalic.woff2") format("woff2"),
+    url("../fonts/Satoshi-VariableItalic.woff") format("woff"),
+    url("../fonts/Satoshi-VariableItalic.ttf") format("truetype");
   font-weight: 300 900;
   font-display: swap;
   font-style: italic;
 }
 @font-face {
   font-family: "Magilio";
-  src: url("../fonts/Magilio.woff2") format("woff2"), url("../fonts/Magilio.woff") format("woff"), url("../fonts/Magilio.ttf") format("truetype");
+  src: url("../fonts/Magilio.woff2") format("woff2"),
+    url("../fonts/Magilio.woff") format("woff"),
+    url("../fonts/Magilio.ttf") format("truetype");
   font-display: swap;
   font-style: normal;
 }
 @font-face {
   font-family: "Magilio-slant";
-  src: url("../fonts/Magilio-slant.woff2") format("woff2"), url("../fonts/Magilio-slant.woff") format("woff"), url("../fonts/Magilio-slant.ttf") format("truetype");
+  src: url("../fonts/Magilio-slant.woff2") format("woff2"),
+    url("../fonts/Magilio-slant.woff") format("woff"),
+    url("../fonts/Magilio-slant.ttf") format("truetype");
   font-display: swap;
   font-style: normal;
 }
@@ -92,6 +100,12 @@
 .magilio-heading-small {
   font-family: "Magilio", sans-serif;
   font-size: 25px;
+}
+
+/* ----- Extra Classes ----- */
+
+.dashed-border {
+  border: dashed;
 }
 
 /* ------ Colors ----- */
@@ -679,4 +693,4 @@ a.logo:hover {
   .heading-contact {
     font-size: 50px;
   }
-}/*# sourceMappingURL=styles.css.map */
+} /*# sourceMappingURL=styles.css.map */
