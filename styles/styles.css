@@ -496,6 +496,12 @@ a.logo:hover {
 .contact-profile {
   background-color: rgba(23, 120, 79, 0.4);
   box-shadow: inset 0px 0px 15px 0px #354052;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.contact-profile:hover {
+  transform: scale(1.1);
 }
 
 .magilio-contact {

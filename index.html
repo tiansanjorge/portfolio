@@ -165,14 +165,12 @@
 
       /* Skills icons enhancement */
       .skills-background img {
-        transition:
-          transform 0.3s ease,
-          filter 0.3s ease;
+        transition: transform 0.3s ease;
       }
 
       .skills-background img:hover {
         transform: translateY(-5px) scale(1.05);
-        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+        box-shadow: none !important;
       }
 
       /* Project images subtle shadow */
@@ -579,23 +577,7 @@
               <p class="text-center mb-0 pt-2 fs-medium">TypeScript</p>
             </div>
 
-            <!-- JavaScript -->
-            <div
-              class="col-4 col-md-3 d-flex flex-column justify-content-end mb-5"
-            >
-              <div
-                class="d-flex flex-column justify-content-center col-7 col-sm-6 col-md-5 col-lg-4 mx-auto"
-              >
-                <img
-                  class="img-fluid"
-                  src="https://skillicons.dev/icons?i=js"
-                  alt="JavaScript"
-                />
-              </div>
-              <p class="text-center mb-0 pt-2 fs-medium">JavaScript</p>
-            </div>
-
-            <!-- Tailwind CSS -->
+            <!-- Tailwind -->
             <div
               class="col-4 col-md-3 d-flex flex-column justify-content-end mb-5"
             >
@@ -605,13 +587,13 @@
                 <img
                   class="img-fluid"
                   src="https://skillicons.dev/icons?i=tailwind"
-                  alt="Tailwind CSS"
+                  alt="Tailwind"
                 />
               </div>
-              <p class="text-center mb-0 pt-2 fs-medium">Tailwind CSS</p>
+              <p class="text-center mb-0 pt-2 fs-medium">Tailwind</p>
             </div>
 
-            <!-- PostgreSQL -->
+            <!-- Redux -->
             <div
               class="col-4 col-md-3 d-flex flex-column justify-content-end mb-5"
             >
@@ -620,11 +602,55 @@
               >
                 <img
                   class="img-fluid"
-                  src="https://skillicons.dev/icons?i=postgres"
-                  alt="PostgreSQL"
+                  src="https://skillicons.dev/icons?i=redux"
+                  alt="Redux"
                 />
               </div>
-              <p class="text-center mb-0 pt-2 fs-medium">PostgreSQL</p>
+              <p class="text-center mb-0 pt-2 fs-medium">Redux</p>
+            </div>
+
+            <!-- Architecture -->
+            <div
+              class="col-4 col-md-3 d-flex flex-column justify-content-end mb-5"
+            >
+              <div
+                class="d-flex flex-column justify-content-center col-7 col-sm-6 col-md-5 col-lg-4 mx-auto"
+              >
+                <img
+                  class="img-fluid"
+                  src="img/architecture.svg"
+                  alt="Architecture"
+                />
+              </div>
+              <p class="text-center mb-0 pt-2 fs-medium">Architecture</p>
+            </div>
+
+            <!-- SOLID -->
+            <div
+              class="col-4 col-md-3 d-flex flex-column justify-content-end mb-5"
+            >
+              <div
+                class="d-flex flex-column justify-content-center col-7 col-sm-6 col-md-5 col-lg-4 mx-auto"
+              >
+                <img class="img-fluid" src="img/solid.svg" alt="SOLID" />
+              </div>
+              <p class="text-center mb-0 pt-2 fs-medium">SOLID</p>
+            </div>
+
+            <!-- Vitest -->
+            <div
+              class="col-4 col-md-3 d-flex flex-column justify-content-end mb-5"
+            >
+              <div
+                class="d-flex flex-column justify-content-center col-7 col-sm-6 col-md-5 col-lg-4 mx-auto"
+              >
+                <img
+                  class="img-fluid"
+                  src="https://skillicons.dev/icons?i=vitest"
+                  alt="Vitest"
+                />
+              </div>
+              <p class="text-center mb-0 pt-2 fs-medium">Vitest</p>
             </div>
 
             <!-- Node.js -->
@@ -643,7 +669,7 @@
               <p class="text-center mb-0 pt-2 fs-medium">Node.js</p>
             </div>
 
-            <!-- Express.js -->
+            <!-- PostgreSQL -->
             <div
               class="col-4 col-md-3 d-flex flex-column justify-content-end mb-5"
             >
@@ -652,14 +678,14 @@
               >
                 <img
                   class="img-fluid"
-                  src="https://skillicons.dev/icons?i=express"
-                  alt="Express.js"
+                  src="https://skillicons.dev/icons?i=postgres"
+                  alt="PostgreSQL"
                 />
               </div>
-              <p class="text-center mb-0 pt-2 fs-medium">Express.js</p>
+              <p class="text-center mb-0 pt-2 fs-medium">PostgreSQL</p>
             </div>
 
-            <!-- Git -->
+            <!-- English -->
             <div
               class="col-4 col-md-3 d-flex flex-column justify-content-end mb-5"
             >
@@ -667,35 +693,12 @@
                 class="d-flex flex-column justify-content-center col-7 col-sm-6 col-md-5 col-lg-4 mx-auto"
               >
                 <img
-                  class="img-fluid"
-                  src="https://skillicons.dev/icons?i=git"
-                  alt="Git"
+                  class="img-fluid rounded-4"
+                  src="img/inglesC1.jpg"
+                  alt="English"
                 />
               </div>
-              <p class="text-center mb-0 pt-2 fs-medium">Git Flow</p>
-            </div>
-
-            <!-- WebSockets -->
-            <div
-              class="col-4 col-md-3 d-flex flex-column justify-content-end mb-5"
-            >
-              <div
-                class="d-flex flex-column justify-content-center col-7 col-sm-6 col-md-5 col-lg-4 mx-auto"
-              >
-                <div class="img-fluid">
-                  <svg
-                    role="img"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <title>Socket.io</title>
-                    <path
-                      d="M11.9362.0137a12.1694 12.1694 0 00-2.9748.378C4.2816 1.5547.5678 5.7944.0918 10.6012c-.59 4.5488 1.7079 9.2856 5.6437 11.6345 3.8608 2.4179 9.0926 2.3199 12.8734-.223 3.3969-2.206 5.5118-6.2277 5.3858-10.2845-.058-4.0159-2.31-7.9167-5.7588-9.9796C16.354.5876 14.1431.0047 11.9362.0137zm-.063 1.696c4.9448-.007 9.7886 3.8137 10.2815 8.9245.945 5.6597-3.7528 11.4125-9.4875 11.5795-5.4538.544-10.7245-4.0798-10.8795-9.5566-.407-4.4338 2.5159-8.8346 6.6977-10.2995a9.1126 9.1126 0 013.3878-.647zm5.0908 3.2248c-2.6869 2.0849-5.2598 4.3078-7.8886 6.4567 1.2029.017 2.4118.016 3.6208.01 1.41-2.165 2.8589-4.3008 4.2678-6.4667zm-5.6647 7.6536c-1.41 2.166-2.86 4.3088-4.2699 6.4737 2.693-2.0799 5.2548-4.3198 7.9017-6.4557a255.4132 255.4132 0 00-3.6318-.018z"
-                    />
-                  </svg>
-                </div>
-              </div>
-              <p class="text-center mb-0 pt-2 fs-medium">WebSockets</p>
+              <p class="text-center mb-0 pt-2 fs-medium">English</p>
             </div>
 
             <!-- Scrum -->
@@ -722,22 +725,6 @@
                 </div>
               </div>
               <p class="text-center mb-0 pt-2 fs-medium">Scrum</p>
-            </div>
-
-            <!-- C2 English -->
-            <div
-              class="col-4 col-md-3 d-flex flex-column justify-content-end mb-5"
-            >
-              <div
-                class="d-flex flex-column justify-content-center col-7 col-sm-6 col-md-5 col-lg-4 mx-auto"
-              >
-                <img
-                  class="img-fluid rounded-4"
-                  src="img/inglesC2.jpg"
-                  alt="English C2"
-                />
-              </div>
-              <p class="text-center mb-0 pt-2 fs-medium">C2 English</p>
             </div>
           </div>
         </div>
