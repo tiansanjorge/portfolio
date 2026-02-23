@@ -1,27 +1,39 @@
 /* ------ Importing fonts ----- */
 @font-face {
   font-family: "Satoshi-Variable";
-  src: url("../fonts/Satoshi-Variable.woff2") format("woff2"), url("../fonts/Satoshi-Variable.woff") format("woff"), url("../fonts/Satoshi-Variable.ttf") format("truetype");
+  src:
+    url("../fonts/Satoshi-Variable.woff2") format("woff2"),
+    url("../fonts/Satoshi-Variable.woff") format("woff"),
+    url("../fonts/Satoshi-Variable.ttf") format("truetype");
   font-weight: 300 900;
   font-display: swap;
   font-style: normal;
 }
 @font-face {
   font-family: "Satoshi-VariableItalic";
-  src: url("../fonts/Satoshi-VariableItalic.woff2") format("woff2"), url("../fonts/Satoshi-VariableItalic.woff") format("woff"), url("../fonts/Satoshi-VariableItalic.ttf") format("truetype");
+  src:
+    url("../fonts/Satoshi-VariableItalic.woff2") format("woff2"),
+    url("../fonts/Satoshi-VariableItalic.woff") format("woff"),
+    url("../fonts/Satoshi-VariableItalic.ttf") format("truetype");
   font-weight: 300 900;
   font-display: swap;
   font-style: italic;
 }
 @font-face {
   font-family: "Magilio";
-  src: url("../fonts/Magilio.woff2") format("woff2"), url("../fonts/Magilio.woff") format("woff"), url("../fonts/Magilio.ttf") format("truetype");
+  src:
+    url("../fonts/Magilio.woff2") format("woff2"),
+    url("../fonts/Magilio.woff") format("woff"),
+    url("../fonts/Magilio.ttf") format("truetype");
   font-display: swap;
   font-style: normal;
 }
 @font-face {
   font-family: "Magilio-slant";
-  src: url("../fonts/Magilio-slant.woff2") format("woff2"), url("../fonts/Magilio-slant.woff") format("woff"), url("../fonts/Magilio-slant.ttf") format("truetype");
+  src:
+    url("../fonts/Magilio-slant.woff2") format("woff2"),
+    url("../fonts/Magilio-slant.woff") format("woff"),
+    url("../fonts/Magilio-slant.ttf") format("truetype");
   font-display: swap;
   font-style: normal;
 }
@@ -69,25 +81,25 @@
 }
 
 .fs-small {
-  font-size: 10px;
+  font-size: 14px;
 }
 
 .fs-medium {
-  font-size: 13px;
+  font-size: 16px;
 }
 
 .fs-big {
-  font-size: 15px;
+  font-size: 18px;
 }
 
 .magilio-heading {
   font-family: "Magilio", sans-serif;
-  font-size: 50px;
+  font-size: 65px;
 }
 
 .magilio-heading-small {
   font-family: "Magilio", sans-serif;
-  font-size: 25px;
+  font-size: 35px;
 }
 
 /* ------ Colors ----- */
@@ -191,7 +203,7 @@ a.logo:hover {
 }
 
 .dd-menu.active {
-  height: 90px;
+  height: 130px;
 }
 
 .active-link {
@@ -226,7 +238,7 @@ a.logo:hover {
 
 .presentation-description {
   font-family: "Satoshi-Variable", sans-serif;
-  font-size: 15px;
+  font-size: 18px;
 }
 
 .s-behind {
@@ -268,7 +280,7 @@ a.logo:hover {
   background-color: #04160f;
   color: #e7e7e7;
   overflow: hidden;
-  height: 23px;
+  height: 37px;
   position: relative;
 }
 
@@ -477,88 +489,85 @@ a.logo:hover {
 
 @media screen and (min-width: 468px) {
   .magilio-heading {
-    font-size: 60px;
-  }
-  .magilio-heading-small {
-    font-size: 30px;
-  }
-  .s-front {
-    left: 4px;
-    top: -7px;
-  }
-  .magilio-contact {
-    font-size: 50px;
-  }
-}
-@media screen and (min-width: 576px) {
-  .fs-small {
-    font-size: 12px;
-  }
-  .fs-medium {
-    font-size: 14px;
-  }
-  .fs-big {
-    font-size: 16px;
-  }
-  a.logo,
-  .contact-logo {
-    font-size: 25px;
-  }
-  .magilio-heading {
-    font-size: 80px;
+    font-size: 75px;
   }
   .magilio-heading-small {
     font-size: 40px;
   }
   .s-front {
     left: 4px;
-    top: -9px;
-  }
-  .text-banner-container {
-    height: 34px;
-  }
-  .heading-contact {
-    font-size: 28px;
+    top: -7px;
   }
   .magilio-contact {
     font-size: 60px;
   }
+}
+@media screen and (min-width: 576px) {
+  .fs-small {
+    font-size: 15px;
+  }
+  .fs-medium {
+    font-size: 17px;
+  }
+  .fs-big {
+    font-size: 19px;
+  }
+  a.logo,
+  .contact-logo {
+    font-size: 28px;
+  }
+  .magilio-heading {
+    font-size: 90px;
+  }
+  .magilio-heading-small {
+    font-size: 50px;
+  }
+  .s-front {
+    left: 4px;
+    top: -9px;
+  }
+  .heading-contact {
+    font-size: 32px;
+  }
+  .magilio-contact {
+    font-size: 70px;
+  }
   .contact-link {
-    font-size: 22px;
+    font-size: 25px;
     padding: 14px 21px;
   }
   .contact-link:hover {
-    font-size: 28px;
+    font-size: 30px;
     padding: 15px 23px;
   }
   .contact-link2 {
-    font-size: 20px;
+    font-size: 23px;
     padding: 16px 16px;
   }
   .contact-link2:hover {
-    font-size: 25px;
+    font-size: 28px;
     padding: 18px 18px;
   }
 }
 @media screen and (min-width: 768px) {
   .fs-small {
-    font-size: 14px;
-  }
-  .fs-medium {
     font-size: 16px;
   }
-  .fs-big {
+  .fs-medium {
     font-size: 18px;
+  }
+  .fs-big {
+    font-size: 20px;
   }
   a.logo,
   .contact-logo {
-    font-size: 27px;
+    font-size: 30px;
   }
   .magilio-heading {
-    font-size: 85px;
+    font-size: 100px;
   }
   .magilio-heading-small {
-    font-size: 45px;
+    font-size: 60px;
   }
   .s-front {
     left: 5px;
@@ -578,69 +587,69 @@ a.logo:hover {
     filter: grayscale(0%);
   }
   .magilio-contact {
-    font-size: 70px;
+    font-size: 85px;
   }
   .contact-link {
-    font-size: 22px;
+    font-size: 25px;
     padding: 14px 21px;
   }
   .contact-link:hover {
-    font-size: 28px;
+    font-size: 30px;
     padding: 15px 23px;
   }
   .contact-link2 {
-    font-size: 20px;
+    font-size: 23px;
     padding: 16px 16px;
   }
   .contact-link2:hover {
-    font-size: 25px;
+    font-size: 28px;
     padding: 18px 18px;
   }
 }
 @media screen and (min-width: 992px) {
   .fs-small {
-    font-size: 15px;
+    font-size: 16px;
   }
   .fs-medium {
-    font-size: 18px;
+    font-size: 19px;
   }
   .fs-big {
-    font-size: 20px;
+    font-size: 21px;
   }
   a.logo,
   .contact-logo {
-    font-size: 30px;
+    font-size: 33px;
   }
   .magilio-heading {
-    font-size: 110px;
+    font-size: 120px;
   }
   .magilio-heading-small {
-    font-size: 55px;
+    font-size: 65px;
   }
   .s-front {
     left: 6px;
     top: -12px;
   }
   .magilio-contact {
-    font-size: 80px;
+    font-size: 90px;
   }
   .heading-contact {
-    font-size: 35px;
+    font-size: 38px;
   }
   .contact-link {
-    font-size: 22px;
+    font-size: 25px;
     padding: 15px 21px;
   }
   .contact-link:hover {
-    font-size: 28px;
+    font-size: 30px;
     padding: 15px 23px;
   }
   .contact-link2 {
-    font-size: 20px;
+    font-size: 23px;
     padding: 16px 16px;
   }
   .contact-link2:hover {
-    font-size: 25px;
+    font-size: 28px;
     padding: 18px 18px;
   }
 }
@@ -726,4 +735,15 @@ a.logo:hover {
   }
 }
 
-/*# sourceMappingURL=styles.css.map */
+/* Projects title mobile adjustments */
+@media screen and (max-width: 767px) {
+  .projects-title {
+    font-size: 55px !important;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .projects-title {
+    font-size: 75px !important;
+  }
+}
