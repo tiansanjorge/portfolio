@@ -236,6 +236,35 @@ a.logo:hover {
   animation: fadeInRight 0.1s;
 }
 
+.iph-link {
+  background-color: #9bc1bc;
+  color: #333333;
+  padding: 5px 14px;
+  border-radius: 20px;
+  display: inline-block;
+  font-size: 0.75rem;
+  font-family: "Satoshi-Variable", sans-serif;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+}
+
+.iph-link:hover {
+  background-color: #17784f;
+  color: #e7e7e7;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.iph-logo {
+  max-width: 120px;
+}
+
+@media (min-width: 768px) {
+  .iph-logo {
+    max-width: 160px;
+  }
+}
+
 .presentation-description {
   font-family: "Satoshi-Variable", sans-serif;
   font-size: 18px;
@@ -310,6 +339,8 @@ a.logo:hover {
 .contact-button {
   background-color: #17784f;
   color: #e7e7e7;
+  width: 40px;
+  height: 40px;
   transition: 0.2s;
 }
 .contact-button:hover {
