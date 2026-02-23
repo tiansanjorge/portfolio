@@ -52,8 +52,8 @@
 
       #projectsCarousel .carousel-item {
         transition:
-          transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1),
-          opacity 0.2s ease;
+          transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1),
+          opacity 0.15s ease;
       }
 
       #projectsCarousel .carousel-item:not(.active) {
@@ -62,7 +62,7 @@
 
       #projectsCarousel .carousel-item.active {
         opacity: 1;
-        animation: slideInScale 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+        animation: slideInScale 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
       }
 
       @keyframes slideInScale {
@@ -161,13 +161,13 @@
 
       /* Project content animations */
       .project-content {
-        animation: fadeInUp 0.8s ease-out 0.2s both;
+        animation: fadeInUp 0.15s ease-out 0s both;
       }
 
       @keyframes fadeInUp {
         0% {
           opacity: 0;
-          transform: translateY(30px);
+          transform: translateY(15px);
         }
         100% {
           opacity: 1;
@@ -268,6 +268,82 @@
           transform: translateY(-5px);
           box-shadow: 0 10px 30px rgba(94, 231, 131, 0.2);
         }
+      }
+
+      /* Scroll reveal animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes fadeInRight {
+        from {
+          opacity: 0;
+          transform: translateX(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      .scroll-reveal {
+        opacity: 0;
+      }
+
+      .scroll-reveal.animate-fade-up {
+        transform: translateY(30px);
+      }
+
+      .scroll-reveal.animate-fade-left {
+        transform: translateX(-30px);
+      }
+
+      .scroll-reveal.animate-fade-right {
+        transform: translateX(30px);
+      }
+
+      .scroll-reveal.visible {
+        animation-play-state: running;
+      }
+
+      .animate-fade-up.visible {
+        animation: fadeInUp 0.8s ease-out both;
+      }
+
+      .animate-fade-left.visible {
+        animation: fadeInLeft 0.8s ease-out both;
+      }
+
+      .animate-fade-right.visible {
+        animation: fadeInRight 0.8s ease-out both;
+      }
+
+      .delay-1 {
+        animation-delay: 0.1s;
+      }
+      .delay-2 {
+        animation-delay: 0.2s;
+      }
+      .delay-3 {
+        animation-delay: 0.3s;
       }
     </style>
   </head>
@@ -376,7 +452,9 @@
         <div class="row justify-content-evenly py-3">
           <div class="col-10 col-xxl-9 d-flex flex-column px-0">
             <!-- Title -->
-            <div class="col-12 text-end mb-2 mb-lg-3">
+            <div
+              class="col-12 text-end mb-2 mb-lg-3 scroll-reveal animate-fade-right delay-1"
+            >
               <h2
                 class="white mb-0 projects-title"
                 style="
@@ -393,7 +471,7 @@
             <div class="d-flex d-lg-none flex-column">
               <!-- Project 1 -->
               <div
-                class="col-12 d-flex flex-column align-items-center mb-5 mobile-project-card"
+                class="col-12 d-flex flex-column align-items-center mb-5 mobile-project-card scroll-reveal animate-fade-up delay-2"
               >
                 <div class="col-10 col-sm-8 project-image-container">
                   <a
@@ -412,17 +490,56 @@
                   <div
                     class="d-flex justify-content-center align-items-center mb-2"
                   >
-                    <h3
-                      class="fs-medium fw-bolder white m-0 me-3 project-title"
-                    >
-                      Rick & Morty wiki
-                    </h3>
                     <a
                       href="https://rickandmortyexp.netlify.app/"
-                      class="works-button rounded-circle border-0 text-decoration-none"
                       target="_blank"
+                      class="text-decoration-none"
+                    >
+                      <h3
+                        class="fs-medium fw-bolder white m-0 me-3 project-title"
+                      >
+                        Rick & Morty wiki
+                      </h3>
+                    </a>
+                    <a
+                      href="https://rickandmortyexp.netlify.app/"
+                      class="works-button rounded-circle border-0 text-decoration-none me-3"
+                      target="_blank"
+                      title="View Live Project"
                     >
                       <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a
+                      href="https://github.com/tiansanjorge/intramed-challenge"
+                      class="rounded-circle border-0 text-decoration-none"
+                      target="_blank"
+                      title="View on GitHub"
+                      style="
+                        width: 40px;
+                        height: 40px;
+                        min-width: 40px;
+                        min-height: 40px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background: #17784f;
+                        color: #e7e7e7;
+                        box-shadow: 3px 4px 12px 2px rgba(51, 51, 51, 0.25);
+                        transition: 0.2s;
+                      "
+                      onmouseover="
+                        this.style.background = '#9bc1bc';
+                        this.style.color = '#333333';
+                      "
+                      onmouseout="
+                        this.style.background = '#17784f';
+                        this.style.color = '#e7e7e7';
+                      "
+                    >
+                      <i
+                        class="fa-brands fa-github"
+                        style="font-size: 20px"
+                      ></i>
                     </a>
                   </div>
                   <p class="col-10 mx-auto darker-white fs-small mb-0">
@@ -436,7 +553,7 @@
 
               <!-- Project 2 -->
               <div
-                class="col-12 d-flex flex-column align-items-center mb-5 mobile-project-card"
+                class="col-12 d-flex flex-column align-items-center mb-5 mobile-project-card scroll-reveal animate-fade-up delay-3"
               >
                 <div class="col-10 col-sm-8 project-image-container">
                   <a
@@ -455,17 +572,56 @@
                   <div
                     class="d-flex justify-content-center align-items-center mb-2"
                   >
-                    <h3
-                      class="fs-medium fw-bolder white m-0 me-3 project-title"
-                    >
-                      Psychologist´s Website
-                    </h3>
                     <a
                       href="https://psicologosanjorge.com.ar/"
-                      class="works-button rounded-circle border-0 text-decoration-none"
                       target="_blank"
+                      class="text-decoration-none"
+                    >
+                      <h3
+                        class="fs-medium fw-bolder white m-0 me-3 project-title"
+                      >
+                        Psychologist´s Website
+                      </h3>
+                    </a>
+                    <a
+                      href="https://psicologosanjorge.com.ar/"
+                      class="works-button rounded-circle border-0 text-decoration-none me-3"
+                      target="_blank"
+                      title="View Live Project"
                     >
                       <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a
+                      href="https://github.com/tiansanjorge/juan-pablo-sanjorge"
+                      class="rounded-circle border-0 text-decoration-none"
+                      target="_blank"
+                      title="View on GitHub"
+                      style="
+                        width: 40px;
+                        height: 40px;
+                        min-width: 40px;
+                        min-height: 40px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background: #17784f;
+                        color: #e7e7e7;
+                        box-shadow: 3px 4px 12px 2px rgba(51, 51, 51, 0.25);
+                        transition: 0.2s;
+                      "
+                      onmouseover="
+                        this.style.background = '#9bc1bc';
+                        this.style.color = '#333333';
+                      "
+                      onmouseout="
+                        this.style.background = '#17784f';
+                        this.style.color = '#e7e7e7';
+                      "
+                    >
+                      <i
+                        class="fa-brands fa-github"
+                        style="font-size: 20px"
+                      ></i>
                     </a>
                   </div>
                   <p class="col-10 mx-auto darker-white fs-small mb-0">
@@ -479,7 +635,7 @@
 
               <!-- Project 3 -->
               <div
-                class="col-12 d-flex flex-column align-items-center mb-5 mobile-project-card"
+                class="col-12 d-flex flex-column align-items-center mb-5 mobile-project-card scroll-reveal animate-fade-up delay-3"
               >
                 <div class="col-10 col-sm-8 project-image-container">
                   <a
@@ -498,17 +654,56 @@
                   <div
                     class="d-flex justify-content-center align-items-center mb-2"
                   >
-                    <h3
-                      class="fs-medium fw-bolder white m-0 me-3 project-title"
-                    >
-                      Liteflix
-                    </h3>
                     <a
                       href="https://liteflixmovies.netlify.app/"
-                      class="works-button rounded-circle border-0 text-decoration-none"
                       target="_blank"
+                      class="text-decoration-none"
+                    >
+                      <h3
+                        class="fs-medium fw-bolder white m-0 me-3 project-title"
+                      >
+                        Liteflix
+                      </h3>
+                    </a>
+                    <a
+                      href="https://liteflixmovies.netlify.app/"
+                      class="works-button rounded-circle border-0 text-decoration-none me-3"
+                      target="_blank"
+                      title="View Live Project"
                     >
                       <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a
+                      href="https://github.com/tiansanjorge/liteflix-challenge"
+                      class="rounded-circle border-0 text-decoration-none"
+                      target="_blank"
+                      title="View on GitHub"
+                      style="
+                        width: 40px;
+                        height: 40px;
+                        min-width: 40px;
+                        min-height: 40px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background: #17784f;
+                        color: #e7e7e7;
+                        box-shadow: 3px 4px 12px 2px rgba(51, 51, 51, 0.25);
+                        transition: 0.2s;
+                      "
+                      onmouseover="
+                        this.style.background = '#9bc1bc';
+                        this.style.color = '#333333';
+                      "
+                      onmouseout="
+                        this.style.background = '#17784f';
+                        this.style.color = '#e7e7e7';
+                      "
+                    >
+                      <i
+                        class="fa-brands fa-github"
+                        style="font-size: 20px"
+                      ></i>
                     </a>
                   </div>
                   <p class="col-10 mx-auto darker-white fs-small mb-0">
@@ -522,7 +717,10 @@
             </div>
 
             <!-- Desktop: Carousel view -->
-            <div class="carousel slide d-none d-lg-block" id="projectsCarousel">
+            <div
+              class="carousel slide d-none d-lg-block scroll-reveal animate-fade-up delay-2"
+              id="projectsCarousel"
+            >
               <div class="carousel-inner">
                 <!-- Project 1 -->
                 <div class="carousel-item active">
@@ -542,15 +740,22 @@
                     </div>
                     <div class="col-lg-6 ps-lg-5 project-content">
                       <div class="d-flex align-items-center mb-3">
-                        <h3
-                          class="fs-big fw-bolder white m-0 me-3 project-title"
+                        <a
+                          href="https://rickandmortyexp.netlify.app/"
+                          target="_blank"
+                          class="text-decoration-none"
                         >
-                          Rick & Morty wiki
-                        </h3>
+                          <h3
+                            class="fs-big fw-bolder white m-0 me-3 project-title"
+                          >
+                            Rick & Morty wiki
+                          </h3>
+                        </a>
                         <a
                           href="https://rickandmortyexp.netlify.app/"
                           class="works-button rounded-circle border-0 text-decoration-none"
                           target="_blank"
+                          title="View Live Project"
                         >
                           <i class="fa-solid fa-arrow-right"></i>
                         </a>
@@ -561,10 +766,42 @@
                         and API integration patterns. Demonstrates performance
                         optimization and modern UI/UX principles.
                       </p>
-                      <div class="fs-medium mb-2">
+                      <div class="fs-medium mb-2 d-flex align-items-center">
+                        <a
+                          href="https://github.com/tiansanjorge/intramed-challenge"
+                          class="rounded-circle border-0 text-decoration-none me-3"
+                          target="_blank"
+                          title="View on GitHub"
+                          style="
+                            width: 40px;
+                            height: 40px;
+                            min-width: 40px;
+                            min-height: 40px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            background: #17784f;
+                            color: #e7e7e7;
+                            box-shadow: 3px 4px 12px 2px rgba(51, 51, 51, 0.25);
+                            transition: 0.2s;
+                          "
+                          onmouseover="
+                            this.style.background = '#9bc1bc';
+                            this.style.color = '#333333';
+                          "
+                          onmouseout="
+                            this.style.background = '#17784f';
+                            this.style.color = '#e7e7e7';
+                          "
+                        >
+                          <i
+                            class="fa-brands fa-github"
+                            style="font-size: 20px"
+                          ></i>
+                        </a>
                         <span class="aqua fw-bold">Technologies:</span>
                       </div>
-                      <div>
+                      <div class="d-flex align-items-center">
                         <span class="tech-tag">React</span>
                         <span class="tech-tag">TypeScript</span>
                         <span class="tech-tag">REST API</span>
@@ -592,15 +829,22 @@
                     </div>
                     <div class="col-lg-6 ps-lg-5 project-content">
                       <div class="d-flex align-items-center mb-3">
-                        <h3
-                          class="fs-big fw-bolder white m-0 me-3 project-title"
+                        <a
+                          href="https://psicologosanjorge.com.ar/"
+                          target="_blank"
+                          class="text-decoration-none"
                         >
-                          Psychologist´s Website
-                        </h3>
+                          <h3
+                            class="fs-big fw-bolder white m-0 me-3 project-title"
+                          >
+                            Psychologist´s Website
+                          </h3>
+                        </a>
                         <a
                           href="https://psicologosanjorge.com.ar/"
                           class="works-button rounded-circle border-0 text-decoration-none"
                           target="_blank"
+                          title="View Live Project"
                         >
                           <i class="fa-solid fa-arrow-right"></i>
                         </a>
@@ -612,10 +856,42 @@
                         Delivered on time meeting all client requirements and
                         brand guidelines.
                       </p>
-                      <div class="fs-medium mb-2">
+                      <div class="fs-medium mb-2 d-flex align-items-center">
+                        <a
+                          href="https://github.com/tiansanjorge/juan-pablo-sanjorge"
+                          class="rounded-circle border-0 text-decoration-none me-3"
+                          target="_blank"
+                          title="View on GitHub"
+                          style="
+                            width: 40px;
+                            height: 40px;
+                            min-width: 40px;
+                            min-height: 40px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            background: #17784f;
+                            color: #e7e7e7;
+                            box-shadow: 3px 4px 12px 2px rgba(51, 51, 51, 0.25);
+                            transition: 0.2s;
+                          "
+                          onmouseover="
+                            this.style.background = '#9bc1bc';
+                            this.style.color = '#333333';
+                          "
+                          onmouseout="
+                            this.style.background = '#17784f';
+                            this.style.color = '#e7e7e7';
+                          "
+                        >
+                          <i
+                            class="fa-brands fa-github"
+                            style="font-size: 20px"
+                          ></i>
+                        </a>
                         <span class="aqua fw-bold">Technologies:</span>
                       </div>
-                      <div>
+                      <div class="d-flex align-items-center">
                         <span class="tech-tag">HTML5</span>
                         <span class="tech-tag">CSS3</span>
                         <span class="tech-tag">JavaScript</span>
@@ -643,15 +919,22 @@
                     </div>
                     <div class="col-lg-6 ps-lg-5 project-content">
                       <div class="d-flex align-items-center mb-3">
-                        <h3
-                          class="fs-big fw-bolder white m-0 me-3 project-title"
+                        <a
+                          href="https://liteflixmovies.netlify.app/"
+                          target="_blank"
+                          class="text-decoration-none"
                         >
-                          Liteflix
-                        </h3>
+                          <h3
+                            class="fs-big fw-bolder white m-0 me-3 project-title"
+                          >
+                            Liteflix
+                          </h3>
+                        </a>
                         <a
                           href="https://liteflixmovies.netlify.app/"
                           class="works-button rounded-circle border-0 text-decoration-none"
                           target="_blank"
+                          title="View Live Project"
                         >
                           <i class="fa-solid fa-arrow-right"></i>
                         </a>
@@ -662,10 +945,42 @@
                         design patterns. Built with modern frontend architecture
                         and external API integration.
                       </p>
-                      <div class="fs-medium mb-2">
+                      <div class="fs-medium mb-2 d-flex align-items-center">
+                        <a
+                          href="https://github.com/tiansanjorge/liteflix-challenge"
+                          class="rounded-circle border-0 text-decoration-none me-3"
+                          target="_blank"
+                          title="View on GitHub"
+                          style="
+                            width: 40px;
+                            height: 40px;
+                            min-width: 40px;
+                            min-height: 40px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            background: #17784f;
+                            color: #e7e7e7;
+                            box-shadow: 3px 4px 12px 2px rgba(51, 51, 51, 0.25);
+                            transition: 0.2s;
+                          "
+                          onmouseover="
+                            this.style.background = '#9bc1bc';
+                            this.style.color = '#333333';
+                          "
+                          onmouseout="
+                            this.style.background = '#17784f';
+                            this.style.color = '#e7e7e7';
+                          "
+                        >
+                          <i
+                            class="fa-brands fa-github"
+                            style="font-size: 20px"
+                          ></i>
+                        </a>
                         <span class="aqua fw-bold">Technologies:</span>
                       </div>
-                      <div>
+                      <div class="d-flex align-items-center">
                         <span class="tech-tag">React</span>
                         <span class="tech-tag">Redux</span>
                         <span class="tech-tag">API Integration</span>

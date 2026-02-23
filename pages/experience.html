@@ -25,6 +25,80 @@
     <link rel="stylesheet" href="../styles/styles.css" />
     <link rel="icon" type="image/png" href="../img/favicon.png" />
     <title>Sanjorge • Front End Developer</title>
+    <style>
+      /* Scroll reveal animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes fadeInRight {
+        from {
+          opacity: 0;
+          transform: translateX(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      .scroll-reveal {
+        opacity: 0;
+      }
+
+      .scroll-reveal.animate-fade-up {
+        transform: translateY(30px);
+      }
+
+      .scroll-reveal.animate-fade-left {
+        transform: translateX(-30px);
+      }
+
+      .scroll-reveal.animate-fade-right {
+        transform: translateX(30px);
+      }
+
+      .scroll-reveal.visible {
+        animation-play-state: running;
+      }
+
+      .animate-fade-up.visible {
+        animation: fadeInUp 0.8s ease-out both;
+      }
+
+      .animate-fade-left.visible {
+        animation: fadeInLeft 0.8s ease-out both;
+      }
+
+      .animate-fade-right.visible {
+        animation: fadeInRight 0.8s ease-out both;
+      }
+
+      .delay-1 {
+        animation-delay: 0.1s;
+      }
+      .delay-2 {
+        animation-delay: 0.2s;
+      }
+    </style>
   </head>
 
   <body>
@@ -133,7 +207,7 @@
             class="col-10 col-xxl-9 d-flex flex-column flex-lg-row px-0 gap-3 gap-lg-0"
           >
             <div
-              class="experience-overflow col-12 col-lg-7 col-xl-8 d-flex flex-column rounded-4 py-4 py-md-5 px-4 px-md-5"
+              class="experience-overflow col-12 col-lg-7 col-xl-8 d-flex flex-column rounded-4 py-4 py-md-5 px-4 px-md-5 scroll-reveal animate-fade-left delay-1"
             >
               <div class="col-12 d-flex flex-column">
                 <div class="col-12 d-flex flex-column mt-2 mb-3">
@@ -192,7 +266,7 @@
               </div>
             </div>
             <div
-              class="col-12 col-lg-5 col-xl-4 d-flex flex-column justify-content-end"
+              class="col-12 col-lg-5 col-xl-4 d-flex flex-column justify-content-end scroll-reveal animate-fade-right delay-2"
             >
               <div class="col-12 magilio-heading text-end">
                 Exp<span class="aqua">.</span>

@@ -25,6 +25,64 @@
     <link rel="stylesheet" href="../styles/styles.css" />
     <link rel="icon" type="image/png" href="../img/favicon.png" />
     <title>Sanjorge • Front End Developer</title>
+    <style>
+      /* Scroll reveal animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInScale {
+        from {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .scroll-reveal {
+        opacity: 0;
+      }
+
+      .scroll-reveal.animate-fade-up {
+        transform: translateY(30px);
+      }
+
+      .scroll-reveal.animate-scale {
+        transform: scale(0.95);
+      }
+
+      .scroll-reveal.visible {
+        animation-play-state: running;
+      }
+
+      .animate-fade-up.visible {
+        animation: fadeInUp 0.8s ease-out both;
+      }
+
+      .animate-scale.visible {
+        animation: fadeInScale 0.8s ease-out both;
+      }
+
+      .delay-1 {
+        animation-delay: 0.1s;
+      }
+      .delay-2 {
+        animation-delay: 0.2s;
+      }
+      .delay-3 {
+        animation-delay: 0.3s;
+      }
+    </style>
   </head>
 
   <body>
@@ -127,7 +185,9 @@
           <div
             class="col-10 d-flex flex-column justify-content-between justify-content-lg-around justify-content-xl-evenly px-0 vh-80 px-lg-3 px-xl-5"
           >
-            <div class="col-12 d-flex flex-row rounded-circle text-center blue">
+            <div
+              class="col-12 d-flex flex-row rounded-circle text-center blue scroll-reveal animate-scale delay-1"
+            >
               <div class="col-6 d-none d-lg-flex flex-column"></div>
               <div class="col-12 col-lg-6 d-flex flex-column pb-3">
                 <img
@@ -144,7 +204,7 @@
               </div>
             </div>
             <div
-              class="col-12 d-flex flex-column flex-lg-row justify-content-between mt-xl-4 mt-xxl-3"
+              class="col-12 d-flex flex-column flex-lg-row justify-content-between mt-xl-4 mt-xxl-3 scroll-reveal animate-fade-up delay-2"
             >
               <p class="magilio-contact d-none d-lg-flex col-6 blue m-0">
                 Let’s Talk<span class="green">.</span>
@@ -180,7 +240,7 @@
                 >
               </div>
             </div>
-            <div class="col-12 d-lg-none">
+            <div class="col-12 d-lg-none scroll-reveal animate-fade-up delay-3">
               <p class="magilio-contact text-center blue m-0 mt-2 mt-lg-0">
                 Let’s Talk<span class="green">.</span>
               </p>
