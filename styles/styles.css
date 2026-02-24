@@ -398,6 +398,33 @@ a.logo:hover {
   transition: width 0.2s ease-in-out;
 }
 
+/* Language toggle styles */
+.lang-toggle {
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+  background: transparent;
+  border: none;
+  color: inherit;
+  padding: 4px 6px;
+}
+
+.lang-toggle:focus {
+  outline: none;
+}
+
+.active-lang {
+  background: rgba(155, 193, 188, 0.12);
+  border-radius: 6px;
+  box-shadow: 0 0 0 2px rgba(155, 193, 188, 0.08) inset;
+}
+
+.lang-wrapper {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
 .subrayado-works:hover::after {
   width: 100%;
   border-bottom: 2px solid #17784f;

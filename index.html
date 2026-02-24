@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="styles/animate.css" />
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="icon" type="image/png" href="img/favicon.png" />
-    <title>Sanjorge • Front End Developer</title>
+    <title>Sanjorge • Frontend Engineer</title>
     <style>
       /* Content animations */
       @keyframes fadeInUp {
@@ -201,6 +201,16 @@
                 ><b>SS<span class="green">.</span></b></a
               >
             </div>
+            <div
+              class="col-2 d-flex justify-content-end align-items-center lang-wrapper"
+            >
+              <button id="lang-en" class="lang-toggle" title="English">
+                🇬🇧
+              </button>
+              <button id="lang-es" class="lang-toggle" title="Español">
+                🇪🇸
+              </button>
+            </div>
             <div class="col-2 d-flex justify-content-end pe-2">
               <button class="border-0 nav-button" onclick="dropdown()">
                 <i
@@ -218,29 +228,30 @@
                 <a
                   class="fs-medium text-decoration-none green fw-600 active-link"
                   href="#"
-                  >Home<span class="active-dot aqua">•</span></a
+                  ><span data-i18n="nav.home"></span
+                  ><span class="active-dot aqua">•</span></a
                 >
               </div>
               <div class="pe-2 my-1">
                 <a
                   class="fs-medium text-decoration-none subrayado black fw-600"
                   href="pages/experience.html"
-                  >Experience</a
-                >
+                  ><span data-i18n="nav.experience"></span
+                ></a>
               </div>
               <div class="pe-2 my-1">
                 <a
                   class="fs-medium text-decoration-none subrayado black fw-600"
                   href="pages/works.html"
-                  >Projects</a
-                >
+                  ><span data-i18n="nav.projects"></span
+                ></a>
               </div>
               <div class="pe-2 mt-1">
                 <a
                   class="fs-medium text-decoration-none subrayado black fw-600"
                   href="pages/contact.html"
-                  >Contact</a
-                >
+                  ><span data-i18n="nav.contact"></span
+                ></a>
               </div>
             </div>
           </div>
@@ -252,6 +263,16 @@
               <a class="logo text-decoration-none black" href="#"
                 ><b>SS<span class="green">.</span></b></a
               >
+            </div>
+            <div
+              class="col-2 d-none d-lg-flex justify-content-end align-items-center lang-wrapper"
+            >
+              <button id="lang-en" class="lang-toggle" title="English">
+                🇬🇧
+              </button>
+              <button id="lang-es" class="lang-toggle" title="Español">
+                🇪🇸
+              </button>
             </div>
             <div
               class="col-6 col-lg-5 col-xl-4 d-flex justify-content-between align-items-center"
@@ -288,26 +309,13 @@
           <div class="col-10 d-flex flex-column justify-content-evenly">
             <h1
               class="magilio-heading d-flex flex-column text-end mx-0 mb-4 mb-md-3 mb-lg-2 scroll-reveal animate-fade-right delay-1"
-            >
-              Hello<span
-                >I<span class="ms-1 ms-md-2">’</span>m
-                <span class="green s-behind"
-                  >S<span class="aqua s-front">S</span></span
-                >ebastian</span
-              >
-            </h1>
+              data-i18n="hero.h1"
+            ></h1>
             <div class="col-12 d-flex justify-content-between">
               <h2
                 class="presentation-description fs-big col-md-6 green text-center text-md-start m-0 scroll-reveal animate-fade-left delay-2"
-              >
-                <b>Frontend Engineer</b
-                ><span class="black fw-400">
-                  building scalable, high-performance applications with React
-                  and TypeScript. Delivering quality features with focus on
-                  clean code, maintainability, and long-term product
-                  success.</span
-                >
-              </h2>
+                data-i18n="hero.title"
+              ></h2>
               <div
                 class="scroll d-none col-2 col-xl-1 d-md-flex flex-column justify-content-center text-center scroll-reveal animate-fade delay-3"
               >
@@ -330,7 +338,8 @@
       <div class="text-banner fs-small py-1 py-sm-2 py-md-3" id="text-banner">
         <i class="fa-solid fa-minus ms-2"></i>
         <i class="fa-solid fa-minus"></i>
-        <i class="fa-solid fa-minus me-2"></i> CRAFTING DIGITAL MAGIC
+        <i class="fa-solid fa-minus me-2"></i>
+        <span data-i18n="banner.text"></span>
       </div>
     </section>
 
@@ -367,29 +376,8 @@
               <div class="col-10 col-md-7 mx-auto my-auto px-3 px-md-0">
                 <h3
                   class="d-flex flex-column fs-big lh-base text-center text-md-start"
-                >
-                  <b class="white">
-                    <span class="aqua">Scalable Solutions.</span> Product
-                    <span class="aqua">Commitment.</span> Performance
-                    <span class="aqua">Focus.</span>
-                  </b>
-                  <span class="mt-4">
-                    <b class="white"
-                      >4+ years of frontend development experience,</b
-                    >
-                    including work at international companies building
-                    production applications. Proficient in
-                    <b class="aqua">React, Next.js, and TypeScript,</b>
-                    delivering solutions that balance
-                    <b class="white"
-                      >development speed with code quality, scalability, and
-                      maintainability.</b
-                    >
-                    I apply architectural principles and performance
-                    optimization while collaborating effectively across teams to
-                    build products that last.
-                  </span>
-                </h3>
+                  data-i18n="about.heading"
+                ></h3>
               </div>
               <div
                 class="col-2 d-none d-md-block ps-md-3 pb-2 pb-lg-2 align-self-end fs-medium"
@@ -416,24 +404,16 @@
               />
             </div>
             <div class="col-12 col-md-8 d-flex flex-column">
-              <p class="fs-medium darker-white fw-semibold mb-2 text-center">
-                Worked at
-                <span class="white fw-bold">IPH (Spain)</span> as part of a
-                <span class="aqua fw-bold">15-person development team</span>
-                building a real-time platform for underground mining operations.
-                <span class="white fw-bold"
-                  >Developed scalable frontend solutions</span
-                >
-                applying architectural patterns for reliability and performance
-                in high-stakes international operations.
-              </p>
+              <p
+                class="fs-medium darker-white fw-semibold mb-2 text-center"
+                data-i18n="iph.paragraph"
+              ></p>
               <div class="text-center mt-3">
                 <a
                   href="pages/experience.html"
                   class="text-decoration-none fw-bold fs-medium iph-link"
-                >
-                  Learn more
-                </a>
+                  data-i18n="iph.learnMore"
+                ></a>
               </div>
             </div>
           </div>
@@ -442,8 +422,6 @@
     </div>
 
     <!-- Text Banner 2 -->
-
-    <section class="text-banner-container" style="height: 14px"></section>
 
     <!-- Projects -->
 
@@ -456,18 +434,22 @@
             <div class="col-12 col-md-10 d-flex flex-column align-items-center">
               <div
                 class="d-block d-md-none col-12 white text-center fs-medium mb-4"
-              >
-                <b> Featured <span class="aqua">Projects</span></b>
-              </div>
+                data-i18n="projects.featured"
+              ></div>
               <div class="col-12 col-sm-10 d-flex justify-content-center mb-5">
-                <div class="d-none d-md-block col-5 white ps-3 pt-1 fs-medium">
-                  <b> Featured <span class="aqua">Projects</span></b>
-                </div>
+                <div
+                  class="d-none d-md-block col-5 white ps-3 pt-1 fs-medium"
+                  data-i18n="projects.featured"
+                ></div>
                 <div class="col-2 white text-md-center fs-medium fw-bolder">
                   01/03
                 </div>
                 <div class="col-8 col-md-5">
-                  <a href="https://rickandmortyexp.netlify.app/">
+                  <a
+                    href="https://rickandmortyexp.netlify.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <img
                       class="img-fluid grayscale-on-hover rounded-3"
                       src="img/rickymorty.jpg"
@@ -479,7 +461,10 @@
 
               <div class="col-12 col-sm-10 d-flex justify-content-center mb-5">
                 <div class="col-8 col-md-5">
-                  <a href="https://psicologosanjorge.com.ar/"
+                  <a
+                    href="https://psicologosanjorge.com.ar/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     ><img
                       class="img-fluid grayscale-on-hover rounded-3"
                       src="img/jps.jpg"
@@ -501,7 +486,11 @@
                   03/03
                 </div>
                 <div class="col-8 col-md-5">
-                  <a href="https://liteflixmovies.netlify.app/">
+                  <a
+                    href="https://liteflixmovies.netlify.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <img
                       class="img-fluid grayscale-on-hover rounded-3"
                       src="img/liteflix.jpg"
@@ -523,10 +512,8 @@
         <div
           class="col-10 d-flex flex-column align-items-center scroll-reveal animate-fade-up delay-1"
         >
-          <div
-            class="col-9 d-flex justify-content-center fs-medium fw-600 mb-5"
-          >
-            <div class=""><span class="green">Technical </span>Skills</div>
+          <div class="col-9 d-flex justify-content-center fs-medium mb-5">
+            <div data-i18n="skills.title"></div>
           </div>
           <div class="col-md-10 d-flex flex-wrap">
             <!-- React -->
@@ -723,7 +710,8 @@
       <div class="text-banner fs-small py-1 py-sm-2 py-md-3" id="text-banner-2">
         <i class="fa-solid fa-minus ms-2"></i>
         <i class="fa-solid fa-minus"></i>
-        <i class="fa-solid fa-minus me-2"></i> CRAFTING DIGITAL MAGIC
+        <i class="fa-solid fa-minus me-2"></i>
+        <span data-i18n="banner2.text"></span>
       </div>
     </section>
 
@@ -733,7 +721,7 @@
       <section class="container-fluid white">
         <div class="row justify-content-evenly pt-4 pt-md-5 pb-md-3">
           <div class="col-10 d-flex p-0 scroll-reveal animate-fade-up delay-1">
-            <p class="magilio-heading m-0">Let’s Talk</p>
+            <p class="magilio-heading m-0" data-i18n="footer.letsTalk"></p>
             <div
               class="scroll col-2 col-md-1 d-flex flex-column justify-content-center align-items-end text-center"
             >
@@ -762,17 +750,21 @@
                 class="d-flex flex-column justify-content-center white text-decoration-none footer-link"
                 href="https://wa.link/rehzl5"
                 target="_blank"
+                rel="noopener noreferrer"
                 ><i class="fa-brands fa-whatsapp fs-big"></i>
               </a>
               <a
                 class="d-flex flex-column justify-content-center white text-decoration-none footer-link"
                 href="https://www.linkedin.com/in/sebastian-sanjorge-frontend-developer"
-                ><i class="fa-brands fa-linkedin fs-big" target="_blank"></i
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fa-brands fa-linkedin fs-big"></i
               ></a>
               <a
                 class="d-flex flex-column justify-content-center white text-decoration-none footer-link"
                 href="https://github.com/tiansanjorge"
                 target="_blank"
+                rel="noopener noreferrer"
                 ><i class="fa-brands fa-github fs-big"></i
               ></a>
             </div>

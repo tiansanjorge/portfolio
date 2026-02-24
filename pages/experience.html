@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="../styles/animate.css" />
     <link rel="stylesheet" href="../styles/styles.css" />
     <link rel="icon" type="image/png" href="../img/favicon.png" />
-    <title>Sanjorge • Front End Developer</title>
+    <title>Sanjorge • Frontend Engineer</title>
     <style>
       /* Scroll reveal animations */
       @keyframes fadeInUp {
@@ -117,6 +117,16 @@
                 ><b>SS<span class="green">.</span></b></a
               >
             </div>
+            <div
+              class="col-2 d-flex justify-content-end align-items-center lang-wrapper"
+            >
+              <button id="lang-en" class="lang-toggle" title="English">
+                🇬🇧
+              </button>
+              <button id="lang-es" class="lang-toggle" title="Español">
+                🇪🇸
+              </button>
+            </div>
             <div class="col-2 d-flex justify-content-end pe-2">
               <button class="border-0 nav-button" onclick="dropdown()">
                 <i
@@ -134,29 +144,30 @@
                 <a
                   class="experience-header-link header-link fs-medium text-decoration-none subrayado-experience white fw-600"
                   href="../index.html"
-                  >Home</a
-                >
+                  ><span data-i18n="nav.home"></span
+                ></a>
               </div>
               <div class="pe-2 my-1">
                 <a
                   class="experience-header-link fs-medium text-decoration-none aqua fw-600 active-link"
                   href="#"
-                  >Experience <span class="active-dot green">•</span></a
+                  ><span data-i18n="nav.experience"></span>
+                  <span class="active-dot green">•</span></a
                 >
               </div>
               <div class="pe-2 my-1">
                 <a
                   class="experience-header-link header-link fs-medium text-decoration-none subrayado-experience white fw-600"
                   href="works.html"
-                  >Projects</a
-                >
+                  ><span data-i18n="nav.projects"></span
+                ></a>
               </div>
               <div class="pe-2 mt-1">
                 <a
                   class="experience-header-link header-link fs-medium text-decoration-none subrayado-experience white fw-600"
                   href="contact.html"
-                  >Contact</a
-                >
+                  ><span data-i18n="nav.contact"></span
+                ></a>
               </div>
             </div>
           </div>
@@ -170,6 +181,16 @@
               <a class="logo text-decoration-none white" href="../index.html"
                 ><b>SS<span class="green">.</span></b></a
               >
+            </div>
+            <div
+              class="col-2 d-flex justify-content-end align-items-center lang-wrapper"
+            >
+              <button id="lang-en" class="lang-toggle" title="English">
+                🇬🇧
+              </button>
+              <button id="lang-es" class="lang-toggle" title="Español">
+                🇪🇸
+              </button>
             </div>
             <div
               class="col-6 col-lg-5 col-xl-4 d-flex justify-content-between align-items-center"
@@ -219,48 +240,22 @@
                         style="max-width: 120px; border-radius: 8px"
                       />
                     </div>
-                    <h3 class="fs-medium fw-bolder white text-center mb-5">
-                      IPH (Spain) • Frontend Engineer
-                    </h3>
-                    <p class="fs-medium darker-white mb-3">
-                      Contributed to a
-                      <span class="white fw-bold"
-                        >real-time underground mining platform</span
-                      >
-                      serving international operations, developing features with
-                      <span class="aqua fw-bold"
-                        >React, TypeScript, and Next.js</span
-                      >
-                      within a modular microfrontend architecture handling
-                      critical safety and operational data.
-                    </p>
-                    <p class="fs-medium darker-white mb-3">
-                      <span class="aqua fw-bold">Key achievement:</span> Led the
-                      complete implementation of a
-                      <span class="white fw-bold"
-                        >Role-Based Access Control (RBAC) system</span
-                      >
-                      from scratch, collaborating with backend engineers to
-                      design the architecture and implementing it
-                      <span class="aqua fw-bold"
-                        >across the entire project and multiple
-                        repositories.</span
-                      >
-                      This solution became a core security feature used
-                      throughout the platform.
-                    </p>
-                    <p class="fs-medium darker-white mb-0">
-                      Worked closely with cross-functional teams in an
-                      <span class="white fw-bold">agile environment,</span>
-                      participating in code reviews, technical discussions, and
-                      sprint planning. Applied
-                      <span class="aqua fw-bold"
-                        >performance optimization, scalable patterns, and clean
-                        code principles</span
-                      >
-                      to deliver maintainable solutions that balanced quality
-                      with delivery speed.
-                    </p>
+                    <h3
+                      class="fs-medium fw-bolder white text-center mb-5"
+                      data-i18n="experience.iph.title"
+                    ></h3>
+                    <p
+                      class="fs-medium darker-white mb-3"
+                      data-i18n="experience.iph.p1"
+                    ></p>
+                    <p
+                      class="fs-medium darker-white mb-3"
+                      data-i18n="experience.iph.p2"
+                    ></p>
+                    <p
+                      class="fs-medium darker-white mb-0"
+                      data-i18n="experience.iph.p3"
+                    ></p>
                   </div>
                 </div>
               </div>

@@ -59,76 +59,240 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// Scrolling animation for text banners
-document.addEventListener("DOMContentLoaded", function () {
-  const textBanner = document.getElementById("text-banner");
-  if (!textBanner) return;
+// --- Simple i18n loader and applier ---
+(function () {
+  const STORAGE_KEY = "site_lang";
 
-  const originalHTML = textBanner.innerHTML;
-  // Duplicate the content enough times to ensure seamless loop
-  const repeatedHTML = originalHTML.repeat(50);
-  textBanner.innerHTML = repeatedHTML;
-
-  // Measure the width of a single repetition
-  const tempDiv = document.createElement("div");
-  tempDiv.style.cssText =
-    "position: absolute; visibility: hidden; white-space: nowrap;";
-  tempDiv.className = textBanner.className;
-  tempDiv.innerHTML = originalHTML;
-  document.body.appendChild(tempDiv);
-  const singleWidth = tempDiv.offsetWidth;
-  document.body.removeChild(tempDiv);
-
-  let position = 0;
-  const speed = 0.5; // pixels per frame
-
-  function animateScroll() {
-    requestAnimationFrame(animateScroll);
-
-    position -= speed;
-
-    // Reset position seamlessly when one full cycle completes
-    if (Math.abs(position) >= singleWidth) {
-      position = position % singleWidth;
-    }
-
-    textBanner.style.transform = `translateX(${position}px)`;
+  function basePrefix() {
+    // If page is inside /pages/ use ../ else use ./
+    return location.pathname.includes("/pages/") ? "../" : "";
   }
 
-  animateScroll();
+  async function loadTranslations() {
+    const path = basePrefix() + "i18n/translations.json";
+    try {
+      const res = await fetch(path);
+      if (!res.ok) return null;
+      return await res.json();
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function applyTranslations(translations, lang) {
+    if (!translations || !translations[lang]) return;
+    const nodes = document.querySelectorAll("[data-i18n]");
+    nodes.forEach((el) => {
+      const key = el.getAttribute("data-i18n");
+      const value = translations[lang][key];
+      if (value !== undefined) el.innerHTML = value;
+    });
+    document.documentElement.lang = lang;
+  }
+
+  function setActiveLangUI(lang) {
+    const buttons = document.querySelectorAll(".lang-toggle");
+    buttons.forEach((btn) => {
+      const btnLang =
+        btn.getAttribute("data-lang") ||
+        (btn.id === "lang-en" ? "en" : btn.id === "lang-es" ? "es" : null);
+      if (!btnLang) return;
+      btn.classList.toggle("active-lang", btnLang === lang);
+    });
+  }
+
+  function changeLanguage(translations, lang) {
+    localStorage.setItem(STORAGE_KEY, lang);
+    applyTranslations(translations, lang);
+    setActiveLangUI(lang);
+  }
+
+  // (Removed complex banner animator - using a simple static banner below)
+
+  document.addEventListener("DOMContentLoaded", async () => {
+    const translations = await loadTranslations();
+    if (!translations) return;
+    const saved = localStorage.getItem(STORAGE_KEY) || "en";
+    applyTranslations(translations, saved);
+    setActiveLangUI(saved);
+
+    // Apply translations to common selectors when data-i18n attributes aren't present
+    function applySelectorTranslations(lang) {
+      const t = translations[lang] || {};
+      // nav links: try multiple href patterns
+      const navMap = [
+        { sel: 'a[href$="index.html"]', key: "nav.home" },
+        { sel: 'a[href="#"]', key: "nav.home" },
+        { sel: 'a[href$="experience.html"]', key: "nav.experience" },
+        { sel: 'a[href$="works.html"]', key: "nav.projects" },
+        { sel: 'a[href$="contact.html"]', key: "nav.contact" },
+        { sel: 'a[href$="../index.html"]', key: "nav.home" },
+      ];
+
+      navMap.forEach((m) => {
+        const el = document.querySelector(m.sel);
+        if (el && !el.hasAttribute("data-i18n") && t[m.key]) {
+          el.innerHTML =
+            t[m.key] +
+            (m.key === "nav.home" && el.querySelector(".active-dot")
+              ? ' <span class="active-dot aqua">•</span>'
+              : "");
+        }
+      });
+
+      // Hero and presentation
+      const hero = document.querySelector(".magilio-heading");
+      if (hero && t["hero.h1"] && !hero.hasAttribute("data-i18n"))
+        hero.innerHTML = t["hero.h1"];
+      const pres = document.querySelector(".presentation-description");
+      if (pres && t["hero.title"] && !pres.hasAttribute("data-i18n"))
+        pres.innerHTML = t["hero.title"];
+
+      // Banner content is provided by the HTML (data-i18n) and handled by the
+      // original scrolling animation below; do not override here.
+
+      // Contact page specific: prefer explicit data-i18n targets
+      const contactNameEl =
+        document.querySelector('[data-i18n="contact.headingName"]') ||
+        document.querySelector(".heading-contact");
+      const contactRoleEl =
+        document.querySelector('[data-i18n="contact.headingRole"]') ||
+        document.querySelector(".heading-contact-role");
+      if (contactNameEl && t["contact.headingName"])
+        contactNameEl.innerHTML = t["contact.headingName"];
+      if (contactRoleEl && t["contact.headingRole"])
+        contactRoleEl.innerHTML = t["contact.headingRole"];
+      const letsTalk = document.querySelectorAll(".magilio-contact");
+      if (letsTalk && t["contact.letsTalk"])
+        letsTalk.forEach((e) => (e.innerHTML = t["contact.letsTalk"]));
+      const cv = document.querySelector("a[download]");
+      if (cv && t["contact.cv"])
+        cv.innerHTML = "<b>" + t["contact.cv"] + "</b>";
+    }
+
+    // inject simple language toggle into header if not present
+    function injectToggleUI() {
+      // desktop header
+      const desktopHeader =
+        document.querySelector(".col-10.d-none.d-md-flex") ||
+        document.querySelector("header .row");
+      // Only inject if no language toggle exists on the page to avoid duplicates
+      if (desktopHeader && !document.querySelector(".lang-toggle")) {
+        const wrap = document.createElement("div");
+        wrap.className =
+          "col-2 d-none d-lg-flex justify-content-end align-items-center";
+        wrap.innerHTML =
+          '<button id="lang-en" class="lang-toggle border-0 bg-transparent fs-5 me-2" title="English">🇬🇧</button><button id="lang-es" class="lang-toggle border-0 bg-transparent fs-5" title="Español">🇪🇸</button>';
+        desktopHeader.insertBefore(wrap, desktopHeader.children[1] || null);
+      }
+
+      // mobile dropdown: try to add at end of dropdown menu
+      const dd = document.getElementById("dropdown-menu");
+      if (dd && !document.querySelector(".lang-toggle")) {
+        const node = document.createElement("div");
+        node.className = "pe-2 mt-2 d-flex justify-content-end";
+        node.innerHTML =
+          '<button id="lang-en" class="lang-toggle border-0 bg-transparent fs-5 me-2" title="English">🇬🇧</button><button id="lang-es" class="lang-toggle border-0 bg-transparent fs-5" title="Español">🇪🇸</button>';
+        dd.appendChild(node);
+      }
+    }
+
+    applySelectorTranslations(saved);
+    injectToggleUI();
+
+    // banners set above; animation handled by a simple independent routine below
+
+    // Hook UI buttons (attach to all .lang-toggle elements)
+    const langButtons = document.querySelectorAll(".lang-toggle");
+    langButtons.forEach((btn) => {
+      const lang =
+        btn.getAttribute("data-lang") ||
+        (btn.id === "lang-en" ? "en" : btn.id === "lang-es" ? "es" : null);
+      if (!lang) return;
+      btn.addEventListener("click", () => {
+        changeLanguage(translations, lang);
+        applySelectorTranslations(lang);
+      });
+    });
+  });
+})();
+
+// Scrolling animation for text banners
+document.addEventListener("DOMContentLoaded", function () {
+  // Delay banner setup slightly so i18n replacements finish first
+  setTimeout(() => {
+    const textBanner = document.getElementById("text-banner");
+    if (!textBanner) return;
+
+    const originalHTML = textBanner.innerHTML;
+    // Duplicate the content enough times to ensure seamless loop
+    const repeatedHTML = originalHTML.repeat(50);
+    textBanner.innerHTML = repeatedHTML;
+
+    // Measure the width of a single repetition
+    const tempDiv = document.createElement("div");
+    tempDiv.style.cssText =
+      "position: absolute; visibility: hidden; white-space: nowrap;";
+    tempDiv.className = textBanner.className;
+    tempDiv.innerHTML = originalHTML;
+    document.body.appendChild(tempDiv);
+    const singleWidth = tempDiv.offsetWidth;
+    document.body.removeChild(tempDiv);
+
+    let position = 0;
+    const speed = 0.5; // pixels per frame
+
+    function animateScroll() {
+      requestAnimationFrame(animateScroll);
+
+      position -= speed;
+
+      // Reset position seamlessly when one full cycle completes
+      if (Math.abs(position) >= singleWidth) {
+        position = position % singleWidth;
+      }
+
+      textBanner.style.transform = `translateX(${position}px)`;
+    }
+
+    animateScroll();
+  }, 80);
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const textBanner2 = document.getElementById("text-banner-2");
-  if (!textBanner2) return;
+  // Delay banner2 setup slightly so i18n replacements finish first
+  setTimeout(() => {
+    const textBanner2 = document.getElementById("text-banner-2");
+    if (!textBanner2) return;
 
-  const originalHTML2 = textBanner2.innerHTML;
-  const repeatedHTML2 = originalHTML2.repeat(50);
-  textBanner2.innerHTML = repeatedHTML2;
+    const originalHTML2 = textBanner2.innerHTML;
+    const repeatedHTML2 = originalHTML2.repeat(50);
+    textBanner2.innerHTML = repeatedHTML2;
 
-  const tempDiv2 = document.createElement("div");
-  tempDiv2.style.cssText =
-    "position: absolute; visibility: hidden; white-space: nowrap;";
-  tempDiv2.className = textBanner2.className;
-  tempDiv2.innerHTML = originalHTML2;
-  document.body.appendChild(tempDiv2);
-  const singleWidth2 = tempDiv2.offsetWidth;
-  document.body.removeChild(tempDiv2);
+    const tempDiv2 = document.createElement("div");
+    tempDiv2.style.cssText =
+      "position: absolute; visibility: hidden; white-space: nowrap;";
+    tempDiv2.className = textBanner2.className;
+    tempDiv2.innerHTML = originalHTML2;
+    document.body.appendChild(tempDiv2);
+    const singleWidth2 = tempDiv2.offsetWidth;
+    document.body.removeChild(tempDiv2);
 
-  let position2 = 0;
-  const speed2 = 0.5;
+    let position2 = 0;
+    const speed2 = 0.5;
 
-  function animateScroll2() {
-    requestAnimationFrame(animateScroll2);
+    function animateScroll2() {
+      requestAnimationFrame(animateScroll2);
 
-    position2 -= speed2;
+      position2 -= speed2;
 
-    if (Math.abs(position2) >= singleWidth2) {
-      position2 = position2 % singleWidth2;
+      if (Math.abs(position2) >= singleWidth2) {
+        position2 = position2 % singleWidth2;
+      }
+
+      textBanner2.style.transform = `translateX(${position2}px)`;
     }
 
-    textBanner2.style.transform = `translateX(${position2}px)`;
-  }
-
-  animateScroll2();
+    animateScroll2();
+  }, 80);
 });

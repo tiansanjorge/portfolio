@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="../styles/animate.css" />
     <link rel="stylesheet" href="../styles/styles.css" />
     <link rel="icon" type="image/png" href="../img/favicon.png" />
-    <title>Sanjorge • Front End Developer</title>
+    <title>Sanjorge • Frontend Engineer</title>
     <style>
       /* Scroll reveal animations */
       @keyframes fadeInUp {
@@ -101,6 +101,22 @@
                 ><b>SS<span class="green">.</span></b></a
               >
             </div>
+            <div class="col-2 d-flex justify-content-end align-items-center">
+              <button
+                id="lang-en"
+                class="lang-toggle border-0 bg-transparent fs-5 me-2"
+                title="English"
+              >
+                🇬🇧
+              </button>
+              <button
+                id="lang-es"
+                class="lang-toggle border-0 bg-transparent fs-5"
+                title="Español"
+              >
+                🇪🇸
+              </button>
+            </div>
             <div class="col-2 d-flex justify-content-end pe-2">
               <button class="border-0 nav-button" onclick="dropdown()">
                 <i class="d-block fa-solid fa-bars fs-5 blue" id="bar-icon"></i>
@@ -115,28 +131,29 @@
                 <a
                   class="fs-medium text-decoration-none subrayado blue fw-600"
                   href="../index.html"
-                  >Home</a
-                >
+                  ><span data-i18n="nav.home"></span
+                ></a>
               </div>
               <div class="pe-2 my-1">
                 <a
                   class="fs-medium text-decoration-none subrayado blue fw-600"
                   href="experience.html"
-                  >Experience</a
-                >
+                  ><span data-i18n="nav.experience"></span
+                ></a>
               </div>
               <div class="pe-2 my-1">
                 <a
                   class="fs-medium text-decoration-none subrayado blue fw-600"
                   href="works.html"
-                  >Projects</a
-                >
+                  ><span data-i18n="nav.projects"></span
+                ></a>
               </div>
               <div class="pe-2 mt-1">
                 <a
                   class="fs-medium text-decoration-none green fw-600 active-link"
                   href="#"
-                  >Contact <span class="active-dot aqua">•</span></a
+                  ><span data-i18n="nav.contact"></span>
+                  <span class="active-dot aqua">•</span></a
                 >
               </div>
             </div>
@@ -149,6 +166,16 @@
               <a class="contact-logo text-decoration-none" href="../index.html"
                 ><b>SS<span class="green">.</span></b></a
               >
+            </div>
+            <div
+              class="col-2 d-flex justify-content-end align-items-center lang-wrapper"
+            >
+              <button id="lang-en" class="lang-toggle" title="English">
+                🇬🇧
+              </button>
+              <button id="lang-es" class="lang-toggle" title="Español">
+                🇪🇸
+              </button>
             </div>
             <div
               class="col-6 col-lg-5 col-xl-4 d-flex justify-content-between align-items-center"
@@ -195,20 +222,23 @@
                   class="contact-profile col-6 col-sm-4 col-lg-6 img-fluid rounded-circle mx-auto mb-2 p-3 p-xl-4"
                   alt="Sebastian Sanjorge"
                 />
-                <h1 class="heading-contact text-center py-2 m-0">
-                  Sebastián Sanjorge
-                </h1>
-                <h2 class="fs-big fw-600 text-center pt-1 m-0">
-                  <span class="green">Full Stack</span> Developer
-                </h2>
+                <h1
+                  class="heading-contact text-center py-2 m-0"
+                  data-i18n="contact.headingName"
+                ></h1>
+                <h2
+                  class="fs-big fw-600 text-center pt-1 m-0"
+                  data-i18n="contact.headingRole"
+                ></h2>
               </div>
             </div>
             <div
               class="col-12 d-flex flex-column flex-lg-row justify-content-between mt-xl-4 mt-xxl-3 scroll-reveal animate-fade-up delay-2"
             >
-              <p class="magilio-contact d-none d-lg-flex col-6 blue m-0">
-                Let’s Talk<span class="green">.</span>
-              </p>
+              <p
+                class="magilio-contact d-none d-lg-flex col-6 blue m-0"
+                data-i18n="contact.letsTalk"
+              ></p>
               <div
                 class="col-12 col-sm-10 col-md-8 col-lg-6 d-flex justify-content-around align-items-start pt-lg-3 pt-xxl-4 my-4 my-lg-0 mx-auto mx-lg-0"
               >
@@ -216,27 +246,34 @@
                   class="white contact-link rounded-circle"
                   href="https://wa.link/rehzl5"
                   target="_blank"
+                  rel="noopener noreferrer"
                   ><i class="fa-brands fa-whatsapp"></i>
                 </a>
 
                 <a
                   class="white contact-link rounded-circle"
                   href="https://www.linkedin.com/in/sebastian-sanjorge-frontend-developer"
-                  ><i class="fa-brands fa-linkedin" target="_blank"></i
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><i class="fa-brands fa-linkedin"></i
                 ></a>
 
                 <a
                   class="white contact-link rounded-circle"
                   href="https://github.com/tiansanjorge"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   ><i class="fa-brands fa-github"></i
                 ></a>
 
                 <a
                   class="white contact-link2 rounded-circle text-decoration-none fs-big fw-600"
-                  href="../pdf/Sebastian_Sanjorge_Frontend_Developer_CV.pdf"
+                  href="../pdf/Sebastian_Sanjorge_Frontend_Engineer_CV.pdf"
                   target="_blank"
+                  rel="noopener noreferrer"
                   download
-                  ><b>CV</b></a
+                  data-i18n="contact.cv"
+                ></a>
                 >
               </div>
             </div>
