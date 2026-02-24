@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Professional Portfolio • Sebastián Sanjorge Fullstack Developer"
+      content="Professional Portfolio • Sebastián Sanjorge Frontend Engineer"
     />
     <link
       rel="stylesheet"
@@ -364,25 +364,39 @@
                 ><b>SS<span class="green">.</span></b></a
               >
             </div>
-            <div
-              class="col-2 d-flex justify-content-end align-items-center lang-wrapper"
-            >
-              <button id="lang-en" class="lang-toggle" title="English">
-                🇬🇧
-              </button>
-              <button id="lang-es" class="lang-toggle" title="Español">
-                🇪🇸
-              </button>
+            <div class="col-3 d-flex justify-content-evenly align-items-center">
+              <div
+                class="d-flex justify-content-center align-items-center lang-wrapper"
+              >
+                <button id="lang-en" class="lang-toggle" title="English">
+                  <img
+                    src="../img/flags/en.jpg"
+                    alt="English"
+                    class="lang-flag"
+                  />
+                </button>
+                <button id="lang-es" class="lang-toggle" title="Español">
+                  <img
+                    src="../img/flags/es.jpg"
+                    alt="Español"
+                    class="lang-flag"
+                  />
+                </button>
+              </div>
+              <div class="pt-2">
+                <button class="border-0 nav-button" onclick="dropdown()">
+                  <i
+                    class="d-block fa-solid fa-bars fs-5 white"
+                    id="bar-icon"
+                  ></i>
+                  <i
+                    class="d-none fa-solid fa-xmark fs-5 green"
+                    id="x-icon"
+                  ></i>
+                </button>
+              </div>
             </div>
-            <div class="col-2 d-flex justify-content-end pe-2">
-              <button class="border-0 nav-button" onclick="dropdown()">
-                <i
-                  class="d-block fa-solid fa-bars fs-5 white"
-                  id="bar-icon"
-                ></i>
-                <i class="d-none fa-solid fa-xmark fs-5 green" id="x-icon"></i>
-              </button>
-            </div>
+
             <div
               class="dd-menu col-12 d-flex flex-column text-end"
               id="dropdown-menu"
@@ -433,39 +447,49 @@
                 ><b>SS<span class="green">.</span></b></a
               >
             </div>
+
             <div
-              class="col-2 d-flex justify-content-end align-items-center lang-wrapper"
-            >
-              <button id="lang-en" class="lang-toggle" title="English">
-                🇬🇧
-              </button>
-              <button id="lang-es" class="lang-toggle" title="Español">
-                🇪🇸
-              </button>
-            </div>
-            <div
-              class="col-6 col-lg-5 col-xl-4 d-flex justify-content-between align-items-center"
+              class="col-7 col-lg-6 col-xl-5 d-flex justify-content-between align-items-center"
             >
               <a
                 class="works-header-link fs-medium text-decoration-none subrayado-works white fw-600"
                 href="../index.html"
-                >Home</a
-              >
+                ><span data-i18n="nav.home"></span
+              ></a>
               <a
                 class="works-header-link fs-medium text-decoration-none subrayado-works white fw-600"
                 href="experience.html"
-                >Experience</a
-              >
+                ><span data-i18n="nav.experience"></span
+              ></a>
               <a
                 class="works-header-link active-link fs-medium text-decoration-none aqua fw-600"
                 href="#"
-                >Projects <span class="active-dot green">•</span></a
+                ><span data-i18n="nav.projects"></span>
+                <span class="active-dot green">•</span></a
               >
               <a
                 class="works-header-link fs-medium text-decoration-none subrayado-works white fw-600"
                 href="contact.html"
-                >Contact</a
-              >
+                ><span data-i18n="nav.contact"></span
+              ></a>
+            </div>
+            <div
+              class="col-2 d-flex justify-content-end align-items-center lang-wrapper"
+            >
+              <button id="lang-en" class="lang-toggle" title="English">
+                <img
+                  src="../img/flags/en.jpg"
+                  alt="English"
+                  class="lang-flag"
+                />
+              </button>
+              <button id="lang-es" class="lang-toggle" title="Español">
+                <img
+                  src="../img/flags/es.jpg"
+                  alt="Español"
+                  class="lang-flag"
+                />
+              </button>
             </div>
           </div>
         </div>
@@ -776,6 +800,7 @@
                         >
                           <h3
                             class="fs-big fw-bolder white m-0 me-3 project-title"
+                            data-i18n="project.rick.title"
                           >
                             Rick & Morty wiki
                           </h3>
@@ -790,7 +815,10 @@
                           <i class="fa-solid fa-arrow-right"></i>
                         </a>
                       </div>
-                      <p class="darker-white fs-medium mb-3">
+                      <p
+                        class="darker-white fs-medium mb-3"
+                        data-i18n="project.rick.desc"
+                      >
                         Full-featured character explorer built with React and
                         TypeScript, implementing advanced filtering, pagination,
                         and API integration patterns. Demonstrates performance
@@ -830,7 +858,11 @@
                             style="font-size: 20px"
                           ></i>
                         </a>
-                        <span class="aqua fw-bold">Technologies:</span>
+                        <span
+                          class="aqua fw-bold"
+                          data-i18n="projects.technologies"
+                          >Technologies:</span
+                        >
                       </div>
                       <div class="d-flex align-items-center">
                         <span class="tech-tag">React</span>
@@ -869,8 +901,9 @@
                         >
                           <h3
                             class="fs-big fw-bolder white m-0 me-3 project-title"
+                            data-i18n="project.jps.title"
                           >
-                            Psychologist´s Website
+                            Psychologist's Website
                           </h3>
                         </a>
                         <a
@@ -883,7 +916,10 @@
                           <i class="fa-solid fa-arrow-right"></i>
                         </a>
                       </div>
-                      <p class="darker-white fs-medium mb-3">
+                      <p
+                        class="darker-white fs-medium mb-3"
+                        data-i18n="project.jps.desc"
+                      >
                         Professional business website built for a clinical
                         psychologist, featuring responsive design, SEO
                         optimization, and accessibility best practices.
@@ -924,7 +960,11 @@
                             style="font-size: 20px"
                           ></i>
                         </a>
-                        <span class="aqua fw-bold">Technologies:</span>
+                        <span
+                          class="aqua fw-bold"
+                          data-i18n="projects.technologies"
+                          >Technologies:</span
+                        >
                       </div>
                       <div class="d-flex align-items-center">
                         <span class="tech-tag">HTML5</span>
@@ -963,6 +1003,7 @@
                         >
                           <h3
                             class="fs-big fw-bolder white m-0 me-3 project-title"
+                            data-i18n="project.liteflix.title"
                           >
                             Liteflix
                           </h3>
@@ -977,7 +1018,10 @@
                           <i class="fa-solid fa-arrow-right"></i>
                         </a>
                       </div>
-                      <p class="darker-white fs-medium mb-3">
+                      <p
+                        class="darker-white fs-medium mb-3"
+                        data-i18n="project.liteflix.desc"
+                      >
                         Streaming platform prototype showcasing real-time data
                         handling, complex state management, and Netflix-inspired
                         design patterns. Built with modern frontend architecture
@@ -1017,7 +1061,11 @@
                             style="font-size: 20px"
                           ></i>
                         </a>
-                        <span class="aqua fw-bold">Technologies:</span>
+                        <span
+                          class="aqua fw-bold"
+                          data-i18n="projects.technologies"
+                          >Technologies:</span
+                        >
                       </div>
                       <div class="d-flex align-items-center">
                         <span class="tech-tag">React</span>

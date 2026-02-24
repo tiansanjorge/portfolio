@@ -7,7 +7,7 @@
     "hero.h1": "Hello<span>I<span class=\"ms-1 ms-md-2\">’</span>m <span class=\"green s-behind\">S<span class=\"aqua s-front\">S</span></span>ebastian",
     "hero.title": "<b>Frontend Engineer</b> <span class=\"black fw-400\">building scalable, high-performance applications with React and TypeScript. Delivering quality features with focus on clean code, maintainability, and long-term product success.</span>",
     "banner.text": "CRAFTING DIGITAL MAGIC",
-    "contact.role": "<span class=\"green\">Full Stack</span> Developer",
+    "contact.role": "<span class=\"green\">Frontend</span> Engineer",
     "contact.letsTalk": "Let's Talk<span class=\"green\">.</span>",
     "contact.cv": "CV",
     "about.heading": "<b class=\"white\"><span class=\"aqua\">Scalable Solutions.</span> Product <span class=\"aqua\">Commitment.</span> Performance <span class=\"aqua\">Focus.</span></b><span class=\"mt-4\"> <b class=\"white\">4+ years of frontend development experience,</b> including work at international companies building production applications. Proficient in <b class=\"aqua\">React, Next.js, and TypeScript,</b> delivering solutions that balance <b class=\"white\">development speed with code quality, scalability, and maintainability.</b> I apply architectural principles and performance optimization while collaborating effectively across teams to build products that last.</span>",
@@ -27,14 +27,15 @@
     "project.jps.title": "Psychologist's Website",
     "project.jps.desc": "Professional business website built for a clinical psychologist, featuring responsive design, SEO optimization, and accessibility best practices. Delivered on time meeting all client requirements and brand guidelines.",
     "project.liteflix.title": "Liteflix",
+    "projects.technologies": "Technologies:",
     "project.liteflix.desc": "Streaming platform prototype showcasing real-time data handling, complex state management, and Netflix-inspired design patterns. Built with modern frontend architecture and external API integration.",
     "experience.titleShort": "Exp<span class=\"aqua\">.</span>",
     "experience.iph.title": "IPH (Spain) • Frontend Engineer",
-    "experience.iph.p1": "Contributed to a real-time underground mining platform serving international operations, developing features with React, TypeScript, and Next.js within a modular microfrontend architecture handling critical safety and operational data.",
-    "experience.iph.p2": "Key achievement: Led the complete implementation of a Role-Based Access Control (RBAC) system from scratch, collaborating with backend engineers to design the architecture and implementing it across the entire project and multiple repositories. This solution became a core security feature used throughout the platform.",
-    "experience.iph.p3": "Worked closely with cross-functional teams in an agile environment, participating in code reviews, technical discussions, and sprint planning. Applied performance optimization, scalable patterns, and clean code principles to deliver maintainable solutions that balanced quality with delivery speed.",
+    "experience.iph.p1": "Contributed to a <span class=\"white fw-bold\">real-time underground mining platform</span> serving international operations, developing features with <span class=\"aqua fw-bold\">React, TypeScript, and Next.js</span> within a modular microfrontend architecture handling critical safety and operational data.",
+    "experience.iph.p2": "<span class=\"aqua fw-bold\">Key achievement:</span> Led the complete implementation of a <span class=\"white fw-bold\">Role-Based Access Control (RBAC) system</span> from scratch, collaborating with backend engineers to design the architecture and implementing it <span class=\"aqua fw-bold\">across the entire project and multiple repositories.</span> This solution became a core security feature used throughout the platform.",
+    "experience.iph.p3": "Worked closely with cross-functional teams in an <span class=\"white fw-bold\">agile environment,</span> participating in code reviews, technical discussions, and sprint planning. Applied <span class=\"aqua fw-bold\">performance optimization, scalable patterns, and clean code principles</span> to deliver maintainable solutions that balanced quality with delivery speed.",
     "contact.headingName": "Sebastián Sanjorge",
-    "contact.headingRole": "<span class=\"green\">Full Stack</span> Developer",
+    "contact.headingRole": "<span class=\"green\">Frontend</span> Engineer",
     "contact.social.whatsapp": "WhatsApp",
     "contact.social.linkedin": "LinkedIn",
     "contact.social.github": "GitHub",
@@ -45,40 +46,66 @@
     "nav.experience": "Experiencia",
     "nav.projects": "Proyectos",
     "nav.contact": "Contacto",
+
     "hero.h1": "Hola<span> Soy <span class=\"green s-behind\">S<span class=\"aqua s-front\">S</span></span>ebastian</span>",
-    "hero.title": "<b>Ingeniero Frontend</b> <span class=\"black fw-400\">construyendo aplicaciones escalables y de alto rendimiento. Entrego funcionalidades de calidad con foco en código limpio, mantenibilidad y éxito a largo plazo del producto.</span>",
-    "banner.text": "CREANDO MAGIA DIGITAL",
-    "contact.role": "<span class=\"green\">Full Stack</span> Desarrollador",
+
+    "hero.title": "<b>Frontend Engineer</b> <span class=\"black fw-400\">desarrollando aplicaciones escalables y de alto rendimiento con React y TypeScript. Entrego funcionalidades sólidas con foco en código limpio, mantenibilidad y crecimiento sostenible del producto.</span>",
+
+    "banner.text": "TECNOLOGÍA CON CRITERIO",
+
+    "contact.role": "<span class=\"green\">Frontend</span> Engineer",
     "contact.letsTalk": "Hablemos<span class=\"green\">.</span>",
     "contact.cv": "CV",
-    "about.heading": "<b class=\"white\"><span class=\"aqua\">Soluciones escalables.</span> Compromiso de producto. <span class=\"aqua\">Enfoque en rendimiento.</span></b><span class=\"mt-4\"> <b class=\"white\">Más de 4 años de experiencia en desarrollo frontend,</b> incluyendo trabajo en empresas internacionales construyendo aplicaciones en producción. Experto en <b class=\"aqua\">React, Next.js y TypeScript,</b> entregando soluciones que equilibran velocidad de desarrollo con calidad de código, escalabilidad y mantenibilidad. Aplico principios arquitectónicos y optimización de rendimiento colaborando eficazmente con equipos para construir productos duraderos.</span>",
-    "about.paragraph": "Más de 4 años de experiencia en desarrollo frontend, incluyendo trabajo en empresas internacionales construyendo aplicaciones en producción. Experto en React, Next.js y TypeScript, entregando soluciones que equilibran velocidad de desarrollo con calidad de código, escalabilidad y mantenibilidad. Aplico principios arquitectónicos y optimización de rendimiento colaborando eficazmente con equipos para construir productos duraderos.",
-    "iph.paragraph": "Trabajé en <span class=\"white fw-bold\">IPH (España)</span> como parte de un equipo de <span class=\"aqua fw-bold\">15 desarrolladores</span> construyendo una plataforma en tiempo real para operaciones mineras subterráneas. <span class=\"white fw-bold\">Desarrollé soluciones frontend escalables</span> aplicando patrones arquitectónicos para fiabilidad y rendimiento en operaciones internacionales de alto riesgo.",
+
+    "about.heading": "<b class=\"white\"><span class=\"aqua\">Soluciones escalables.</span> Compromiso con el producto. <span class=\"aqua\">Enfoque en performance.</span></b><span class=\"mt-4\"> <b class=\"white\">Más de 4 años desarrollando frontend,</b> incluyendo experiencia en empresas internacionales trabajando sobre aplicaciones en producción. Especializado en <b class=\"aqua\">React, Next.js y TypeScript,</b> construyendo soluciones que equilibran velocidad de desarrollo con <b class=\"white\">calidad de código, escalabilidad y mantenibilidad.</b> Aplico principios arquitectónicos y optimización de rendimiento mientras colaboro activamente con equipos para construir productos robustos y duraderos.</span>",
+
+    "about.paragraph": "Más de 4 años desarrollando frontend, incluyendo experiencia en empresas internacionales trabajando sobre aplicaciones en producción. Especializado en React, Next.js y TypeScript, construyendo soluciones que equilibran velocidad de desarrollo con calidad de código, escalabilidad y mantenibilidad. Aplico principios arquitectónicos y optimización de rendimiento colaborando activamente con equipos para crear productos sólidos y sostenibles.",
+
+    "iph.paragraph": "Trabajé en <span class=\"white fw-bold\">IPH (España)</span> dentro de un <span class=\"aqua fw-bold\">equipo de 15 desarrolladores</span> construyendo una plataforma en tiempo real para operaciones mineras subterráneas. <span class=\"white fw-bold\">Desarrollé soluciones frontend escalables</span> aplicando patrones arquitectónicos orientados a fiabilidad, rendimiento y seguridad en un entorno internacional de alta criticidad.",
+
     "iph.learnMore": "Leer más",
+
     "projects.featured": "<b> Proyectos <span class=\"aqua\">Destacados</span></b>",
-    "banner2.text": "CREANDO MAGIA DIGITAL",
+    "banner2.text": "TECNOLOGÍA CON CRITERIO",
+
     "skills.title": "<span class=\"fw-600\"><span class=\"green\">Habilidades </span>Técnicas</span>",
+
     "footer.letsTalk": "Hablemos",
+
     "projects.counter.01": "01/03",
     "projects.counter.02": "02/03",
     "projects.counter.03": "03/03",
+
     "works.title": "Proyectos<span class=\"aqua\">.</span>",
-    "project.rick.title": "Rick & Morty wiki",
-    "project.rick.desc": "Explorador de personajes completo construido con React y TypeScript, implementando filtrado avanzado, paginación e integración con APIs. Demuestra optimización de rendimiento y principios modernos de UI/UX.",
-    "project.jps.title": "Sitio web profesional",
-    "project.jps.desc": "Sitio web profesional creado para un psicólogo clínico, con diseño responsivo, optimización SEO y mejores prácticas de accesibilidad. Entregado a tiempo cumpliendo requisitos y lineamientos de marca.",
+
+    "project.rick.title": "Rick & Morty Wiki",
+    "project.rick.desc": "Explorador de personajes desarrollado con React y TypeScript, que incluye filtrado avanzado, paginación e integración con APIs externas. Demuestra buenas prácticas de arquitectura frontend, optimización de rendimiento y criterios modernos de UI/UX.",
+
+    "project.jps.title": "Sitio Web Profesional",
+    "project.jps.desc": "Sitio institucional desarrollado para un psicólogo clínico, con diseño responsivo, optimización SEO y buenas prácticas de accesibilidad. Entregado en tiempo y forma cumpliendo los requisitos funcionales y lineamientos de marca.",
+
     "project.liteflix.title": "Liteflix",
-    "project.liteflix.desc": "Prototipo de plataforma de streaming que muestra manejo de datos en tiempo real, gestión compleja de estado y patrones inspirados en Netflix. Construido con arquitectura frontend moderna e integración con APIs externas.",
+    "projects.technologies": "Tecnologías:",
+
+    "project.liteflix.desc": "Prototipo de plataforma de streaming que demuestra manejo de datos dinámicos, gestión compleja de estado y patrones de diseño inspirados en plataformas de consumo masivo. Construido con arquitectura frontend moderna e integración con APIs externas.",
+
     "experience.titleShort": "Exp<span class=\"aqua\">.</span>",
+
     "experience.iph.title": "IPH (España) • Frontend Engineer",
-    "experience.iph.p1": "Contribuí en una plataforma minera subterránea en tiempo real para operaciones internacionales, desarrollando funcionalidades con React, TypeScript y Next.js dentro de una arquitectura modular de microfrontends que maneja datos críticos de seguridad y operación.",
-    "experience.iph.p2": "Logro clave: Lideré la implementación completa de un sistema de Control de Acceso Basado en Roles (RBAC) desde cero, colaborando con backend para diseñar la arquitectura y aplicándolo en múltiples repositorios. Esta solución se convirtió en una funcionalidad de seguridad central utilizada en toda la plataforma.",
-    "experience.iph.p3": "Trabajé estrechamente con equipos multifuncionales en un entorno ágil, participando en revisiones de código, discusiones técnicas y planificación de sprints. Apliqué optimización de rendimiento, patrones escalables y principios de código limpio para entregar soluciones mantenibles.",
+
+    "experience.iph.p1": "Participé en el desarrollo de una <span class=\"white fw-bold\">plataforma minera subterránea en tiempo real</span> utilizada en operaciones internacionales, implementando funcionalidades con <span class=\"aqua fw-bold\">React, TypeScript y Next.js</span> dentro de una arquitectura modular basada en microfrontends que gestiona datos críticos de seguridad y operación.",
+
+    "experience.iph.p2": "<span class=\"aqua fw-bold\">Logro clave:</span> Lideré la implementación completa de un <span class=\"white fw-bold\">sistema de Control de Acceso Basado en Roles (RBAC)</span> desde cero, trabajando junto al equipo backend en el diseño de la arquitectura e integrándolo <span class=\"aqua fw-bold\">de forma transversal en múltiples repositorios.</span> La solución se convirtió en un componente central del esquema de seguridad de la plataforma.",
+
+    "experience.iph.p3": "Trabajé en colaboración con equipos multifuncionales dentro de un <span class=\"white fw-bold\">entorno ágil,</span> participando en revisiones de código, discusiones técnicas y planificación de sprints. Apliqué <span class=\"aqua fw-bold\">patrones escalables, optimización de rendimiento y principios de código limpio</span> para entregar soluciones mantenibles sin comprometer tiempos de entrega.",
+
     "contact.headingName": "Sebastián Sanjorge",
-    "contact.headingRole": "<span class=\"green\">Full Stack</span> Desarrollador",
+    "contact.headingRole": "<span class=\"green\">Frontend</span> Engineer",
+
     "contact.social.whatsapp": "WhatsApp",
     "contact.social.linkedin": "LinkedIn",
     "contact.social.github": "GitHub",
+
     "footer.copy": "© 2026 Sebastián Sanjorge"
   }
 }

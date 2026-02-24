@@ -1,3 +1,9 @@
+@media screen and (max-width: 767px) {
+  .lang-flag {
+    height: 20px !important;
+    width: 20px !important;
+  }
+}
 /* ------ Importing fonts ----- */
 @font-face {
   font-family: "Satoshi-Variable";
@@ -406,7 +412,8 @@ a.logo:hover {
   background: transparent;
   border: none;
   color: inherit;
-  padding: 4px 6px;
+  padding: 0;
+  border-radius: 0;
 }
 
 .lang-toggle:focus {
@@ -415,11 +422,25 @@ a.logo:hover {
 
 .active-lang {
   background: rgba(155, 193, 188, 0.12);
-  border-radius: 6px;
-  box-shadow: 0 0 0 2px rgba(155, 193, 188, 0.08) inset;
+  border-radius: 50%;
+  box-shadow: none;
 }
 
 .lang-wrapper {
+  /* Banderas de idioma en header desktop */
+  .lang-flag {
+    height: 32px;
+    width: 32px;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 50%;
+    object-fit: cover;
+    border: none;
+    box-shadow: none;
+  }
+  .lang-flag:hover {
+    border: none;
+  }
   display: flex;
   gap: 6px;
   align-items: center;

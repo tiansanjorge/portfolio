@@ -130,14 +130,53 @@ document.addEventListener("DOMContentLoaded", function () {
       ];
 
       navMap.forEach((m) => {
-        const el = document.querySelector(m.sel);
-        if (el && !el.hasAttribute("data-i18n") && t[m.key]) {
-          el.innerHTML =
-            t[m.key] +
-            (m.key === "nav.home" && el.querySelector(".active-dot")
-              ? ' <span class="active-dot aqua">•</span>'
-              : "");
-        }
+        const els = document.querySelectorAll(m.sel);
+        els.forEach((el) => {
+          // Evitar reemplazar el contenido del logo SS
+          if (
+            el &&
+            !el.hasAttribute("data-i18n") &&
+            t[m.key] &&
+            !(
+              el.classList.contains("logo") ||
+              el.classList.contains("contact-logo")
+            ) &&
+            // Evitar sobrescribir el botón flecha del footer
+            !(
+              el.classList.contains("contact-button") ||
+              el.querySelector(".fa-arrow-right")
+            )
+          ) {
+            // Detectar si es la opción activa
+            if (el.classList.contains("active-link")) {
+              // Determinar la clave correcta según la página
+              let correctKey = m.key;
+              if (location.pathname.includes("works"))
+                correctKey = "nav.projects";
+              else if (location.pathname.includes("experience"))
+                correctKey = "nav.experience";
+              else if (location.pathname.includes("contact"))
+                correctKey = "nav.contact";
+              else if (
+                location.pathname.endsWith("index.html") ||
+                location.pathname === "/" ||
+                location.pathname.endsWith("/")
+              )
+                correctKey = "nav.home";
+              el.innerHTML =
+                t[correctKey] +
+                (el.querySelector(".active-dot")
+                  ? ' <span class="active-dot aqua">•</span>'
+                  : "");
+            } else {
+              el.innerHTML =
+                t[m.key] +
+                (m.key === "nav.home" && el.querySelector(".active-dot")
+                  ? ' <span class="active-dot aqua">•</span>'
+                  : "");
+            }
+          }
+        });
       });
 
       // Hero and presentation
@@ -204,14 +243,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Hook UI buttons (attach to all .lang-toggle elements)
     const langButtons = document.querySelectorAll(".lang-toggle");
+    let currentLang = localStorage.getItem(STORAGE_KEY) || "en";
+    function updateFlags() {
+      langButtons.forEach((btn) => {
+        const btnLang =
+          btn.getAttribute("data-lang") ||
+          (btn.id === "lang-en" ? "en" : btn.id === "lang-es" ? "es" : null);
+        if (!btnLang) return;
+        btn.style.display = btnLang === currentLang ? "none" : "inline-block";
+      });
+    }
+    updateFlags();
     langButtons.forEach((btn) => {
-      const lang =
-        btn.getAttribute("data-lang") ||
-        (btn.id === "lang-en" ? "en" : btn.id === "lang-es" ? "es" : null);
-      if (!lang) return;
-      btn.addEventListener("click", () => {
-        changeLanguage(translations, lang);
+      btn.addEventListener("click", (e) => {
+        const lang = btn.id.split("-")[1];
+        localStorage.setItem(STORAGE_KEY, lang);
+        applyTranslations(translations, lang);
         applySelectorTranslations(lang);
+        currentLang = lang;
+        updateFlags();
       });
     });
   });

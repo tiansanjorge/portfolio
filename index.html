@@ -201,24 +201,37 @@
                 ><b>SS<span class="green">.</span></b></a
               >
             </div>
-            <div
-              class="col-2 d-flex justify-content-end align-items-center lang-wrapper"
-            >
-              <button id="lang-en" class="lang-toggle" title="English">
-                🇬🇧
-              </button>
-              <button id="lang-es" class="lang-toggle" title="Español">
-                🇪🇸
-              </button>
-            </div>
-            <div class="col-2 d-flex justify-content-end pe-2">
-              <button class="border-0 nav-button" onclick="dropdown()">
-                <i
-                  class="d-block fa-solid fa-bars fs-5 black"
-                  id="bar-icon"
-                ></i>
-                <i class="d-none fa-solid fa-xmark fs-5 green" id="x-icon"></i>
-              </button>
+            <div class="col-3 d-flex justify-content-evenly align-items-center">
+              <div
+                class="d-flex justify-content-center align-items-center lang-wrapper"
+              >
+                <button id="lang-en" class="lang-toggle" title="English">
+                  <img
+                    src="../img/flags/en.jpg"
+                    alt="English"
+                    class="lang-flag"
+                  />
+                </button>
+                <button id="lang-es" class="lang-toggle" title="Español">
+                  <img
+                    src="../img/flags/es.jpg"
+                    alt="Español"
+                    class="lang-flag"
+                  />
+                </button>
+              </div>
+              <div class="pt-2">
+                <button class="border-0 nav-button" onclick="dropdown()">
+                  <i
+                    class="d-block fa-solid fa-bars fs-5 blue"
+                    id="bar-icon"
+                  ></i>
+                  <i
+                    class="d-none fa-solid fa-xmark fs-5 green"
+                    id="x-icon"
+                  ></i>
+                </button>
+              </div>
             </div>
             <div
               class="dd-menu col-12 d-flex flex-column text-end"
@@ -264,39 +277,41 @@
                 ><b>SS<span class="green">.</span></b></a
               >
             </div>
+
             <div
-              class="col-2 d-none d-lg-flex justify-content-end align-items-center lang-wrapper"
-            >
-              <button id="lang-en" class="lang-toggle" title="English">
-                🇬🇧
-              </button>
-              <button id="lang-es" class="lang-toggle" title="Español">
-                🇪🇸
-              </button>
-            </div>
-            <div
-              class="col-6 col-lg-5 col-xl-4 d-flex justify-content-between align-items-center"
+              class="col-7 col-lg-6 col-xl-5 d-flex justify-content-between align-items-center"
             >
               <a
                 class="fs-medium text-decoration-none green fw-600 active-link"
                 href="#"
-                >Home <span class="active-dot aqua">•</span></a
+                ><span data-i18n="nav.home"></span>
+                <span class="active-dot aqua">•</span></a
               >
               <a
                 class="fs-medium text-decoration-none subrayado black fw-600"
                 href="pages/experience.html"
-                >Experience</a
-              >
+                ><span data-i18n="nav.experience"></span
+              ></a>
               <a
                 class="fs-medium text-decoration-none subrayado black fw-600"
                 href="pages/works.html"
-                >Projects</a
-              >
+                ><span data-i18n="nav.projects"></span
+              ></a>
               <a
                 class="fs-medium text-decoration-none subrayado black fw-600"
                 href="pages/contact.html"
-                >Contact</a
-              >
+                ><span data-i18n="nav.contact"></span
+              ></a>
+            </div>
+            <div
+              class="col-2 d-none d-lg-flex justify-content-end align-items-center lang-wrapper"
+            >
+              <button id="lang-en" class="lang-toggle" title="English">
+                <img src="img/flags/en.jpg" alt="English" class="lang-flag" />
+              </button>
+              <button id="lang-es" class="lang-toggle" title="Español">
+                <img src="img/flags/es.jpg" alt="Español" class="lang-flag" />
+              </button>
             </div>
           </div>
         </div>
