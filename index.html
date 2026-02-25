@@ -8,6 +8,25 @@
       name="description"
       content="Professional Portfolio • Sebastián Sanjorge Full stack Developer"
     />
+
+    <script>
+      (function () {
+        try {
+          var lang = localStorage.getItem("site_lang") || "en";
+          document.documentElement.setAttribute("data-lang", lang);
+        } catch (e) {
+          document.documentElement.setAttribute("data-lang", "en");
+        }
+      })();
+    </script>
+
+    <style>
+      html[data-lang="en"] #lang-en,
+      html[data-lang="es"] #lang-es {
+        display: none !important;
+      }
+    </style>
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -25,6 +44,7 @@
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="icon" type="image/png" href="img/favicon.png" />
     <title>Sanjorge • Frontend Engineer</title>
+
     <style>
       /* Content animations */
       @keyframes fadeInUp {
@@ -437,6 +457,7 @@
     </div>
 
     <!-- Text Banner 2 -->
+    <section class="divider-banner"></section>
 
     <!-- Projects -->
 

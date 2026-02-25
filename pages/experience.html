@@ -8,6 +8,23 @@
       name="description"
       content="Professional Portfolio • Sebastián Sanjorge Fullstack Developer"
     />
+    <script>
+      (function () {
+        try {
+          var lang = localStorage.getItem("site_lang") || "en";
+          document.documentElement.setAttribute("data-lang", lang);
+        } catch (e) {
+          document.documentElement.setAttribute("data-lang", "en");
+        }
+      })();
+    </script>
+
+    <style>
+      html[data-lang="en"] #lang-en,
+      html[data-lang="es"] #lang-es {
+        display: none !important;
+      }
+    </style>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"

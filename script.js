@@ -204,9 +204,19 @@ document.addEventListener("DOMContentLoaded", function () {
       const letsTalk = document.querySelectorAll(".magilio-contact");
       if (letsTalk && t["contact.letsTalk"])
         letsTalk.forEach((e) => (e.innerHTML = t["contact.letsTalk"]));
-      const cv = document.querySelector("a[download]");
+      const cv = document.getElementById("cv-download-link");
       if (cv && t["contact.cv"])
         cv.innerHTML = "<b>" + t["contact.cv"] + "</b>";
+      // Cambiar href del CV según idioma
+      if (cv) {
+        if (lang === "es") {
+          cv.href =
+            basePrefix() + "pdf/Sebastian_Sanjorge_Frontend_Engineer_CV_ES.pdf";
+        } else {
+          cv.href =
+            basePrefix() + "pdf/Sebastian_Sanjorge_Frontend_Engineer_CV_EN.pdf";
+        }
+      }
     }
 
     // inject simple language toggle into header if not present
@@ -258,6 +268,10 @@ document.addEventListener("DOMContentLoaded", function () {
       btn.addEventListener("click", (e) => {
         const lang = btn.id.split("-")[1];
         localStorage.setItem(STORAGE_KEY, lang);
+
+        // FIX: sincroniza CSS inmediato
+        document.documentElement.setAttribute("data-lang", lang);
+
         applyTranslations(translations, lang);
         applySelectorTranslations(lang);
         currentLang = lang;

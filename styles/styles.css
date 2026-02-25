@@ -1,3 +1,16 @@
+/* Efecto de escala en hover para los botones de banderas de idioma */
+.lang-toggle .lang-flag {
+  transition:
+    transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lang-toggle:hover .lang-flag {
+  transform: scale(1.18);
+  box-shadow:
+    0 4px 18px 0 rgba(30, 60, 90, 0.18),
+    0 1.5px 6px 0 rgba(30, 60, 90, 0.12);
+}
 @media screen and (max-width: 767px) {
   .lang-flag {
     height: 20px !important;
@@ -842,4 +855,11 @@ a.logo:hover {
   .projects-title {
     font-size: 75px !important;
   }
+}
+
+/* Divider Banner: igual fondo que text-banner, altura 15px */
+.divider-banner {
+  background-color: #04160f;
+  height: 2px;
+  width: 100%;
 }
