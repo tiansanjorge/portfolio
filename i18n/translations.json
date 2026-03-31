@@ -26,9 +26,9 @@
     "project.rick.desc": "Full-featured character explorer built with React and TypeScript, implementing advanced filtering, pagination, and API integration patterns. Demonstrates performance optimization and modern UI/UX principles.",
     "project.jps.title": "Psychologist's Website",
     "project.jps.desc": "Professional business website built for a clinical psychologist, featuring responsive design, SEO optimization, and accessibility best practices. Delivered on time meeting all client requirements and brand guidelines.",
-    "project.liteflix.title": "Liteflix",
+    "project.microfrontend.title": "Microfrontend Architecture",
     "projects.technologies": "Technologies:",
-    "project.liteflix.desc": "Streaming platform prototype showcasing real-time data handling, complex state management, and Netflix-inspired design patterns. Built with modern frontend architecture and external API integration.",
+    "project.microfrontend.desc": "Microfrontend architecture built with React and Webpack Module Federation, featuring independently deployable modules and a custom shared UI library. Focused on scalability, separation of concerns, and frontend system design rather than visual polish.",
     "experience.titleShort": "Exp<span class=\"aqua\">.</span>",
     "experience.iph.title": "IPH (Spain) • Frontend Engineer",
     "experience.iph.p1": "Contributed to a <span class=\"white fw-bold\">real-time underground mining platform</span> serving international operations, developing features with <span class=\"aqua fw-bold\">React, TypeScript, and Next.js</span> within a modular microfrontend architecture handling critical safety and operational data.",
@@ -84,10 +84,10 @@
     "project.jps.title": "Sitio Web Profesional",
     "project.jps.desc": "Sitio institucional desarrollado para un psicólogo clínico, con diseño responsivo, optimización SEO y buenas prácticas de accesibilidad. Entregado en tiempo y forma cumpliendo los requisitos funcionales y lineamientos de marca.",
 
-    "project.liteflix.title": "Liteflix",
+    "project.microfrontend.title": "Microfrontend Architecture",
     "projects.technologies": "Tecnologías:",
 
-    "project.liteflix.desc": "Prototipo de plataforma de streaming que demuestra manejo de datos dinámicos, gestión compleja de estado y patrones de diseño inspirados en plataformas de consumo masivo. Construido con arquitectura frontend moderna e integración con APIs externas.",
+    "project.microfrontend.desc": "Arquitectura de microfrontends construida con React y Webpack Module Federation, con módulos desplegables de forma independiente y una librería de UI compartida. Enfocada en escalabilidad, separación de responsabilidades y diseño de sistemas frontend, más que en el acabado visual.",
 
     "experience.titleShort": "Exp<span class=\"aqua\">.</span>",
 

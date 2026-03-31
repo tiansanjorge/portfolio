@@ -9,23 +9,22 @@
       content="Professional Portfolio • Sebastián Sanjorge Frontend Engineer"
     />
     <script>
-  (function () {
-    try {
-      var lang = localStorage.getItem("site_lang") || "en";
-      document.documentElement.setAttribute("data-lang", lang);
-    } catch (e) {
-      document.documentElement.setAttribute("data-lang", "en");
-    }
-  })();
-</script>
+      (function () {
+        try {
+          var lang = localStorage.getItem("site_lang") || "en";
+          document.documentElement.setAttribute("data-lang", lang);
+        } catch (e) {
+          document.documentElement.setAttribute("data-lang", "en");
+        }
+      })();
+    </script>
 
-
-<style>
-  html[data-lang="en"] #lang-en,
-  html[data-lang="es"] #lang-es {
-    display: none !important;
-  }
-</style>
+    <style>
+      html[data-lang="en"] #lang-en,
+      html[data-lang="es"] #lang-es {
+        display: none !important;
+      }
+    </style>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -541,6 +540,87 @@
               >
                 <div class="col-10 col-sm-8 project-image-container">
                   <a
+                    href="https://github.com/tiansanjorge/microfrontends-architecture"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-image-wrapper"
+                  >
+                    <img
+                      class="img-fluid rounded-3"
+                      src="../img/rickymorty.jpg"
+                      alt="Microfrontend Architecture"
+                    />
+                  </a>
+                </div>
+                <div class="col-12 text-center mt-3">
+                  <div
+                    class="d-flex justify-content-center align-items-center mb-2"
+                  >
+                    <a
+                      href="https://github.com/tiansanjorge/microfrontends-architecture"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-decoration-none"
+                    >
+                      <h3
+                        class="fs-medium fw-bolder white m-0 me-3 project-title"
+                        data-i18n="project.microfrontend.title"
+                      ></h3>
+                    </a>
+                    <a
+                      href="https://github.com/tiansanjorge/microfrontends-architecture"
+                      class="rounded-circle border-0 text-decoration-none"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="View on GitHub"
+                      style="
+                        width: 40px;
+                        height: 40px;
+                        min-width: 40px;
+                        min-height: 40px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background: #17784f;
+                        color: #e7e7e7;
+                        box-shadow: 3px 4px 12px 2px rgba(51, 51, 51, 0.25);
+                        transition: 0.2s;
+                      "
+                      onmouseover="
+                        this.style.background = '#9bc1bc';
+                        this.style.color = '#333333';
+                      "
+                      onmouseout="
+                        this.style.background = '#17784f';
+                        this.style.color = '#e7e7e7';
+                      "
+                    >
+                      <i
+                        class="fa-brands fa-github"
+                        style="font-size: 20px"
+                      ></i>
+                    </a>
+                  </div>
+                  <p
+                    class="col-10 mx-auto darker-white fs-small mb-2"
+                    data-i18n="project.microfrontend.desc"
+                  ></p>
+                  <div class="d-flex justify-content-center flex-wrap mt-1">
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">Module Federation</span>
+                    <span class="tech-tag">Webpack 5</span>
+                    <span class="tech-tag">Monorepo</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 2 -->
+              <div
+                class="col-12 d-flex flex-column align-items-center mb-5 mobile-project-card scroll-reveal animate-fade-up delay-3"
+              >
+                <div class="col-10 col-sm-8 project-image-container">
+                  <a
                     href="https://rickandmortyexp.netlify.app/"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -612,13 +692,19 @@
                     </a>
                   </div>
                   <p
-                    class="col-10 mx-auto darker-white fs-small mb-0"
+                    class="col-10 mx-auto darker-white fs-small mb-2"
                     data-i18n="project.rick.desc"
                   ></p>
+                  <div class="d-flex justify-content-center flex-wrap mt-1">
+                    <span class="tech-tag">Next.js</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">REST API</span>
+                    <span class="tech-tag">Vite</span>
+                  </div>
                 </div>
               </div>
 
-              <!-- Project 2 -->
+              <!-- Project 3 -->
               <div
                 class="col-12 d-flex flex-column align-items-center mb-5 mobile-project-card scroll-reveal animate-fade-up delay-3"
               >
@@ -695,92 +781,15 @@
                     </a>
                   </div>
                   <p
-                    class="col-10 mx-auto darker-white fs-small mb-0"
+                    class="col-10 mx-auto darker-white fs-small mb-2"
                     data-i18n="project.jps.desc"
                   ></p>
-                </div>
-              </div>
-
-              <!-- Project 3 -->
-              <div
-                class="col-12 d-flex flex-column align-items-center mb-5 mobile-project-card scroll-reveal animate-fade-up delay-3"
-              >
-                <div class="col-10 col-sm-8 project-image-container">
-                  <a
-                    href="https://liteflixmovies.netlify.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="project-image-wrapper"
-                  >
-                    <img
-                      class="img-fluid rounded-3"
-                      src="../img/liteflix.jpg"
-                      alt="Liteflix"
-                    />
-                  </a>
-                </div>
-                <div class="col-12 text-center mt-3">
-                  <div
-                    class="d-flex justify-content-center align-items-center mb-2"
-                  >
-                    <a
-                      href="https://liteflixmovies.netlify.app/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="text-decoration-none"
-                    >
-                      <h3
-                        class="fs-medium fw-bolder white m-0 me-3 project-title"
-                        data-i18n="project.liteflix.title"
-                      ></h3>
-                    </a>
-                    <a
-                      href="https://liteflixmovies.netlify.app/"
-                      class="works-button rounded-circle border-0 text-decoration-none me-3"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      title="View Live Project"
-                    >
-                      <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                    <a
-                      href="https://github.com/tiansanjorge/liteflix-challenge"
-                      class="rounded-circle border-0 text-decoration-none"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      title="View on GitHub"
-                      style="
-                        width: 40px;
-                        height: 40px;
-                        min-width: 40px;
-                        min-height: 40px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        background: #17784f;
-                        color: #e7e7e7;
-                        box-shadow: 3px 4px 12px 2px rgba(51, 51, 51, 0.25);
-                        transition: 0.2s;
-                      "
-                      onmouseover="
-                        this.style.background = '#9bc1bc';
-                        this.style.color = '#333333';
-                      "
-                      onmouseout="
-                        this.style.background = '#17784f';
-                        this.style.color = '#e7e7e7';
-                      "
-                    >
-                      <i
-                        class="fa-brands fa-github"
-                        style="font-size: 20px"
-                      ></i>
-                    </a>
+                  <div class="d-flex justify-content-center flex-wrap mt-1">
+                    <span class="tech-tag">HTML5</span>
+                    <span class="tech-tag">CSS3</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">SEO</span>
                   </div>
-                  <p
-                    class="col-10 mx-auto darker-white fs-small mb-0"
-                    data-i18n="project.liteflix.desc"
-                  ></p>
                 </div>
               </div>
             </div>
@@ -793,6 +802,101 @@
               <div class="carousel-inner">
                 <!-- Project 1 -->
                 <div class="carousel-item active">
+                  <div class="row align-items-center">
+                    <div class="col-lg-6 project-image-container">
+                      <a
+                        href="https://github.com/tiansanjorge/microfrontends-architecture"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-image-wrapper"
+                      >
+                        <img
+                          class="img-fluid rounded-3"
+                          src="../img/rickymorty.jpg"
+                          alt="Microfrontend Architecture"
+                        />
+                      </a>
+                    </div>
+                    <div class="col-lg-6 ps-lg-5 project-content">
+                      <div class="d-flex align-items-center mb-3">
+                        <a
+                          href="https://github.com/tiansanjorge/microfrontends-architecture"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="text-decoration-none"
+                        >
+                          <h3
+                            class="fs-big fw-bolder white m-0 me-3 project-title"
+                            data-i18n="project.microfrontend.title"
+                          >
+                            Microfrontend Architecture
+                          </h3>
+                          <a
+                            href="https://github.com/tiansanjorge/microfrontends-architecture"
+                            class="rounded-circle border-0 text-decoration-none me-3"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            title="View on GitHub"
+                            style="
+                              width: 40px;
+                              height: 40px;
+                              min-width: 40px;
+                              min-height: 40px;
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                              background: #17784f;
+                              color: #e7e7e7;
+                              box-shadow: 3px 4px 12px 2px
+                                rgba(51, 51, 51, 0.25);
+                              transition: 0.2s;
+                            "
+                            onmouseover="
+                              this.style.background = '#9bc1bc';
+                              this.style.color = '#333333';
+                            "
+                            onmouseout="
+                              this.style.background = '#17784f';
+                              this.style.color = '#e7e7e7';
+                            "
+                          >
+                            <i
+                              class="fa-brands fa-github"
+                              style="font-size: 20px"
+                            ></i>
+                          </a>
+                        </a>
+                      </div>
+                      <p
+                        class="darker-white fs-medium mb-3"
+                        data-i18n="project.microfrontend.desc"
+                      >
+                        Microfrontend architecture built with React and Webpack
+                        Module Federation, featuring independently deployable
+                        modules and a custom shared UI library. Focused on
+                        scalability, separation of concerns, and frontend system
+                        design rather than visual polish.
+                      </p>
+                      <div class="fs-medium mb-2 d-flex align-items-center">
+                        <span
+                          class="aqua fw-bold"
+                          data-i18n="projects.technologies"
+                          >Technologies:</span
+                        >
+                      </div>
+                      <div class="d-flex align-items-center flex-wrap">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Module Federation</span>
+                        <span class="tech-tag">Webpack 5</span>
+                        <span class="tech-tag">Monorepo</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="carousel-item">
                   <div class="row align-items-center">
                     <div class="col-lg-6 project-image-container">
                       <a
@@ -883,7 +987,7 @@
                         >
                       </div>
                       <div class="d-flex align-items-center">
-                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Next.js</span>
                         <span class="tech-tag">TypeScript</span>
                         <span class="tech-tag">REST API</span>
                         <span class="tech-tag">Vite</span>
@@ -892,7 +996,7 @@
                   </div>
                 </div>
 
-                <!-- Project 2 -->
+                <!-- Project 3 -->
                 <div class="carousel-item">
                   <div class="row align-items-center">
                     <div class="col-lg-6 project-image-container">
@@ -989,107 +1093,6 @@
                         <span class="tech-tag">CSS3</span>
                         <span class="tech-tag">JavaScript</span>
                         <span class="tech-tag">SEO</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="carousel-item">
-                  <div class="row align-items-center">
-                    <div class="col-lg-6 project-image-container">
-                      <a
-                        href="https://liteflixmovies.netlify.app/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="project-image-wrapper"
-                      >
-                        <img
-                          class="img-fluid rounded-3"
-                          src="../img/liteflix.jpg"
-                          alt="Liteflix"
-                        />
-                      </a>
-                    </div>
-                    <div class="col-lg-6 ps-lg-5 project-content">
-                      <div class="d-flex align-items-center mb-3">
-                        <a
-                          href="https://liteflixmovies.netlify.app/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          class="text-decoration-none"
-                        >
-                          <h3
-                            class="fs-big fw-bolder white m-0 me-3 project-title"
-                            data-i18n="project.liteflix.title"
-                          >
-                            Liteflix
-                          </h3>
-                        </a>
-                        <a
-                          href="https://liteflixmovies.netlify.app/"
-                          class="works-button rounded-circle border-0 text-decoration-none"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          title="View Live Project"
-                        >
-                          <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                      </div>
-                      <p
-                        class="darker-white fs-medium mb-3"
-                        data-i18n="project.liteflix.desc"
-                      >
-                        Streaming platform prototype showcasing real-time data
-                        handling, complex state management, and Netflix-inspired
-                        design patterns. Built with modern frontend architecture
-                        and external API integration.
-                      </p>
-                      <div class="fs-medium mb-2 d-flex align-items-center">
-                        <a
-                          href="https://github.com/tiansanjorge/liteflix-challenge"
-                          class="rounded-circle border-0 text-decoration-none me-3"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          title="View on GitHub"
-                          style="
-                            width: 40px;
-                            height: 40px;
-                            min-width: 40px;
-                            min-height: 40px;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            background: #17784f;
-                            color: #e7e7e7;
-                            box-shadow: 3px 4px 12px 2px rgba(51, 51, 51, 0.25);
-                            transition: 0.2s;
-                          "
-                          onmouseover="
-                            this.style.background = '#9bc1bc';
-                            this.style.color = '#333333';
-                          "
-                          onmouseout="
-                            this.style.background = '#17784f';
-                            this.style.color = '#e7e7e7';
-                          "
-                        >
-                          <i
-                            class="fa-brands fa-github"
-                            style="font-size: 20px"
-                          ></i>
-                        </a>
-                        <span
-                          class="aqua fw-bold"
-                          data-i18n="projects.technologies"
-                          >Technologies:</span
-                        >
-                      </div>
-                      <div class="d-flex align-items-center">
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">Redux</span>
-                        <span class="tech-tag">API Integration</span>
-                        <span class="tech-tag">Styled Components</span>
                       </div>
                     </div>
                   </div>
