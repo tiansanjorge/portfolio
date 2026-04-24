@@ -263,72 +263,159 @@
             class="col-10 col-xxl-9 d-flex flex-column flex-lg-row px-0 gap-3 gap-lg-0"
           >
             <div
-              class="experience-overflow col-12 col-lg-7 col-xl-8 d-flex flex-column rounded-4 py-4 py-md-5 px-4 px-md-5 scroll-reveal animate-fade-left delay-1"
+              class="experience-overflow col-12 col-lg-7 col-xl-8 d-flex flex-column rounded-4 py-3 py-md-4 px-4 px-md-5 scroll-reveal animate-fade-left delay-1"
             >
               <div class="col-12 d-flex flex-column">
-                <div class="col-12 d-flex flex-column mt-2 mb-3">
-                  <div class="experience-item mb-4">
-                    <div class="d-flex justify-content-center mb-3">
-                      <img
-                        src="../img/iph.jpg"
-                        alt="IPH"
-                        style="max-width: 120px; border-radius: 8px"
-                      />
+                <!-- Tab switcher -->
+                <div class="exp-tabs d-flex mt-1 mb-4">
+                  <button class="exp-tab-btn active" data-target="iph">
+                    IPH
+                  </button>
+                  <button class="exp-tab-btn" data-target="freelance">
+                    Freelance
+                  </button>
+                </div>
+
+                <!-- IPH Panel -->
+                <div class="exp-panel active" id="panel-iph">
+                  <div class="d-flex justify-content-center mb-3">
+                    <img
+                      src="../img/iph.jpg"
+                      alt="IPH"
+                      style="max-width: 120px; border-radius: 8px"
+                    />
+                  </div>
+                  <h3
+                    class="fs-medium fw-bolder white text-center mb-5"
+                    data-i18n="experience.iph.title"
+                  ></h3>
+                  <p
+                    class="fs-medium darker-white mb-3"
+                    data-i18n="experience.iph.p1"
+                  ></p>
+                  <p
+                    class="fs-medium darker-white mb-3"
+                    data-i18n="experience.iph.p2"
+                  ></p>
+                  <p
+                    class="fs-medium darker-white mb-0"
+                    data-i18n="experience.iph.p3"
+                  ></p>
+                </div>
+
+                <!-- Freelance Panel -->
+                <div class="exp-panel" id="panel-freelance">
+                  <div class="d-flex justify-content-center mb-3">
+                    <img
+                      src="../img/freelance.png"
+                      alt="Freelance Developer"
+                      style="max-width: 120px; border-radius: 8px"
+                    />
+                  </div>
+                  <h3
+                    class="fs-medium fw-bolder white text-center mb-4"
+                    data-i18n="experience.freelance.title"
+                  ></h3>
+                  <p
+                    class="fs-medium darker-white mb-3"
+                    data-i18n="experience.freelance.p1"
+                  ></p>
+                  <p
+                    class="fs-medium darker-white mb-3"
+                    data-i18n="experience.freelance.p2"
+                  ></p>
+                  <p
+                    class="fs-medium darker-white mb-4"
+                    data-i18n="experience.freelance.p3"
+                  ></p>
+
+                  <!-- Clients in Production -->
+                  <p class="exp-clients-label mb-3">
+                    <span
+                      class="aqua fw-600 fs-small"
+                      data-i18n="experience.freelance.clients.title"
+                    ></span>
+                  </p>
+                  <div class="row g-3">
+                    <!-- Client 1: Psychologist -->
+                    <div class="col-12 col-sm-6">
+                      <!-- Replace href with actual production URL -->
+                      <a
+                        href="#client-psych"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="freelance-client-card d-block text-decoration-none rounded-3 overflow-hidden"
+                      >
+                        <div class="client-img-wrapper">
+                          <img
+                            src="../img/jps.jpg"
+                            alt="Psychology Practice Website"
+                            class="client-img"
+                          />
+                          <div class="client-overlay">
+                            <span class="fw-600">
+                              <i
+                                class="fa-solid fa-arrow-up-right-from-square me-2 aqua"
+                              ></i>
+                              <span
+                                class="aqua"
+                                data-i18n="experience.freelance.client.cta"
+                              ></span>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="client-card-body p-3">
+                          <p
+                            class="white fw-600 mb-2 fs-small"
+                            data-i18n="experience.freelance.client1.label"
+                          ></p>
+                          <p
+                            class="client-quote fs-small mb-0"
+                            data-i18n="experience.freelance.client1.quote"
+                          ></p>
+                        </div>
+                      </a>
                     </div>
-                    <h3
-                      class="fs-medium fw-bolder white text-center mb-5"
-                      data-i18n="experience.iph.title"
-                    >
-                      IPH (Spain) • Frontend Engineer
-                    </h3>
-                    <p
-                      class="fs-medium darker-white mb-3"
-                      data-i18n="experience.iph.p1"
-                    >
-                      Contributed to a
-                      <span class="white fw-bold"
-                        >real-time underground mining platform</span
+
+                    <!-- Client 2: Law firm -->
+                    <div class="col-12 col-sm-6">
+                      <!-- Replace href with actual production URL -->
+                      <a
+                        href="#client-law"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="freelance-client-card d-block text-decoration-none rounded-3 overflow-hidden"
                       >
-                      serving international operations, developing features with
-                      <span class="aqua fw-bold"
-                        >React, TypeScript, and Next.js</span
-                      >
-                      within a modular microfrontend architecture handling
-                      critical safety and operational data.
-                    </p>
-                    <p
-                      class="fs-medium darker-white mb-3"
-                      data-i18n="experience.iph.p2"
-                    >
-                      <span class="aqua fw-bold">Key achievement:</span> Led the
-                      complete implementation of a
-                      <span class="white fw-bold"
-                        >Role-Based Access Control (RBAC) system</span
-                      >
-                      from scratch, collaborating with backend engineers to
-                      design the architecture and implementing it
-                      <span class="aqua fw-bold"
-                        >across the entire project and multiple
-                        repositories.</span
-                      >
-                      This solution became a core security feature used
-                      throughout the platform.
-                    </p>
-                    <p
-                      class="fs-medium darker-white mb-0"
-                      data-i18n="experience.iph.p3"
-                    >
-                      Worked closely with cross-functional teams in an
-                      <span class="white fw-bold">agile environment,</span>
-                      participating in code reviews, technical discussions, and
-                      sprint planning. Applied
-                      <span class="aqua fw-bold"
-                        >performance optimization, scalable patterns, and clean
-                        code principles</span
-                      >
-                      to deliver maintainable solutions that balanced quality
-                      with delivery speed.
-                    </p>
+                        <div class="client-img-wrapper">
+                          <img
+                            src="../img/ejer.jpg"
+                            alt="Law Firm Website"
+                            class="client-img"
+                          />
+                          <div class="client-overlay">
+                            <span class="fw-600">
+                              <i
+                                class="fa-solid fa-arrow-up-right-from-square me-2 aqua"
+                              ></i>
+                              <span
+                                class="aqua"
+                                data-i18n="experience.freelance.client.cta"
+                              ></span>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="client-card-body p-3">
+                          <p
+                            class="white fw-600 mb-2 fs-small"
+                            data-i18n="experience.freelance.client2.label"
+                          ></p>
+                          <p
+                            class="client-quote fs-small mb-0"
+                            data-i18n="experience.freelance.client2.quote"
+                          ></p>
+                        </div>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -364,5 +451,21 @@
       </section>
     </div>
     <script src="../script.js"></script>
+    <script>
+      document.querySelectorAll(".exp-tab-btn").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          document.querySelectorAll(".exp-tab-btn").forEach(function (b) {
+            b.classList.remove("active");
+          });
+          document.querySelectorAll(".exp-panel").forEach(function (p) {
+            p.classList.remove("active");
+          });
+          btn.classList.add("active");
+          document
+            .getElementById("panel-" + btn.dataset.target)
+            .classList.add("active");
+        });
+      });
+    </script>
   </body>
 </html>

@@ -362,6 +362,32 @@
       .delay-3 {
         animation-delay: 0.3s;
       }
+
+      /* Project 4 bullet scroll */
+      .project-bullet-scroll {
+        overflow-y: auto;
+        max-height: 175px;
+        padding-right: 10px;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(94, 231, 131, 0.4) transparent;
+      }
+
+      .project-bullet-scroll::-webkit-scrollbar {
+        width: 4px;
+      }
+
+      .project-bullet-scroll::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      .project-bullet-scroll::-webkit-scrollbar-thumb {
+        background: rgba(94, 231, 131, 0.4);
+        border-radius: 4px;
+      }
+
+      .project-bullet-scroll::-webkit-scrollbar-thumb:hover {
+        background: rgba(94, 231, 131, 0.7);
+      }
     </style>
   </head>
 
@@ -639,6 +665,46 @@
                 class="col-12 d-flex flex-column align-items-center mb-5 mobile-project-card scroll-reveal animate-fade-up delay-3"
               >
                 <div class="col-10 col-sm-8 project-image-container">
+                  <div class="project-image-wrapper">
+                    <img
+                      class="img-fluid rounded-3"
+                      src="../img/vetsforpets.jpg"
+                      alt="Emergency Vet Platform"
+                    />
+                  </div>
+                </div>
+                <div class="col-12 text-center mt-3">
+                  <div
+                    class="d-flex justify-content-center align-items-center mb-2"
+                  >
+                    <h3
+                      class="fs-medium fw-bolder white m-0 project-title"
+                      data-i18n="project.henry.title"
+                    >
+                      Emergency Vet Platform
+                    </h3>
+                  </div>
+                  <div
+                    class="project-bullet-scroll col-10 mx-auto text-start mb-2"
+                    data-i18n="project.henry.content"
+                  ></div>
+                  <div class="d-flex justify-content-center flex-wrap mt-1">
+                    <span class="tech-tag">Next.js</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">Tailwind</span>
+                    <span class="tech-tag">Socket.io</span>
+                    <span class="tech-tag">Leaflet</span>
+                    <span class="tech-tag">Zustand</span>
+                    <span class="tech-tag">Stripe</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 3 -->
+              <div
+                class="col-12 d-flex flex-column align-items-center mb-5 mobile-project-card scroll-reveal animate-fade-up delay-3"
+              >
+                <div class="col-10 col-sm-8 project-image-container">
                   <a
                     href="https://rickandmortyexp.netlify.app/"
                     target="_blank"
@@ -719,95 +785,6 @@
                     <span class="tech-tag">TypeScript</span>
                     <span class="tech-tag">REST API</span>
                     <span class="tech-tag">Vite</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Project 3 -->
-              <div
-                class="col-12 d-flex flex-column align-items-center mb-5 mobile-project-card scroll-reveal animate-fade-up delay-3"
-              >
-                <div class="col-10 col-sm-8 project-image-container">
-                  <a
-                    href="https://psicologosanjorge.com.ar/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="project-image-wrapper"
-                  >
-                    <img
-                      class="img-fluid rounded-3"
-                      src="../img/jps.jpg"
-                      alt="Psychologist's Website"
-                    />
-                  </a>
-                </div>
-                <div class="col-12 text-center mt-3">
-                  <div
-                    class="d-flex justify-content-center align-items-center mb-2"
-                  >
-                    <a
-                      href="https://psicologosanjorge.com.ar/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="text-decoration-none"
-                    >
-                      <h3
-                        class="fs-medium fw-bolder white m-0 me-3 project-title"
-                        data-i18n="project.jps.title"
-                      ></h3>
-                    </a>
-                    <a
-                      href="https://psicologosanjorge.com.ar/"
-                      class="works-button rounded-circle border-0 text-decoration-none me-3"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      title="View Live Project"
-                    >
-                      <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                    <a
-                      href="https://github.com/tiansanjorge/juan-pablo-sanjorge"
-                      class="rounded-circle border-0 text-decoration-none"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      title="View on GitHub"
-                      style="
-                        width: 40px;
-                        height: 40px;
-                        min-width: 40px;
-                        min-height: 40px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        background: #17784f;
-                        color: #e7e7e7;
-                        box-shadow: 3px 4px 12px 2px rgba(51, 51, 51, 0.25);
-                        transition: 0.2s;
-                      "
-                      onmouseover="
-                        this.style.background = '#9bc1bc';
-                        this.style.color = '#333333';
-                      "
-                      onmouseout="
-                        this.style.background = '#17784f';
-                        this.style.color = '#e7e7e7';
-                      "
-                    >
-                      <i
-                        class="fa-brands fa-github"
-                        style="font-size: 20px"
-                      ></i>
-                    </a>
-                  </div>
-                  <p
-                    class="col-10 mx-auto darker-white fs-small mb-2"
-                    data-i18n="project.jps.desc"
-                  ></p>
-                  <div class="d-flex justify-content-center flex-wrap mt-1">
-                    <span class="tech-tag">HTML5</span>
-                    <span class="tech-tag">CSS3</span>
-                    <span class="tech-tag">JavaScript</span>
-                    <span class="tech-tag">SEO</span>
                   </div>
                 </div>
               </div>
@@ -937,6 +914,51 @@
                 <div class="carousel-item">
                   <div class="row align-items-center">
                     <div class="col-lg-6 project-image-container">
+                      <div class="project-image-wrapper">
+                        <img
+                          class="img-fluid rounded-3"
+                          src="../img/vetsforpets.jpg"
+                          alt="Emergency Vet Platform"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-lg-6 ps-lg-5 project-content">
+                      <div class="d-flex align-items-center mb-3">
+                        <h3
+                          class="fs-big fw-bolder white m-0 me-3 project-title"
+                          data-i18n="project.henry.title"
+                        >
+                          Emergency Vet Platform
+                        </h3>
+                      </div>
+                      <div
+                        class="project-bullet-scroll mb-3"
+                        data-i18n="project.henry.content"
+                      ></div>
+                      <div class="fs-medium mb-2 d-flex align-items-center">
+                        <span
+                          class="aqua fw-bold"
+                          data-i18n="projects.technologies"
+                          >Technologies:</span
+                        >
+                      </div>
+                      <div class="d-flex align-items-center flex-wrap">
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Tailwind</span>
+                        <span class="tech-tag">Socket.io</span>
+                        <span class="tech-tag">Leaflet</span>
+                        <span class="tech-tag">Zustand</span>
+                        <span class="tech-tag">Stripe</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="carousel-item">
+                  <div class="row align-items-center">
+                    <div class="col-lg-6 project-image-container">
                       <a
                         href="https://rickandmortyexp.netlify.app/"
                         target="_blank"
@@ -979,10 +1001,12 @@
                         class="darker-white fs-medium mb-3"
                         data-i18n="project.rick.desc"
                       >
-                        Full-featured character explorer built with React and
-                        TypeScript, implementing advanced filtering, pagination,
-                        and API integration patterns. Demonstrates performance
-                        optimization and modern UI/UX principles.
+                        UI-focused character explorer built with React and
+                        TypeScript. Smooth paginated API navigation, accessible
+                        component design, and optimized rendering — treating
+                        interface quality as an engineering discipline.
+                        Showcases performance tuning, WCAG-aligned
+                        accessibility, and polished micro-interactions.
                       </p>
                       <div class="fs-medium mb-2 d-flex align-items-center">
                         <a
@@ -1029,108 +1053,6 @@
                         <span class="tech-tag">TypeScript</span>
                         <span class="tech-tag">REST API</span>
                         <span class="tech-tag">Vite</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="carousel-item">
-                  <div class="row align-items-center">
-                    <div class="col-lg-6 project-image-container">
-                      <a
-                        href="https://psicologosanjorge.com.ar/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="project-image-wrapper"
-                      >
-                        <img
-                          class="img-fluid rounded-3"
-                          src="../img/jps.jpg"
-                          alt="Psychologist's Website"
-                        />
-                      </a>
-                    </div>
-                    <div class="col-lg-6 ps-lg-5 project-content">
-                      <div class="d-flex align-items-center mb-3">
-                        <a
-                          href="https://psicologosanjorge.com.ar/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          class="text-decoration-none"
-                        >
-                          <h3
-                            class="fs-big fw-bolder white m-0 me-3 project-title"
-                            data-i18n="project.jps.title"
-                          >
-                            Psychologist's Website
-                          </h3>
-                        </a>
-                        <a
-                          href="https://psicologosanjorge.com.ar/"
-                          class="works-button rounded-circle border-0 text-decoration-none"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          title="View Live Project"
-                        >
-                          <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                      </div>
-                      <p
-                        class="darker-white fs-medium mb-3"
-                        data-i18n="project.jps.desc"
-                      >
-                        Professional business website built for a clinical
-                        psychologist, featuring responsive design, SEO
-                        optimization, and accessibility best practices.
-                        Delivered on time meeting all client requirements and
-                        brand guidelines.
-                      </p>
-                      <div class="fs-medium mb-2 d-flex align-items-center">
-                        <a
-                          href="https://github.com/tiansanjorge/juan-pablo-sanjorge"
-                          class="rounded-circle border-0 text-decoration-none me-3"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          title="View on GitHub"
-                          style="
-                            width: 40px;
-                            height: 40px;
-                            min-width: 40px;
-                            min-height: 40px;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            background: #17784f;
-                            color: #e7e7e7;
-                            box-shadow: 3px 4px 12px 2px rgba(51, 51, 51, 0.25);
-                            transition: 0.2s;
-                          "
-                          onmouseover="
-                            this.style.background = '#9bc1bc';
-                            this.style.color = '#333333';
-                          "
-                          onmouseout="
-                            this.style.background = '#17784f';
-                            this.style.color = '#e7e7e7';
-                          "
-                        >
-                          <i
-                            class="fa-brands fa-github"
-                            style="font-size: 20px"
-                          ></i>
-                        </a>
-                        <span
-                          class="aqua fw-bold"
-                          data-i18n="projects.technologies"
-                          >Technologies:</span
-                        >
-                      </div>
-                      <div class="d-flex align-items-center">
-                        <span class="tech-tag">HTML5</span>
-                        <span class="tech-tag">CSS3</span>
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">SEO</span>
                       </div>
                     </div>
                   </div>
