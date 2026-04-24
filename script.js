@@ -211,10 +211,12 @@ document.addEventListener("DOMContentLoaded", function () {
       if (cv) {
         if (lang === "es") {
           cv.href =
-            basePrefix() + "pdf/Sebastian_Sanjorge_Frontend_Engineer_CV_ES.pdf";
+            basePrefix() +
+            "pdf/Sebastian_Sanjorge_Fullstack_Engineer_CV_ES.pdf";
         } else {
           cv.href =
-            basePrefix() + "pdf/Sebastian_Sanjorge_Frontend_Engineer_CV_EN.pdf";
+            basePrefix() +
+            "pdf/Sebastian_Sanjorge_Fullstack_Engineer_CV_EN.pdf";
         }
       }
     }
