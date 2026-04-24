@@ -532,6 +532,174 @@ a.logo:hover {
   display: none;
 }
 
+/* ---------- Freelance Icon Badge ---------- */
+.freelance-icon-badge {
+  width: 80px;
+  height: 80px;
+  border-radius: 16px;
+  background: linear-gradient(
+    135deg,
+    rgba(23, 120, 79, 0.18) 0%,
+    rgba(155, 193, 188, 0.08) 100%
+  );
+  border: 1px solid rgba(155, 193, 188, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #9bc1bc;
+}
+
+/* ---------- Experience Tab Switcher ---------- */
+.exp-tabs {
+  border-bottom: 1px solid rgba(155, 193, 188, 0.2);
+}
+
+.exp-tab-btn {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 0.4rem 1.25rem;
+  margin-bottom: -1px;
+  color: #a5a5a5;
+  font-family: "Satoshi-Variable", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.exp-tab-btn:hover {
+  color: #e7e7e7;
+}
+
+.exp-tab-btn.active {
+  color: #9bc1bc;
+  border-bottom-color: #17784f;
+}
+
+.exp-panel {
+  display: none;
+}
+
+.exp-panel.active {
+  display: block;
+  animation: fadeInPanel 0.38s ease both;
+}
+
+@keyframes fadeInPanel {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Freelance Client Cards ---------- */
+.exp-clients-label {
+  border-bottom: 1px solid rgba(155, 193, 188, 0.15);
+  padding-bottom: 0.5rem;
+}
+
+.freelance-client-card {
+  background-color: rgba(18, 18, 18, 0.45);
+  border: 1px solid rgba(155, 193, 188, 0.12);
+  transition:
+    transform 0.22s ease,
+    border-color 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.freelance-client-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(155, 193, 188, 0.35);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+}
+
+.client-img-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 150px;
+}
+
+.client-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.3s ease;
+}
+
+.freelance-client-card:hover .client-img {
+  transform: scale(1.05);
+}
+
+.client-img-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(23, 120, 79, 0.12) 0%,
+    rgba(18, 18, 18, 0.85) 100%
+  );
+}
+
+.client-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.freelance-client-card:hover .client-overlay {
+  opacity: 1;
+}
+
+.client-card-body {
+  background-color: rgba(18, 18, 18, 0.3);
+}
+
+.tech-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  color: #9bc1bc;
+  background: rgba(155, 193, 188, 0.08);
+  border: 1px solid rgba(155, 193, 188, 0.2);
+  border-radius: 4px;
+  padding: 2px 7px;
+  margin-right: 4px;
+  margin-bottom: 4px;
+}
+
+.client-quote {
+  font-style: italic;
+  color: #a5a5a5;
+  line-height: 1.55;
+  padding-left: 0.75rem;
+  border-left: 2px solid rgba(23, 120, 79, 0.5);
+  margin-bottom: 0;
+}
+
+.client-signature {
+  display: block;
+  font-style: normal;
+  font-weight: 600;
+  color: #9bc1bc;
+  margin-top: 0.5rem;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+}
+
 .contact-logo {
   color: #354052;
   cursor: pointer;

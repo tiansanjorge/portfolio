@@ -5,12 +5,12 @@
     "nav.projects": "Projects",
     "nav.contact": "Contact",
     "hero.h1": "Hello<span>I<span class=\"ms-1 ms-md-2\">’</span>m <span class=\"green s-behind\">S<span class=\"aqua s-front\">S</span></span>ebastian",
-    "hero.title": "<b>Frontend Engineer</b> <span class=\"black fw-400\">building scalable, high-performance applications with React and TypeScript. Delivering quality features with focus on clean code, maintainability, and long-term product success.</span>",
+    "hero.title": "<b>Fullstack Engineer</b> <span class=\"black fw-400\">with a strong frontend orientation. Building scalable, production-ready applications with React, Next.js, and TypeScript. Experienced in backend integration, microfrontend architecture, and UI systems for international product teams.</span>",
     "banner.text": "TECHNOLOGY WITH PURPOSE",
-    "contact.role": "<span class=\"green\">Frontend</span> Engineer",
+    "contact.role": "<span class=\"green\">Fullstack</span> Engineer",
     "contact.letsTalk": "Let's Talk<span class=\"green\">.</span>",
     "contact.cv": "CV",
-    "about.heading": "<b class=\"white\"><span class=\"aqua\">Scalable Solutions.</span> Product <span class=\"aqua\">Commitment.</span> Performance <span class=\"aqua\">Focus.</span></b><span class=\"mt-4\"> <b class=\"white\">4+ years of frontend development experience,</b> including work at international companies building production applications. Proficient in <b class=\"aqua\">React, Next.js, and TypeScript,</b> delivering solutions that balance <b class=\"white\">development speed with code quality, scalability, and maintainability.</b> I apply architectural principles and performance optimization while collaborating effectively across teams to build products that last.</span>",
+    "about.heading": "<b class=\"white\"><span class=\"aqua\">Scalable Solutions.</span> Product <span class=\"aqua\">Commitment.</span> Performance <span class=\"aqua\">Focus.</span></b><span class=\"mt-4\"> <b class=\"white\">Fullstack Engineer with a strong frontend orientation,</b> specialized in building production-ready applications using <b class=\"aqua\">React, Next.js, TypeScript, and Node.js.</b> Experienced in frontend architecture, microfrontend systems, and backend integration, delivering end-to-end features in international environments. Strong eye for UI quality and design systems.</span>",
     "about.paragraph": "4+ years of frontend development experience, including work at international companies building production applications. Proficient in React, Next.js, and TypeScript, delivering solutions that balance development speed with code quality, scalability, and maintainability. I apply architectural principles and performance optimization while collaborating effectively across teams to build products that last.",
     "iph.paragraph": "Worked at <span class=\"white fw-bold\">IPH (Spain)</span> as part of a <span class=\"aqua fw-bold\">15-person development team</span> building a real-time platform for underground mining operations. <span class=\"white fw-bold\">Developed scalable frontend solutions</span> applying architectural patterns for reliability and performance in high-stakes international operations.",
     "iph.learnMore": "Learn more",
@@ -23,23 +23,40 @@
     "projects.counter.03": "03/03",
     "works.title": "Projects<span class=\"aqua\">.</span>",
     "project.rick.title": "Rick & Morty wiki",
-    "project.rick.desc": "Full-featured character explorer built with React and TypeScript, implementing advanced filtering, pagination, and API integration patterns. Demonstrates performance optimization and modern UI/UX principles.",
+    "project.rick.desc": "UI-focused character explorer built with React and TypeScript. Smooth paginated API navigation, accessible component design, and optimized rendering — treating interface quality as an engineering discipline. Showcases performance tuning, WCAG-aligned accessibility, and polished micro-interactions.",
     "project.jps.title": "Psychologist's Website",
     "project.jps.desc": "Professional business website built for a clinical psychologist, featuring responsive design, SEO optimization, and accessibility best practices. Delivered on time meeting all client requirements and brand guidelines.",
     "project.microfrontend.title": "Microfrontend Architecture",
     "projects.technologies": "Technologies:",
     "project.microfrontend.desc": "Microfrontend architecture built with React and Webpack Module Federation, featuring independently deployable modules and a custom shared UI library. Focused on scalability, separation of concerns, and frontend system design rather than visual polish.",
+    "project.henry.title": "Emergency Vet Platform",
+    "project.henry.content": "<p class='darker-white fs-medium mb-2'>Graduation project at Henry Bootcamp &mdash; a full-stack platform for pet emergencies. <span class='white fw-bold'>Led the frontend team across 4 devs:</span> defined architecture, enforced code standards, and owned the core real-time features.</p><ul class='darker-white fs-medium ps-3 mb-0'><li class='mb-2'><span class='white fw-bold'>Real-time alert system</span> (<span class='aqua fw-bold'>Socket.io</span>) that connects users with available clinics and opens a live chat session instantly.</li><li class='mb-2'><span class='white fw-bold'>Interactive map</span> with Leaflet showing nearby clinics, hours, and available services.</li><li class='mb-0'>Delivered the <span class='white fw-bold'>final live demo</span> and technical Q&amp;A on behalf of the team.</li></ul>",
     "experience.titleShort": "Exp<span class=\"aqua\">.</span>",
     "experience.iph.title": "IPH (Spain) • Frontend Engineer",
-    "experience.iph.p1": "Contributed to a <span class=\"white fw-bold\">real-time underground mining platform</span> serving international operations, developing features with <span class=\"aqua fw-bold\">React, TypeScript, and Next.js</span> within a modular microfrontend architecture handling critical safety and operational data.",
-    "experience.iph.p2": "<span class=\"aqua fw-bold\">Key achievement:</span> Led the complete implementation of a <span class=\"white fw-bold\">Role-Based Access Control (RBAC) system</span> from scratch, collaborating with backend engineers to design the architecture and implementing it <span class=\"aqua fw-bold\">across the entire project and multiple repositories.</span> This solution became a core security feature used throughout the platform.",
-    "experience.iph.p3": "Worked closely with cross-functional teams in an <span class=\"white fw-bold\">agile environment,</span> participating in code reviews, technical discussions, and sprint planning. Applied <span class=\"aqua fw-bold\">performance optimization, scalable patterns, and clean code principles</span> to deliver maintainable solutions that balanced quality with delivery speed.",
+    "experience.iph.p1": "Worked <span class=\"aqua fw-bold\">fully remote from Argentina</span> for a <span class=\"white fw-bold\">Spain-based product company</span> — collaborating across timezones in a cross-cultural distributed team of 15 engineers spanning Latin America and Europe. Contributed to a <span class=\"white fw-bold\">real-time geolocation and traceability platform</span> for mission-critical underground mining operations, serving international clients. Built scalable UIs inside a <span class=\"white fw-bold\">microfrontend architecture</span> using React, TypeScript, and Next.js — enabling modular deployments and independent feature delivery across teams.",
+    "experience.iph.p2": "<span class=\"aqua fw-bold\">Key achievement:</span> Architected and implemented a full <span class=\"white fw-bold\">Role-Based Access Control (RBAC) system</span> from scratch — spanning routes, components, and API contracts — in close coordination with the backend team. The solution became a <span class=\"aqua fw-bold\">core component of the platform's security layer,</span> adopted across the entire codebase and multiple repositories. Mentored team members on RBAC patterns and frontend architecture, improving implementation consistency across the project.",
+    "experience.iph.p3": "Applied <span class=\"white fw-bold\">TDD with Vitest and React Testing Library,</span> reducing regressions in production releases. Optimized rendering and state management in real-time critical views, <span class=\"aqua fw-bold\">eliminating unnecessary re-renders</span> and improving responsiveness under live data updates. Actively contributed to technical decision-making, accessibility standards, and CI/CD workflows within an international agile environment.",
     "contact.headingName": "Sebastián Sanjorge",
-    "contact.headingRole": "<span class=\"green\">Frontend</span> Engineer",
+    "contact.headingRole": "<span class=\"green\">Fullstack</span> Engineer",
     "contact.social.whatsapp": "WhatsApp",
     "contact.social.linkedin": "LinkedIn",
     "contact.social.github": "GitHub",
-    "footer.copy": "© 2026 Sebastián Sanjorge"
+    "footer.copy": "© 2026 Sebastián Sanjorge",
+    "experience.freelance.title": "Freelance Developer",
+    "experience.freelance.p1": "Designed, developed, and deployed a web application for a <span class=\"white fw-bold\">mental health professional</span> — custom UI design, client-side routing, and contact form integration built with modern component-based technologies — <span class=\"aqua fw-bold\">live in production since launch.</span>",
+    "experience.freelance.p2": "Built a complete website for a <span class=\"white fw-bold\">personal injury law firm:</span> full visual design, responsive layout, and lead capture functionality — developed with a modern frontend stack and <span class=\"aqua fw-bold\">actively maintained in production.</span>",
+    "experience.freelance.p3": "Managed the full project lifecycle end-to-end — requirements gathering, UI design, development, deployment, and ongoing support — working directly with clients to translate business needs into <span class=\"aqua fw-bold\">production-ready solutions.</span>",
+    "experience.freelance.clients.title": "— Clients in Production",
+    "experience.freelance.client.cta": "View site",
+    "experience.freelance.client1.label": "Mental Health Professional",
+    "experience.freelance.client1.quote": "\"Working with Sebastián was smooth from start to finish. The site looks exactly like what I envisioned, and it's been running flawlessly since day one.\" <span class='client-signature'>— Juan Pablo</span>",
+    "experience.freelance.client2.label": "Personal Injury Law Firm",
+    "experience.freelance.client2.quote": "\"He understood our business right away. Clean design, fast, and professional. We've been receiving leads through the contact form since the very first week.\" <span class='client-signature'>— Emiliano</span>",
+    "experience.henry.title": "Frontend Lead  •  Emergency Vet Platform  •  2024",
+    "experience.henry.subtitle": "Graduation project at Henry Bootcamp. Team of 8 (4 frontend, 4 backend).",
+    "experience.henry.p1": "Led the frontend team as <span class=\"white fw-bold\">main technical reference:</span> defined folder structure, enforced code quality standards, and conducted code reviews throughout the project.",
+    "experience.henry.p2": "Implemented a <span class=\"white fw-bold\">real-time emergency system</span> using Socket.io: users trigger alerts that instantly notify registered vet clinics, opening a <span class=\"aqua fw-bold\">live chat session.</span>",
+    "experience.henry.p3": "Built an <span class=\"white fw-bold\">interactive map with Leaflet</span> displaying nearby clinics, with animated detail views showing schedules and available services. Delivered the final live presentation on behalf of the team."
   },
   "es": {
     "nav.home": "Inicio",
@@ -49,15 +66,15 @@
 
     "hero.h1": "Hola<span> Soy <span class=\"green s-behind\">S<span class=\"aqua s-front\">S</span></span>ebastian</span>",
 
-    "hero.title": "<b>Frontend Engineer</b> <span class=\"black fw-400\">desarrollando aplicaciones escalables y de alto rendimiento con React y TypeScript. Entrego funcionalidades sólidas con foco en código limpio, mantenibilidad y crecimiento sostenible del producto.</span>",
+    "hero.title": "<b>Desarrollador Fullstack</b> <span class=\"black fw-400\">con fuerte orientación frontend. Construyo aplicaciones escalables y listas para producción con React, Next.js y TypeScript. Experiencia en integración de backend, arquitectura de microfrontends y sistemas de UI para equipos de producto internacionales.</span>",
 
     "banner.text": "TECNOLOGÍA CON CRITERIO",
 
-    "contact.role": "<span class=\"green\">Frontend</span> Engineer",
+    "contact.role": "<span class=\"green\">Fullstack</span> Engineer",
     "contact.letsTalk": "Hablemos<span class=\"green\">.</span>",
     "contact.cv": "CV",
 
-    "about.heading": "<b class=\"white\"><span class=\"aqua\">Soluciones escalables.</span> Compromiso con el producto. <span class=\"aqua\">Enfoque en performance.</span></b><span class=\"mt-4\"> <b class=\"white\">Más de 4 años desarrollando frontend,</b> incluyendo experiencia en empresas internacionales trabajando sobre aplicaciones en producción. Especializado en <b class=\"aqua\">React, Next.js y TypeScript,</b> construyendo soluciones que equilibran velocidad de desarrollo con <b class=\"white\">calidad de código, escalabilidad y mantenibilidad.</b> Aplico principios arquitectónicos y optimización de rendimiento mientras colaboro activamente con equipos para construir productos robustos y duraderos.</span>",
+    "about.heading": "<b class=\"white\"><span class=\"aqua\">Soluciones escalables.</span> Compromiso con el producto. <span class=\"aqua\">Enfoque en performance.</span></b><span class=\"mt-4\"> <b class=\"white\">Desarrollador Fullstack con fuerte orientación frontend,</b> especializado en construir aplicaciones listas para producción con <b class=\"aqua\">React, Next.js, TypeScript y Node.js.</b> Experiencia en arquitectura frontend, sistemas de microfrontends e integración de backend, entregando funcionalidades end-to-end en entornos internacionales. Fuerte criterio para calidad de UI y design systems.</span>",
 
     "about.paragraph": "Más de 4 años desarrollando frontend, incluyendo experiencia en empresas internacionales trabajando sobre aplicaciones en producción. Especializado en React, Next.js y TypeScript, construyendo soluciones que equilibran velocidad de desarrollo con calidad de código, escalabilidad y mantenibilidad. Aplico principios arquitectónicos y optimización de rendimiento colaborando activamente con equipos para crear productos sólidos y sostenibles.",
 
@@ -79,7 +96,7 @@
     "works.title": "Proyectos<span class=\"aqua\">.</span>",
 
     "project.rick.title": "Rick & Morty Wiki",
-    "project.rick.desc": "Explorador de personajes desarrollado con React y TypeScript, que incluye filtrado avanzado, paginación e integración con APIs externas. Demuestra buenas prácticas de arquitectura frontend, optimización de rendimiento y criterios modernos de UI/UX.",
+    "project.rick.desc": "Explorador de personajes con React y TypeScript, centrado en calidad de interfaz: navegación paginada fluida, componentes accesibles y renderizado optimizado. Trata la UI como disciplina de ingeniería — performance, accesibilidad alineada a WCAG y micro-interacciones bien ejecutadas.",
 
     "project.jps.title": "Sitio Web Profesional",
     "project.jps.desc": "Sitio institucional desarrollado para un psicólogo clínico, con diseño responsivo, optimización SEO y buenas prácticas de accesibilidad. Entregado en tiempo y forma cumpliendo los requisitos funcionales y lineamientos de marca.",
@@ -88,24 +105,41 @@
     "projects.technologies": "Tecnologías:",
 
     "project.microfrontend.desc": "Arquitectura de microfrontends construida con React y Webpack Module Federation, con módulos desplegables de forma independiente y una librería de UI compartida. Enfocada en escalabilidad, separación de responsabilidades y diseño de sistemas frontend, más que en el acabado visual.",
+    "project.henry.title": "Emergency Vet Platform",
+    "project.henry.content": "<p class='darker-white fs-medium mb-2'>Proyecto de graduación en Henry Bootcamp &mdash; plataforma fullstack para emergencias veterinarias. <span class='white fw-bold'>Lideré el equipo frontend de 4 devs:</span> definí la arquitectura, establecí estándares de código y fui responsable de las funcionalidades en tiempo real.</p><ul class='darker-white fs-medium ps-3 mb-0'><li class='mb-2'><span class='white fw-bold'>Sistema de alertas en tiempo real</span> (<span class='aqua fw-bold'>Socket.io</span>) que conecta usuarios con clínicas disponibles y abre una sesión de chat al instante.</li><li class='mb-2'><span class='white fw-bold'>Mapa interactivo</span> con Leaflet que muestra clínicas cercanas, horarios y servicios disponibles.</li><li class='mb-0'>Presenté la <span class='white fw-bold'>demo final en vivo</span> y respondí preguntas técnicas en nombre del equipo.</li></ul>",
 
     "experience.titleShort": "Exp<span class=\"aqua\">.</span>",
 
     "experience.iph.title": "IPH (España) • Frontend Engineer",
 
-    "experience.iph.p1": "Participé en el desarrollo de una <span class=\"white fw-bold\">plataforma minera subterránea en tiempo real</span> utilizada en operaciones internacionales, implementando funcionalidades con <span class=\"aqua fw-bold\">React, TypeScript y Next.js</span> dentro de una arquitectura modular basada en microfrontends que gestiona datos críticos de seguridad y operación.",
+    "experience.iph.p1": "Trabajé <span class=\"aqua fw-bold\">de forma 100% remota desde Argentina</span> para una <span class=\"white fw-bold\">empresa española de producto</span> — colaborando entre zonas horarias en un equipo distribuido y multicultural de 15 ingenieros entre Latinoamérica y Europa. Contribuí al desarrollo de una <span class=\"white fw-bold\">plataforma de geolocalización y trazabilidad en tiempo real</span> para operaciones mineras subterráneas de alta criticidad, prestando servicio a clientes internacionales. Construí UIs escalables dentro de una <span class=\"white fw-bold\">arquitectura de microfrontends</span> con React, TypeScript y Next.js, habilitando despliegues modulares e independientes entre equipos.",
 
-    "experience.iph.p2": "<span class=\"aqua fw-bold\">Logro clave:</span> Lideré la implementación completa de un <span class=\"white fw-bold\">sistema de Control de Acceso Basado en Roles (RBAC)</span> desde cero, trabajando junto al equipo backend en el diseño de la arquitectura e integrándolo <span class=\"aqua fw-bold\">de forma transversal en múltiples repositorios.</span> La solución se convirtió en un componente central del esquema de seguridad de la plataforma.",
+    "experience.iph.p2": "<span class=\"aqua fw-bold\">Logro clave:</span> Arquitecté e implementé un sistema completo de <span class=\"white fw-bold\">Control de Acceso Basado en Roles (RBAC)</span> desde cero — abarcando rutas, componentes y contratos de API — en coordinación directa con el equipo backend. La solución se convirtió en un <span class=\"aqua fw-bold\">componente central de la capa de seguridad</span> de la plataforma, adoptado en toda la base de código y múltiples repositorios. Mentóreé a miembros del equipo en patrones RBAC y arquitectura frontend, mejorando la consistencia de implementación en el proyecto.",
 
-    "experience.iph.p3": "Trabajé en colaboración con equipos multifuncionales dentro de un <span class=\"white fw-bold\">entorno ágil,</span> participando en revisiones de código, discusiones técnicas y planificación de sprints. Apliqué <span class=\"aqua fw-bold\">patrones escalables, optimización de rendimiento y principios de código limpio</span> para entregar soluciones mantenibles sin comprometer tiempos de entrega.",
+    "experience.iph.p3": "Apliqué <span class=\"white fw-bold\">TDD con Vitest y React Testing Library,</span> reduciendo regresiones en releases de producción. Optimicé el renderizado y la gestión de estado en vistas críticas en tiempo real, <span class=\"aqua fw-bold\">eliminando re-renders innecesarios</span> y mejorando la responsividad bajo actualizaciones en vivo. Contribuí activamente a decisiones técnicas, estándares de accesibilidad y flujos de CI/CD dentro de un entorno ágil internacional.",
 
     "contact.headingName": "Sebastián Sanjorge",
-    "contact.headingRole": "<span class=\"green\">Frontend</span> Engineer",
+    "contact.headingRole": "<span class=\"green\">Fullstack</span> Engineer",
 
     "contact.social.whatsapp": "WhatsApp",
     "contact.social.linkedin": "LinkedIn",
     "contact.social.github": "GitHub",
 
-    "footer.copy": "© 2026 Sebastián Sanjorge"
+    "footer.copy": "© 2026 Sebastián Sanjorge",
+    "experience.freelance.title": "Desarrollador Freelance",
+    "experience.freelance.p1": "Diseñé, desarrollé y desplegué una aplicación web para un <span class=\"white fw-bold\">profesional de la salud mental</span> — diseño UI custom, routing y formulario de contacto integrado, desarrollados con tecnologías frontend modernas — <span class=\"aqua fw-bold\">en producción desde el lanzamiento.</span>",
+    "experience.freelance.p2": "Desarrollé el sitio completo para un <span class=\"white fw-bold\">estudio jurídico:</span> diseño visual completo, layout responsive y captación de leads — construido con un stack frontend moderno y <span class=\"aqua fw-bold\">en producción con mantenimiento activo.</span>",
+    "experience.freelance.p3": "Gestioné el ciclo de vida completo de ambos proyectos — relevamiento, diseño, desarrollo, deploy y soporte continuo — trabajando directamente con los clientes para transformar sus necesidades en <span class=\"aqua fw-bold\">soluciones listas para producción.</span>",
+    "experience.freelance.clients.title": "— Clientes en Producción",
+    "experience.freelance.client.cta": "Ver sitio",
+    "experience.freelance.client1.label": "Profesional de Salud Mental",
+    "experience.freelance.client1.quote": "\"Trabajar con Sebastián fue excelente de principio a fin. El sitio quedó exactamente como lo imaginaba, y funciona a la perfección desde el día del lanzamiento.\" <span class='client-signature'>— Juan Pablo</span>",
+    "experience.freelance.client2.label": "Estudio Jurídico",
+    "experience.freelance.client2.quote": "\"Entendió nuestra actividad de inmediato. Diseño limpio, rápido y muy profesional. Desde la primera semana ya empezamos a recibir consultas por el formulario.\" <span class='client-signature'>— Emiliano</span>",
+    "experience.henry.title": "Frontend Lead  •  Emergency Vet Platform  •  2024",
+    "experience.henry.subtitle": "Proyecto de graduación en Henry Bootcamp. Equipo de 8 personas (4 frontend, 4 backend).",
+    "experience.henry.p1": "Lideré el equipo frontend como <span class=\"white fw-bold\">principal referente técnico:</span> definí la estructura de carpetas, establecí estándares de calidad de código y realicé code reviews a lo largo de todo el proyecto.",
+    "experience.henry.p2": "Implementé el <span class=\"white fw-bold\">sistema de emergencias en tiempo real</span> con Socket.io: los usuarios disparan alertas que notifican instantáneamente a las clínicas registradas, abriendo una <span class=\"aqua fw-bold\">sesión de chat en vivo.</span>",
+    "experience.henry.p3": "Construí un <span class=\"white fw-bold\">mapa interactivo con Leaflet</span> mostrando clínicas cercanas, con vistas animadas de detalle que exhiben horarios y servicios. Realicé la presentación final en vivo en nombre del equipo."
   }
 }
