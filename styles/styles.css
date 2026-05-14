@@ -340,15 +340,39 @@ a.logo:hover {
   color: #e7e7e7;
   overflow: hidden;
   height: 37px;
-  position: relative;
 }
 
-.text-banner {
-  background-color: #04160f;
-  font-weight: 600;
+.marquee-track {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  will-change: transform;
+}
+
+.marquee-set {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.marquee-unit {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 4px;
   white-space: nowrap;
-  display: inline-block;
-  position: absolute;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+@keyframes marquee-slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(var(--marquee-offset));
+  }
 }
 
 .skills-background {

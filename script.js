@@ -250,8 +250,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     applySelectorTranslations(saved);
     injectToggleUI();
-
-    // banners set above; animation handled by a simple independent routine below
+    buildMarquee("text-banner");
+    buildMarquee("text-banner-2");
 
     // Hook UI buttons (attach to all .lang-toggle elements)
     const langButtons = document.querySelectorAll(".lang-toggle");
@@ -276,6 +276,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         applyTranslations(translations, lang);
         applySelectorTranslations(lang);
+        buildMarquee("text-banner");
+        buildMarquee("text-banner-2");
         currentLang = lang;
         updateFlags();
       });
@@ -283,82 +285,56 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 })();
 
-// Scrolling animation for text banners
-document.addEventListener("DOMContentLoaded", function () {
-  // Delay banner setup slightly so i18n replacements finish first
-  setTimeout(() => {
-    const textBanner = document.getElementById("text-banner");
-    if (!textBanner) return;
+// --- Marquee banner ---
+function buildMarquee(trackId) {
+  const track = document.getElementById(trackId);
+  if (!track) return;
 
-    const originalHTML = textBanner.innerHTML;
-    // Duplicate the content enough times to ensure seamless loop
-    const repeatedHTML = originalHTML.repeat(50);
-    textBanner.innerHTML = repeatedHTML;
+  // Get the template unit — can be loose (first run) or inside a set (language change)
+  const template = track.querySelector(".marquee-unit");
+  if (!template) return;
 
-    // Measure the width of a single repetition
-    const tempDiv = document.createElement("div");
-    tempDiv.style.cssText =
-      "position: absolute; visibility: hidden; white-space: nowrap;";
-    tempDiv.className = textBanner.className;
-    tempDiv.innerHTML = originalHTML;
-    document.body.appendChild(tempDiv);
-    const singleWidth = tempDiv.offsetWidth;
-    document.body.removeChild(tempDiv);
+  // 1. Remove all previous sets and loose units, reset animation
+  track.querySelectorAll(".marquee-set").forEach((el) => el.remove());
+  track.querySelectorAll(".marquee-unit").forEach((el) => el.remove());
+  track.style.animation = "none";
+  track.style.transform = "";
+  void track.offsetWidth;
 
-    let position = 0;
-    const speed = 0.5; // pixels per frame
+  // 2. Measure unit width with a clean single insert
+  track.appendChild(template);
+  void track.offsetWidth;
+  const unitWidth = template.getBoundingClientRect().width;
+  track.removeChild(template);
+  if (unitWidth <= 0) return;
 
-    function animateScroll() {
-      requestAnimationFrame(animateScroll);
+  // 3. Build two identical sets — setB is the seamless "second copy"
+  const unitsNeeded = Math.ceil(window.innerWidth / unitWidth) + 2;
 
-      position -= speed;
-
-      // Reset position seamlessly when one full cycle completes
-      if (Math.abs(position) >= singleWidth) {
-        position = position % singleWidth;
-      }
-
-      textBanner.style.transform = `translateX(${position}px)`;
+  function buildSet() {
+    const set = document.createElement("div");
+    set.className = "marquee-set";
+    for (let i = 0; i < unitsNeeded; i++) {
+      const unit = template.cloneNode(true);
+      if (i > 0) unit.setAttribute("aria-hidden", "true");
+      set.appendChild(unit);
     }
+    return set;
+  }
 
-    animateScroll();
-  }, 80);
-});
+  const setA = buildSet();
+  const setB = buildSet();
+  setB.setAttribute("aria-hidden", "true");
+  track.appendChild(setA);
+  track.appendChild(setB);
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Delay banner2 setup slightly so i18n replacements finish first
-  setTimeout(() => {
-    const textBanner2 = document.getElementById("text-banner-2");
-    if (!textBanner2) return;
+  // 4. Measure EXACT pixel width of one set after layout
+  void track.offsetWidth;
+  const setWidth = setA.getBoundingClientRect().width;
 
-    const originalHTML2 = textBanner2.innerHTML;
-    const repeatedHTML2 = originalHTML2.repeat(50);
-    textBanner2.innerHTML = repeatedHTML2;
+  // Pixel offset — no subpixel ambiguity, seamless reset guaranteed
+  track.style.setProperty("--marquee-offset", `-${Math.round(setWidth)}px`);
 
-    const tempDiv2 = document.createElement("div");
-    tempDiv2.style.cssText =
-      "position: absolute; visibility: hidden; white-space: nowrap;";
-    tempDiv2.className = textBanner2.className;
-    tempDiv2.innerHTML = originalHTML2;
-    document.body.appendChild(tempDiv2);
-    const singleWidth2 = tempDiv2.offsetWidth;
-    document.body.removeChild(tempDiv2);
-
-    let position2 = 0;
-    const speed2 = 0.5;
-
-    function animateScroll2() {
-      requestAnimationFrame(animateScroll2);
-
-      position2 -= speed2;
-
-      if (Math.abs(position2) >= singleWidth2) {
-        position2 = position2 % singleWidth2;
-      }
-
-      textBanner2.style.transform = `translateX(${position2}px)`;
-    }
-
-    animateScroll2();
-  }, 80);
-});
+  const duration = setWidth / 80;
+  track.style.animation = `marquee-slide ${duration.toFixed(3)}s linear infinite`;
+}
