@@ -335,6 +335,6 @@ function buildMarquee(trackId) {
   // Pixel offset — no subpixel ambiguity, seamless reset guaranteed
   track.style.setProperty("--marquee-offset", `-${Math.round(setWidth)}px`);
 
-  const duration = setWidth / 80;
+  const duration = setWidth / 40;
   track.style.animation = `marquee-slide ${duration.toFixed(3)}s linear infinite`;
 }
