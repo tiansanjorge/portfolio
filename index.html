@@ -202,6 +202,17 @@
       .grayscale-on-hover:hover {
         box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
       }
+
+      @media (min-width: 768px) {
+        .video-bw {
+          filter: grayscale(1);
+          transition: filter 0.4s ease;
+        }
+
+        .video-bw:hover {
+          filter: grayscale(0);
+        }
+      }
     </style>
   </head>
 
@@ -548,7 +559,7 @@
 
               <div class="col-12 col-sm-10 d-flex justify-content-center mb-5">
                 <div class="col-8 col-md-5">
-                  <div class="ratio ratio-16x9 rounded-3 overflow-hidden">
+                  <div class="ratio ratio-16x9 rounded-3 overflow-hidden video-bw">
                     <iframe
                       src="https://www.youtube.com/embed/AmEC6fejFVQ?vq=hd1080"
                       title="Microfrontend Architecture"
