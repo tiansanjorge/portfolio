@@ -366,6 +366,12 @@ a.logo:hover {
   font-size: 15px;
 }
 
+.banner-dot {
+  font-size: 10px;
+  opacity: 0.45;
+  line-height: 1;
+}
+
 @keyframes marquee-slide {
   from {
     transform: translateX(0);
