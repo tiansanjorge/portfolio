@@ -65,6 +65,7 @@
 
       #projectsCarousel .carousel-inner {
         padding: 20px 0;
+        min-height: 420px;
       }
 
       #projectsCarousel .carousel-item {
@@ -387,6 +388,36 @@
       .project-bullet-scroll::-webkit-scrollbar-thumb:hover {
         background: rgba(94, 231, 131, 0.7);
       }
+
+      /* Carousel dots */
+      .carousel-dots {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-top: 28px;
+      }
+
+      .carousel-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(155, 193, 188, 0.3);
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        transition:
+          width 0.3s ease,
+          height 0.3s ease,
+          background 0.3s ease;
+        flex-shrink: 0;
+      }
+
+      .carousel-dot.active {
+        width: 13px;
+        height: 13px;
+        background: #5ee783;
+      }
     </style>
   </head>
 
@@ -582,7 +613,7 @@
                     class="d-flex justify-content-center align-items-center mb-2"
                   >
                     <a
-                      href="https://github.com/tiansanjorge/fleet-ops"
+                      href="https://fleet-ops-live.vercel.app/"
                       target="_blank"
                       rel="noopener noreferrer"
                       class="text-decoration-none"
@@ -591,6 +622,15 @@
                         class="fs-medium fw-bolder white m-0 me-3 project-title"
                         data-i18n="project.fleetops.title"
                       ></h3>
+                    </a>
+                    <a
+                      href="https://fleet-ops-live.vercel.app/"
+                      class="works-button rounded-circle border-0 text-decoration-none me-3"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="View Live Project"
+                    >
+                      <i class="fa-solid fa-arrow-right"></i>
                     </a>
                     <a
                       href="https://github.com/tiansanjorge/fleet-ops"
@@ -884,7 +924,7 @@
                   <div class="row align-items-center">
                     <div class="col-lg-6 project-image-container">
                       <a
-                        href="https://github.com/tiansanjorge/fleet-ops"
+                        href="https://fleet-ops-live.vercel.app/"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="project-image-wrapper"
@@ -899,7 +939,7 @@
                     <div class="col-lg-6 ps-lg-5 project-content">
                       <div class="d-flex align-items-center mb-3">
                         <a
-                          href="https://github.com/tiansanjorge/fleet-ops"
+                          href="https://fleet-ops-live.vercel.app/"
                           target="_blank"
                           rel="noopener noreferrer"
                           class="text-decoration-none"
@@ -911,6 +951,21 @@
                             FleetOps
                           </h3>
                         </a>
+                        <a
+                          href="https://fleet-ops-live.vercel.app/"
+                          class="works-button rounded-circle border-0 text-decoration-none"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          title="View Live Project"
+                        >
+                          <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                      </div>
+                      <div
+                        class="project-bullet-scroll darker-white fs-medium mb-3"
+                        data-i18n="project.fleetops.desc"
+                      ></div>
+                      <div class="fs-medium mb-2 d-flex align-items-center">
                         <a
                           href="https://github.com/tiansanjorge/fleet-ops"
                           class="rounded-circle border-0 text-decoration-none me-3"
@@ -944,12 +999,6 @@
                             style="font-size: 20px"
                           ></i>
                         </a>
-                      </div>
-                      <div
-                        class="project-bullet-scroll darker-white fs-medium mb-3"
-                        data-i18n="project.fleetops.desc"
-                      ></div>
-                      <div class="fs-medium mb-2 d-flex align-items-center">
                         <span
                           class="aqua fw-bold"
                           data-i18n="projects.technologies"
@@ -1258,7 +1307,53 @@
                 ></span>
                 <span class="visually-hidden">Next</span>
               </button>
+
+              <!-- Carousel Dots -->
+              <div class="carousel-dots">
+                <button
+                  class="carousel-dot active"
+                  data-index="0"
+                  aria-label="Project 1"
+                ></button>
+                <button
+                  class="carousel-dot"
+                  data-index="1"
+                  aria-label="Project 2"
+                ></button>
+                <button
+                  class="carousel-dot"
+                  data-index="2"
+                  aria-label="Project 3"
+                ></button>
+                <button
+                  class="carousel-dot"
+                  data-index="3"
+                  aria-label="Project 4"
+                ></button>
+              </div>
             </div>
+
+            <script>
+              (function () {
+                var carousel = document.getElementById("projectsCarousel");
+                var dots = document.querySelectorAll(".carousel-dot");
+
+                carousel.addEventListener("slide.bs.carousel", function (e) {
+                  dots.forEach(function (dot) {
+                    dot.classList.remove("active");
+                  });
+                  dots[e.to].classList.add("active");
+                });
+
+                dots.forEach(function (dot) {
+                  dot.addEventListener("click", function () {
+                    var index = parseInt(this.getAttribute("data-index"));
+                    var bsCarousel = bootstrap.Carousel.getInstance(carousel);
+                    bsCarousel.to(index);
+                  });
+                });
+              })();
+            </script>
           </div>
         </div>
       </section>
