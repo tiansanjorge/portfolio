@@ -1,95 +1,50 @@
-# Full Stack Engineer — React · TypeScript · Next.js · Scalable Systems
+# Sebastián Sanjorge — Portfolio
 
-Full Stack Engineer with a Frontend specialization, building production-grade systems with a focus on scalability, performance, and maintainability.
+Full Stack Engineer with a Frontend specialization. This repository is the source code of my personal portfolio: a static, multi-page site (no framework, no build step) covering my experience, projects, and case studies.
 
-This repository contains my personal portfolio, showcasing real-world experience in complex applications, including real-time systems and modular architectures.
-
-Portfolio: https://ssanjorge.netlify.app/
+**Live site:** https://ssanjorge.netlify.app/
 
 ---
 
-## About
+## Pages
 
-I specialize in developing scalable web applications using React, TypeScript, and modern frontend architecture patterns.
+- **Home** (`index.html`) — introduction, featured work, and skills.
+- **Experience** (`pages/experience.html`) — IPH, Terragene, Freelance, and Henry Bootcamp, as tabs.
+- **Projects** (`pages/works.html`) — FleetOps, Microfrontend Architecture, Rick & Morty Wiki, and Taste Labs.
+- **Case Studies** (`pages/case-studies.html`) — four Problem → Decision → Result write-ups going deeper than the project teasers.
+- **Contact** (`pages/contact.html`) — social links and CV download.
 
-My experience includes building and maintaining a real-time geolocation platform for underground mining operations, working within an international team and contributing to architectural decisions in production environments.
+## Experience
 
----
+- **IPH (Spain)** — Frontend Engineer on a real-time geolocation and traceability platform for mining operations, inside a microfrontend architecture. Designed and implemented the platform's RBAC system from scratch.
+- **Terragene** — Freelance. Rebuilt the corporate web platform as a Next.js frontend on a WordPress Headless architecture, owning Frontend architecture, integration, and delivery.
+- **Freelance** — Two production clients (a law firm and a mental health practice), plus Terragene above.
+- **Henry Bootcamp** — Graduation project (VetsForPets), technical lead on a 9-person full-stack team.
 
-## Experience Highlights
+Full narratives for IPH, Terragene, and two personal projects (FleetOps, Taste Labs) are in [Case Studies](https://ssanjorge.netlify.app/pages/case-studies.html).
 
-- Built and maintained a real-time geolocation and traceability platform used in underground mining operations
-- Contributed to architectural decisions within a team of 15 engineers
-- Designed and implemented a **RBAC (Role-Based Access Control)** system across routes and components
-- Developed applications using a **microfrontend architecture**, enabling modular development and independent deployments
-- Optimized rendering and state management in real-time views, improving responsiveness
-- Applied **TDD practices** using Vitest and React Testing Library in critical features
-- Delivered features aligned with business-critical workflows in short development cycles
+## Projects
 
----
+| Project | Stack | Link |
+|---|---|---|
+| FleetOps | Next.js, React, TypeScript, Zustand, React Query, MSW, Leaflet | [Live](https://fleetoperations.vercel.app/) · [Repo](https://github.com/tiansanjorge/fleet-ops) |
+| Microfrontend Architecture | React, TypeScript, Webpack Module Federation | [Repo](https://github.com/tiansanjorge/microfrontends-architecture) |
+| Rick & Morty Wiki | Next.js, TypeScript, Vitest, React Testing Library | [Live](https://rickandmortyexp.netlify.app/) · [Repo](https://github.com/tiansanjorge/intramed-challenge) |
+| Taste Labs Assessment | React, Tailwind, WebGL2, GLSL, Claude Code | [Live](https://lambda-ai-clone.vercel.app/) · [Repo](https://github.com/tiansanjorge/lambda-ai-clone) |
 
-## Technical Focus
+## Tech stack of this site
 
-- **Architecture**: Microfrontends, modular systems, scalable frontend design
-- **State Management**: Handling complex and real-time application state
-- **Performance**: Render optimization and efficient data flow
-- **Access Control**: Consistent RBAC implementation across the application
-- **Testing**: TDD with high coverage in critical paths
-- **Accessibility**: ARIA, semantic HTML, keyboard navigation
+- HTML, CSS, and vanilla JavaScript — no build tool, no framework.
+- Bootstrap 5 (CDN) for the grid and base utilities.
+- Custom i18n: `i18n/translations.json` + `data-i18n` attributes, applied at runtime via `fetch()` in `script.js`.
+- Tab/accordion interactions (experience tabs, project grid, case studies) are plain JS, no library.
 
----
+### Running locally
 
-## Tech Stack
-
-- **Frontend**: React, TypeScript, Next.js
-- **State & UI**: Zustand, MUI, Tailwind CSS
-- **Testing**: Vitest, React Testing Library
-- **Backend (foundations)**: Node.js, Express, PostgreSQL
-
----
-
-## Featured Project — Microfrontend Architecture
-
-A modular frontend system built with **Webpack Module Federation**, composed of a host application, two independently deployed microfrontends, and a custom shared UI library.
-
-Designed to simulate a real-world environment where multiple teams can develop, ship, and scale features independently without tightly coupling applications.
-
-**Architecture:**
-
-- Host application responsible for routing, layout composition, and runtime integration
-- Two domain-based microfrontends:
-  - Character List (data fetching + list rendering)
-  - Character Detail (dynamic detail view loaded at runtime)
-- Custom shared UI library (`tarjeta-lib`) to decouple UI from business logic and enforce consistency
-
-**Key technical decisions:**
-
-- Runtime composition via Module Federation (no build-time coupling)
-- Monorepo setup using workspaces to improve developer experience and local orchestration
-- Shared dependencies managed as singletons to avoid duplication and version conflicts
-- Independent module boundaries to enable scalability across teams
-
-**What this demonstrates:**
-
-- How to structure frontend systems beyond a single SPA
-- Separation of concerns across distributed applications
-- Shared UI strategy without creating tight coupling
-- Trade-offs involved in microfrontend architectures (complexity, coordination, runtime concerns)
-
-This project focuses on **architecture, modularity, and maintainability**, rather than visual complexity.
-
-→ Repository: https://github.com/tiansanjorge/microfrontends-architecture
-
----
+Because translations are loaded with `fetch()`, opening `index.html` directly (`file://`) will fail silently due to CORS. Serve the folder with any static server, e.g. VS Code's Live Server extension.
 
 ## Contact
 
 - GitHub: https://github.com/tiansanjorge
-- LinkedIn: https://www.linkedin.com/in/sebastian-sanjorge-frontend-developer/
+- LinkedIn: https://www.linkedin.com/in/sebastian-sanjorge-fullstack-engineer/
 - Portfolio: https://ssanjorge.netlify.app/
-
----
-
-## Introduction (35s)
-
-https://www.youtube.com/watch?v=qlBhpazVkCQ

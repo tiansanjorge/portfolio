@@ -403,6 +403,7 @@
                 type="button"
                 class="case-card-header d-flex justify-content-between align-items-center px-4 px-md-5 py-3 py-md-4"
                 aria-expanded="false"
+                aria-controls="case-body-iph"
               >
                 <div>
                   <p
@@ -414,9 +415,15 @@
                     data-i18n="caseStudies.iph.title"
                   ></h3>
                 </div>
-                <i class="fa-solid fa-chevron-down case-chevron aqua ms-3 mt-2"></i>
+                <i
+                  class="fa-solid fa-chevron-down case-chevron aqua ms-3 mt-2"
+                  aria-hidden="true"
+                ></i>
               </button>
-              <div class="case-card-body px-4 px-md-5 pb-4 pb-md-5">
+              <div
+                class="case-card-body px-4 px-md-5 pb-4 pb-md-5"
+                id="case-body-iph"
+              >
                 <p class="darker-white fs-medium mb-1">
                   <span
                     class="aqua fw-bold case-label"
@@ -462,6 +469,7 @@
                 type="button"
                 class="case-card-header d-flex justify-content-between align-items-center px-4 px-md-5 py-3 py-md-4"
                 aria-expanded="false"
+                aria-controls="case-body-terragene"
               >
                 <div>
                   <p
@@ -473,9 +481,15 @@
                     data-i18n="caseStudies.terragene.title"
                   ></h3>
                 </div>
-                <i class="fa-solid fa-chevron-down case-chevron aqua ms-3 mt-2"></i>
+                <i
+                  class="fa-solid fa-chevron-down case-chevron aqua ms-3 mt-2"
+                  aria-hidden="true"
+                ></i>
               </button>
-              <div class="case-card-body px-4 px-md-5 pb-4 pb-md-5">
+              <div
+                class="case-card-body px-4 px-md-5 pb-4 pb-md-5"
+                id="case-body-terragene"
+              >
                 <p class="darker-white fs-medium mb-1">
                   <span
                     class="aqua fw-bold case-label"
@@ -524,6 +538,7 @@
                 type="button"
                 class="case-card-header d-flex justify-content-between align-items-center px-4 px-md-5 py-3 py-md-4"
                 aria-expanded="false"
+                aria-controls="case-body-fleetops"
               >
                 <div>
                   <p
@@ -535,9 +550,15 @@
                     data-i18n="caseStudies.fleetops.title"
                   ></h3>
                 </div>
-                <i class="fa-solid fa-chevron-down case-chevron aqua ms-3 mt-2"></i>
+                <i
+                  class="fa-solid fa-chevron-down case-chevron aqua ms-3 mt-2"
+                  aria-hidden="true"
+                ></i>
               </button>
-              <div class="case-card-body px-4 px-md-5 pb-4 pb-md-5">
+              <div
+                class="case-card-body px-4 px-md-5 pb-4 pb-md-5"
+                id="case-body-fleetops"
+              >
                 <p class="darker-white fs-medium mb-1">
                   <span
                     class="aqua fw-bold case-label"
@@ -583,6 +604,7 @@
                 type="button"
                 class="case-card-header d-flex justify-content-between align-items-center px-4 px-md-5 py-3 py-md-4"
                 aria-expanded="false"
+                aria-controls="case-body-tastelabs"
               >
                 <div>
                   <p
@@ -594,9 +616,15 @@
                     data-i18n="caseStudies.tastelabs.title"
                   ></h3>
                 </div>
-                <i class="fa-solid fa-chevron-down case-chevron aqua ms-3 mt-2"></i>
+                <i
+                  class="fa-solid fa-chevron-down case-chevron aqua ms-3 mt-2"
+                  aria-hidden="true"
+                ></i>
               </button>
-              <div class="case-card-body px-4 px-md-5 pb-4 pb-md-5">
+              <div
+                class="case-card-body px-4 px-md-5 pb-4 pb-md-5"
+                id="case-body-tastelabs"
+              >
                 <p class="darker-white fs-medium mb-1">
                   <span
                     class="aqua fw-bold case-label"
@@ -659,7 +687,7 @@
               </a>
               <a
                 class="d-flex flex-column justify-content-center white text-decoration-none footer-link"
-                href="https://www.linkedin.com/in/sebastian-sanjorge-frontend-developer"
+                href="https://www.linkedin.com/in/sebastian-sanjorge-fullstack-engineer"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
@@ -722,7 +750,10 @@
           // fijo para que el contenido pueda reflowear si cambia el viewport
           var body = card.querySelector(".case-card-body");
           body.addEventListener("transitionend", function (e) {
-            if (e.propertyName === "max-height" && body.classList.contains("open")) {
+            if (
+              e.propertyName === "max-height" &&
+              body.classList.contains("open")
+            ) {
               body.style.maxHeight = "none";
             }
           });
