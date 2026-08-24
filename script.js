@@ -1,6 +1,6 @@
 // Dropdown navbar button
 
-function dropdown() {
+function dropdown(trigger) {
   const dropdownMenu = document.getElementById("dropdown-menu");
   const barIcon = document.getElementById("bar-icon");
   const xIcon = document.getElementById("x-icon");
@@ -13,6 +13,8 @@ function dropdown() {
 
     xIcon.classList.remove("d-block");
     xIcon.classList.add("d-none");
+
+    if (trigger) trigger.setAttribute("aria-expanded", "false");
   } else {
     dropdownMenu.classList.add("active");
 
@@ -21,6 +23,8 @@ function dropdown() {
 
     xIcon.classList.remove("d-none");
     xIcon.classList.add("d-block");
+
+    if (trigger) trigger.setAttribute("aria-expanded", "true");
   }
 }
 
@@ -28,7 +32,26 @@ function dropdown() {
 document.addEventListener("DOMContentLoaded", function () {
   const scrollElements = document.querySelectorAll(".scroll-reveal");
 
-  if (scrollElements.length > 0) {
+  if (scrollElements.length === 0) return;
+
+  if ("IntersectionObserver" in window) {
+    // Reveals each element once, then stops observing it — avoids
+    // recalculating layout for every element on every scroll event.
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: "0px 0px -15% 0px", threshold: 0 }
+    );
+
+    scrollElements.forEach((el) => observer.observe(el));
+  } else {
+    // Fallback for browsers without IntersectionObserver support
     const elementInView = (el, percentageScroll = 100) => {
       const elementTop = el.getBoundingClientRect().top;
       return (
@@ -38,25 +61,39 @@ document.addEventListener("DOMContentLoaded", function () {
       );
     };
 
-    const displayScrollElement = (element) => {
-      element.classList.add("visible");
-    };
-
     const handleScrollAnimation = () => {
       scrollElements.forEach((el) => {
         if (elementInView(el, 85)) {
-          displayScrollElement(el);
+          el.classList.add("visible");
         }
       });
     };
 
-    window.addEventListener("scroll", () => {
-      handleScrollAnimation();
-    });
-
-    // Trigger on page load for elements already in view
+    window.addEventListener("scroll", handleScrollAnimation);
     handleScrollAnimation();
   }
+});
+
+// YouTube click-to-load facade — avoids loading the embed until the user asks for it
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".yt-facade").forEach(function (facade) {
+    facade.addEventListener("click", function () {
+      const videoId = facade.getAttribute("data-yt-id");
+      const title = facade.getAttribute("data-yt-title") || "YouTube video";
+      const iframe = document.createElement("iframe");
+      iframe.src =
+        "https://www.youtube.com/embed/" +
+        videoId +
+        "?autoplay=1&vq=hd1080";
+      iframe.title = title;
+      iframe.allow =
+        "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+      iframe.allowFullscreen = true;
+      iframe.style.cssText =
+        "position:absolute;top:0;left:0;width:100%;height:100%;border:0;";
+      facade.replaceWith(iframe);
+    });
+  });
 });
 
 // --- Simple i18n loader and applier ---
@@ -153,6 +190,8 @@ document.addEventListener("DOMContentLoaded", function () {
               let correctKey = m.key;
               if (location.pathname.includes("works"))
                 correctKey = "nav.projects";
+              else if (location.pathname.includes("case-studies"))
+                correctKey = "nav.caseStudies";
               else if (location.pathname.includes("experience"))
                 correctKey = "nav.experience";
               else if (location.pathname.includes("contact"))

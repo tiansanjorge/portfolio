@@ -1,0 +1,772 @@
+{
+  "metadata": {
+    "document": "Perfil Profesional Estructurado",
+    "file_name": "professional_profile.json",
+    "version": "2.3",
+    "phase": 6,
+    "status": "completo",
+    "language": "es",
+    "purpose": "Representación estructurada del Perfil Profesional Consolidado para consumo de agentes.",
+    "public_profile": false,
+    "source_policy": "No agrega conocimiento nuevo ni constituye un artefacto público.",
+    "audit_status": "generado_desde_fase_5_v2.2",
+    "audit_scope": [
+      "cobertura de las 29 capacidades consolidadas",
+      "fidelidad de clasificación",
+      "contexto y límites de atribución",
+      "clasificación tecnológica",
+      "casos, logros y principios",
+      "formación académica e idiomas",
+      "formación en AI Engineering",
+      "consistencia interna y estructura para consumo de agentes"
+    ],
+    "source_version": "Perfil Profesional Consolidado v2.2",
+    "important_boundary": "La formación en AI Engineering representa aprendizaje profesional deliberado y expansión técnica; no constituye experiencia profesional productiva como AI Engineer."
+  },
+  "professional_core": {
+    "primary_area": "Desarrollo Frontend",
+    "professional_expansion": [
+      "Arquitectura Frontend",
+      "Integración Frontend–Backend y APIs",
+      "Resolución de problemas y debugging",
+      "Diseño de componentes reutilizables",
+      "Gestión de estado",
+      "Diseño de sistemas de autorización",
+      "Comunicación técnica y coordinación",
+      "Liderazgo técnico, ownership y autonomía",
+      "Expansión hacia AI Engineering mediante formación profesional"
+    ],
+    "overall_interpretation": "La trayectoria tiene como núcleo el desarrollo Frontend y muestra una expansión progresiva hacia arquitectura Frontend, integración entre sistemas, resolución de problemas multicapa, ownership y coordinación técnica. Durante 2026 se incorporó además formación profesional especializada en AI Engineering como expansión técnica deliberada, sin constituir experiencia productiva como AI Engineer."
+  },
+  "capabilities": {
+    "primary": [
+      {
+        "name": "Desarrollo Frontend",
+        "classification": "principal",
+        "description": "Capacidad central y transversal para construir y evolucionar interfaces y aplicaciones Frontend, incluyendo componentización, routing, responsive, estado, APIs, integración, testing, performance y resolución de problemas.",
+        "contexts": [
+          "Freelance",
+          "Henry",
+          "IPH",
+          "Terragene",
+          "FleetOps",
+          "Proyectos Personales"
+        ]
+      },
+      {
+        "name": "Arquitectura Frontend",
+        "classification": "principal",
+        "description": "Diseño y evolución de estructuras Frontend mediante separación de responsabilidades, reutilización, estado, servicios, contratos, sistemas transversales e integración con arquitecturas externas.",
+        "contexts": [
+          "IPH",
+          "Terragene",
+          "FleetOps",
+          "Henry",
+          "Proyectos Personales"
+        ]
+      },
+      {
+        "name": "Diseño de componentes reutilizables",
+        "classification": "principal",
+        "description": "Identificación de patrones repetidos y creación o adopción de abstracciones y componentes reutilizables cuando aportan consistencia y reducen duplicación.",
+        "contexts": [
+          "Juan Pablo Sanjorge",
+          "Henry",
+          "IPH",
+          "Proyectos Personales"
+        ]
+      },
+      {
+        "name": "Integración Frontend–Backend y APIs",
+        "classification": "principal",
+        "description": "Consumo e integración de APIs, organización de servicios, transformación y tipado de datos, trabajo con contratos, autenticación y coordinación de interfaces entre Frontend y Backend.",
+        "contexts": [
+          "Henry",
+          "IPH",
+          "Terragene",
+          "FleetOps",
+          "Freelance",
+          "Proyectos Personales"
+        ]
+      },
+      {
+        "name": "Gestión de estado",
+        "classification": "principal",
+        "description": "Decisión y modelado de dónde vive el estado, cómo se comparte, persiste y actualiza, incluyendo estado local, Context API, Zustand, Redux/Redux Toolkit y sincronización realtime.",
+        "contexts": [
+          "Henry",
+          "IPH",
+          "Terragene",
+          "FleetOps",
+          "Proyectos Personales"
+        ]
+      },
+      {
+        "name": "Resolución de problemas y debugging",
+        "classification": "principal",
+        "description": "Investigación, reproducción, aislamiento y resolución de problemas de UI, integración, build, estado, autorización, performance, APIs externas, WebSockets e infraestructura.",
+        "contexts": [
+          "Transversal",
+          "especialmente IPH",
+          "Terragene",
+          "FleetOps",
+          "Henry",
+          "Proyectos Personales"
+        ]
+      },
+      {
+        "name": "Diseño de sistemas de autorización",
+        "classification": "principal",
+        "description": "Diseño y aplicación de modelos de permisos y RBAC, centralización de reglas y coherencia entre los controles del Frontend y el Backend.",
+        "contexts": [
+          "IPH",
+          "FleetOps",
+          "Henry"
+        ]
+      },
+      {
+        "name": "Diseño de producto, UX/UI y responsive",
+        "classification": "principal",
+        "description": "Construcción de interfaces considerando diseño visual, traducción de necesidades de producto, responsive, UX/UI y correcciones de experiencia.",
+        "contexts": [
+          "Freelance",
+          "Henry",
+          "IPH",
+          "Terragene",
+          "Proyectos Personales"
+        ]
+      },
+      {
+        "name": "Comunicación técnica y relación con stakeholders",
+        "classification": "principal",
+        "description": "Explicación y defensa de decisiones, coordinación con Backend, QA, Diseño y Product, comunicación con clientes, documentación, capacitación y comunicación de restricciones.",
+        "contexts": [
+          "Freelance",
+          "Henry",
+          "IPH",
+          "Terragene"
+        ]
+      },
+      {
+        "name": "Colaboración técnica y trabajo con equipos multidisciplinarios",
+        "classification": "principal",
+        "description": "Trabajo coordinado con Frontend, Backend, QA, Diseño, Product Management y otros referentes mediante refinamientos, PRs, revisión de código y debugging conjunto.",
+        "contexts": [
+          "Henry",
+          "IPH",
+          "Terragene"
+        ]
+      },
+      {
+        "name": "Liderazgo técnico, ownership y autonomía",
+        "classification": "principal",
+        "description": "Ownership sobre resultados, orientación técnica de otros, definición de criterios, coordinación y autonomía creciente, sin atribuir autoridad jerárquica formal.",
+        "contexts": [
+          "Freelance",
+          "Henry",
+          "IPH",
+          "Terragene",
+          "FleetOps"
+        ]
+      }
+    ],
+    "secondary_contextual": [
+      {
+        "name": "Autenticación y gestión de sesión",
+        "classification": "secundaria/contextual",
+        "description": "Registro, login, JWT, Google OAuth, sesión, persistencia y coordinación Frontend–Backend.",
+        "contexts": [
+          "Henry",
+          "IPH",
+          "Terragene",
+          "FleetOps"
+        ]
+      },
+      {
+        "name": "Testing y calidad",
+        "classification": "secundaria/contextual",
+        "description": "Testing de componentes, hooks, stores y páginas mediante Vitest, React Testing Library, MSW, mocks y TDD. No equivale a especialización QA.",
+        "contexts": [
+          "IPH",
+          "Rick & Morty",
+          "Henry",
+          "FleetOps"
+        ]
+      },
+      {
+        "name": "Performance y optimización Frontend",
+        "classification": "secundaria/contextual",
+        "description": "Optimización relacionada con renders, requests, cache, granularidad de suscripciones, frecuencia de actualizaciones y efectos secundarios.",
+        "contexts": [
+          "IPH",
+          "Rick & Morty",
+          "FleetOps"
+        ]
+      },
+      {
+        "name": "Infraestructura, despliegue y ciclo de entrega",
+        "classification": "secundaria/contextual",
+        "description": "Publicación, entornos, build, deploy y operación aplicada. No equivale a especialización DevOps/SRE.",
+        "contexts": [
+          "Freelance",
+          "Terragene",
+          "FleetOps"
+        ]
+      },
+      {
+        "name": "Sistemas realtime y WebSockets",
+        "classification": "secundaria/contextual",
+        "description": "Socket.IO, eventos, salas, persistencia, sincronización de estado y debugging de comunicación realtime.",
+        "contexts": [
+          "Henry",
+          "FleetOps"
+        ]
+      },
+      {
+        "name": "Backend y desarrollo Full Stack",
+        "classification": "secundaria/contextual",
+        "description": "Implementación real de Backend y persistencia, especialmente en Henry y FleetOps, además de integración profesional con Backend.",
+        "contexts": [
+          "Henry",
+          "FleetOps",
+          "IPH",
+          "Terragene"
+        ]
+      },
+      {
+        "name": "Documentación técnica y transferencia de conocimiento",
+        "classification": "secundaria/contextual",
+        "description": "Documentación de decisiones, sistemas, contratos, mantenimiento, capacitación y onboarding.",
+        "contexts": [
+          "IPH",
+          "Henry",
+          "Terragene"
+        ]
+      },
+      {
+        "name": "Aprendizaje técnico y evolución profesional",
+        "classification": "secundaria/contextual",
+        "description": "Formación, aprendizaje autodidacta, incorporación de tecnologías, resolución de problemas y experimentación deliberada.",
+        "contexts": [
+          "Toda la trayectoria"
+        ]
+      },
+      {
+        "name": "Evaluación de trade-offs y toma de decisiones técnicas",
+        "classification": "secundaria/contextual",
+        "description": "Evaluación de complejidad, mantenibilidad, velocidad, reutilización, performance, costo, restricciones y alcance.",
+        "contexts": [
+          "IPH",
+          "Terragene",
+          "Rick & Morty",
+          "FleetOps",
+          "otros proyectos"
+        ]
+      },
+      {
+        "name": "Desarrollo asistido por IA",
+        "classification": "secundaria/contextual",
+        "description": "Uso de IA como mecanismo de implementación y exploración bajo dirección y evaluación técnica. En FleetOps la implementación fue 100% asistida por IA.",
+        "contexts": [
+          "Taste Labs",
+          "FleetOps"
+        ]
+      },
+      {
+        "name": "Calidad de código, mantenibilidad y deuda técnica",
+        "classification": "secundaria/contextual",
+        "description": "Reutilización, separación de responsabilidades, tipado, revisión, testing, documentación, refactorización y reconocimiento de deuda.",
+        "contexts": [
+          "IPH",
+          "Terragene",
+          "Freelance",
+          "FleetOps",
+          "Proyectos Personales"
+        ]
+      },
+      {
+        "name": "Seguridad Frontend y seguridad de aplicaciones",
+        "classification": "secundaria/contextual",
+        "description": "Comprensión práctica contextual de autenticación, autorización, protección de rutas, secretos, validación y autenticación de WebSockets. No constituye especialización AppSec/IAM.",
+        "contexts": [
+          "IPH",
+          "Terragene",
+          "Henry",
+          "FleetOps"
+        ]
+      },
+      {
+        "name": "Integración de servicios externos y ecosistemas tecnológicos",
+        "classification": "secundaria/contextual",
+        "description": "Integración con CMS, APIs, almacenamiento, OAuth, analítica, servicios de envío, infraestructura y sistemas Backend externos.",
+        "contexts": [
+          "Terragene",
+          "Henry",
+          "Freelance",
+          "Proyectos Personales"
+        ]
+      },
+      {
+        "name": "Desarrollo Full Stack y comprensión sistémica",
+        "classification": "secundaria/contextual",
+        "description": "Comprensión e implementación de Frontend, Backend, APIs, persistencia, autenticación, autorización, realtime e infraestructura.",
+        "contexts": [
+          "Henry",
+          "FleetOps",
+          "Terragene"
+        ]
+      },
+      {
+        "name": "Infraestructura, despliegue y comprensión de DevOps",
+        "classification": "secundaria/contextual",
+        "description": "Experiencia aplicada con entornos, variables, build, hosting, servicios cloud, secretos, deploy y problemas de publicación. No constituye especialización.",
+        "contexts": [
+          "Terragene",
+          "Freelance",
+          "FleetOps"
+        ]
+      },
+      {
+        "name": "Git, control de versiones y colaboración sobre código",
+        "classification": "secundaria/contextual",
+        "description": "Branches, commits, Pull Requests, code review, integración de cambios, conflictos y recuperación de trabajo.",
+        "contexts": [
+          "Toda la trayectoria",
+          "especialmente contextos colaborativos"
+        ]
+      },
+      {
+        "name": "Forma de trabajo y proceso de ingeniería",
+        "classification": "secundaria/contextual",
+        "description": "Requerimientos, planificación, refinamiento, alternativas, implementación incremental, validación, debugging, review, documentación y coordinación.",
+        "contexts": [
+          "Evolución transversal",
+          "especialmente IPH y Terragene"
+        ]
+      },
+      {
+        "name": "Principios de ingeniería y criterios técnicos recurrentes",
+        "classification": "secundaria/contextual",
+        "description": "Simplicidad proporcional, reutilización, separación de responsabilidades, centralización de reglas, investigación multicapa, adecuación al problema y evaluación de consecuencias.",
+        "contexts": [
+          "Toda la trayectoria"
+        ]
+      },
+      {
+        "name": "SEO y analítica",
+        "classification": "secundaria/contextual",
+        "description": "SEO técnico aplicado, metadatos, indexación, estructura de páginas, analítica y tracking. No constituye especialización independiente.",
+        "contexts": [
+          "Proyectos web",
+          "principalmente Terragene"
+        ]
+      },
+      {
+        "name": "Mantenimiento y evolución de software",
+        "classification": "secundaria/contextual",
+        "description": "Mantenimiento posterior, correcciones, evolución de aplicaciones existentes y resolución de problemas sobre sistemas ya publicados.",
+        "contexts": [
+          "Transversal; peso variable según experiencia"
+        ]
+      },
+      {
+        "name": "Gestión de requerimientos, alcance y traducción negocio → tecnología",
+        "classification": "secundaria/contextual",
+        "description": "Relevamiento de necesidades, interpretación de requerimientos, definición y ajuste de alcance, refinamiento, evaluación de alternativas y traducción entre necesidades de producto/cliente y soluciones técnicas.",
+        "contexts": [
+          "Freelance",
+          "IPH",
+          "Terragene"
+        ]
+      },
+      {
+        "name": "Gestión profesional y relación con clientes",
+        "classification": "secundaria/contextual",
+        "description": "Definición de condiciones y alcance, comunicación profesional, establecimiento de límites, negociación y defensa de los términos acordados. Es experiencia contextual, no capacidad técnica principal.",
+        "contexts": [
+          "Freelance"
+        ]
+      },
+      {
+        "name": "Formación en AI Engineering",
+        "classification": "secundaria/contextual",
+        "description": "Formación profesional iniciada en 2026 orientada al diseño, implementación, evaluación e integración de sistemas basados en inteligencia artificial. Incluye fundamentos de IA, prompt engineering, structured outputs, embeddings, RAG, bases vectoriales, agentes, LangChain, LangGraph, MCP, aplicaciones multimodales, PEFT/LoRA, observabilidad, evaluación e infraestructura/optimización de aplicaciones de IA. Constituye aprendizaje profesional deliberado y expansión técnica, no experiencia productiva como AI Engineer.",
+        "contexts": [
+          "Formación profesional — AI Engineering (2026)"
+        ],
+        "limitation": "No constituye evidencia de haber diseñado, implementado u operado sistemas de IA en producción."
+      }
+    ],
+    "experimental_or_point": [
+      {
+        "name": "Microfrontends / Module Federation",
+        "classification": "experimental",
+        "context": "Microfrontends Architecture y exposición en IPH",
+        "limitation": "No existe evidencia de experiencia profesional prolongada en operación avanzada de microfrontends."
+      },
+      {
+        "name": "WebGL2 / GLSL",
+        "classification": "experimental",
+        "context": "Taste Labs",
+        "limitation": "Experiencia práctica puntual; no constituye una especialización consolidada en graphics programming."
+      },
+      {
+        "name": "Infraestructura/DevOps avanzada",
+        "classification": "experimental",
+        "context": "Exposición aplicada en distintos proyectos",
+        "limitation": "No existe evidencia suficiente para atribuir especialización independiente en DevOps, SRE o arquitectura cloud avanzada."
+      }
+    ]
+  },
+  "technologies": {
+    "deep_domain": [
+      {
+        "name": "React",
+        "basis": "Tecnología central y recurrente; implementación y arquitectura Frontend en múltiples contextos."
+      },
+      {
+        "name": "TypeScript",
+        "basis": "Uso transversal en aplicaciones y arquitectura, incluyendo componentes, estado, APIs, contratos y lógica."
+      },
+      {
+        "name": "Next.js",
+        "basis": "Uso recurrente con App Router, arquitectura, rendering, integración con CMS/APIs y aplicaciones profesionales y personales."
+      }
+    ],
+    "solid_experience": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Zustand / gestión de estado",
+      "REST / APIs / integración Frontend–Backend",
+      "React Router / routing Frontend",
+      "Vitest",
+      "React Testing Library",
+      "MSW",
+      "Socket.IO / WebSockets",
+      "Tailwind CSS",
+      "MUI",
+      "Sass",
+      "Bootstrap"
+    ],
+    "functional_experience": [
+      "Redux",
+      "Redux Toolkit",
+      "redux-persist",
+      "TanStack Query",
+      "Node.js",
+      "Express",
+      "Fastify",
+      "PostgreSQL",
+      "Prisma",
+      "NestJS",
+      "TypeORM",
+      "JWT",
+      "autenticación",
+      "RBAC",
+      "WordPress Headless",
+      "ACF",
+      "Git",
+      "GitHub",
+      "Pull Requests",
+      "Code Review",
+      "GitHub Actions",
+      "PM2",
+      "Nginx",
+      "Linux",
+      "Render",
+      "Neon",
+      "Docker Compose",
+      "Cloudflare",
+      "S3",
+      "analítica",
+      "GTM",
+      "GA4",
+      "servicios externos"
+    ],
+    "basic_or_point_experience": [
+      {
+        "name": "Module Federation / Microfrontends",
+        "context": "Implementación experimental; no experiencia profesional prolongada en operación avanzada."
+      },
+      {
+        "name": "WebGL2 / GLSL",
+        "context": "Experimentación puntual en Taste Labs."
+      },
+      {
+        "name": "Herramientas de IA para desarrollo, incluyendo Claude Code",
+        "context": "Participación alta en contextos concretos, pero no constituye por sí sola una tecnología que defina profundidad profesional."
+      }
+    ],
+    "training_areas_ai_engineering": [
+      "AI fundamentals",
+      "prompt engineering",
+      "structured outputs",
+      "embeddings",
+      "RAG",
+      "vector databases",
+      "agents",
+      "LangChain",
+      "LangGraph",
+      "MCP",
+      "multimodal applications",
+      "PEFT",
+      "LoRA",
+      "observability",
+      "AI evaluation",
+      "AI application infrastructure and optimization"
+    ]
+  },
+  "context_weight": {
+    "IPH": "Mayor peso para evaluar arquitectura, sistemas transversales, comunicación, coordinación, ownership, testing y trabajo dentro de un equipo de producto.",
+    "Terragene": "Mayor peso para integración sistémica, arquitectura Frontend, CMS, infraestructura, despliegue, servicios externos, SEO, analítica y problemas abiertos.",
+    "Freelance": "Alta autonomía y responsabilidad integral, pero sobre productos de escala y complejidad heterogéneas.",
+    "Henry": "Evidencia práctica significativa de Full Stack, Backend, realtime y liderazgo técnico informal; no equivalente a experiencia productiva profesional.",
+    "FleetOps": "Evidencia fuerte de arquitectura Full Stack, realtime, RBAC, performance y trade-offs; la implementación fue 100% asistida por IA.",
+    "Proyectos Personales": "Evidencia complementaria y experimental de Frontend, testing, resiliencia, microfrontends, WebGL/GLSL y desarrollo asistido por IA.",
+    "Formación profesional — AI Engineering": "Evidencia de aprendizaje técnico deliberado y expansión hacia AI Engineering; no equivalente a experiencia productiva como AI Engineer."
+  },
+  "engineering_principles": [
+    "Evaluar soluciones por adecuación al problema y no por cantidad de tecnología incorporada.",
+    "Preferir simplicidad proporcional al alcance cuando la complejidad adicional no aporta valor suficiente.",
+    "Identificar patrones repetidos y abstraerlos cuando la reutilización reduce duplicación y mejora consistencia.",
+    "Centralizar reglas transversales para evitar divergencia entre módulos.",
+    "Investigar la capa correcta: el lugar donde aparece un fallo no necesariamente coincide con su origen.",
+    "Evaluar simultáneamente mantenibilidad, escalabilidad, performance, UX, accesibilidad, integración y restricciones de producto.",
+    "Separar mecanismos de comunicación cuando sus responsabilidades son diferentes, como REST para operaciones CRUD y WebSockets para eventos realtime.",
+    "Considerar costo, infraestructura y ciclo de vida de uso al tomar decisiones técnicas.",
+    "Usar IA como mecanismo de implementación y exploración sin sustituir la dirección, evaluación, comprensión y validación técnica."
+  ],
+  "representative_technical_cases": [
+    {
+      "case": "RBAC en IPH",
+      "demonstrates": [
+        "diseño de sistemas de autorización",
+        "arquitectura Frontend",
+        "integración Frontend–Backend",
+        "coordinación técnica"
+      ],
+      "participation": [
+        "diseño",
+        "implementación",
+        "integración",
+        "coordinación"
+      ]
+    },
+    {
+      "case": "REST + WebSocket en FleetOps",
+      "demonstrates": [
+        "resolución de problemas",
+        "arquitectura Full Stack",
+        "sincronización de estado",
+        "diseño realtime"
+      ],
+      "participation": [
+        "diseño",
+        "dirección técnica",
+        "evaluación",
+        "ajuste de implementación asistida por IA"
+      ]
+    },
+    {
+      "case": "Optimización del mapa realtime en FleetOps",
+      "demonstrates": [
+        "performance Frontend",
+        "gestión de estado",
+        "optimización de renderizado"
+      ],
+      "participation": [
+        "diseño",
+        "evaluación",
+        "ajuste de implementación asistida por IA"
+      ]
+    },
+    {
+      "case": "Autenticación JWT para REST y WebSocket en FleetOps",
+      "demonstrates": [
+        "autenticación",
+        "seguridad aplicada",
+        "integración Frontend–Backend",
+        "realtime"
+      ],
+      "participation": [
+        "diseño",
+        "dirección técnica",
+        "evaluación",
+        "ajuste de implementación asistida por IA"
+      ]
+    },
+    {
+      "case": "Fastify frente a NestJS en FleetOps",
+      "demonstrates": [
+        "evaluación de trade-offs",
+        "adecuación arquitectónica al alcance"
+      ],
+      "participation": [
+        "decisión",
+        "dirección técnica"
+      ]
+    },
+    {
+      "case": "Evolución de responsive desde Freelance hacia aplicaciones React y trabajo profesional",
+      "demonstrates": [
+        "responsive",
+        "UX/UI",
+        "evolución del criterio de ingeniería"
+      ],
+      "participation": [
+        "diseño",
+        "implementación",
+        "evaluación"
+      ]
+    },
+    {
+      "case": "Microfrontends Architecture",
+      "demonstrates": [
+        "Microfrontends",
+        "Module Federation",
+        "composición runtime",
+        "librería compartida"
+      ],
+      "participation": [
+        "implementación",
+        "experimentación",
+        "diseño arquitectónico experimental"
+      ]
+    },
+    {
+      "case": "Taste Labs",
+      "demonstrates": [
+        "desarrollo asistido por IA",
+        "precisión visual",
+        "WebGL2",
+        "GLSL"
+      ],
+      "participation": [
+        "dirección",
+        "evaluación",
+        "iteración",
+        "experimentación"
+      ]
+    }
+  ],
+  "representative_achievements": [
+    "Evolución desde desarrollo web inicial hacia ingeniería Frontend profesional.",
+    "Diseño e implementación de un sistema RBAC transversal en IPH.",
+    "Creación de componentes reutilizables adoptados como estándares.",
+    "Estabilización de integraciones y funcionalidades complejas dentro de productos.",
+    "Incorporación de testing Frontend en contextos profesionales y personales.",
+    "Construcción y entrega de VetsForPets como producto académico colaborativo.",
+    "Construcción de FleetOps como evidencia deliberada de capacidades Full Stack.",
+    "Optimización del renderizado del mapa realtime en FleetOps.",
+    "Resolución de problemas de consistencia entre REST y WebSocket en FleetOps."
+  ],
+  "interview_examples": [
+    "Explicar la arquitectura RBAC de IPH, incluyendo centralización de reglas y coordinación Frontend–Backend.",
+    "Explicar por qué TableGeneralContainer fue abstraído y cómo la reutilización afectó al producto.",
+    "Explicar el problema de consistencia entre REST y WebSocket en FleetOps y la división de responsabilidades resultante.",
+    "Explicar la optimización del renderizado del mapa realtime en FleetOps.",
+    "Explicar cómo se aplicó autenticación JWT tanto a REST como a WebSocket.",
+    "Explicar el trade-off arquitectónico detrás de elegir Fastify en lugar de NestJS en FleetOps.",
+    "Explicar la evolución de la implementación responsive desde EJER hacia aplicaciones React y posteriormente trabajo profesional.",
+    "Explicar cómo evolucionó el ownership desde proyectos freelance individuales hacia desarrollo colaborativo de productos."
+  ],
+  "evidence_constraints": [
+    "La utilización de una tecnología no demuestra por sí sola haber diseñado su arquitectura.",
+    "Consumir una API o integrar un servicio no implica haber diseñado la arquitectura de ese servicio.",
+    "Colaborar con Backend no implica haber implementado Backend.",
+    "La evidencia académica y personal debe conservar su contexto y no equipararse automáticamente con experiencia profesional productiva.",
+    "FleetOps no debe describirse como programación manual línea por línea: la implementación fue 100% asistida por IA.",
+    "No deben inferirse causas raíz cuando la BCP conserva explícitamente incertidumbre.",
+    "La exposición contextual no debe convertirse en especialización.",
+    "Backend no debe presentarse como especialización equivalente al Frontend.",
+    "Infraestructura, DevOps y SRE no deben presentarse como especialización independiente.",
+    "Microfrontends/Module Federation constituyen experiencia práctica experimental, no especialización profesional prolongada.",
+    "WebGL2/GLSL constituye experiencia puntual y experimental.",
+    "Autenticación, RBAC y seguridad aplicada no deben convertirse en claims de especialización IAM, AppSec, OAuth/OIDC o SSO empresarial.",
+    "No existe evidencia para atribuir arquitectura empresarial/distribuida a gran escala, sistemas de millones de usuarios o liderazgo arquitectónico institucional.",
+    "Los logros y resultados sólo deben expresarse cuando la evidencia permita atribuirlos.",
+    "SEO y analítica son experiencia contextual, no especialización independiente.",
+    "La gestión de clientes corresponde a experiencia contextual dentro de Freelance, no a una capacidad técnica principal.",
+    "AI Engineering training must not be represented as productive AI Engineer experience or as evidence of production AI systems."
+  ],
+  "traceability": {
+    "primary_sources": [
+      "Perfil Profesional Consolidado v2.2",
+      "Banco de Evidencias",
+      "Base de Conocimiento Profesional Consolidada"
+    ],
+    "experience_sources": {
+      "Terragene": "Base de Conocimiento Profesional — Terragene",
+      "IPH": "Base de Conocimiento Profesional — IPH",
+      "FleetOps": "Base de Conocimiento Profesional — FleetOps",
+      "Freelance": "Base de Conocimiento Profesional — Freelance",
+      "Henry": "Base de Conocimiento Profesional — Henry",
+      "Proyectos Personales": "Base de Conocimiento Profesional — Proyectos Personales"
+    },
+    "consolidation": "Base de Conocimiento Profesional Consolidada",
+    "evidence": "Banco de Evidencias",
+    "synthesis": "Perfil Profesional Consolidado v2.2"
+  },
+  "coverage_control": {
+    "source": "Perfil Profesional Consolidado v2.2 — matriz de cobertura de 29 capacidades",
+    "total_capabilities": 29,
+    "represented": 29,
+    "omitted": 0,
+    "rule": "Cada capacidad consolidada debe estar representada como principal, secundaria/contextual o experimental/puntual."
+  },
+  "ai_engineering_training": {
+    "status": "formación profesional",
+    "year": 2026,
+    "classification": "aprendizaje profesional deliberado / expansión técnica",
+    "areas": [
+      "fundamentos y aplicaciones de inteligencia artificial",
+      "prompt engineering",
+      "structured outputs",
+      "embeddings y representación semántica",
+      "Retrieval-Augmented Generation (RAG)",
+      "bases de datos vectoriales y recuperación semántica",
+      "agentes y orquestación",
+      "LangChain",
+      "LangGraph",
+      "Model Context Protocol (MCP)",
+      "integración de modelos y sistemas externos",
+      "aplicaciones multimodales",
+      "PEFT",
+      "LoRA",
+      "observabilidad",
+      "evaluación de sistemas de IA",
+      "infraestructura y optimización de aplicaciones basadas en IA"
+    ],
+    "professional_interpretation": "La formación documenta una expansión deliberada desde el desarrollo de software y el uso contextual de IA hacia la comprensión de arquitecturas, técnicas y herramientas específicas para construir sistemas basados en inteligencia artificial.",
+    "limitations": [
+      "No constituye experiencia profesional productiva como AI Engineer.",
+      "No demuestra por sí sola diseño, implementación u operación de sistemas de IA en producción."
+    ]
+  },
+  "education_and_languages": {
+    "education": [
+      {
+        "institution": "Universidad de Buenos Aires",
+        "program": "Design Studies",
+        "period": "2014–2016",
+        "classification": "antecedente de formación académica",
+        "limitation": "No constituye experiencia profesional ni se utiliza como evidencia independiente de capacidades técnicas."
+      }
+    ],
+    "languages": [
+      {
+        "language": "Español",
+        "level": "Nativo",
+        "classification": "competencia lingüística profesional transversal"
+      },
+      {
+        "language": "Inglés",
+        "level": "Avanzado (C1)",
+        "certification": "EF SET 77/100",
+        "classification": "competencia lingüística profesional transversal",
+        "evidence": "La certificación EF SET 77/100 constituye evidencia objetiva del nivel declarado."
+      }
+    ]
+  }
+}

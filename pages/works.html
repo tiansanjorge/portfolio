@@ -6,7 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Professional Portfolio • Sebastián Sanjorge Frontend Engineer"
+      content="Personal projects — FleetOps, Microfrontend Architecture, Rick & Morty Wiki, and Taste Labs. Sebastián Sanjorge, Full Stack Engineer."
+    />
+    <link
+      rel="canonical"
+      href="https://ssanjorge.netlify.app/pages/works.html"
+    />
+
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://ssanjorge.netlify.app/pages/works.html"
+    />
+    <meta property="og:title" content="Sanjorge • Projects" />
+    <meta
+      property="og:description"
+      content="Personal projects — FleetOps, Microfrontend Architecture, Rick & Morty Wiki, and Taste Labs. Sebastián Sanjorge, Full Stack Engineer."
+    />
+    <meta
+      property="og:image"
+      content="https://ssanjorge.netlify.app/img/perfil.jpg"
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sanjorge • Projects" />
+    <meta
+      name="twitter:description"
+      content="Personal projects — FleetOps, Microfrontend Architecture, Rick & Morty Wiki, and Taste Labs. Sebastián Sanjorge, Full Stack Engineer."
+    />
+    <meta
+      name="twitter:image"
+      content="https://ssanjorge.netlify.app/img/perfil.jpg"
     />
     <script>
       (function () {
@@ -41,7 +71,7 @@
     <link rel="stylesheet" href="../styles/animate.css" />
     <link rel="stylesheet" href="../styles/styles.css" />
     <link rel="icon" type="image/png" href="../img/favicon.png" />
-    <title>Sanjorge • Frontend Engineer</title>
+    <title>Sanjorge • Projects</title>
     <style>
       /* Enhanced background animation - more movement */
       .works-background {
@@ -55,42 +85,6 @@
         }
         50% {
           filter: brightness(1.1);
-        }
-      }
-
-      /* Carousel custom styles */
-      #projectsCarousel {
-        perspective: 1000px;
-      }
-
-      #projectsCarousel .carousel-inner {
-        padding: 20px 0;
-        min-height: 420px;
-      }
-
-      #projectsCarousel .carousel-item {
-        transition:
-          transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1),
-          opacity 0.15s ease;
-      }
-
-      #projectsCarousel .carousel-item:not(.active) {
-        opacity: 0;
-      }
-
-      #projectsCarousel .carousel-item.active {
-        opacity: 1;
-        animation: slideInScale 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
-      }
-
-      @keyframes slideInScale {
-        0% {
-          transform: scale(0.98) translateX(30px);
-          opacity: 0;
-        }
-        100% {
-          transform: scale(1) translateX(0);
-          opacity: 1;
         }
       }
 
@@ -118,64 +112,6 @@
         transform: scale(1);
       }
 
-      /* Carousel controls - scroll-button style */
-      #projectsCarousel .carousel-control-prev,
-      #projectsCarousel .carousel-control-next {
-        width: 45px;
-        height: 45px;
-        background: #17784f;
-        border-radius: 50%;
-        border: none;
-        top: 175px;
-        transform: none;
-        opacity: 0.9;
-        box-shadow: 3px 4px 12px 2px rgba(51, 51, 51, 0.25);
-        transition: 0.2s;
-      }
-
-      #projectsCarousel .carousel-control-prev:hover,
-      #projectsCarousel .carousel-control-next:hover {
-        background: #9bc1bc;
-        opacity: 1;
-        box-shadow: 3px 4px 12px 2px rgba(51, 51, 51, 0.25);
-      }
-
-      #projectsCarousel .carousel-control-prev-icon,
-      #projectsCarousel .carousel-control-next-icon {
-        width: 18px;
-        height: 18px;
-        filter: brightness(0) invert(1) drop-shadow(0 0 0.5px white)
-          drop-shadow(0 0 0.5px white);
-        background-size: 18px 18px;
-      }
-
-      #projectsCarousel
-        .carousel-control-prev:hover
-        .carousel-control-prev-icon,
-      #projectsCarousel
-        .carousel-control-next:hover
-        .carousel-control-next-icon {
-        filter: brightness(0) saturate(100%) invert(20%)
-          drop-shadow(0 0 0.5px #333333) drop-shadow(0 0 0.5px #333333);
-      }
-
-      #projectsCarousel .carousel-control-prev {
-        left: -80px;
-      }
-
-      #projectsCarousel .carousel-control-next {
-        right: -80px;
-      }
-
-      @media (max-width: 1400px) {
-        #projectsCarousel .carousel-control-prev {
-          left: -50px;
-        }
-        #projectsCarousel .carousel-control-next {
-          right: -50px;
-        }
-      }
-
       /* Project content animations */
       .project-content {
         animation: fadeInUp 0.15s ease-out 0s both;
@@ -190,19 +126,6 @@
           opacity: 1;
           transform: translateY(0);
         }
-      }
-
-      /* Enhanced project titles with glow effect */
-      .project-title {
-        position: relative;
-        display: inline-block;
-        text-shadow: 0 0 20px rgba(94, 231, 131, 0.3);
-        transition: all 0.3s ease;
-      }
-
-      .project-title:hover {
-        text-shadow: 0 0 30px rgba(94, 231, 131, 0.6);
-        transform: translateX(5px);
       }
 
       /* Project button styles - scroll-button style */
@@ -389,34 +312,40 @@
         background: rgba(94, 231, 131, 0.7);
       }
 
-      /* Carousel dots */
-      .carousel-dots {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-        margin-top: 28px;
-      }
-
-      .carousel-dot {
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: rgba(155, 193, 188, 0.3);
-        border: none;
-        padding: 0;
-        cursor: pointer;
+      /* Project thumbnail grid (grayscale -> color, click to select) */
+      .project-thumb {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        filter: grayscale(1);
         transition:
-          width 0.3s ease,
-          height 0.3s ease,
-          background 0.3s ease;
-        flex-shrink: 0;
+          filter 0.3s ease,
+          box-shadow 0.3s ease,
+          transform 0.3s ease;
       }
 
-      .carousel-dot.active {
-        width: 13px;
-        height: 13px;
-        background: #5ee783;
+      .project-thumb-btn {
+        cursor: pointer;
+      }
+
+      .project-thumb-btn:hover .project-thumb {
+        filter: grayscale(0);
+        transform: translateY(-2px);
+      }
+
+      .project-thumb-btn.active .project-thumb {
+        filter: grayscale(0);
+        box-shadow: 0 0 0 3px #17784f;
+      }
+
+      /* Detail panel, single-open like the tabs in experience.html */
+      .project-detail {
+        display: none;
+      }
+
+      .project-detail.active {
+        display: block;
+        animation: fadeInPanel 0.38s ease both;
       }
     </style>
   </head>
@@ -457,7 +386,13 @@
                 </button>
               </div>
               <div class="pt-2">
-                <button class="border-0 nav-button" onclick="dropdown()">
+                <button
+                  class="border-0 nav-button"
+                  onclick="dropdown(this)"
+                  aria-expanded="false"
+                  aria-controls="dropdown-menu"
+                  aria-label="Menu"
+                >
                   <i
                     class="d-block fa-solid fa-bars fs-5 white"
                     id="bar-icon"
@@ -499,6 +434,14 @@
                   <span class="active-dot green">•</span>
                 </a>
               </div>
+              <div class="pe-2 my-1">
+                <a
+                  class="works-header-link header-link fs-medium text-decoration-none subrayado-works white fw-600"
+                  href="case-studies.html"
+                >
+                  <span data-i18n="nav.caseStudies"></span>
+                </a>
+              </div>
               <div class="pe-2 mt-1">
                 <a
                   class="works-header-link header-link fs-medium text-decoration-none subrayado-works white fw-600"
@@ -522,7 +465,7 @@
             </div>
 
             <div
-              class="col-7 col-lg-6 col-xl-5 d-flex justify-content-between align-items-center"
+              class="col-9 col-lg-8 col-xl-7 d-flex justify-content-between align-items-center"
             >
               <a
                 class="works-header-link fs-medium text-decoration-none subrayado-works white fw-600"
@@ -540,6 +483,11 @@
                 ><span data-i18n="nav.projects"></span>
                 <span class="active-dot green">•</span></a
               >
+              <a
+                class="works-header-link fs-medium text-decoration-none subrayado-works white fw-600"
+                href="case-studies.html"
+                ><span data-i18n="nav.caseStudies"></span
+              ></a>
               <a
                 class="works-header-link fs-medium text-decoration-none subrayado-works white fw-600"
                 href="contact.html"
@@ -575,7 +523,7 @@
           <div class="col-10 col-xxl-9 d-flex flex-column px-0">
             <!-- Title -->
             <div
-              class="col-12 text-end mb-2 mb-lg-3 scroll-reveal animate-fade-right delay-1"
+              class="col-12 text-start mb-2 mb-lg-3 scroll-reveal animate-fade-right delay-1"
             >
               <h2
                 class="white mb-0 projects-title"
@@ -596,12 +544,13 @@
               >
                 <div class="col-10 col-sm-8 project-image-container">
                   <a
-                    href="https://fleet-ops-live.vercel.app/"
+                    href="https://fleetoperations.vercel.app/"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="project-image-wrapper"
                   >
                     <img
+                      loading="lazy"
                       class="img-fluid rounded-3"
                       src="../img/fleetops.jpg"
                       alt="FleetOps"
@@ -612,19 +561,12 @@
                   <div
                     class="d-flex justify-content-center align-items-center mb-2"
                   >
+                    <h3
+                      class="fs-medium fw-bolder white m-0 me-3"
+                      data-i18n="project.fleetops.title"
+                    ></h3>
                     <a
-                      href="https://fleet-ops-live.vercel.app/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="text-decoration-none"
-                    >
-                      <h3
-                        class="fs-medium fw-bolder white m-0 me-3 project-title"
-                        data-i18n="project.fleetops.title"
-                      ></h3>
-                    </a>
-                    <a
-                      href="https://fleet-ops-live.vercel.app/"
+                      href="https://fleetoperations.vercel.app/"
                       class="works-button rounded-circle border-0 text-decoration-none me-3"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -696,19 +638,10 @@
                       height: 0;
                     "
                   >
-                    <iframe
-                      src="https://www.youtube.com/embed/AmEC6fejFVQ?vq=hd1080"
-                      title="Microfrontend Architecture"
-                      frameborder="0"
-                      allow="
-                        accelerometer;
-                        autoplay;
-                        clipboard-write;
-                        encrypted-media;
-                        gyroscope;
-                        picture-in-picture;
-                      "
-                      allowfullscreen
+                    <div
+                      class="yt-facade"
+                      data-yt-id="AmEC6fejFVQ"
+                      data-yt-title="Microfrontend Architecture"
                       style="
                         position: absolute;
                         top: 0;
@@ -717,24 +650,26 @@
                         height: 100%;
                         border-radius: 12px;
                       "
-                    ></iframe>
+                    >
+                      <img
+                        src="https://img.youtube.com/vi/AmEC6fejFVQ/hqdefault.jpg"
+                        alt="Microfrontend Architecture — video preview"
+                        loading="lazy"
+                      />
+                      <span class="yt-play-btn"
+                        ><i class="fa-solid fa-play"></i
+                      ></span>
+                    </div>
                   </div>
                 </div>
                 <div class="col-12 text-center mt-3">
                   <div
                     class="d-flex justify-content-center align-items-center mb-2"
                   >
-                    <a
-                      href="https://github.com/tiansanjorge/microfrontends-architecture"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="text-decoration-none"
-                    >
-                      <h3
-                        class="fs-medium fw-bolder white m-0 me-3 project-title"
-                        data-i18n="project.microfrontend.title"
-                      ></h3>
-                    </a>
+                    <h3
+                      class="fs-medium fw-bolder white m-0 me-3"
+                      data-i18n="project.microfrontend.title"
+                    ></h3>
                     <a
                       href="https://github.com/tiansanjorge/microfrontends-architecture"
                       class="rounded-circle border-0 text-decoration-none"
@@ -783,46 +718,6 @@
                 </div>
               </div>
 
-              <!-- Project 2 -->
-              <div
-                class="col-12 d-flex flex-column align-items-center mb-5 mobile-project-card scroll-reveal animate-fade-up delay-3"
-              >
-                <div class="col-10 col-sm-8 project-image-container">
-                  <div class="project-image-wrapper">
-                    <img
-                      class="img-fluid rounded-3"
-                      src="../img/vetsforpets.jpg"
-                      alt="Emergency Vet Platform"
-                    />
-                  </div>
-                </div>
-                <div class="col-12 text-center mt-3">
-                  <div
-                    class="d-flex justify-content-center align-items-center mb-2"
-                  >
-                    <h3
-                      class="fs-medium fw-bolder white m-0 project-title"
-                      data-i18n="project.henry.title"
-                    >
-                      Emergency Vet Platform
-                    </h3>
-                  </div>
-                  <div
-                    class="project-bullet-scroll col-10 mx-auto text-start mb-2"
-                    data-i18n="project.henry.content"
-                  ></div>
-                  <div class="d-flex justify-content-center flex-wrap mt-1">
-                    <span class="tech-tag">Next.js</span>
-                    <span class="tech-tag">TypeScript</span>
-                    <span class="tech-tag">Tailwind</span>
-                    <span class="tech-tag">Socket.io</span>
-                    <span class="tech-tag">Leaflet</span>
-                    <span class="tech-tag">Zustand</span>
-                    <span class="tech-tag">Stripe</span>
-                  </div>
-                </div>
-              </div>
-
               <!-- Project 3 -->
               <div
                 class="col-12 d-flex flex-column align-items-center mb-5 mobile-project-card scroll-reveal animate-fade-up delay-3"
@@ -835,6 +730,7 @@
                     class="project-image-wrapper"
                   >
                     <img
+                      loading="lazy"
                       class="img-fluid rounded-3"
                       src="../img/rickymorty.jpg"
                       alt="Rick & Morty wiki"
@@ -845,17 +741,10 @@
                   <div
                     class="d-flex justify-content-center align-items-center mb-2"
                   >
-                    <a
-                      href="https://rickandmortyexp.netlify.app/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="text-decoration-none"
-                    >
-                      <h3
-                        class="fs-medium fw-bolder white m-0 me-3 project-title"
-                        data-i18n="project.rick.title"
-                      ></h3>
-                    </a>
+                    <h3
+                      class="fs-medium fw-bolder white m-0 me-3"
+                      data-i18n="project.rick.title"
+                    ></h3>
                     <a
                       href="https://rickandmortyexp.netlify.app/"
                       class="works-button rounded-circle border-0 text-decoration-none me-3"
@@ -911,25 +800,183 @@
                   </div>
                 </div>
               </div>
+
+              <!-- Project 4: Taste Labs -->
+              <div
+                class="col-12 d-flex flex-column align-items-center mb-5 mobile-project-card scroll-reveal animate-fade-up delay-3"
+              >
+                <div class="col-10 col-sm-8 project-image-container">
+                  <a
+                    href="https://lambda-ai-clone.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-image-wrapper"
+                  >
+                    <img
+                      loading="lazy"
+                      class="img-fluid rounded-3"
+                      src="../img/taselabs.jpg"
+                      alt="Taste Labs Assessment"
+                    />
+                  </a>
+                </div>
+                <div class="col-12 text-center mt-3">
+                  <div
+                    class="d-flex justify-content-center align-items-center mb-2"
+                  >
+                    <h3
+                      class="fs-medium fw-bolder white m-0 me-3"
+                      data-i18n="project.tastelabs.title"
+                    ></h3>
+                    <a
+                      href="https://lambda-ai-clone.vercel.app/"
+                      class="works-button rounded-circle border-0 text-decoration-none me-3"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="View Live Project"
+                    >
+                      <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a
+                      href="https://github.com/tiansanjorge/lambda-ai-clone"
+                      class="rounded-circle border-0 text-decoration-none"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="View on GitHub"
+                      style="
+                        width: 40px;
+                        height: 40px;
+                        min-width: 40px;
+                        min-height: 40px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background: #17784f;
+                        color: #e7e7e7;
+                        box-shadow: 3px 4px 12px 2px rgba(51, 51, 51, 0.25);
+                        transition: 0.2s;
+                      "
+                      onmouseover="
+                        this.style.background = '#9bc1bc';
+                        this.style.color = '#333333';
+                      "
+                      onmouseout="
+                        this.style.background = '#17784f';
+                        this.style.color = '#e7e7e7';
+                      "
+                    >
+                      <i
+                        class="fa-brands fa-github"
+                        style="font-size: 20px"
+                      ></i>
+                    </a>
+                  </div>
+                  <p
+                    class="col-10 mx-auto darker-white fs-small mb-2"
+                    data-i18n="project.tastelabs.desc"
+                  ></p>
+                  <div class="d-flex justify-content-center flex-wrap mt-1">
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Tailwind</span>
+                    <span class="tech-tag">WebGL2</span>
+                    <span class="tech-tag">GLSL</span>
+                    <span class="tech-tag">Claude Code</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <!-- Desktop: Carousel view -->
-            <div
-              class="carousel slide d-none d-lg-block scroll-reveal animate-fade-up delay-2"
-              id="projectsCarousel"
-            >
-              <div class="carousel-inner">
-                <!-- Project FleetOps -->
-                <div class="carousel-item active">
+            <!-- Desktop: Grid + Detail -->
+            <div class="d-none d-lg-block scroll-reveal animate-fade-up delay-2">
+              <div class="row g-4 mt-3 mb-5">
+                <div class="col-3">
+                  <button
+                    type="button"
+                    class="project-thumb-btn active w-100 border-0 p-0 bg-transparent"
+                    data-target="fleetops"
+                  >
+                    <img
+                      loading="lazy"
+                      class="img-fluid rounded-3 project-thumb"
+                      src="../img/fleetops.jpg"
+                      alt="FleetOps"
+                    />
+                    <p
+                      class="white fw-bold fs-small text-center mt-2 mb-0"
+                      data-i18n="project.fleetops.title"
+                    ></p>
+                  </button>
+                </div>
+                <div class="col-3">
+                  <button
+                    type="button"
+                    class="project-thumb-btn w-100 border-0 p-0 bg-transparent"
+                    data-target="microfrontend"
+                  >
+                    <img
+                      loading="lazy"
+                      class="img-fluid rounded-3 project-thumb"
+                      src="../img/microfrontends%20rick%20y%20morty.jpg"
+                      alt="Microfrontend Architecture"
+                    />
+                    <p
+                      class="white fw-bold fs-small text-center mt-2 mb-0"
+                      data-i18n="project.microfrontend.title"
+                    ></p>
+                  </button>
+                </div>
+                <div class="col-3">
+                  <button
+                    type="button"
+                    class="project-thumb-btn w-100 border-0 p-0 bg-transparent"
+                    data-target="rick"
+                  >
+                    <img
+                      loading="lazy"
+                      class="img-fluid rounded-3 project-thumb"
+                      src="../img/rickymorty.jpg"
+                      alt="Rick & Morty wiki"
+                    />
+                    <p
+                      class="white fw-bold fs-small text-center mt-2 mb-0"
+                      data-i18n="project.rick.title"
+                    ></p>
+                  </button>
+                </div>
+                <div class="col-3">
+                  <button
+                    type="button"
+                    class="project-thumb-btn w-100 border-0 p-0 bg-transparent"
+                    data-target="tastelabs"
+                  >
+                    <img
+                      loading="lazy"
+                      class="img-fluid rounded-3 project-thumb"
+                      src="../img/taselabs.jpg"
+                      alt="Taste Labs Assessment"
+                    />
+                    <p
+                      class="white fw-bold fs-small text-center mt-2 mb-0"
+                      data-i18n="project.tastelabs.title"
+                    ></p>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Detail panels -->
+              <div class="project-detail-wrapper">
+                <!-- FleetOps -->
+                <div class="project-detail active" id="detail-fleetops">
                   <div class="row align-items-center">
                     <div class="col-lg-6 project-image-container">
                       <a
-                        href="https://fleet-ops-live.vercel.app/"
+                        href="https://fleetoperations.vercel.app/"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="project-image-wrapper"
                       >
                         <img
+                          loading="lazy"
                           class="img-fluid rounded-3"
                           src="../img/fleetops.jpg"
                           alt="FleetOps"
@@ -938,21 +985,12 @@
                     </div>
                     <div class="col-lg-6 ps-lg-5 project-content">
                       <div class="d-flex align-items-center mb-3">
+                        <h3
+                          class="fs-big fw-bolder white m-0 me-3"
+                          data-i18n="project.fleetops.title"
+                        ></h3>
                         <a
-                          href="https://fleet-ops-live.vercel.app/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          class="text-decoration-none"
-                        >
-                          <h3
-                            class="fs-big fw-bolder white m-0 me-3 project-title"
-                            data-i18n="project.fleetops.title"
-                          >
-                            FleetOps
-                          </h3>
-                        </a>
-                        <a
-                          href="https://fleet-ops-live.vercel.app/"
+                          href="https://fleetoperations.vercel.app/"
                           class="works-button rounded-circle border-0 text-decoration-none"
                           target="_blank"
                           rel="noopener noreferrer"
@@ -1019,8 +1057,8 @@
                   </div>
                 </div>
 
-                <!-- Project 1 -->
-                <div class="carousel-item">
+                <!-- Microfrontend Architecture -->
+                <div class="project-detail" id="detail-microfrontend">
                   <div class="row align-items-center">
                     <div class="col-lg-6 project-image-container">
                       <div
@@ -1031,19 +1069,10 @@
                           height: 0;
                         "
                       >
-                        <iframe
-                          src="https://www.youtube.com/embed/AmEC6fejFVQ?vq=hd1080"
-                          title="Microfrontend Architecture"
-                          frameborder="0"
-                          allow="
-                            accelerometer;
-                            autoplay;
-                            clipboard-write;
-                            encrypted-media;
-                            gyroscope;
-                            picture-in-picture;
-                          "
-                          allowfullscreen
+                        <div
+                          class="yt-facade"
+                          data-yt-id="AmEC6fejFVQ"
+                          data-yt-title="Microfrontend Architecture"
                           style="
                             position: absolute;
                             top: 0;
@@ -1052,69 +1081,62 @@
                             height: 100%;
                             border-radius: 12px;
                           "
-                        ></iframe>
+                        >
+                          <img
+                            src="https://img.youtube.com/vi/AmEC6fejFVQ/hqdefault.jpg"
+                            alt="Microfrontend Architecture — video preview"
+                            loading="lazy"
+                          />
+                          <span class="yt-play-btn"
+                            ><i class="fa-solid fa-play"></i
+                          ></span>
+                        </div>
                       </div>
                     </div>
                     <div class="col-lg-6 ps-lg-5 project-content">
                       <div class="d-flex align-items-center mb-3">
+                        <h3
+                          class="fs-big fw-bolder white m-0 me-3"
+                          data-i18n="project.microfrontend.title"
+                        ></h3>
                         <a
                           href="https://github.com/tiansanjorge/microfrontends-architecture"
+                          class="rounded-circle border-0 text-decoration-none"
                           target="_blank"
                           rel="noopener noreferrer"
-                          class="text-decoration-none"
+                          title="View on GitHub"
+                          style="
+                            width: 40px;
+                            height: 40px;
+                            min-width: 40px;
+                            min-height: 40px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            background: #17784f;
+                            color: #e7e7e7;
+                            box-shadow: 3px 4px 12px 2px rgba(51, 51, 51, 0.25);
+                            transition: 0.2s;
+                          "
+                          onmouseover="
+                            this.style.background = '#9bc1bc';
+                            this.style.color = '#333333';
+                          "
+                          onmouseout="
+                            this.style.background = '#17784f';
+                            this.style.color = '#e7e7e7';
+                          "
                         >
-                          <h3
-                            class="fs-big fw-bolder white m-0 me-3 project-title"
-                            data-i18n="project.microfrontend.title"
-                          >
-                            Microfrontend Architecture
-                          </h3>
-                          <a
-                            href="https://github.com/tiansanjorge/microfrontends-architecture"
-                            class="rounded-circle border-0 text-decoration-none me-3"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            title="View on GitHub"
-                            style="
-                              width: 40px;
-                              height: 40px;
-                              min-width: 40px;
-                              min-height: 40px;
-                              display: flex;
-                              align-items: center;
-                              justify-content: center;
-                              background: #17784f;
-                              color: #e7e7e7;
-                              box-shadow: 3px 4px 12px 2px
-                                rgba(51, 51, 51, 0.25);
-                              transition: 0.2s;
-                            "
-                            onmouseover="
-                              this.style.background = '#9bc1bc';
-                              this.style.color = '#333333';
-                            "
-                            onmouseout="
-                              this.style.background = '#17784f';
-                              this.style.color = '#e7e7e7';
-                            "
-                          >
-                            <i
-                              class="fa-brands fa-github"
-                              style="font-size: 20px"
-                            ></i>
-                          </a>
+                          <i
+                            class="fa-brands fa-github"
+                            style="font-size: 20px"
+                          ></i>
                         </a>
                       </div>
                       <p
                         class="darker-white fs-medium mb-3"
                         data-i18n="project.microfrontend.desc"
-                      >
-                        Microfrontend architecture built with React and Webpack
-                        Module Federation, featuring independently deployable
-                        modules and a custom shared UI library. Focused on
-                        scalability, separation of concerns, and frontend system
-                        design rather than visual polish.
-                      </p>
+                      ></p>
                       <div class="fs-medium mb-2 d-flex align-items-center">
                         <span
                           class="aqua fw-bold"
@@ -1133,53 +1155,8 @@
                   </div>
                 </div>
 
-                <!-- Project 2 -->
-                <div class="carousel-item">
-                  <div class="row align-items-center">
-                    <div class="col-lg-6 project-image-container">
-                      <div class="project-image-wrapper">
-                        <img
-                          class="img-fluid rounded-3"
-                          src="../img/vetsforpets.jpg"
-                          alt="Emergency Vet Platform"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-lg-6 ps-lg-5 project-content">
-                      <div class="d-flex align-items-center mb-3">
-                        <h3
-                          class="fs-big fw-bolder white m-0 me-3 project-title"
-                          data-i18n="project.henry.title"
-                        >
-                          Emergency Vet Platform
-                        </h3>
-                      </div>
-                      <div
-                        class="project-bullet-scroll mb-3"
-                        data-i18n="project.henry.content"
-                      ></div>
-                      <div class="fs-medium mb-2 d-flex align-items-center">
-                        <span
-                          class="aqua fw-bold"
-                          data-i18n="projects.technologies"
-                          >Technologies:</span
-                        >
-                      </div>
-                      <div class="d-flex align-items-center flex-wrap">
-                        <span class="tech-tag">Next.js</span>
-                        <span class="tech-tag">TypeScript</span>
-                        <span class="tech-tag">Tailwind</span>
-                        <span class="tech-tag">Socket.io</span>
-                        <span class="tech-tag">Leaflet</span>
-                        <span class="tech-tag">Zustand</span>
-                        <span class="tech-tag">Stripe</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="carousel-item">
+                <!-- Rick & Morty -->
+                <div class="project-detail" id="detail-rick">
                   <div class="row align-items-center">
                     <div class="col-lg-6 project-image-container">
                       <a
@@ -1189,6 +1166,7 @@
                         class="project-image-wrapper"
                       >
                         <img
+                          loading="lazy"
                           class="img-fluid rounded-3"
                           src="../img/rickymorty.jpg"
                           alt="Rick & Morty wiki"
@@ -1197,19 +1175,10 @@
                     </div>
                     <div class="col-lg-6 ps-lg-5 project-content">
                       <div class="d-flex align-items-center mb-3">
-                        <a
-                          href="https://rickandmortyexp.netlify.app/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          class="text-decoration-none"
-                        >
-                          <h3
-                            class="fs-big fw-bolder white m-0 me-3 project-title"
-                            data-i18n="project.rick.title"
-                          >
-                            Rick & Morty wiki
-                          </h3>
-                        </a>
+                        <h3
+                          class="fs-big fw-bolder white m-0 me-3"
+                          data-i18n="project.rick.title"
+                        ></h3>
                         <a
                           href="https://rickandmortyexp.netlify.app/"
                           class="works-button rounded-circle border-0 text-decoration-none"
@@ -1223,14 +1192,7 @@
                       <p
                         class="darker-white fs-medium mb-3"
                         data-i18n="project.rick.desc"
-                      >
-                        UI-focused character explorer built with React and
-                        TypeScript. Smooth paginated API navigation, accessible
-                        component design, and optimized rendering — treating
-                        interface quality as an engineering discipline.
-                        Showcases performance tuning, WCAG-aligned
-                        accessibility, and polished micro-interactions.
-                      </p>
+                      ></p>
                       <div class="fs-medium mb-2 d-flex align-items-center">
                         <a
                           href="https://github.com/tiansanjorge/intramed-challenge"
@@ -1271,7 +1233,7 @@
                           >Technologies:</span
                         >
                       </div>
-                      <div class="d-flex align-items-center">
+                      <div class="d-flex align-items-center flex-wrap">
                         <span class="tech-tag">Next.js</span>
                         <span class="tech-tag">TypeScript</span>
                         <span class="tech-tag">REST API</span>
@@ -1280,76 +1242,115 @@
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <!-- Carousel Controls -->
-              <button
-                class="carousel-control-prev"
-                type="button"
-                data-bs-target="#projectsCarousel"
-                data-bs-slide="prev"
-              >
-                <span
-                  class="carousel-control-prev-icon"
-                  aria-hidden="true"
-                ></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button
-                class="carousel-control-next"
-                type="button"
-                data-bs-target="#projectsCarousel"
-                data-bs-slide="next"
-              >
-                <span
-                  class="carousel-control-next-icon"
-                  aria-hidden="true"
-                ></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-
-              <!-- Carousel Dots -->
-              <div class="carousel-dots">
-                <button
-                  class="carousel-dot active"
-                  data-index="0"
-                  aria-label="Project 1"
-                ></button>
-                <button
-                  class="carousel-dot"
-                  data-index="1"
-                  aria-label="Project 2"
-                ></button>
-                <button
-                  class="carousel-dot"
-                  data-index="2"
-                  aria-label="Project 3"
-                ></button>
-                <button
-                  class="carousel-dot"
-                  data-index="3"
-                  aria-label="Project 4"
-                ></button>
+                <!-- Taste Labs -->
+                <div class="project-detail" id="detail-tastelabs">
+                  <div class="row align-items-center">
+                    <div class="col-lg-6 project-image-container">
+                      <a
+                        href="https://lambda-ai-clone.vercel.app/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-image-wrapper"
+                      >
+                        <img
+                          loading="lazy"
+                          class="img-fluid rounded-3"
+                          src="../img/taselabs.jpg"
+                          alt="Taste Labs Assessment"
+                        />
+                      </a>
+                    </div>
+                    <div class="col-lg-6 ps-lg-5 project-content">
+                      <div class="d-flex align-items-center mb-3">
+                        <h3
+                          class="fs-big fw-bolder white m-0 me-3"
+                          data-i18n="project.tastelabs.title"
+                        ></h3>
+                        <a
+                          href="https://lambda-ai-clone.vercel.app/"
+                          class="works-button rounded-circle border-0 text-decoration-none"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          title="View Live Project"
+                        >
+                          <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                      </div>
+                      <p
+                        class="darker-white fs-medium mb-3"
+                        data-i18n="project.tastelabs.desc"
+                      ></p>
+                      <div class="fs-medium mb-2 d-flex align-items-center">
+                        <a
+                          href="https://github.com/tiansanjorge/lambda-ai-clone"
+                          class="rounded-circle border-0 text-decoration-none me-3"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          title="View on GitHub"
+                          style="
+                            width: 40px;
+                            height: 40px;
+                            min-width: 40px;
+                            min-height: 40px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            background: #17784f;
+                            color: #e7e7e7;
+                            box-shadow: 3px 4px 12px 2px rgba(51, 51, 51, 0.25);
+                            transition: 0.2s;
+                          "
+                          onmouseover="
+                            this.style.background = '#9bc1bc';
+                            this.style.color = '#333333';
+                          "
+                          onmouseout="
+                            this.style.background = '#17784f';
+                            this.style.color = '#e7e7e7';
+                          "
+                        >
+                          <i
+                            class="fa-brands fa-github"
+                            style="font-size: 20px"
+                          ></i>
+                        </a>
+                        <span
+                          class="aqua fw-bold"
+                          data-i18n="projects.technologies"
+                          >Technologies:</span
+                        >
+                      </div>
+                      <div class="d-flex align-items-center flex-wrap">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Tailwind</span>
+                        <span class="tech-tag">WebGL2</span>
+                        <span class="tech-tag">GLSL</span>
+                        <span class="tech-tag">Claude Code</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
             <script>
               (function () {
-                var carousel = document.getElementById("projectsCarousel");
-                var dots = document.querySelectorAll(".carousel-dot");
-
-                carousel.addEventListener("slide.bs.carousel", function (e) {
-                  dots.forEach(function (dot) {
-                    dot.classList.remove("active");
-                  });
-                  dots[e.to].classList.add("active");
-                });
-
-                dots.forEach(function (dot) {
-                  dot.addEventListener("click", function () {
-                    var index = parseInt(this.getAttribute("data-index"));
-                    var bsCarousel = bootstrap.Carousel.getInstance(carousel);
-                    bsCarousel.to(index);
+                var thumbs = document.querySelectorAll(".project-thumb-btn");
+                thumbs.forEach(function (btn) {
+                  btn.addEventListener("click", function () {
+                    thumbs.forEach(function (b) {
+                      b.classList.remove("active");
+                    });
+                    document
+                      .querySelectorAll(".project-detail")
+                      .forEach(function (p) {
+                        p.classList.remove("active");
+                      });
+                    btn.classList.add("active");
+                    document
+                      .getElementById("detail-" + btn.dataset.target)
+                      .classList.add("active");
                   });
                 });
               })();
@@ -1373,6 +1374,7 @@
                 href="https://wa.link/rehzl5"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="WhatsApp"
                 ><i class="fa-brands fa-whatsapp fs-big"></i>
               </a>
               <a
@@ -1380,6 +1382,7 @@
                 href="https://www.linkedin.com/in/sebastian-sanjorge-frontend-developer"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="LinkedIn"
                 ><i class="fa-brands fa-linkedin fs-big"></i
               ></a>
               <a
@@ -1387,6 +1390,7 @@
                 href="https://github.com/tiansanjorge"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="GitHub"
                 ><i class="fa-brands fa-github fs-big"></i
               ></a>
             </div>
@@ -1395,11 +1399,6 @@
       </section>
     </div>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-      crossorigin="anonymous"
-    ></script>
     <script src="../script.js"></script>
   </body>
 </html>

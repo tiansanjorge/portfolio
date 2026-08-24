@@ -6,7 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Professional Portfolio • Sebastián Sanjorge Fullstack Developer"
+      content="Get in touch with Sebastián Sanjorge, Full Stack Engineer — React, Next.js, TypeScript."
+    />
+    <link
+      rel="canonical"
+      href="https://ssanjorge.netlify.app/pages/contact.html"
+    />
+
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://ssanjorge.netlify.app/pages/contact.html"
+    />
+    <meta property="og:title" content="Sanjorge • Contact" />
+    <meta
+      property="og:description"
+      content="Get in touch with Sebastián Sanjorge, Full Stack Engineer — React, Next.js, TypeScript."
+    />
+    <meta
+      property="og:image"
+      content="https://ssanjorge.netlify.app/img/perfil.jpg"
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sanjorge • Contact" />
+    <meta
+      name="twitter:description"
+      content="Get in touch with Sebastián Sanjorge, Full Stack Engineer — React, Next.js, TypeScript."
+    />
+    <meta
+      name="twitter:image"
+      content="https://ssanjorge.netlify.app/img/perfil.jpg"
     />
     <script>
       (function () {
@@ -41,7 +71,7 @@
     <link rel="stylesheet" href="../styles/animate.css" />
     <link rel="stylesheet" href="../styles/styles.css" />
     <link rel="icon" type="image/png" href="../img/favicon.png" />
-    <title>Sanjorge • Frontend Engineer</title>
+    <title>Sanjorge • Contact</title>
     <style>
       /* Scroll reveal animations */
       @keyframes fadeInUp {
@@ -139,7 +169,13 @@
                 </button>
               </div>
               <div class="pt-2">
-                <button class="border-0 nav-button" onclick="dropdown()">
+                <button
+                  class="border-0 nav-button"
+                  onclick="dropdown(this)"
+                  aria-expanded="false"
+                  aria-controls="dropdown-menu"
+                  aria-label="Menu"
+                >
                   <i
                     class="d-block fa-solid fa-bars fs-5 blue"
                     id="bar-icon"
@@ -177,6 +213,13 @@
                   ><span data-i18n="nav.projects"></span
                 ></a>
               </div>
+              <div class="pe-2 my-1">
+                <a
+                  class="fs-medium text-decoration-none subrayado blue fw-600"
+                  href="case-studies.html"
+                  ><span data-i18n="nav.caseStudies"></span
+                ></a>
+              </div>
               <div class="pe-2 mt-1">
                 <a
                   class="fs-medium text-decoration-none green fw-600 active-link"
@@ -198,7 +241,7 @@
             </div>
 
             <div
-              class="col-7 col-lg-6 col-xl-5 d-flex justify-content-between align-items-center"
+              class="col-9 col-lg-8 col-xl-7 d-flex justify-content-between align-items-center"
             >
               <a
                 class="fs-medium text-decoration-none subrayado blue fw-600"
@@ -214,6 +257,11 @@
                 class="fs-medium text-decoration-none subrayado blue fw-600"
                 href="works.html"
                 ><span data-i18n="nav.projects"></span
+              ></a>
+              <a
+                class="fs-medium text-decoration-none subrayado blue fw-600"
+                href="case-studies.html"
+                ><span data-i18n="nav.caseStudies"></span
               ></a>
               <a
                 class="fs-medium text-decoration-none green fw-600 active-link"
@@ -291,6 +339,7 @@
                   href="https://wa.link/rehzl5"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="WhatsApp"
                   ><i class="fa-brands fa-whatsapp"></i>
                 </a>
 
@@ -299,6 +348,7 @@
                   href="https://www.linkedin.com/in/sebastian-sanjorge-frontend-developer"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="LinkedIn"
                   ><i class="fa-brands fa-linkedin"></i
                 ></a>
 
@@ -307,6 +357,7 @@
                   href="https://github.com/tiansanjorge"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="GitHub"
                   ><i class="fa-brands fa-github"></i
                 ></a>
 

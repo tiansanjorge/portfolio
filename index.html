@@ -6,7 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Professional Portfolio • Sebastián Sanjorge Full stack Developer"
+      content="Full Stack Engineer portfolio — React, Next.js, TypeScript. Case studies, projects, and experience from IPH, Terragene, and FleetOps."
+    />
+    <link rel="canonical" href="https://ssanjorge.netlify.app/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ssanjorge.netlify.app/" />
+    <meta property="og:title" content="Sebastián Sanjorge • Full Stack Engineer" />
+    <meta
+      property="og:description"
+      content="Full Stack Engineer portfolio — React, Next.js, TypeScript. Case studies, projects, and experience from IPH, Terragene, and FleetOps."
+    />
+    <meta
+      property="og:image"
+      content="https://ssanjorge.netlify.app/img/perfil.jpg"
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sebastián Sanjorge • Full Stack Engineer" />
+    <meta
+      name="twitter:description"
+      content="Full Stack Engineer portfolio — React, Next.js, TypeScript. Case studies, projects, and experience from IPH, Terragene, and FleetOps."
+    />
+    <meta
+      name="twitter:image"
+      content="https://ssanjorge.netlify.app/img/perfil.jpg"
     />
 
     <script>
@@ -43,7 +67,7 @@
     <link rel="stylesheet" href="styles/animate.css" />
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="icon" type="image/png" href="img/favicon.png" />
-    <title>Sanjorge • Frontend Engineer</title>
+    <title>Sebastián Sanjorge • Full Stack Engineer</title>
 
     <style>
       /* Content animations */
@@ -183,6 +207,11 @@
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
       }
 
+      .iph-logo.no-shadow,
+      .iph-logo.no-shadow:hover {
+        box-shadow: none;
+      }
+
       /* Skills icons enhancement */
       .skills-background img {
         transition: transform 0.3s ease;
@@ -252,7 +281,13 @@
                 </button>
               </div>
               <div class="pt-2">
-                <button class="border-0 nav-button" onclick="dropdown()">
+                <button
+                  class="border-0 nav-button"
+                  onclick="dropdown(this)"
+                  aria-expanded="false"
+                  aria-controls="dropdown-menu"
+                  aria-label="Menu"
+                >
                   <i
                     class="d-block fa-solid fa-bars fs-5 blue"
                     id="bar-icon"
@@ -290,6 +325,13 @@
                   ><span data-i18n="nav.projects">Projects</span></a
                 >
               </div>
+              <div class="pe-2 my-1">
+                <a
+                  class="fs-medium text-decoration-none subrayado black fw-600"
+                  href="pages/case-studies.html"
+                  ><span data-i18n="nav.caseStudies">Case Studies</span></a
+                >
+              </div>
               <div class="pe-2 mt-1">
                 <a
                   class="fs-medium text-decoration-none subrayado black fw-600"
@@ -310,7 +352,7 @@
             </div>
 
             <div
-              class="col-7 col-lg-6 col-xl-5 d-flex justify-content-between align-items-center"
+              class="col-9 col-lg-8 col-xl-7 d-flex justify-content-between align-items-center"
             >
               <a
                 class="fs-medium text-decoration-none green fw-600 active-link"
@@ -327,6 +369,11 @@
                 class="fs-medium text-decoration-none subrayado black fw-600"
                 href="pages/works.html"
                 ><span data-i18n="nav.projects">Projects</span></a
+              >
+              <a
+                class="fs-medium text-decoration-none subrayado black fw-600"
+                href="pages/case-studies.html"
+                ><span data-i18n="nav.caseStudies">Case Studies</span></a
               >
               <a
                 class="fs-medium text-decoration-none subrayado black fw-600"
@@ -381,13 +428,13 @@
                 class="presentation-description fs-big col-md-6 green text-center text-md-start m-0 scroll-reveal animate-fade-left delay-2"
                 data-i18n="hero.title"
               >
-                <b>Fullstack Engineer</b>
+                <b>Full Stack Engineer</b>
                 <span class="black fw-400"
-                  >with a sharp eye for design and a strong
-                  <span class="green fw-500">Frontend orientation.</span> I
-                  build production-ready applications that work well and look
-                  intentional, bridging solid architecture with interfaces
-                  people actually enjoy using.</span
+                  >with a
+                  <span class="green fw-500">Frontend specialization.</span> I
+                  design and build Frontend interfaces and systems that
+                  combine solid architecture, visual precision, and a
+                  polished product experience.</span
                 >
               </h2>
               <div
@@ -408,7 +455,7 @@
 
     <!-- Text Banner -->
 
-    <section class="text-banner-container">
+    <section class="text-banner-container" aria-hidden="true">
       <div class="marquee-track" id="text-banner">
         <span class="marquee-unit">
           <span class="banner-dot ms-2">&middot;</span>
@@ -438,24 +485,25 @@
               class="col-12 col-lg-4 col-xl-5 mx-auto mx-md-0 d-flex flex-column align-items-center"
             >
               <div
-                class="ratio rounded-5 overflow-hidden mb-5 pb-5 mb-xs-0 pb-xs-0"
+                class="ratio rounded-5 overflow-hidden pb-5 pb-xs-0"
                 style="height: 550px; width: calc(550px * 9 / 16)"
               >
-                <!-- YouTube Video -->
-                <iframe
-                  src="https://www.youtube.com/embed/qlBhpazVkCQ"
-                  title="YouTube Short"
-                  allow="
-                    accelerometer;
-                    autoplay;
-                    clipboard-write;
-                    encrypted-media;
-                    gyroscope;
-                    picture-in-picture;
-                  "
-                  allowfullscreen
-                  style="width: 100%; height: 100%; border: 0"
-                ></iframe>
+                <!-- YouTube Video (click to load) -->
+                <div
+                  class="yt-facade"
+                  data-yt-id="qlBhpazVkCQ"
+                  data-yt-title="YouTube Short"
+                  style="width: 100%; height: 100%"
+                >
+                  <img
+                    src="https://img.youtube.com/vi/qlBhpazVkCQ/hqdefault.jpg"
+                    alt="YouTube Short — video preview"
+                    loading="lazy"
+                  />
+                  <span class="yt-play-btn"
+                    ><i class="fa-solid fa-play"></i
+                  ></span>
+                </div>
               </div>
             </div>
             <div class="col-12 col-lg-8 col-xl-7 d-flex mt-4 mt-md-0">
@@ -473,7 +521,7 @@
                 ></h3>
               </div>
               <div
-                class="col-1 d-none d-md-block pb-2 pb-lg-2 align-self-end fs-medium"
+                class="col-1 d-none d-md-block pb-5 pb-lg-5 align-self-end fs-medium"
               >
                 &lt;h3&#47;&gt;
               </div>
@@ -484,7 +532,7 @@
 
       <!-- IPH Experience -->
 
-      <section class="iph-experience container-fluid py-5">
+      <section class="iph-experience container-fluid py-3">
         <div class="row justify-content-evenly py-3 py-md-4">
           <div
             class="col-10 col-lg-9 col-xl-8 d-flex flex-column flex-md-row justify-content-evenly align-items-center p-0 gap-4 scroll-reveal animate-fade-up delay-2"
@@ -494,6 +542,7 @@
                 src="img/iph.jpg"
                 alt="IPH"
                 class="img-fluid rounded-3 iph-logo"
+                loading="lazy"
                 width="160"
                 height="160"
               />
@@ -506,7 +555,41 @@
               <div class="text-center mt-3">
                 <a
                   href="pages/experience.html"
-                  class="text-decoration-none fw-bold fs-medium iph-link"
+                  class="text-decoration-none fw-bold fs-medium iph-link no-lift"
+                  data-i18n="iph.learnMore"
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Terragene Experience -->
+
+      <section class="iph-experience container-fluid pt-3 pb-5">
+        <div class="row justify-content-evenly py-3 py-md-4">
+          <div
+            class="col-10 col-lg-9 col-xl-8 d-flex flex-column flex-md-row justify-content-evenly align-items-center p-0 gap-4 scroll-reveal animate-fade-up delay-2"
+          >
+            <div class="col-12 col-md-2 d-flex justify-content-center">
+              <img
+                src="img/terragene.ico"
+                alt="Terragene"
+                class="img-fluid rounded-3 iph-logo no-shadow"
+                loading="lazy"
+                width="160"
+                height="160"
+              />
+            </div>
+            <div class="col-12 col-md-8 d-flex flex-column">
+              <p
+                class="fs-medium darker-white fw-semibold mb-2 text-center"
+                data-i18n="terragene.paragraph"
+              ></p>
+              <div class="text-center mt-3">
+                <a
+                  href="pages/experience.html#terragene"
+                  class="text-decoration-none fw-bold fs-medium iph-link no-lift"
                   data-i18n="iph.learnMore"
                 ></a>
               </div>
@@ -542,17 +625,19 @@
                 </div>
                 <div class="col-8 col-md-5">
                   <a
-                    href="https://fleet-ops-live.vercel.app/"
+                    href="https://fleetoperations.vercel.app/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <img
-                      class="img-fluid grayscale-on-hover rounded-3"
-                      src="img/fleetops.jpg"
-                      alt="FleetOps — Real-time Fleet Tracking Platform"
-                      width="640"
-                      height="360"
-                    />
+                    <div class="ratio ratio-16x9 rounded-3 overflow-hidden">
+                      <img
+                        class="grayscale-on-hover"
+                        style="object-fit: cover"
+                        src="img/fleetops.jpg"
+                        loading="lazy"
+                        alt="FleetOps — Real-time Fleet Tracking Platform"
+                      />
+                    </div>
                   </a>
                 </div>
               </div>
@@ -562,20 +647,20 @@
                   <div
                     class="ratio ratio-16x9 rounded-3 overflow-hidden video-bw"
                   >
-                    <iframe
-                      src="https://www.youtube.com/embed/AmEC6fejFVQ?vq=hd1080"
-                      title="Microfrontend Architecture"
-                      allow="
-                        accelerometer;
-                        autoplay;
-                        clipboard-write;
-                        encrypted-media;
-                        gyroscope;
-                        picture-in-picture;
-                      "
-                      allowfullscreen
-                      style="border: 0"
-                    ></iframe>
+                    <div
+                      class="yt-facade"
+                      data-yt-id="AmEC6fejFVQ"
+                      data-yt-title="Microfrontend Architecture"
+                    >
+                      <img
+                        src="https://img.youtube.com/vi/AmEC6fejFVQ/hqdefault.jpg"
+                        alt="Microfrontend Architecture — video preview"
+                        loading="lazy"
+                      />
+                      <span class="yt-play-btn"
+                        ><i class="fa-solid fa-play"></i
+                      ></span>
+                    </div>
                   </div>
                 </div>
                 <div
@@ -593,17 +678,19 @@
                 </div>
                 <div class="col-8 col-md-5">
                   <a
-                    href="https://psicologosanjorge.com.ar/"
+                    href="https://lambda-ai-clone.vercel.app/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <img
-                      class="img-fluid grayscale-on-hover rounded-3"
-                      src="img/jps.jpg"
-                      alt="Juan Pablo Sanjorge´s Website"
-                      width="640"
-                      height="360"
-                    />
+                    <div class="ratio ratio-16x9 rounded-3 overflow-hidden">
+                      <img
+                        class="grayscale-on-hover"
+                        style="object-fit: cover"
+                        src="img/taselabs.jpg"
+                        loading="lazy"
+                        alt="Taste Labs Assessment"
+                      />
+                    </div>
                   </a>
                 </div>
               </div>
@@ -633,8 +720,9 @@
               >
                 <img
                   class="img-fluid"
-                  src="https://skillicons.dev/icons?i=react"
+                  src="img/skill-react.svg"
                   alt="React"
+                  loading="lazy"
                 />
               </div>
               <p class="text-center mb-0 pt-2 fs-medium">React</p>
@@ -649,8 +737,9 @@
               >
                 <img
                   class="img-fluid"
-                  src="https://skillicons.dev/icons?i=nextjs"
+                  src="img/skill-nextjs.svg"
                   alt="Next.js"
+                  loading="lazy"
                 />
               </div>
               <p class="text-center mb-0 pt-2 fs-medium">Next.js</p>
@@ -665,43 +754,12 @@
               >
                 <img
                   class="img-fluid"
-                  src="https://skillicons.dev/icons?i=ts"
+                  src="img/skill-ts.svg"
                   alt="TypeScript"
+                  loading="lazy"
                 />
               </div>
               <p class="text-center mb-0 pt-2 fs-medium">TypeScript</p>
-            </div>
-
-            <!-- Tailwind -->
-            <div
-              class="col-4 col-md-3 d-flex flex-column justify-content-end mb-5"
-            >
-              <div
-                class="d-flex flex-column justify-content-center col-7 col-sm-6 col-md-5 col-lg-4 mx-auto"
-              >
-                <img
-                  class="img-fluid"
-                  src="https://skillicons.dev/icons?i=tailwind"
-                  alt="Tailwind"
-                />
-              </div>
-              <p class="text-center mb-0 pt-2 fs-medium">Tailwind</p>
-            </div>
-
-            <!-- Zustand -->
-            <div
-              class="col-4 col-md-3 d-flex flex-column justify-content-end mb-5"
-            >
-              <div
-                class="d-flex flex-column justify-content-center col-7 col-sm-6 col-md-5 col-lg-4 mx-auto"
-              >
-                <img
-                  class="img-fluid"
-                  src="https://user-images.githubusercontent.com/958486/218346783-72be5ae3-b953-4dd7-b239-788a882fdad6.svg"
-                  alt="Zustand"
-                />
-              </div>
-              <p class="text-center mb-0 pt-2 fs-medium">Zustand</p>
             </div>
 
             <!-- Architecture -->
@@ -715,24 +773,13 @@
                   class="img-fluid"
                   src="img/architecture.svg"
                   alt="Architecture"
+                  loading="lazy"
                 />
               </div>
               <p class="text-center mb-0 pt-2 fs-medium">Architecture</p>
             </div>
 
-            <!-- SOLID -->
-            <div
-              class="col-4 col-md-3 d-flex flex-column justify-content-end mb-5"
-            >
-              <div
-                class="d-flex flex-column justify-content-center col-7 col-sm-6 col-md-5 col-lg-4 mx-auto"
-              >
-                <img class="img-fluid" src="img/solid.svg" alt="SOLID" />
-              </div>
-              <p class="text-center mb-0 pt-2 fs-medium">SOLID</p>
-            </div>
-
-            <!-- Vitest -->
+            <!-- Tailwind CSS -->
             <div
               class="col-4 col-md-3 d-flex flex-column justify-content-end mb-5"
             >
@@ -741,11 +788,46 @@
               >
                 <img
                   class="img-fluid"
-                  src="https://skillicons.dev/icons?i=vitest"
-                  alt="Vitest"
+                  src="img/skill-tailwind.svg"
+                  alt="Tailwind CSS"
+                  loading="lazy"
                 />
               </div>
-              <p class="text-center mb-0 pt-2 fs-medium">Vitest</p>
+              <p class="text-center mb-0 pt-2 fs-medium">Tailwind CSS</p>
+            </div>
+
+            <!-- Zustand -->
+            <div
+              class="col-4 col-md-3 d-flex flex-column justify-content-end mb-5"
+            >
+              <div
+                class="d-flex flex-column justify-content-center col-7 col-sm-6 col-md-5 col-lg-4 mx-auto"
+              >
+                <img
+                  class="img-fluid"
+                  src="https://user-images.githubusercontent.com/958486/218346783-72be5ae3-b953-4dd7-b239-788a882fdad6.svg"
+                  alt="Zustand"
+                  loading="lazy"
+                />
+              </div>
+              <p class="text-center mb-0 pt-2 fs-medium">Zustand</p>
+            </div>
+
+            <!-- REST APIs -->
+            <div
+              class="col-4 col-md-3 d-flex flex-column justify-content-end mb-5"
+            >
+              <div
+                class="d-flex flex-column justify-content-center col-7 col-sm-6 col-md-5 col-lg-4 mx-auto"
+              >
+                <img
+                  class="img-fluid"
+                  src="img/skill-restapi.svg"
+                  alt="REST APIs"
+                  loading="lazy"
+                />
+              </div>
+              <p class="text-center mb-0 pt-2 fs-medium">REST APIs</p>
             </div>
 
             <!-- Node.js -->
@@ -757,14 +839,31 @@
               >
                 <img
                   class="img-fluid"
-                  src="https://skillicons.dev/icons?i=nodejs"
+                  src="img/skill-nodejs.svg"
                   alt="Node.js"
+                  loading="lazy"
                 />
               </div>
               <p class="text-center mb-0 pt-2 fs-medium">Node.js</p>
             </div>
 
-            <!-- PostgreSQL -->
+            <!-- RBAC -->
+            <div
+              class="col-4 col-md-3 d-flex flex-column justify-content-end mb-5"
+            >
+              <div
+                class="d-flex flex-column justify-content-center align-items-center col-7 col-sm-6 col-md-5 col-lg-4 mx-auto"
+                style="aspect-ratio: 1"
+              >
+                <i
+                  class="fa-solid fa-user-shield"
+                  style="font-size: 3.75rem; color: #111111"
+                ></i>
+              </div>
+              <p class="text-center mb-0 pt-2 fs-medium">RBAC</p>
+            </div>
+
+            <!-- WebSockets -->
             <div
               class="col-4 col-md-3 d-flex flex-column justify-content-end mb-5"
             >
@@ -773,11 +872,12 @@
               >
                 <img
                   class="img-fluid"
-                  src="https://skillicons.dev/icons?i=postgres"
-                  alt="PostgreSQL"
+                  src="img/skill-websockets.svg"
+                  alt="WebSockets"
+                  loading="lazy"
                 />
               </div>
-              <p class="text-center mb-0 pt-2 fs-medium">PostgreSQL</p>
+              <p class="text-center mb-0 pt-2 fs-medium">WebSockets</p>
             </div>
 
             <!-- English -->
@@ -791,6 +891,7 @@
                   class="img-fluid rounded-4"
                   src="img/inglesC1.jpg"
                   alt="English"
+                  loading="lazy"
                 />
               </div>
               <p class="text-center mb-0 pt-2 fs-medium">English</p>
@@ -803,7 +904,12 @@
               <div
                 class="d-flex flex-column justify-content-center col-7 col-sm-6 col-md-5 col-lg-4 mx-auto"
               >
-                <img class="img-fluid" src="img/scrum.svg" alt="Scrum" />
+                <img
+                  class="img-fluid"
+                  src="img/scrum.svg"
+                  alt="Scrum"
+                  loading="lazy"
+                />
               </div>
               <p class="text-center mb-0 pt-2 fs-medium">Scrum</p>
             </div>
@@ -814,7 +920,7 @@
 
     <!-- Text Banner 2 -->
 
-    <section class="text-banner-container">
+    <section class="text-banner-container" aria-hidden="true">
       <div class="marquee-track" id="text-banner-2">
         <span class="marquee-unit">
           <span class="banner-dot ms-2">&middot;</span>
@@ -866,6 +972,7 @@
                 href="https://wa.link/rehzl5"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="WhatsApp"
                 ><i class="fa-brands fa-whatsapp fs-big"></i>
               </a>
               <a
@@ -873,6 +980,7 @@
                 href="https://www.linkedin.com/in/sebastian-sanjorge-frontend-developer"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="LinkedIn"
                 ><i class="fa-brands fa-linkedin fs-big"></i
               ></a>
               <a
@@ -880,6 +988,7 @@
                 href="https://github.com/tiansanjorge"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="GitHub"
                 ><i class="fa-brands fa-github fs-big"></i
               ></a>
             </div>

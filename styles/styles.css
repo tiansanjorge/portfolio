@@ -1,3 +1,45 @@
+/* YouTube click-to-load facade (avoids loading the embed until requested) */
+.yt-facade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.yt-facade img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.yt-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(23, 120, 79, 0.9);
+  color: #e7e7e7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.yt-facade:hover .yt-play-btn {
+  background: #17784f;
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
 /* Efecto de escala en hover para los botones de banderas de idioma */
 .lang-toggle .lang-flag {
   transition:
@@ -233,7 +275,7 @@ a.logo:hover {
 }
 
 .dd-menu.active {
-  height: 130px;
+  height: 175px;
 }
 
 .active-link {
@@ -266,6 +308,15 @@ a.logo:hover {
   animation: fadeInRight 0.1s;
 }
 
+.terragene-visit-link {
+  color: #9bc1bc;
+  transition: color 0.2s ease;
+}
+
+.terragene-visit-link:hover {
+  color: #17784f;
+}
+
 .iph-link {
   background-color: #9bc1bc;
   color: #333333;
@@ -283,6 +334,10 @@ a.logo:hover {
   color: #e7e7e7;
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.iph-link.no-lift:hover {
+  transform: none;
 }
 
 .iph-logo {
@@ -524,6 +579,20 @@ a.logo:hover {
   min-height: 100vh;
 }
 
+.case-studies-background {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1600' height='1000' preserveAspectRatio='none' viewBox='0 0 1600 1000'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1236%26quot%3b)' fill='none'%3e%3crect width='1600' height='1000' x='0' y='0' fill='url(%26quot%3b%23SvgjsRadialGradient1237%26quot%3b)'%3e%3c/rect%3e%3cpath d='M266.94 996.42 a223.62 223.62 0 1 0 447.24 0 a223.62 223.62 0 1 0 -447.24 0z' fill='rgba(155%2c 193%2c 188%2c 0.12)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M-124.66 663.93 a192.1 192.1 0 1 0 384.2 0 a192.1 192.1 0 1 0 -384.2 0z' fill='rgba(155%2c 193%2c 188%2c 0.12)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M47.09 579.79 a226.94 226.94 0 1 0 453.88 0 a226.94 226.94 0 1 0 -453.88 0z' fill='rgba(155%2c 193%2c 188%2c 0.12)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M738 454.54 a234.47 234.47 0 1 0 468.94 0 a234.47 234.47 0 1 0 -468.94 0z' fill='rgba(155%2c 193%2c 188%2c 0.12)' class='triangle-float2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1236'%3e%3crect width='1600' height='1000' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cradialGradient cx='50%25' cy='50%25' r='943.4' gradientUnits='userSpaceOnUse' id='SvgjsRadialGradient1237'%3e%3cstop stop-color='rgba(93%2c 58%2c 155%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(0%2c 0%2c 0%2c 1)' offset='0.92'%3e%3c/stop%3e%3c/radialGradient%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0) rotate(0deg)%7d 33%25%7btransform: translate(-15px%2c -10px) rotate(3deg)%7d 66%25%7btransform: translate(10px%2c -15px) rotate(-3deg)%7d 100%25%7btransform: translate(0%2c 0) rotate(0deg)%7d %7d .triangle-float1 %7b animation: float1 12s ease-in-out infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0) rotate(0deg)%7d 33%25%7btransform: translate(-12px%2c 15px) rotate(-4deg)%7d 66%25%7btransform: translate(15px%2c 10px) rotate(4deg)%7d 100%25%7btransform: translate(0%2c 0) rotate(0deg)%7d %7d .triangle-float2 %7b animation: float2 10s ease-in-out infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0) rotate(0deg) scale(1)%7d 33%25%7btransform: translate(12px%2c -18px) rotate(5deg) scale(1.02)%7d 66%25%7btransform: translate(-10px%2c 12px) rotate(-5deg) scale(0.98)%7d 100%25%7btransform: translate(0%2c 0) rotate(0deg) scale(1)%7d %7d .triangle-float3 %7b animation: float3 14s ease-in-out infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+@media (max-width: 767px) {
+  /* background-attachment: fixed is unreliable on mobile browsers */
+  .case-studies-background {
+    background-attachment: scroll;
+  }
+}
+
 .experience-header-link:hover {
   color: #9bc1bc;
   transition: 0.3s;
@@ -583,6 +652,8 @@ a.logo:hover {
 /* ---------- Experience Tab Switcher ---------- */
 .exp-tabs {
   border-bottom: 1px solid rgba(155, 193, 188, 0.2);
+  flex-wrap: wrap;
+  row-gap: 0.25rem;
 }
 
 .exp-tab-btn {
@@ -596,9 +667,17 @@ a.logo:hover {
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
+  white-space: nowrap;
   transition:
     color 0.2s ease,
     border-color 0.2s ease;
+}
+
+@media (max-width: 575px) {
+  .exp-tab-btn {
+    padding: 0.4rem 0.75rem;
+    font-size: 13px;
+  }
 }
 
 .exp-tab-btn:hover {

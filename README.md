@@ -1,6 +1,6 @@
-# Frontend Engineer — React · TypeScript · Next.js · Scalable Systems
+# Full Stack Engineer — React · TypeScript · Next.js · Scalable Systems
 
-Frontend Engineer building production-grade frontend systems with a focus on scalability, performance, and maintainability.
+Full Stack Engineer with a Frontend specialization, building production-grade systems with a focus on scalability, performance, and maintainability.
 
 This repository contains my personal portfolio, showcasing real-world experience in complex applications, including real-time systems and modular architectures.
 
