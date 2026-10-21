@@ -77,7 +77,36 @@ document.addEventListener("DOMContentLoaded", function () {
 // YouTube click-to-load facade — avoids loading the embed until the user asks for it
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".yt-facade").forEach(function (facade) {
-    facade.addEventListener("click", function () {
+    // muted: browsers only allow autoplay without a user gesture if it starts muted
+    function activate(muted) {
+      if (!facade.isConnected) return;
+      const videoSrc = facade.getAttribute("data-video-src");
+      if (videoSrc) {
+        const video = document.createElement("video");
+        video.muted = muted;
+        video.src = videoSrc;
+        video.controls = true;
+        video.autoplay = true;
+        video.playsInline = true;
+        video.title = facade.getAttribute("data-yt-title") || "Video";
+        // Keep the per-language sources so a language switch can swap them
+        [
+          ["srcEn", "data-video-src-en"],
+          ["srcEs", "data-video-src-es"],
+          ["posEn", "data-video-pos-en"],
+          ["posEs", "data-video-pos-es"],
+        ].forEach(function (pair) {
+          if (facade.hasAttribute(pair[1]))
+            video.dataset[pair[0]] = facade.getAttribute(pair[1]);
+        });
+        video.className = "local-video";
+        const pos = facade.getAttribute("data-video-pos");
+        if (pos) video.style.setProperty("--video-pos", pos);
+        video.style.cssText +=
+          "position:absolute;top:0;left:0;width:100%;height:100%;border:0;background:#000;";
+        facade.replaceWith(video);
+        return;
+      }
       const videoId = facade.getAttribute("data-yt-id");
       const title = facade.getAttribute("data-yt-title") || "YouTube video";
       const iframe = document.createElement("iframe");
@@ -92,7 +121,38 @@ document.addEventListener("DOMContentLoaded", function () {
       iframe.style.cssText =
         "position:absolute;top:0;left:0;width:100%;height:100%;border:0;";
       facade.replaceWith(iframe);
+    }
+
+    facade.addEventListener("click", function () {
+      activate(false);
     });
+
+    // Start once when scrolled into view, after the language video has been chosen
+    if (facade.hasAttribute("data-autoplay-on-scroll") && "IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        function (entries) {
+          if (!entries.some((e) => e.isIntersecting)) return;
+          observer.disconnect();
+          const start = function () {
+            activate(true);
+          };
+          if (window.__langVideosReady) start();
+          else {
+            const t = setTimeout(start, 3000);
+            document.addEventListener(
+              "langvideos:ready",
+              function () {
+                clearTimeout(t);
+                start();
+              },
+              { once: true },
+            );
+          }
+        },
+        { threshold: 0.6 },
+      );
+      observer.observe(facade);
+    }
   });
 });
 
@@ -125,6 +185,41 @@ document.addEventListener("DOMContentLoaded", function () {
       if (value !== undefined) el.innerHTML = value;
     });
     document.documentElement.lang = lang;
+    applyLangVideos(lang);
+  }
+
+  // Swap language-specific local videos (facades and already-playing players)
+  function applyLangVideos(lang) {
+    const key = lang === "es" ? "es" : "en";
+    const prefix = basePrefix();
+    document.querySelectorAll(".yt-facade[data-video-src-" + key + "]").forEach((f) => {
+      f.setAttribute("data-video-src", prefix + f.getAttribute("data-video-src-" + key));
+      const img = f.querySelector("img");
+      const poster = f.getAttribute("data-poster-" + key);
+      if (img && poster) img.src = prefix + poster;
+      const pos = f.getAttribute("data-video-pos-" + key);
+      if (pos) f.setAttribute("data-video-pos", pos);
+      else f.removeAttribute("data-video-pos");
+    });
+    document.querySelectorAll("video.local-video").forEach((v) => {
+      const pos = v.dataset["pos" + (key === "es" ? "Es" : "En")];
+      if (pos) v.style.setProperty("--video-pos", pos);
+      else v.style.removeProperty("--video-pos");
+    });
+    const dsKey = key === "es" ? "srcEs" : "srcEn";
+    document.querySelectorAll("video[data-src-en], video[data-src-es]").forEach((v) => {
+      const next = prefix + v.dataset[dsKey];
+      if (v.dataset[dsKey] && !v.src.endsWith(next.replace(/^\.\.\//, ""))) {
+        // Same element, new source: the old language stops, never two at once
+        v.pause();
+        v.src = next;
+        v.play().catch(() => {});
+      }
+    });
+    if (!window.__langVideosReady) {
+      window.__langVideosReady = true;
+      document.dispatchEvent(new Event("langvideos:ready"));
+    }
   }
 
   function setActiveLangUI(lang) {

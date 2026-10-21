@@ -35,6 +35,22 @@
     transform 0.2s ease;
 }
 
+/* Local video: cover in the container (optionally shifted), full frame in fullscreen */
+.local-video {
+  object-fit: cover;
+  object-position: var(--video-pos, center);
+}
+
+.local-video:fullscreen {
+  object-fit: contain;
+  object-position: center;
+}
+
+.local-video:-webkit-full-screen {
+  object-fit: contain;
+  object-position: center;
+}
+
 .yt-facade:hover .yt-play-btn {
   background: #17784f;
   transform: translate(-50%, -50%) scale(1.08);

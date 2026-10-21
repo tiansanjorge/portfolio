@@ -494,16 +494,22 @@
                 class="ratio rounded-5 overflow-hidden pb-5 pb-xs-0"
                 style="height: 550px; width: calc(550px * 9 / 16)"
               >
-                <!-- YouTube Video (click to load) -->
+                <!-- Presentation video (click to load, per language) -->
                 <div
                   class="yt-facade"
-                  data-yt-id="qlBhpazVkCQ"
-                  data-yt-title="YouTube Short"
+                  data-video-src="videos/compressed/Presentation.mp4"
+                  data-video-src-en="videos/compressed/Presentation.mp4"
+                  data-video-src-es="videos/compressed/Presentacion.mp4"
+                  data-video-pos-es="44.7% 50%"
+                  data-autoplay-on-scroll
+                  data-poster-en="img/presentation-en.jpg"
+                  data-poster-es="img/presentation-es.jpg"
+                  data-yt-title="Presentation"
                   style="width: 100%; height: 100%"
                 >
                   <img
-                    src="https://img.youtube.com/vi/qlBhpazVkCQ/hqdefault.jpg"
-                    alt="YouTube Short — video preview"
+                    src="img/presentation-en.jpg"
+                    alt="Presentation — video preview"
                     loading="lazy"
                   />
                   <span class="yt-play-btn"
@@ -630,21 +636,24 @@
                   01/03
                 </div>
                 <div class="col-8 col-md-5">
-                  <a
-                    href="https://fleetoperations.vercel.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <div
+                    class="ratio ratio-16x9 rounded-3 overflow-hidden video-bw"
                   >
-                    <div class="ratio ratio-16x9 rounded-3 overflow-hidden">
+                    <div
+                      class="yt-facade"
+                      data-video-src="videos/Fleetops.mp4"
+                      data-yt-title="FleetOps — Real-time Fleet Tracking Platform"
+                    >
                       <img
-                        class="grayscale-on-hover"
-                        style="object-fit: cover"
                         src="img/fleetops.jpg"
+                        alt="FleetOps — video preview"
                         loading="lazy"
-                        alt="FleetOps — Real-time Fleet Tracking Platform"
                       />
+                      <span class="yt-play-btn"
+                        ><i class="fa-solid fa-play"></i
+                      ></span>
                     </div>
-                  </a>
+                  </div>
                 </div>
               </div>
 
