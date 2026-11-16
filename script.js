@@ -160,6 +160,16 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+// YouTube embed URL (privacy-enhanced domain). muted is required to autoplay without a gesture
+function ytEmbedSrc(id, muted) {
+  return (
+    "https://www.youtube-nocookie.com/embed/" +
+    id +
+    "?autoplay=1&rel=0&playsinline=1&vq=hd1080" +
+    (muted ? "&mute=1" : "")
+  );
+}
+
 // YouTube click-to-load facade — avoids loading the embed until the user asks for it
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".yt-facade").forEach(function (facade) {
@@ -196,10 +206,15 @@ document.addEventListener("DOMContentLoaded", function () {
       const videoId = facade.getAttribute("data-yt-id");
       const title = facade.getAttribute("data-yt-title") || "YouTube video";
       const iframe = document.createElement("iframe");
-      iframe.src =
-        "https://www.youtube.com/embed/" +
-        videoId +
-        "?autoplay=1&vq=hd1080";
+      iframe.src = ytEmbedSrc(videoId, muted);
+      // Keep the per-language ids so a language switch can swap the video
+      [
+        ["ytIdEn", "data-yt-id-en"],
+        ["ytIdEs", "data-yt-id-es"],
+      ].forEach(function (pair) {
+        if (facade.hasAttribute(pair[1]))
+          iframe.dataset[pair[0]] = facade.getAttribute(pair[1]);
+      });
       iframe.title = title;
       iframe.allow =
         "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
@@ -293,6 +308,18 @@ document.addEventListener("DOMContentLoaded", function () {
       const pos = v.dataset["pos" + (key === "es" ? "Es" : "En")];
       if (pos) v.style.setProperty("--video-pos", pos);
       else v.style.removeProperty("--video-pos");
+    });
+    // YouTube versions: pick the id (and poster) of the active language
+    document.querySelectorAll(".yt-facade[data-yt-id-" + key + "]").forEach((f) => {
+      f.setAttribute("data-yt-id", f.getAttribute("data-yt-id-" + key));
+      const img = f.querySelector("img");
+      const poster = f.getAttribute("data-poster-" + key);
+      if (img && poster) img.src = prefix + poster;
+    });
+    const ytKey = key === "es" ? "ytIdEs" : "ytIdEn";
+    document.querySelectorAll("iframe[data-yt-id-en], iframe[data-yt-id-es]").forEach((fr) => {
+      const id = fr.dataset[ytKey];
+      if (id && fr.src.indexOf("/embed/" + id) === -1) fr.src = ytEmbedSrc(id, false);
     });
     const dsKey = key === "es" ? "srcEs" : "srcEn";
     document.querySelectorAll("video[data-src-en], video[data-src-es]").forEach((v) => {
