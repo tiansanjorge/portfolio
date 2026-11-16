@@ -222,12 +222,15 @@ function mountCroppedPlayer(facade, muted) {
   const fill = bar.querySelector(".yt-crop-progress-fill");
   let player = null;
   let loadedId = ids[currentLang()];
+  // The player applies mute()/unMute() asynchronously, so isMuted() right after the call still
+  // returns the old value: the button keeps its own state instead of asking the player.
+  let mutedUI = !!muted;
 
   function sync() {
     if (!player || !player.getPlayerState) return;
     const playing = player.getPlayerState() === 1;
     playIcon.className = "fa-solid " + (playing ? "fa-pause" : "fa-play");
-    muteIcon.className = "fa-solid " + (player.isMuted() ? "fa-volume-xmark" : "fa-volume-high");
+    muteIcon.className = "fa-solid " + (mutedUI ? "fa-volume-xmark" : "fa-volume-high");
   }
   // No automatic captions (YouTube may turn them on by itself)
   function hideCaptions(target) {
@@ -252,8 +255,9 @@ function mountCroppedPlayer(facade, muted) {
   bar.querySelector("[data-act=play]").addEventListener("click", toggle);
   bar.querySelector("[data-act=mute]").addEventListener("click", function () {
     if (!player) return;
-    if (player.isMuted()) player.unMute();
-    else player.mute();
+    mutedUI = !mutedUI;
+    if (mutedUI) player.mute();
+    else player.unMute();
     sync();
   });
   // Fullscreen shows the whole video (no vertical crop). iPhone Safari can only fullscreen
