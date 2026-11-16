@@ -87,6 +87,33 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// AI Engineering page: "View trace" opens the Langfuse screenshot in a native <dialog>
+// (Esc closes it, focus is trapped while open and returns to the button afterwards)
+document.addEventListener("DOMContentLoaded", function () {
+  const dialog = document.getElementById("trace-dialog");
+  if (!dialog || typeof dialog.showModal !== "function") return;
+  const img = document.getElementById("trace-dialog-img");
+
+  document.querySelectorAll("[data-trace-src]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      img.src = btn.getAttribute("data-trace-src");
+      img.alt = btn.getAttribute("data-trace-alt") || "";
+      dialog.showModal();
+    });
+  });
+
+  dialog.querySelectorAll("[data-trace-close]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      dialog.close();
+    });
+  });
+
+  // A click on the backdrop lands on the <dialog> element itself
+  dialog.addEventListener("click", function (e) {
+    if (e.target === dialog) dialog.close();
+  });
+});
+
 // Scroll-triggered animations
 document.addEventListener("DOMContentLoaded", function () {
   const scrollElements = document.querySelectorAll(".scroll-reveal");

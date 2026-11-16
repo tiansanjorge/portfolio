@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="AI Engineering projects — LegalMove contract comparison, Nimbus Desk multi-agent RAG, NimbusHR FAQ RAG and a Helpdesk CLI. Sebastián Sanjorge."
+    />
+    <link
+      rel="canonical"
+      href="https://ssanjorge.netlify.app/pages/ai-engineering.html"
+    />
+
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://ssanjorge.netlify.app/pages/ai-engineering.html"
+    />
+    <meta property="og:title" content="Sanjorge • AI Engineering" />
+    <meta
+      property="og:description"
+      content="AI Engineering projects — LegalMove contract comparison, Nimbus Desk multi-agent RAG, NimbusHR FAQ RAG and a Helpdesk CLI. Sebastián Sanjorge."
+    />
+    <meta
+      property="og:image"
+      content="https://ssanjorge.netlify.app/img/perfil.jpg"
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sanjorge • AI Engineering" />
+    <meta
+      name="twitter:description"
+      content="AI Engineering projects — LegalMove contract comparison, Nimbus Desk multi-agent RAG, NimbusHR FAQ RAG and a Helpdesk CLI. Sebastián Sanjorge."
+    />
+    <meta
+      name="twitter:image"
+      content="https://ssanjorge.netlify.app/img/perfil.jpg"
+    />
+
+    <script>
+      (function () {
+        try {
+          var lang = localStorage.getItem("site_lang") || "en";
+          document.documentElement.setAttribute("data-lang", lang);
+        } catch (e) {
+          document.documentElement.setAttribute("data-lang", "en");
+        }
+      })();
+    </script>
+
+    <style>
+      html[data-lang="en"] #lang-en,
+      html[data-lang="es"] #lang-es {
+        display: none !important;
+      }
+    </style>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../styles/animate.css" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="icon" type="image/png" href="../img/favicon.png" />
+    <title>Sanjorge • AI Engineering</title>
+  </head>
+
+  <body>
+    <!-------- Header ------->
+
+    <div class="works-background">
+      <header class="container-fluid py-2">
+        <div class="row">
+          <!-- Mobile -->
+
+          <div
+            class="col-10 d-flex d-md-none justify-content-between flex-wrap mx-auto p-0"
+          >
+            <div class="col-2">
+              <a class="logo text-decoration-none white" href="../index.html"
+                ><b>SS<span class="green">.</span></b></a
+              >
+            </div>
+            <div class="col-3 d-flex justify-content-evenly align-items-center">
+              <div
+                class="d-flex justify-content-center align-items-center lang-wrapper"
+              >
+                <button id="lang-en" class="lang-toggle" title="English">
+                  <img
+                    src="../img/flags/en.jpg"
+                    alt="English"
+                    class="lang-flag"
+                  />
+                </button>
+                <button id="lang-es" class="lang-toggle" title="Español">
+                  <img
+                    src="../img/flags/es.jpg"
+                    alt="Español"
+                    class="lang-flag"
+                  />
+                </button>
+              </div>
+              <div class="pt-2">
+                <button
+                  class="border-0 nav-button"
+                  onclick="dropdown(this)"
+                  aria-expanded="false"
+                  aria-controls="dropdown-menu"
+                  aria-label="Menu"
+                >
+                  <i
+                    class="d-block fa-solid fa-bars fs-5 white"
+                    id="bar-icon"
+                  ></i>
+                  <i
+                    class="d-none fa-solid fa-xmark fs-5 green"
+                    id="x-icon"
+                  ></i>
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="dd-menu col-12 d-flex flex-column text-end"
+              id="dropdown-menu"
+            >
+              <div class="pe-2 my-1">
+                <a
+                  class="works-header-link header-link fs-medium text-decoration-none subrayado-works white fw-600"
+                  href="../index.html"
+                >
+                  <span data-i18n="nav.home"></span>
+                </a>
+              </div>
+              <div class="pe-2 my-1">
+                <a
+                  class="works-header-link header-link fs-medium text-decoration-none subrayado-works white fw-600"
+                  href="experience.html"
+                >
+                  <span data-i18n="nav.experience"></span>
+                </a>
+              </div>
+              <div class="pe-2 my-1">
+                <button type="button" class="nav-dd-trigger works-header-link fs-medium text-decoration-none aqua fw-600 active-link" aria-expanded="false" aria-controls="projects-menu-m"><span data-i18n="nav.projects">Projects</span><i class="fa-solid fa-chevron-down nav-dd-chevron" aria-hidden="true"></i><span class="active-dot green">•</span></button>
+                <div class="nav-sub white" id="projects-menu-m"><a class="nav-dd-link" href="works.html" data-i18n="nav.fullstack">Fullstack</a><a class="nav-dd-link nav-sub-active" href="ai-engineering.html" data-i18n="nav.ai">AI Engineering</a></div>
+              </div>
+              <div class="pe-2 my-1">
+                <a
+                  class="works-header-link header-link fs-medium text-decoration-none subrayado-works white fw-600"
+                  href="case-studies.html"
+                >
+                  <span data-i18n="nav.caseStudies"></span>
+                </a>
+              </div>
+              <div class="pe-2 mt-1">
+                <a
+                  class="works-header-link header-link fs-medium text-decoration-none subrayado-works white fw-600"
+                  href="contact.html"
+                >
+                  <span data-i18n="nav.contact"></span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Desktop -->
+
+          <div
+            class="col-10 d-none d-md-flex justify-content-between mx-auto p-0"
+          >
+            <div class="col-2">
+              <a class="logo text-decoration-none white" href="../index.html"
+                ><b>SS<span class="green">.</span></b></a
+              >
+            </div>
+
+            <div
+              class="col-9 col-lg-8 col-xl-7 d-flex justify-content-between align-items-center"
+            >
+              <a
+                class="works-header-link fs-medium text-decoration-none subrayado-works white fw-600"
+                href="../index.html"
+                ><span data-i18n="nav.home"></span
+              ></a>
+              <a
+                class="works-header-link fs-medium text-decoration-none subrayado-works white fw-600"
+                href="experience.html"
+                ><span data-i18n="nav.experience"></span
+              ></a>
+              <div class="nav-dd"><button type="button" class="nav-dd-trigger works-header-link active-link fs-medium text-decoration-none aqua fw-600" aria-expanded="false" aria-controls="projects-menu-d" aria-haspopup="true"><span data-i18n="nav.projects">Projects</span><i class="fa-solid fa-chevron-down nav-dd-chevron" aria-hidden="true"></i><span class="active-dot green">•</span></button><div class="nav-dd-menu" id="projects-menu-d"><a class="nav-dd-link" href="works.html" data-i18n="nav.fullstack">Fullstack</a><a class="nav-dd-link nav-sub-active" href="ai-engineering.html" data-i18n="nav.ai">AI Engineering</a></div></div>
+              <a
+                class="works-header-link fs-medium text-decoration-none subrayado-works white fw-600"
+                href="case-studies.html"
+                ><span data-i18n="nav.caseStudies"></span
+              ></a>
+              <a
+                class="works-header-link fs-medium text-decoration-none subrayado-works white fw-600"
+                href="contact.html"
+                ><span data-i18n="nav.contact"></span
+              ></a>
+            </div>
+            <div
+              class="col-2 d-flex justify-content-end align-items-center lang-wrapper"
+            >
+              <button id="lang-en" class="lang-toggle" title="English">
+                <img
+                  src="../img/flags/en.jpg"
+                  alt="English"
+                  class="lang-flag"
+                />
+              </button>
+              <button id="lang-es" class="lang-toggle" title="Español">
+                <img
+                  src="../img/flags/es.jpg"
+                  alt="Español"
+                  class="lang-flag"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- AI Engineering -->
+
+      <section class="container-fluid white pb-4 ai-page" style="min-height: 100vh">
+        <div class="row justify-content-evenly py-3">
+          <div class="col-10 col-xxl-9 d-flex flex-column px-0">
+            <!-- Title -->
+            <div class="col-12 text-start mb-2 mb-lg-3">
+              <h2
+                class="white mb-0 projects-title ai-title"
+                data-i18n="ai.title"
+              >
+                AI Engineering
+              </h2>
+            </div>
+
+            <!-- Training overview -->
+            <div class="ai-intro scroll-reveal">
+              <div>
+                <p data-i18n="ai.intro.p1">
+                  I completed Henry's AI Engineering program with four
+                  integrator projects that cover the whole path, from calling
+                  an LLM API to a multimodal, observable system: structured
+                  outputs, RAG, multi-agent routing and vision.
+                </p>
+                <p data-i18n="ai.intro.p2">
+                  Every project follows the same approach: treat the prompt and
+                  the design as hypotheses, measure them, and leave the
+                  evidence in the repository — tests, evaluation sets, traces
+                  and a list of known limitations.
+                </p>
+                <p class="ai-scope" data-i18n="ai.intro.scope">
+                  Academic projects built on synthetic data. They show how I
+                  design, evaluate and validate LLM systems; they are not
+                  production deployments.
+                </p>
+              </div>
+              <div class="ai-panel">
+                <h3 class="ai-panel-title" data-i18n="ai.skills.title">
+                  What this covers
+                </h3>
+                <div class="ai-chips">
+                  <span class="ai-chip">LLM APIs</span>
+                  <span class="ai-chip">Structured outputs</span>
+                  <span class="ai-chip">RAG</span>
+                  <span class="ai-chip">Embeddings</span>
+                  <span class="ai-chip">LangChain</span>
+                  <span class="ai-chip">LangGraph</span>
+                  <span class="ai-chip">Chroma</span>
+                  <span class="ai-chip">Pydantic</span>
+                  <span class="ai-chip">Evaluation</span>
+                  <span class="ai-chip">Observability</span>
+                  <span class="ai-chip">Langfuse</span>
+                  <span class="ai-chip">Testing</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- M4 · Final project -->
+            <article
+              class="ai-card ai-card--featured scroll-reveal"
+              id="legalmove"
+            >
+              <div class="ai-card__visual">
+                <figure class="ai-diagram">
+                  <img
+                    src="../img/ai/m4-architecture.svg"
+                    alt="Architecture diagram: two images are parsed with GPT-4o vision, passed through a contextualization agent and an extraction agent, validated with Pydantic and returned as JSON, with a Langfuse span per stage."
+                    width="560"
+                    height="346"
+                    loading="lazy"
+                  />
+                </figure>
+                <button
+                  type="button"
+                  class="ai-trace-btn"
+                  data-trace-src="../img/ai/m4-trace.png"
+                  data-trace-alt="Langfuse trace of a LegalMove run: the contract-analysis span with its four stages, latency and cost per model call, and the validated JSON output."
+                >
+                  <img src="../img/ai/m4-trace.png" alt="" loading="lazy" />
+                  <span
+                    ><i class="fa-solid fa-magnifying-glass-plus me-2"></i
+                    ><span data-i18n="ai.btn.trace">View trace</span></span
+                  >
+                </button>
+              </div>
+              <div class="ai-card__body">
+                <p class="ai-eyebrow" data-i18n="ai.m4.eyebrow">
+                  Final project · Multimodal
+                </p>
+                <h3 class="ai-card__title" data-i18n="ai.m4.title">
+                  LegalMove — Contract comparison agent
+                </h3>
+                <p class="ai-card__desc" data-i18n="ai.m4.desc">
+                  Takes two images — a contract and its amendment — and returns
+                  a validated JSON describing what changed. GPT-4o reads each
+                  image, a contextualization agent maps the two documents and
+                  an extraction agent isolates every change. The output is
+                  checked against a Pydantic schema with automatic repair and
+                  retries, and every stage is traced in Langfuse.
+                </p>
+                <ul class="ai-metrics">
+                  <li data-i18n="ai.m4.metric1">
+                    14 of 15 runs perfect across 5 synthetic pairs, including
+                    one with an injected instruction the system flags instead
+                    of obeying
+                  </li>
+                  <li data-i18n="ai.m4.metric2">
+                    Parsing WER 0.000 on clean pairs and 0.017–0.029 on a
+                    degraded scan
+                  </li>
+                  <li data-i18n="ai.m4.metric3">
+                    ~11–18 s and ~USD 0.03 per analysis · 87 tests
+                  </li>
+                </ul>
+                <div class="ai-chips">
+                  <span class="ai-chip">Python</span>
+                  <span class="ai-chip">GPT-4o Vision</span>
+                  <span class="ai-chip">LangChain</span>
+                  <span class="ai-chip">Pydantic</span>
+                  <span class="ai-chip">Langfuse</span>
+                  <span class="ai-chip">Pillow</span>
+                  <span class="ai-chip">pytest</span>
+                </div>
+                <p class="ai-scope" data-i18n="ai.m4.scope">
+                  Synthetic documents. It does not provide legal validation or
+                  production-grade reliability.
+                </p>
+                <div class="ai-actions">
+                  <a
+                    class="ai-btn"
+                    href="https://github.com/tiansanjorge/AI-Engineering/tree/main/modulo-4"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    ><i class="fa-brands fa-github"></i
+                    ><span data-i18n="ai.btn.code">View code</span></a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <!-- M3 -->
+            <article
+              class="ai-card ai-card--featured ai-card--reverse scroll-reveal"
+              id="nimbus-desk"
+            >
+              <div class="ai-card__visual">
+                <figure class="ai-diagram">
+                  <img
+                    src="../img/ai/m3-architecture.svg"
+                    alt="Architecture diagram: a query reaches a LangGraph orchestrator that routes it to the HR, Tech or Finance RAG agent, each with its own Chroma collection, or to an out-of-scope or human-escalation path; traced with Langfuse."
+                    width="560"
+                    height="346"
+                    loading="lazy"
+                  />
+                </figure>
+                <button
+                  type="button"
+                  class="ai-trace-btn"
+                  data-trace-src="../img/ai/m3-trace.png"
+                  data-trace-alt="Langfuse trace of a Nimbus Desk request: the support-request span, the LangGraph routing step, the Tech agent with its retriever and the model calls with latency and cost."
+                >
+                  <img src="../img/ai/m3-trace.png" alt="" loading="lazy" />
+                  <span
+                    ><i class="fa-solid fa-magnifying-glass-plus me-2"></i
+                    ><span data-i18n="ai.btn.trace">View trace</span></span
+                  >
+                </button>
+              </div>
+              <div class="ai-card__body">
+                <p class="ai-eyebrow" data-i18n="ai.m3.eyebrow">
+                  Multi-agent · RAG
+                </p>
+                <h3 class="ai-card__title" data-i18n="ai.m3.title">
+                  Nimbus Desk — Multi-agent RAG with routing
+                </h3>
+                <p class="ai-card__desc" data-i18n="ai.m3.desc">
+                  An orchestrator built with LangGraph classifies each internal
+                  request and routes it, through conditional edges, to one of
+                  three RAG agents (HR, Tech, Finance), each with its own
+                  Chroma collection. Answers cite verified sources; the system
+                  abstains when there is no evidence and escalates to a person
+                  if the router fails. Every request is traced in Langfuse and
+                  scored by a judge calibrated against human ratings.
+                </p>
+                <ul class="ai-metrics">
+                  <li data-i18n="ai.m3.metric1">
+                    Evaluated on dev (39), holdout (14) and blind (14) sets
+                    over five iterations: 97% / 100% / 100%
+                  </li>
+                  <li data-i18n="ai.m3.metric2">
+                    Judge calibrated on 30 human ratings: Spearman 0.88, no
+                    false "good" scores
+                  </li>
+                  <li data-i18n="ai.m3.metric3">
+                    114 tests · ~USD 0.0003 per query
+                  </li>
+                </ul>
+                <div class="ai-chips">
+                  <span class="ai-chip">Python</span>
+                  <span class="ai-chip">LangGraph</span>
+                  <span class="ai-chip">LangChain</span>
+                  <span class="ai-chip">Chroma</span>
+                  <span class="ai-chip">Pydantic</span>
+                  <span class="ai-chip">Langfuse</span>
+                  <span class="ai-chip">OpenAI</span>
+                  <span class="ai-chip">pytest</span>
+                </div>
+                <p class="ai-scope" data-i18n="ai.m3.scope">
+                  Synthetic corpus and small, reused evaluation sets, so the
+                  figures are indicative. It is not an autonomous ReAct agent
+                  and has no persistent memory.
+                </p>
+                <div class="ai-actions">
+                  <a
+                    class="ai-btn"
+                    href="https://github.com/tiansanjorge/AI-Engineering/tree/main/modulo-3"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    ><i class="fa-brands fa-github"></i
+                    ><span data-i18n="ai.btn.code">View code</span></a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <!-- Foundations -->
+            <div class="scroll-reveal mt-4">
+              <h3 class="ai-section-title" data-i18n="ai.foundations.title">
+                Foundations
+              </h3>
+              <p class="ai-section-desc" data-i18n="ai.foundations.desc">
+                The earlier projects the last two build on.
+              </p>
+            </div>
+
+            <div class="ai-grid">
+              <!-- M2 -->
+              <article
+                class="ai-card ai-card--compact scroll-reveal"
+                id="nimbushr"
+              >
+                <figure class="ai-diagram">
+                  <img
+                    src="../img/ai/m2-architecture.svg"
+                    alt="Architecture diagram: a FAQ document is chunked, embedded and indexed; a question is matched by cosine similarity and answered by GPT-4o-mini with the retrieved chunks cited."
+                    width="560"
+                    height="330"
+                    loading="lazy"
+                  />
+                </figure>
+                <div class="ai-card__body">
+                  <p class="ai-eyebrow" data-i18n="ai.m2.eyebrow">RAG</p>
+                  <h3 class="ai-card__title" data-i18n="ai.m2.title">
+                    NimbusHR — FAQ chatbot with RAG
+                  </h3>
+                  <p class="ai-card__desc" data-i18n="ai.m2.desc">
+                    Retrieval-augmented generation over a company FAQ:
+                    150-token chunks with overlap, text-embedding-3-small
+                    embeddings, exact cosine similarity with NumPy and
+                    GPT-4o-mini for the answer. Each response lists the chunks
+                    it used, so it can be audited against the source. A bonus
+                    judge agent scores relevance, fidelity and completeness.
+                  </p>
+                  <div class="ai-chips">
+                    <span class="ai-chip">Python</span>
+                    <span class="ai-chip">OpenAI</span>
+                    <span class="ai-chip">NumPy</span>
+                    <span class="ai-chip">tiktoken</span>
+                    <span class="ai-chip">pytest</span>
+                  </div>
+                  <p class="ai-scope" data-i18n="ai.m2.scope">
+                    Small corpus; the judge was evaluated on three examples.
+                  </p>
+                  <div class="ai-actions">
+                    <a
+                      class="ai-btn"
+                      href="https://github.com/tiansanjorge/AI-Engineering/tree/main/modulo-2"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      ><i class="fa-brands fa-github"></i
+                      ><span data-i18n="ai.btn.code">View code</span></a
+                    >
+                  </div>
+                </div>
+              </article>
+
+              <!-- M1 -->
+              <article
+                class="ai-card ai-card--compact scroll-reveal"
+                id="helpdesk-cli"
+              >
+                <figure class="ai-diagram">
+                  <img
+                    src="../img/ai/m1-architecture.svg"
+                    alt="Architecture diagram: a question passes an input guard, is answered by GPT-4o-mini with chain-of-thought, parsed and repaired, validated against a schema and returned as JSON, with metrics logged to CSV."
+                    width="560"
+                    height="310"
+                    loading="lazy"
+                  />
+                </figure>
+                <div class="ai-card__body">
+                  <p class="ai-eyebrow" data-i18n="ai.m1.eyebrow">LLM API</p>
+                  <h3 class="ai-card__title" data-i18n="ai.m1.title">
+                    Helpdesk CLI — Structured generation
+                  </h3>
+                  <p class="ai-card__desc" data-i18n="ai.m1.desc">
+                    A support assistant that turns a question into a validated
+                    JSON — answer, confidence and recommended actions — using
+                    GPT-4o-mini in JSON mode. It parses the response, attempts
+                    one repair, validates the schema by hand and falls back
+                    safely. Chain-of-thought was chosen through a measured
+                    three-round experiment, and regex guardrails block prompt
+                    injection before the model is called.
+                  </p>
+                  <div class="ai-chips">
+                    <span class="ai-chip">Python</span>
+                    <span class="ai-chip">OpenAI</span>
+                    <span class="ai-chip">pytest</span>
+                  </div>
+                  <p class="ai-scope" data-i18n="ai.m1.scope">
+                    Manual schema validation (not native Structured Outputs);
+                    guardrails are limited in scope.
+                  </p>
+                  <div class="ai-actions">
+                    <a
+                      class="ai-btn"
+                      href="https://github.com/tiansanjorge/AI-Engineering/tree/main/modulo-1"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      ><i class="fa-brands fa-github"></i
+                      ><span data-i18n="ai.btn.code">View code</span></a
+                    >
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="container-fluid">
+        <div class="row justify-content-evenly pb-2 pb-md-3">
+          <div
+            class="col-10 d-flex justify-content-between align-items-center p-0"
+          >
+            <div class="col-2">
+              <a class="logo text-decoration-none white" href="#"
+                ><b>SS<span class="green">.</span></b></a
+              >
+            </div>
+            <div class="col-4 col-md-3 col-lg-2 d-flex justify-content-between">
+              <a
+                class="d-flex flex-column justify-content-center white text-decoration-none footer-link"
+                href="https://wa.link/rehzl5"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                ><i class="fa-brands fa-whatsapp fs-big"></i>
+              </a>
+              <a
+                class="d-flex flex-column justify-content-center white text-decoration-none footer-link"
+                href="https://www.linkedin.com/in/sebastian-sanjorge-fullstack-engineer"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                ><i class="fa-brands fa-linkedin fs-big"></i
+              ></a>
+              <a
+                class="d-flex flex-column justify-content-center white text-decoration-none footer-link"
+                href="https://github.com/tiansanjorge"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                ><i class="fa-brands fa-github fs-big"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <dialog class="ai-trace-dialog" id="trace-dialog" aria-label="Langfuse trace">
+      <div class="ai-trace-dialog__bar">
+        <span data-i18n="ai.trace.caption">Langfuse trace of a real run</span>
+        <button type="button" class="ai-trace-dialog__close" data-trace-close>
+          <i class="fa-solid fa-xmark me-1" aria-hidden="true"></i
+          ><span data-i18n="ai.trace.close">Close</span>
+        </button>
+      </div>
+      <img id="trace-dialog-img" src="" alt="" />
+    </dialog>
+
+    <script src="../script.js"></script>
+  </body>
+</html>

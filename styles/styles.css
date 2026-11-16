@@ -1284,3 +1284,390 @@ a.logo:hover {
     transition: none;
   }
 }
+
+/* ------ AI Engineering page ------ */
+
+.ai-title {
+  font-family: "Magilio", sans-serif;
+  font-size: 105px;
+  font-weight: normal;
+  line-height: 1.05;
+}
+
+/* Reveal on scroll (scoped: the Fullstack page keeps its own inline version) */
+@keyframes aiFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ai-page .scroll-reveal {
+  opacity: 0;
+}
+
+.ai-page .scroll-reveal.visible {
+  animation: aiFadeUp 0.7s ease-out both;
+}
+
+/* Intro */
+.ai-intro {
+  display: grid;
+  gap: 24px;
+  margin: 8px 0 48px;
+}
+
+.ai-intro p {
+  margin: 0 0 14px;
+  color: #a5a5a5;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.ai-intro p:first-child {
+  color: #e7e7e7;
+  font-size: 18px;
+}
+
+.ai-panel {
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(94, 231, 131, 0.15);
+  border-radius: 16px;
+}
+
+.ai-panel-title {
+  margin: 0 0 14px;
+  color: #9bc1bc;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.ai-scope {
+  margin: 16px 0;
+  padding-left: 12px;
+  border-left: 2px solid #17784f;
+  color: #a5a5a5;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.ai-intro .ai-scope {
+  margin: 0;
+}
+
+/* Section headings */
+.ai-section-title {
+  margin: 0 0 6px;
+  color: #e7e7e7;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.ai-section-desc {
+  margin: 0 0 24px;
+  color: #a5a5a5;
+  font-size: 15px;
+}
+
+/* Chips (same look as the .tech-tag badges of the Fullstack page) */
+.ai-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 4px;
+}
+
+.ai-chip {
+  display: inline-block;
+  padding: 6px 14px;
+  background: rgba(94, 231, 131, 0.08);
+  color: #9bc1bc;
+  border: 1px solid rgba(94, 231, 131, 0.3);
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  transition: all 0.3s ease;
+}
+
+.ai-chip:hover {
+  background: rgba(94, 231, 131, 0.15);
+  color: #5ee783;
+  border-color: rgba(94, 231, 131, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Cards */
+.ai-card {
+  display: grid;
+  gap: 24px;
+  margin-bottom: 32px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(94, 231, 131, 0.12);
+  border-radius: 16px;
+  transition:
+    border-color 0.4s ease,
+    background 0.4s ease;
+}
+
+.ai-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(94, 231, 131, 0.3);
+}
+
+.ai-diagram {
+  margin: 0;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(155, 193, 188, 0.15);
+  border-radius: 12px;
+}
+
+.ai-diagram img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ai-eyebrow {
+  margin: 0 0 6px;
+  color: #9bc1bc;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.ai-card__title {
+  margin: 0 0 12px;
+  color: #e7e7e7;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.ai-card__desc {
+  margin: 0 0 16px;
+  color: #a5a5a5;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.ai-metrics {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 18px;
+  padding: 0;
+  list-style: none;
+}
+
+.ai-metrics li {
+  position: relative;
+  padding-left: 20px;
+  color: #e7e7e7;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.ai-metrics li::before {
+  content: "•";
+  position: absolute;
+  left: 4px;
+  color: #17784f;
+  font-weight: 700;
+}
+
+.ai-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.ai-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  background: #17784f;
+  color: #e7e7e7;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.ai-btn:hover,
+.ai-btn:focus-visible {
+  background: #9bc1bc;
+  color: #333333;
+}
+
+/* "View trace": thumbnail that opens the Langfuse screenshot in a dialog */
+.ai-trace-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  margin-top: 12px;
+  padding: 8px 14px 8px 8px;
+  background: transparent;
+  color: #9bc1bc;
+  border: 1px solid rgba(155, 193, 188, 0.35);
+  border-radius: 10px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.ai-trace-btn img {
+  flex: none;
+  width: 92px;
+  height: 58px;
+  object-fit: cover;
+  object-position: top left;
+  border: 1px solid rgba(155, 193, 188, 0.3);
+  border-radius: 6px;
+}
+
+.ai-trace-btn:hover,
+.ai-trace-btn:focus-visible {
+  background: rgba(23, 120, 79, 0.2);
+  border-color: #17784f;
+  color: #e7e7e7;
+}
+
+.ai-trace-dialog {
+  width: min(1100px, 94vw);
+  max-height: 92vh;
+  padding: 0;
+  overflow: auto;
+  background: #0d0d0d;
+  color: #e7e7e7;
+  border: 1px solid rgba(155, 193, 188, 0.3);
+  border-radius: 14px;
+}
+
+.ai-trace-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.78);
+}
+
+.ai-trace-dialog img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ai-trace-dialog__bar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 14px;
+  background: rgba(13, 13, 13, 0.95);
+  border-bottom: 1px solid rgba(155, 193, 188, 0.2);
+  font-size: 13px;
+}
+
+.ai-trace-dialog__close {
+  padding: 6px 12px;
+  background: transparent;
+  color: #e7e7e7;
+  border: 1px solid rgba(155, 193, 188, 0.35);
+  border-radius: 8px;
+  font: inherit;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.ai-trace-dialog__close:hover,
+.ai-trace-dialog__close:focus-visible {
+  background: #17784f;
+  border-color: #17784f;
+}
+
+/* Compact cards (Foundations) */
+.ai-grid {
+  display: grid;
+  gap: 24px;
+}
+
+.ai-grid .ai-card {
+  margin-bottom: 0;
+}
+
+.ai-card--compact .ai-card__title {
+  font-size: 20px;
+}
+
+.ai-card--compact .ai-card__desc {
+  font-size: 14px;
+}
+
+@media (min-width: 992px) {
+  .ai-intro {
+    grid-template-columns: 1.4fr 1fr;
+    align-items: start;
+    gap: 40px;
+  }
+
+  .ai-card--featured {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 40px;
+    padding: 32px;
+  }
+
+  .ai-card--reverse .ai-card__visual {
+    order: 2;
+  }
+
+  .ai-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 575px) {
+  .ai-card {
+    padding: 16px;
+  }
+
+  .ai-card__title {
+    font-size: 21px;
+  }
+
+  .ai-trace-btn img {
+    width: 72px;
+    height: 46px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ai-page .scroll-reveal {
+    opacity: 1;
+  }
+
+  .ai-page .scroll-reveal.visible {
+    animation: none;
+  }
+
+  .ai-chip:hover {
+    transform: none;
+  }
+}
