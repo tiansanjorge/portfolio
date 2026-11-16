@@ -1620,19 +1620,28 @@ html:has(.ai-page),
   border-radius: inherit;
 }
 
+.yt-crop-player {
+  /* YouTube picks the resolution from the size of its player, so the iframe is rendered
+     --yt-z times larger and scaled back down: sharper image, same visible size. */
+  --yt-z: 2;
+}
+
 .yt-crop-player iframe {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: calc(100% * var(--yt-z));
+  height: calc(100% * var(--yt-z));
   max-width: none;
   border: 0;
   pointer-events: none;
+  transform: scale(calc(1 / var(--yt-z)));
+  transform-origin: 0 0;
 }
 
 html[data-lang="es"] .yt-crop-player iframe {
-  width: calc(550px * 16 / 9);
+  width: calc(550px * 16 / 9 * var(--yt-z));
+  height: calc(550px * var(--yt-z));
   left: calc((550px * 16 / 9 - 550px * 9 / 16) * -0.447);
 }
 
@@ -1699,6 +1708,7 @@ html[data-lang="es"] .yt-crop-player:fullscreen iframe {
   left: 0;
   width: 100%;
   height: 100%;
+  transform: none;
 }
 
 .yt-crop-player:-webkit-full-screen iframe,
@@ -1707,6 +1717,7 @@ html[data-lang="es"] .yt-crop-player:-webkit-full-screen iframe {
   left: 0;
   width: 100%;
   height: 100%;
+  transform: none;
 }
 
 .yt-crop-btn[hidden] {
