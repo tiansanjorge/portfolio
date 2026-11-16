@@ -1,6 +1,6 @@
 # Sebastián Sanjorge — Portfolio
 
-Full Stack Engineer with a Frontend specialization. This repository is the source code of my personal portfolio: a static, multi-page site (no framework, no build step) covering my experience, projects, and case studies.
+Full Stack & AI Engineer with a Frontend specialization. This repository is the source code of my personal portfolio: a static, multi-page site (no framework, no build step) covering my experience, projects, and case studies.
 
 **Live site:** https://ssanjorge.netlify.app/
 
