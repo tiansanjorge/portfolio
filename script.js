@@ -214,7 +214,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Start once when scrolled into view, after the language video has been chosen
-    if (facade.hasAttribute("data-autoplay-on-scroll") && "IntersectionObserver" in window) {
+    // Phones and tablets: no autoplay (the video downloads only when the user taps play)
+    const smallScreen = window.matchMedia("(max-width: 991px)").matches;
+    if (facade.hasAttribute("data-autoplay-on-scroll") && !smallScreen && "IntersectionObserver" in window) {
       const observer = new IntersectionObserver(
         function (entries) {
           if (!entries.some((e) => e.isIntersecting)) return;
