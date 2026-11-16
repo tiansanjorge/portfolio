@@ -709,45 +709,40 @@
       <section class="container-fluid py-5">
         <div class="row justify-content-evenly py-3 py-md-5">
           <div
-            class="col-10 col-xl-9 d-flex flex-column flex-lg-row align-items-lg-center p-0 scroll-reveal animate-fade-up delay-1"
+            class="col-10 d-flex justify-content-center p-0 scroll-reveal animate-fade-up delay-1"
           >
-            <div class="col-12 col-lg-6 pe-lg-5 mb-5 mb-lg-0">
-              <div class="ai-home-label mb-3" data-i18n="aihome.label">
-                AI Engineering
+            <div class="col-12 col-md-10 d-flex justify-content-center">
+              <div
+                class="col-12 col-sm-10 d-flex flex-column flex-lg-row align-items-lg-center"
+              >
+                <div class="col-12 col-lg-5 pe-lg-5 mb-5 mb-lg-0">
+                  <h3 class="ai-home-title mb-3" data-i18n="aihome.label">
+                    AI Engineering
+                  </h3>
+                  <p class="ai-home-text" data-i18n="aihome.text">
+                    Four integrator projects from my AI Engineering training,
+                    built end to end and measured: structured outputs, RAG,
+                    multi-agent routing and multimodal extraction. Academic work
+                    on synthetic data, documented with tests, evaluations and
+                    traces.
+                  </p>
+                  <a class="ai-home-cta" href="pages/ai-engineering.html"
+                    ><span data-i18n="aihome.cta">Explore AI Engineering</span
+                    ><i class="fa-solid fa-arrow-right" aria-hidden="true"></i
+                  ></a>
+                </div>
+                <div class="col-12 col-lg-7">
+                  <figure class="ai-home-visual">
+                    <img
+                      src="img/ai/m4-architecture.svg"
+                      alt="Architecture of the LegalMove project: two images are parsed with GPT-4o vision, passed through a contextualization agent and an extraction agent, validated with Pydantic and returned as JSON, with a Langfuse span per stage."
+                      width="560"
+                      height="346"
+                      loading="lazy"
+                    />
+                  </figure>
+                </div>
               </div>
-              <p class="ai-home-text" data-i18n="aihome.text">
-                Four integrator projects from my AI Engineering training, built
-                end to end and measured: structured outputs, RAG, multi-agent
-                routing and multimodal extraction. Academic work on synthetic
-                data, documented with tests, evaluations and traces.
-              </p>
-              <ul class="ai-home-list">
-                <li data-i18n="ai.m4.title">
-                  LegalMove — Contract comparison agent
-                </li>
-                <li data-i18n="ai.m3.title">
-                  Nimbus Desk — Multi-agent RAG with routing
-                </li>
-                <li data-i18n="ai.m2.title">NimbusHR — FAQ chatbot with RAG</li>
-                <li data-i18n="ai.m1.title">
-                  Helpdesk CLI — Structured generation
-                </li>
-              </ul>
-              <a class="ai-home-cta" href="pages/ai-engineering.html"
-                ><span data-i18n="aihome.cta">Explore AI Engineering</span
-                ><i class="fa-solid fa-arrow-right" aria-hidden="true"></i
-              ></a>
-            </div>
-            <div class="col-12 col-lg-6">
-              <figure class="ai-home-visual">
-                <img
-                  src="img/ai/m4-architecture.svg"
-                  alt="Architecture of the LegalMove project: two images are parsed with GPT-4o vision, passed through a contextualization agent and an extraction agent, validated with Pydantic and returned as JSON, with a Langfuse span per stage."
-                  width="560"
-                  height="346"
-                  loading="lazy"
-                />
-              </figure>
             </div>
           </div>
         </div>

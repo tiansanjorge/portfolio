@@ -1486,12 +1486,12 @@ html:has(.ai-page),
   background-size: cover;
 }
 
-.ai-home-label {
-  color: #f4a6b8;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
+.ai-home-title {
+  color: #e7e7e7;
+  font-family: "Magilio", sans-serif;
+  font-size: clamp(48px, 6vw, 84px);
+  font-weight: normal;
+  line-height: 1.05;
 }
 
 .ai-home-text {
@@ -1499,30 +1499,6 @@ html:has(.ai-page),
   color: #c9c9c9;
   font-size: 16px;
   line-height: 1.7;
-}
-
-.ai-home-list {
-  display: grid;
-  gap: 10px;
-  margin: 0 0 28px;
-  padding: 0;
-  list-style: none;
-}
-
-.ai-home-list li {
-  position: relative;
-  padding-left: 20px;
-  color: #e7e7e7;
-  font-size: 15px;
-  line-height: 1.5;
-}
-
-.ai-home-list li::before {
-  content: "•";
-  position: absolute;
-  left: 4px;
-  color: #ff7a96;
-  font-weight: 700;
 }
 
 .ai-home-visual {
