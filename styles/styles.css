@@ -1203,10 +1203,15 @@ a.logo:hover {
   flex-direction: column;
   min-width: 170px;
   padding: 6px;
-  background: var(--dd-bg, #e7e7e7);
+  background-color: var(--dd-bg, rgba(231, 231, 231, 0.9));
+  background-image: var(--dd-sheen, none);
+  -webkit-backdrop-filter: blur(16px) saturate(1.5);
+  backdrop-filter: blur(16px) saturate(1.5);
   border: 1px solid var(--dd-line, rgba(18, 18, 18, 0.12));
-  border-radius: 10px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  box-shadow:
+    0 14px 34px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 var(--dd-edge, rgba(255, 255, 255, 0.35));
   opacity: 0;
   visibility: hidden;
   transform: translate(-50%, -6px);
@@ -1271,9 +1276,13 @@ a.logo:hover {
   margin: 6px 0 4px auto;
   padding: 6px 14px;
   width: fit-content;
-  background: var(--dd-bg, #e7e7e7);
+  background-color: var(--dd-bg, rgba(231, 231, 231, 0.9));
+  background-image: var(--dd-sheen, none);
+  -webkit-backdrop-filter: blur(16px) saturate(1.5);
+  backdrop-filter: blur(16px) saturate(1.5);
   border: 1px solid var(--dd-line, rgba(18, 18, 18, 0.12));
-  border-radius: 10px;
+  border-radius: 12px;
+  box-shadow: inset 0 1px 0 var(--dd-edge, rgba(255, 255, 255, 0.35));
 }
 
 .nav-sub.open {
@@ -1302,19 +1311,23 @@ a.logo:hover {
   }
 }
 
-/* Per-page tokens: the dropdown panel reuses each page's background tone and picks its text
-   color from it (light pages -> dark text, dark pages -> light text) */
+/* Per-page tokens: the dropdown is frosted glass tinted with each page's background tone, and
+   its text color follows from it (light pages -> dark text, dark pages -> light text) */
 .header-background {
-  --dd-bg: #f0f0f0;
+  --dd-bg: rgba(255, 255, 255, 0.62);
+  --dd-sheen: linear-gradient(135deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.1));
   --dd-fg: #121212;
-  --dd-line: rgba(18, 18, 18, 0.14);
+  --dd-line: rgba(18, 18, 18, 0.12);
+  --dd-edge: rgba(255, 255, 255, 0.9);
   --dd-hover: rgba(18, 18, 18, 0.08);
 }
 
 .contact-background {
-  --dd-bg: #bfd5d2;
+  --dd-bg: rgba(255, 255, 255, 0.45);
+  --dd-sheen: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.08));
   --dd-fg: #354052;
-  --dd-line: rgba(53, 64, 82, 0.2);
+  --dd-line: rgba(53, 64, 82, 0.18);
+  --dd-edge: rgba(255, 255, 255, 0.85);
   --dd-hover: rgba(53, 64, 82, 0.1);
 }
 
@@ -1322,25 +1335,27 @@ a.logo:hover {
 .experience-background,
 .case-studies-background,
 .ai-background {
+  --dd-sheen: linear-gradient(135deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.03));
   --dd-fg: #e7e7e7;
-  --dd-line: rgba(231, 231, 231, 0.16);
-  --dd-hover: rgba(231, 231, 231, 0.1);
+  --dd-line: rgba(255, 255, 255, 0.18);
+  --dd-edge: rgba(255, 255, 255, 0.3);
+  --dd-hover: rgba(255, 255, 255, 0.12);
 }
 
 .works-background {
-  --dd-bg: #00140a;
+  --dd-bg: rgba(0, 20, 10, 0.55);
 }
 
 .experience-background {
-  --dd-bg: #0d283b;
+  --dd-bg: rgba(13, 40, 59, 0.55);
 }
 
 .case-studies-background {
-  --dd-bg: #271841;
+  --dd-bg: rgba(39, 24, 65, 0.55);
 }
 
 .ai-background {
-  --dd-bg: #2f0814;
+  --dd-bg: rgba(47, 8, 20, 0.55);
 }
 
 /* ------ AI Engineering page ------ */
