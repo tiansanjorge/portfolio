@@ -1931,16 +1931,90 @@ html:has(.ai-page),
   }
 }
 
-/* About video: the English presentation is a vertical Short, the Spanish one is landscape.
-   YouTube cannot crop, so the frame follows the video of the active language. */
+/* About video: vertical frame. The English presentation is a vertical Short; the Spanish one is
+   landscape, so it is cropped to fill the frame (same focus point as the old local video).
+   The YouTube controls would be cropped too, so the player gets its own small control bar. */
 .about-video {
   height: 550px;
   width: calc(550px * 9 / 16);
 }
 
-html[data-lang="es"] .about-video {
-  height: auto;
-  width: min(100%, 560px);
-  padding-bottom: 0 !important;
-  --bs-aspect-ratio: 56.25%;
+.yt-crop-player {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: #000;
+  border-radius: inherit;
+}
+
+.yt-crop-player iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  border: 0;
+  pointer-events: none;
+}
+
+html[data-lang="es"] .yt-crop-player iframe {
+  width: calc(550px * 16 / 9);
+  left: calc((550px * 16 / 9 - 550px * 9 / 16) * -0.447);
+}
+
+.yt-crop-hit {
+  position: absolute;
+  inset: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.yt-crop-bar {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 28px 12px 12px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+}
+
+.yt-crop-btn {
+  flex: none;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  color: #e7e7e7;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(231, 231, 231, 0.35);
+  border-radius: 50%;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.yt-crop-btn:hover,
+.yt-crop-btn:focus-visible {
+  background: #17784f;
+  border-color: #17784f;
+}
+
+.yt-crop-progress {
+  flex: 1;
+  height: 5px;
+  background: rgba(231, 231, 231, 0.3);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.yt-crop-progress-fill {
+  width: 0;
+  height: 100%;
+  background: #17784f;
+  border-radius: inherit;
 }

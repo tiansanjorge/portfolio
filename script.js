@@ -170,6 +170,125 @@ function ytEmbedSrc(id, muted) {
   );
 }
 
+// --- Cropped YouTube player: the presentation is shown in a vertical frame, which crops the
+// landscape video and hides YouTube's own controls, so it gets a small custom control bar ---
+let ytApiPromise;
+function loadYtApi() {
+  if (window.YT && window.YT.Player) return Promise.resolve();
+  if (!ytApiPromise) {
+    ytApiPromise = new Promise(function (resolve) {
+      const previous = window.onYouTubeIframeAPIReady;
+      window.onYouTubeIframeAPIReady = function () {
+        if (previous) previous();
+        resolve();
+      };
+      const tag = document.createElement("script");
+      tag.src = "https://www.youtube.com/iframe_api";
+      document.head.appendChild(tag);
+    });
+  }
+  return ytApiPromise;
+}
+
+function mountCroppedPlayer(facade, muted) {
+  const ids = { en: facade.getAttribute("data-yt-id-en"), es: facade.getAttribute("data-yt-id-es") };
+  const currentLang = function () {
+    return document.documentElement.getAttribute("data-lang") === "es" ? "es" : "en";
+  };
+  const wrap = document.createElement("div");
+  wrap.className = "yt-crop-player";
+  wrap.dataset.ytIdEn = ids.en;
+  wrap.dataset.ytIdEs = ids.es;
+  const slot = document.createElement("div");
+  const hit = document.createElement("button");
+  hit.type = "button";
+  hit.className = "yt-crop-hit";
+  hit.setAttribute("aria-label", "Play / pause");
+  const bar = document.createElement("div");
+  bar.className = "yt-crop-bar";
+  bar.innerHTML =
+    '<button type="button" class="yt-crop-btn" data-act="play" aria-label="Play / pause"><i class="fa-solid fa-pause"></i></button>' +
+    '<div class="yt-crop-progress"><div class="yt-crop-progress-fill"></div></div>' +
+    '<button type="button" class="yt-crop-btn" data-act="mute" aria-label="Mute / unmute"><i class="fa-solid fa-volume-high"></i></button>';
+  wrap.append(slot, hit, bar);
+  facade.replaceWith(wrap);
+
+  const playIcon = bar.querySelector("[data-act=play] i");
+  const muteIcon = bar.querySelector("[data-act=mute] i");
+  const progress = bar.querySelector(".yt-crop-progress");
+  const fill = bar.querySelector(".yt-crop-progress-fill");
+  let player = null;
+  let loadedId = ids[currentLang()];
+
+  function sync() {
+    if (!player || !player.getPlayerState) return;
+    const playing = player.getPlayerState() === 1;
+    playIcon.className = "fa-solid " + (playing ? "fa-pause" : "fa-play");
+    muteIcon.className = "fa-solid " + (player.isMuted() ? "fa-volume-xmark" : "fa-volume-high");
+  }
+  function toggle() {
+    if (!player) return;
+    if (player.getPlayerState() === 1) player.pauseVideo();
+    else player.playVideo();
+  }
+
+  hit.addEventListener("click", toggle);
+  bar.querySelector("[data-act=play]").addEventListener("click", toggle);
+  bar.querySelector("[data-act=mute]").addEventListener("click", function () {
+    if (!player) return;
+    if (player.isMuted()) player.unMute();
+    else player.mute();
+    sync();
+  });
+  progress.addEventListener("click", function (e) {
+    if (!player || !player.getDuration) return;
+    const rect = progress.getBoundingClientRect();
+    player.seekTo(((e.clientX - rect.left) / rect.width) * player.getDuration(), true);
+  });
+
+  const timer = setInterval(function () {
+    if (!wrap.isConnected) return clearInterval(timer);
+    if (!player || !player.getDuration) return;
+    const d = player.getDuration();
+    fill.style.width = (d ? (player.getCurrentTime() / d) * 100 : 0) + "%";
+  }, 300);
+
+  // Language switch: same player, other video
+  wrap.switchVideo = function (id) {
+    if (!player || !id || id === loadedId) return;
+    loadedId = id;
+    player.loadVideoById(id);
+  };
+
+  loadYtApi().then(function () {
+    player = new YT.Player(slot, {
+      host: "https://www.youtube-nocookie.com",
+      width: "100%",
+      height: "100%",
+      videoId: loadedId,
+      playerVars: {
+        autoplay: 1,
+        controls: 0,
+        rel: 0,
+        playsinline: 1,
+        modestbranding: 1,
+        disablekb: 1,
+        fs: 0,
+        iv_load_policy: 3,
+        mute: muted ? 1 : 0,
+      },
+      events: {
+        onReady: function (e) {
+          if (muted) e.target.mute();
+          e.target.playVideo();
+          sync();
+        },
+        onStateChange: sync,
+      },
+    });
+  });
+}
+
 // YouTube click-to-load facade — avoids loading the embed until the user asks for it
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".yt-facade").forEach(function (facade) {
@@ -201,6 +320,10 @@ document.addEventListener("DOMContentLoaded", function () {
         video.style.cssText +=
           "position:absolute;top:0;left:0;width:100%;height:100%;border:0;background:#000;";
         facade.replaceWith(video);
+        return;
+      }
+      if (facade.hasAttribute("data-yt-crop")) {
+        mountCroppedPlayer(facade, muted);
         return;
       }
       const videoId = facade.getAttribute("data-yt-id");
@@ -317,6 +440,9 @@ document.addEventListener("DOMContentLoaded", function () {
       if (img && poster) img.src = prefix + poster;
     });
     const ytKey = key === "es" ? "ytIdEs" : "ytIdEn";
+    document.querySelectorAll(".yt-crop-player").forEach((el) => {
+      if (el.switchVideo) el.switchVideo(el.dataset[ytKey]);
+    });
     document.querySelectorAll("iframe[data-yt-id-en], iframe[data-yt-id-es]").forEach((fr) => {
       const id = fr.dataset[ytKey];
       if (id && fr.src.indexOf("/embed/" + id) === -1) fr.src = ytEmbedSrc(id, false);
