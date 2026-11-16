@@ -197,6 +197,9 @@ function mountCroppedPlayer(facade, muted) {
   };
   const wrap = document.createElement("div");
   wrap.className = "yt-crop-player";
+  // Diagnostics: open the site with ?ytdebug to get YouTube's native player (right click -> Stats for nerds)
+  const debug = /[?&]ytdebug/.test(location.search);
+  if (debug) wrap.classList.add("yt-debug");
   wrap.dataset.ytIdEn = ids.en;
   wrap.dataset.ytIdEs = ids.es;
   const slot = document.createElement("div");
@@ -311,7 +314,7 @@ function mountCroppedPlayer(facade, muted) {
       videoId: loadedId,
       playerVars: {
         autoplay: 1,
-        controls: 0,
+        controls: debug ? 1 : 0,
         rel: 0,
         playsinline: 1,
         modestbranding: 1,

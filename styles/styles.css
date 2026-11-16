@@ -2050,3 +2050,13 @@ html[data-lang="es"] .yt-crop-player:-webkit-full-screen iframe {
 .yt-crop-btn[hidden] {
   display: none;
 }
+
+/* ?ytdebug: let the native player receive clicks and show its own controls */
+.yt-crop-player.yt-debug iframe {
+  pointer-events: auto;
+}
+
+.yt-crop-player.yt-debug .yt-crop-hit,
+.yt-crop-player.yt-debug .yt-crop-bar {
+  display: none;
+}
