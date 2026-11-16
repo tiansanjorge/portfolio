@@ -88,16 +88,69 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // AI Engineering page: "View trace" opens the Langfuse screenshot in a native <dialog>
-// (Esc closes it, focus is trapped while open and returns to the button afterwards)
+// (Esc closes it, focus is trapped while open and returns to the button afterwards).
+// The image can be zoomed: buttons, + / - / 0 keys, click, Ctrl+wheel or trackpad pinch,
+// and dragged with the mouse once zoomed in.
 document.addEventListener("DOMContentLoaded", function () {
   const dialog = document.getElementById("trace-dialog");
   if (!dialog || typeof dialog.showModal !== "function") return;
   const img = document.getElementById("trace-dialog-img");
 
+  const MIN_ZOOM = 1;
+  const MAX_ZOOM = 4;
+  const STEPS = [1, 1.5, 2, 3, 4];
+  const levelLabel = dialog.querySelector(".ai-trace-zoom__level");
+  const btnIn = dialog.querySelector('[data-zoom="in"]');
+  const btnOut = dialog.querySelector('[data-zoom="out"]');
+  let zoom = 1;
+
+  function updateUi() {
+    levelLabel.textContent = Math.round(zoom * 100) + "%";
+    btnIn.disabled = zoom >= MAX_ZOOM - 0.001;
+    btnOut.disabled = zoom <= MIN_ZOOM + 0.001;
+  }
+
+  // Zoom keeping the point under (clientX, clientY) in place; defaults to the visible center
+  function applyZoom(next, clientX, clientY) {
+    next = Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, next));
+    if (Math.abs(next - zoom) < 0.001) return;
+    const view = dialog.getBoundingClientRect();
+    const rect = img.getBoundingClientRect();
+    const px = clientX != null ? clientX : view.left + view.width / 2;
+    const py = clientY != null ? clientY : view.top + view.height / 2;
+    const x = px - rect.left;
+    const y = py - rect.top;
+    const factor = next / zoom;
+    zoom = next;
+    img.style.width = zoom === 1 ? "" : zoom * 100 + "%";
+    img.classList.toggle("is-zoomed", zoom > 1);
+    dialog.scrollLeft += x * (factor - 1);
+    dialog.scrollTop += y * (factor - 1);
+    updateUi();
+  }
+
+  function step(direction, clientX, clientY) {
+    const next =
+      direction > 0
+        ? STEPS.find(function (v) { return v > zoom + 0.001; })
+        : STEPS.slice().reverse().find(function (v) { return v < zoom - 0.001; });
+    if (next) applyZoom(next, clientX, clientY);
+  }
+
+  function resetZoom() {
+    zoom = 1;
+    img.style.width = "";
+    img.classList.remove("is-zoomed");
+    dialog.scrollLeft = 0;
+    dialog.scrollTop = 0;
+    updateUi();
+  }
+
   document.querySelectorAll("[data-trace-src]").forEach(function (btn) {
     btn.addEventListener("click", function () {
       img.src = btn.getAttribute("data-trace-src");
       img.alt = btn.getAttribute("data-trace-alt") || "";
+      resetZoom();
       dialog.showModal();
     });
   });
@@ -112,6 +165,64 @@ document.addEventListener("DOMContentLoaded", function () {
   dialog.addEventListener("click", function (e) {
     if (e.target === dialog) dialog.close();
   });
+
+  btnIn.addEventListener("click", function () { step(1); });
+  btnOut.addEventListener("click", function () { step(-1); });
+  dialog.querySelector('[data-zoom="reset"]').addEventListener("click", resetZoom);
+
+  dialog.addEventListener("keydown", function (e) {
+    if (e.key === "+" || e.key === "=") step(1);
+    else if (e.key === "-" || e.key === "_") step(-1);
+    else if (e.key === "0") resetZoom();
+  });
+
+  // Ctrl+wheel and trackpad pinch (browsers send them as ctrl+wheel)
+  dialog.addEventListener(
+    "wheel",
+    function (e) {
+      if (!e.ctrlKey) return;
+      e.preventDefault();
+      applyZoom(zoom * (e.deltaY < 0 ? 1.2 : 1 / 1.2), e.clientX, e.clientY);
+    },
+    { passive: false },
+  );
+
+  // Click toggles between fit and 2x; dragging (mouse) pans when zoomed in
+  let drag = null;
+  let moved = false;
+  img.addEventListener("pointerdown", function (e) {
+    if (e.pointerType !== "mouse" || e.button !== 0) return;
+    drag = { x: e.clientX, y: e.clientY, left: dialog.scrollLeft, top: dialog.scrollTop };
+    moved = false;
+    img.setPointerCapture(e.pointerId);
+  });
+  img.addEventListener("pointermove", function (e) {
+    if (!drag || zoom === 1) return;
+    const dx = e.clientX - drag.x;
+    const dy = e.clientY - drag.y;
+    if (Math.abs(dx) + Math.abs(dy) > 4) {
+      moved = true;
+      img.classList.add("is-dragging");
+    }
+    dialog.scrollLeft = drag.left - dx;
+    dialog.scrollTop = drag.top - dy;
+  });
+  function endDrag() {
+    drag = null;
+    img.classList.remove("is-dragging");
+  }
+  img.addEventListener("pointerup", endDrag);
+  img.addEventListener("pointercancel", endDrag);
+  img.addEventListener("click", function (e) {
+    if (moved) {
+      moved = false;
+      return;
+    }
+    if (zoom === 1) applyZoom(2, e.clientX, e.clientY);
+    else resetZoom();
+  });
+
+  updateUi();
 });
 
 // Scroll-triggered animations
@@ -160,6 +271,183 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+// --- YouTube player with its own control bar, used for every video of the site.
+// YouTube chooses the resolution from the size of its player, so the iframe is rendered larger
+// and scaled back down (see --yt-z in the CSS), which a native control bar would shrink too.
+// The presentation (data-yt-crop) also crops a landscape video into a vertical frame. ---
+let ytApiPromise;
+function loadYtApi() {
+  if (window.YT && window.YT.Player) return Promise.resolve();
+  if (!ytApiPromise) {
+    ytApiPromise = new Promise(function (resolve) {
+      const previous = window.onYouTubeIframeAPIReady;
+      window.onYouTubeIframeAPIReady = function () {
+        if (previous) previous();
+        resolve();
+      };
+      const tag = document.createElement("script");
+      tag.src = "https://www.youtube.com/iframe_api";
+      document.head.appendChild(tag);
+    });
+  }
+  return ytApiPromise;
+}
+
+function mountYtPlayer(facade, muted) {
+  // Presentation: one video per language. Any other video: a single id.
+  const single = facade.getAttribute("data-yt-id");
+  const ids = {
+    en: facade.getAttribute("data-yt-id-en") || single,
+    es: facade.getAttribute("data-yt-id-es") || single,
+  };
+  const vertical = facade.hasAttribute("data-yt-crop");
+  const currentLang = function () {
+    return document.documentElement.getAttribute("data-lang") === "es" ? "es" : "en";
+  };
+  const wrap = document.createElement("div");
+  wrap.className = "yt-crop-player" + (vertical ? " yt-crop-vertical" : "");
+  wrap.setAttribute("role", "group");
+  wrap.setAttribute("aria-label", facade.getAttribute("data-yt-title") || "YouTube video");
+  // Diagnostics: open the site with ?ytdebug to get YouTube's native player (right click -> Stats for nerds)
+  const debug = /[?&]ytdebug/.test(location.search);
+  if (debug) wrap.classList.add("yt-debug");
+  wrap.dataset.ytIdEn = ids.en;
+  wrap.dataset.ytIdEs = ids.es;
+  const slot = document.createElement("div");
+  const hit = document.createElement("button");
+  hit.type = "button";
+  hit.className = "yt-crop-hit";
+  hit.setAttribute("aria-label", "Play / pause");
+  const bar = document.createElement("div");
+  bar.className = "yt-crop-bar";
+  bar.innerHTML =
+    '<button type="button" class="yt-crop-btn" data-act="play" aria-label="Play / pause"><i class="fa-solid fa-pause"></i></button>' +
+    '<div class="yt-crop-progress"><div class="yt-crop-progress-fill"></div></div>' +
+    '<button type="button" class="yt-crop-btn" data-act="mute" aria-label="Mute / unmute"><i class="fa-solid fa-volume-high"></i></button>' +
+    '<button type="button" class="yt-crop-btn" data-act="fs" aria-label="Fullscreen"><i class="fa-solid fa-expand"></i></button>';
+  wrap.append(slot, hit, bar);
+  facade.replaceWith(wrap);
+
+  const playIcon = bar.querySelector("[data-act=play] i");
+  const muteIcon = bar.querySelector("[data-act=mute] i");
+  const fsBtn = bar.querySelector("[data-act=fs]");
+  const fsIcon = fsBtn.querySelector("i");
+  const progress = bar.querySelector(".yt-crop-progress");
+  const fill = bar.querySelector(".yt-crop-progress-fill");
+  let player = null;
+  let loadedId = ids[currentLang()];
+  // The player applies mute()/unMute() asynchronously, so isMuted() right after the call still
+  // returns the old value: the button keeps its own state instead of asking the player.
+  let mutedUI = !!muted;
+
+  function sync() {
+    if (!player || !player.getPlayerState) return;
+    const playing = player.getPlayerState() === 1;
+    playIcon.className = "fa-solid " + (playing ? "fa-pause" : "fa-play");
+    muteIcon.className = "fa-solid " + (mutedUI ? "fa-volume-xmark" : "fa-volume-high");
+  }
+  // No automatic captions (YouTube may turn them on by itself)
+  function hideCaptions(target) {
+    try {
+      target.unloadModule("captions");
+      target.unloadModule("cc");
+    } catch (err) {
+      /* the module is not loaded: nothing to hide */
+    }
+  }
+  function onState(e) {
+    if (e.data === 1) hideCaptions(e.target);
+    sync();
+  }
+  function toggle() {
+    if (!player) return;
+    if (player.getPlayerState() === 1) player.pauseVideo();
+    else player.playVideo();
+  }
+
+  hit.addEventListener("click", toggle);
+  bar.querySelector("[data-act=play]").addEventListener("click", toggle);
+  bar.querySelector("[data-act=mute]").addEventListener("click", function () {
+    if (!player) return;
+    mutedUI = !mutedUI;
+    if (mutedUI) player.mute();
+    else player.unMute();
+    sync();
+  });
+  // Fullscreen shows the whole video (no vertical crop). iPhone Safari can only fullscreen
+  // <video> elements, so the button is hidden where the browser cannot do it.
+  const requestFs = wrap.requestFullscreen || wrap.webkitRequestFullscreen;
+  const exitFs = document.exitFullscreen || document.webkitExitFullscreen;
+  const fsElement = function () {
+    return document.fullscreenElement || document.webkitFullscreenElement;
+  };
+  if (!requestFs || !exitFs) fsBtn.hidden = true;
+  fsBtn.addEventListener("click", function () {
+    if (fsElement() === wrap) exitFs.call(document);
+    else requestFs.call(wrap);
+  });
+  const onFsChange = function () {
+    if (!wrap.isConnected) {
+      document.removeEventListener("fullscreenchange", onFsChange);
+      document.removeEventListener("webkitfullscreenchange", onFsChange);
+      return;
+    }
+    fsIcon.className = "fa-solid " + (fsElement() === wrap ? "fa-compress" : "fa-expand");
+  };
+  document.addEventListener("fullscreenchange", onFsChange);
+  document.addEventListener("webkitfullscreenchange", onFsChange);
+
+  progress.addEventListener("click", function (e) {
+    if (!player || !player.getDuration) return;
+    const rect = progress.getBoundingClientRect();
+    player.seekTo(((e.clientX - rect.left) / rect.width) * player.getDuration(), true);
+  });
+
+  const timer = setInterval(function () {
+    if (!wrap.isConnected) return clearInterval(timer);
+    if (!player || !player.getDuration) return;
+    const d = player.getDuration();
+    fill.style.width = (d ? (player.getCurrentTime() / d) * 100 : 0) + "%";
+  }, 300);
+
+  // Language switch: same player, other video
+  wrap.switchVideo = function (id) {
+    if (!player || !id || id === loadedId) return;
+    loadedId = id;
+    player.loadVideoById(id);
+  };
+
+  loadYtApi().then(function () {
+    player = new YT.Player(slot, {
+      host: "https://www.youtube-nocookie.com",
+      width: "100%",
+      height: "100%",
+      videoId: loadedId,
+      playerVars: {
+        autoplay: 1,
+        controls: debug ? 1 : 0,
+        rel: 0,
+        playsinline: 1,
+        modestbranding: 1,
+        disablekb: 1,
+        fs: 0,
+        iv_load_policy: 3,
+        cc_load_policy: 0,
+        mute: muted ? 1 : 0,
+      },
+      events: {
+        onReady: function (e) {
+          if (muted) e.target.mute();
+          hideCaptions(e.target);
+          e.target.playVideo();
+          sync();
+        },
+        onStateChange: onState,
+      },
+    });
+  });
+}
+
 // YouTube click-to-load facade — avoids loading the embed until the user asks for it
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".yt-facade").forEach(function (facade) {
@@ -193,20 +481,7 @@ document.addEventListener("DOMContentLoaded", function () {
         facade.replaceWith(video);
         return;
       }
-      const videoId = facade.getAttribute("data-yt-id");
-      const title = facade.getAttribute("data-yt-title") || "YouTube video";
-      const iframe = document.createElement("iframe");
-      iframe.src =
-        "https://www.youtube.com/embed/" +
-        videoId +
-        "?autoplay=1&vq=hd1080";
-      iframe.title = title;
-      iframe.allow =
-        "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-      iframe.allowFullscreen = true;
-      iframe.style.cssText =
-        "position:absolute;top:0;left:0;width:100%;height:100%;border:0;";
-      facade.replaceWith(iframe);
+      mountYtPlayer(facade, muted);
     }
 
     facade.addEventListener("click", function () {
@@ -214,7 +489,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Start once when scrolled into view, after the language video has been chosen
-    if (facade.hasAttribute("data-autoplay-on-scroll") && "IntersectionObserver" in window) {
+    // Phones and tablets: no autoplay (the video downloads only when the user taps play)
+    const smallScreen = window.matchMedia("(max-width: 991px)").matches;
+    if (facade.hasAttribute("data-autoplay-on-scroll") && !smallScreen && "IntersectionObserver" in window) {
       const observer = new IntersectionObserver(
         function (entries) {
           if (!entries.some((e) => e.isIntersecting)) return;
@@ -291,6 +568,17 @@ document.addEventListener("DOMContentLoaded", function () {
       const pos = v.dataset["pos" + (key === "es" ? "Es" : "En")];
       if (pos) v.style.setProperty("--video-pos", pos);
       else v.style.removeProperty("--video-pos");
+    });
+    // YouTube versions: pick the id (and poster) of the active language
+    document.querySelectorAll(".yt-facade[data-yt-id-" + key + "]").forEach((f) => {
+      f.setAttribute("data-yt-id", f.getAttribute("data-yt-id-" + key));
+      const img = f.querySelector("img");
+      const poster = f.getAttribute("data-poster-" + key);
+      if (img && poster) img.src = prefix + poster;
+    });
+    const ytKey = key === "es" ? "ytIdEs" : "ytIdEn";
+    document.querySelectorAll(".yt-crop-player").forEach((el) => {
+      if (el.switchVideo) el.switchVideo(el.dataset[ytKey]);
     });
     const dsKey = key === "es" ? "srcEs" : "srcEn";
     document.querySelectorAll("video[data-src-en], video[data-src-es]").forEach((v) => {
