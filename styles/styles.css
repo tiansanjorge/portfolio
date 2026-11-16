@@ -1689,47 +1689,97 @@ a.logo:hover {
   border-color: #b02a4f;
 }
 
-/* Refined scrollbar: slim rounded thumb with a rose gradient (page + trace dialog) */
-html:has(.ai-page),
+/* Refined scrollbar: slim rounded thumb with a gradient, tinted with each page's colors.
+   Tokens: --sb-a/--sb-b (thumb), --sb-ha/--sb-hb (hover), --sb-solid (Firefox), --sb-track */
+html {
+  --sb-a: #5ee783;
+  --sb-b: #17784f;
+  --sb-ha: #8dffad;
+  --sb-hb: #2fa06e;
+  --sb-solid: #2fa06e;
+  --sb-track: rgba(127, 127, 127, 0.1);
+}
+
+html:has(.works-background) {
+  --sb-track: rgba(255, 255, 255, 0.04);
+}
+
+html:has(.experience-background) {
+  --sb-a: #6db8e8;
+  --sb-b: #1e5f8c;
+  --sb-ha: #93cdf2;
+  --sb-hb: #2f7fb0;
+  --sb-solid: #4a98cc;
+  --sb-track: rgba(255, 255, 255, 0.04);
+}
+
+html:has(.case-studies-background) {
+  --sb-a: #b59cf2;
+  --sb-b: #5d3a9b;
+  --sb-ha: #cdb9f7;
+  --sb-hb: #7a55c0;
+  --sb-solid: #8d6fd6;
+  --sb-track: rgba(255, 255, 255, 0.04);
+}
+
+html:has(.contact-background) {
+  --sb-a: #9bc1bc;
+  --sb-b: #5b8f89;
+  --sb-ha: #b6d6d2;
+  --sb-hb: #74a8a1;
+  --sb-solid: #7fb0a9;
+  --sb-track: rgba(53, 64, 82, 0.08);
+}
+
+html:has(.ai-background) {
+  --sb-a: #ff7a96;
+  --sb-b: #b02a4f;
+  --sb-ha: #ff9db2;
+  --sb-hb: #d4476b;
+  --sb-solid: #d4476b;
+  --sb-track: rgba(255, 255, 255, 0.04);
+}
+
+html,
 .ai-trace-dialog {
   scrollbar-width: thin;
-  scrollbar-color: #d4476b rgba(255, 255, 255, 0.04);
+  scrollbar-color: var(--sb-solid) var(--sb-track);
 }
 
 @supports selector(::-webkit-scrollbar) {
-  html:has(.ai-page),
+  html,
   .ai-trace-dialog {
     scrollbar-width: auto;
     scrollbar-color: auto;
   }
 
-  html:has(.ai-page)::-webkit-scrollbar,
+  html::-webkit-scrollbar,
   .ai-trace-dialog::-webkit-scrollbar {
     width: 12px;
     height: 12px;
   }
 
-  html:has(.ai-page)::-webkit-scrollbar-track,
+  html::-webkit-scrollbar-track,
   .ai-trace-dialog::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.04);
+    background: var(--sb-track);
   }
 
-  html:has(.ai-page)::-webkit-scrollbar-thumb,
+  html::-webkit-scrollbar-thumb,
   .ai-trace-dialog::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #ff7a96, #b02a4f);
+    background: linear-gradient(180deg, var(--sb-a), var(--sb-b));
     border: 3px solid transparent;
     border-radius: 999px;
     background-clip: padding-box;
   }
 
-  html:has(.ai-page)::-webkit-scrollbar-thumb:hover,
+  html::-webkit-scrollbar-thumb:hover,
   .ai-trace-dialog::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, #ff9db2, #d4476b);
+    background: linear-gradient(180deg, var(--sb-ha), var(--sb-hb));
     border: 3px solid transparent;
     background-clip: padding-box;
   }
 
-  html:has(.ai-page)::-webkit-scrollbar-corner,
+  html::-webkit-scrollbar-corner,
   .ai-trace-dialog::-webkit-scrollbar-corner {
     background: transparent;
   }
