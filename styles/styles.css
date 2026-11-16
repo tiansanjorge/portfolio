@@ -1203,8 +1203,8 @@ a.logo:hover {
   flex-direction: column;
   min-width: 190px;
   padding: 6px;
-  background: #e7e7e7;
-  border: 1px solid rgba(18, 18, 18, 0.12);
+  background: var(--dd-bg, #e7e7e7);
+  border: 1px solid var(--dd-line, rgba(18, 18, 18, 0.12));
   border-radius: 10px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
   opacity: 0;
@@ -1226,8 +1226,7 @@ a.logo:hover {
   display: block;
   padding: 9px 14px;
   border-radius: 7px;
-  color: #121212;
-  font-size: 13px;
+  color: var(--dd-fg, #121212);
   font-weight: 600;
   text-decoration: none;
   white-space: nowrap;
@@ -1236,12 +1235,13 @@ a.logo:hover {
 
 .nav-dd-link:hover,
 .nav-dd-link:focus-visible {
-  background: rgba(18, 18, 18, 0.08);
-  color: #121212;
+  background: var(--dd-hover, rgba(18, 18, 18, 0.08));
+  color: var(--dd-fg, #121212);
 }
 
 .nav-dd-link.nav-sub-active {
-  color: #121212;
+  color: var(--dd-fg, #121212);
+  font-weight: 700;
 }
 
 .nav-dd-link.nav-sub-active::before {
@@ -1258,7 +1258,8 @@ a.logo:hover {
   margin: 6px 0 4px auto;
   padding: 6px 14px;
   width: fit-content;
-  background: #e7e7e7;
+  background: var(--dd-bg, #e7e7e7);
+  border: 1px solid var(--dd-line, rgba(18, 18, 18, 0.12));
   border-radius: 10px;
 }
 
@@ -1269,9 +1270,7 @@ a.logo:hover {
 .nav-sub .nav-dd-link {
   padding: 4px 0;
   background: none;
-  color: #121212;
-  font-size: 12px;
-  font-weight: 500;
+  color: var(--dd-fg, #121212);
 }
 
 .nav-sub .nav-dd-link:hover {
@@ -1280,7 +1279,7 @@ a.logo:hover {
 }
 
 .nav-sub .nav-dd-link.nav-sub-active {
-  color: #121212;
+  color: var(--dd-fg, #121212);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1288,6 +1287,47 @@ a.logo:hover {
   .nav-dd-menu {
     transition: none;
   }
+}
+
+/* Per-page tokens: the dropdown panel reuses each page's background tone and picks its text
+   color from it (light pages -> dark text, dark pages -> light text) */
+.header-background {
+  --dd-bg: #f0f0f0;
+  --dd-fg: #121212;
+  --dd-line: rgba(18, 18, 18, 0.14);
+  --dd-hover: rgba(18, 18, 18, 0.08);
+}
+
+.contact-background {
+  --dd-bg: #bfd5d2;
+  --dd-fg: #354052;
+  --dd-line: rgba(53, 64, 82, 0.2);
+  --dd-hover: rgba(53, 64, 82, 0.1);
+}
+
+.works-background,
+.experience-background,
+.case-studies-background,
+.ai-background {
+  --dd-fg: #e7e7e7;
+  --dd-line: rgba(231, 231, 231, 0.16);
+  --dd-hover: rgba(231, 231, 231, 0.1);
+}
+
+.works-background {
+  --dd-bg: #00140a;
+}
+
+.experience-background {
+  --dd-bg: #0d283b;
+}
+
+.case-studies-background {
+  --dd-bg: #271841;
+}
+
+.ai-background {
+  --dd-bg: #2f0814;
 }
 
 /* ------ AI Engineering page ------ */
