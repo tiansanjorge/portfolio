@@ -843,7 +843,8 @@ a.logo {
   padding: 0;
   border: 0;
   background: none;
-  font: inherit;
+  font-family: inherit;
+  font-size: inherit;
   line-height: inherit;
   cursor: pointer;
 }
@@ -876,10 +877,10 @@ a.logo {
   flex-direction: column;
   min-width: 190px;
   padding: 6px;
-  background: rgba(18, 18, 18, 0.97);
-  border: 1px solid rgba(155, 193, 188, 0.25);
+  background: #e7e7e7;
+  border: 1px solid rgba(18, 18, 18, 0.12);
   border-radius: 10px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
   opacity: 0;
   visibility: hidden;
   transform: translate(-50%, -6px);
@@ -899,7 +900,7 @@ a.logo {
   display: block;
   padding: 9px 14px;
   border-radius: 7px;
-  color: #e7e7e7;
+  color: #121212;
   font-size: 13px;
   font-weight: 600;
   text-decoration: none;
@@ -909,12 +910,12 @@ a.logo {
 
 .nav-dd-link:hover,
 .nav-dd-link:focus-visible {
-  background: rgba(23, 120, 79, 0.35);
-  color: #9bc1bc;
+  background: rgba(18, 18, 18, 0.08);
+  color: #121212;
 }
 
 .nav-dd-link.nav-sub-active {
-  color: #9bc1bc;
+  color: #121212;
 }
 
 .nav-dd-link.nav-sub-active::before {
@@ -928,7 +929,11 @@ a.logo {
   display: none;
   flex-direction: column;
   align-items: flex-end;
-  margin-top: 4px;
+  margin: 6px 0 4px auto;
+  padding: 6px 14px;
+  width: fit-content;
+  background: #e7e7e7;
+  border-radius: 10px;
 }
 
 .nav-sub.open {
@@ -936,19 +941,20 @@ a.logo {
 }
 
 .nav-sub .nav-dd-link {
-  padding: 3px 0;
+  padding: 4px 0;
   background: none;
-  color: inherit;
+  color: #121212;
   font-size: 12px;
   font-weight: 500;
 }
 
 .nav-sub .nav-dd-link:hover {
-  color: #17784f;
+  background: none;
+  text-decoration: underline;
 }
 
 .nav-sub .nav-dd-link.nav-sub-active {
-  color: #9bc1bc;
+  color: #121212;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -959,6 +965,20 @@ a.logo {
 }
 
 /* ------ AI Engineering page ------ */
+
+.ai-background {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1600' height='1000' preserveAspectRatio='none' viewBox='0 0 1600 1000'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1236%26quot%3b)' fill='none'%3e%3crect width='1600' height='1000' x='0' y='0' fill='url(%26quot%3b%23SvgjsRadialGradient1237%26quot%3b)'%3e%3c/rect%3e%3cpath d='M266.94 996.42 a223.62 223.62 0 1 0 447.24 0 a223.62 223.62 0 1 0 -447.24 0z' fill='rgba(240%2c 166%2c 210%2c 0.12)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M-124.66 663.93 a192.1 192.1 0 1 0 384.2 0 a192.1 192.1 0 1 0 -384.2 0z' fill='rgba(240%2c 166%2c 210%2c 0.12)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M47.09 579.79 a226.94 226.94 0 1 0 453.88 0 a226.94 226.94 0 1 0 -453.88 0z' fill='rgba(240%2c 166%2c 210%2c 0.12)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M738 454.54 a234.47 234.47 0 1 0 468.94 0 a234.47 234.47 0 1 0 -468.94 0z' fill='rgba(240%2c 166%2c 210%2c 0.12)' class='triangle-float2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1236'%3e%3crect width='1600' height='1000' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cradialGradient cx='50%25' cy='50%25' r='943.4' gradientUnits='userSpaceOnUse' id='SvgjsRadialGradient1237'%3e%3cstop stop-color='rgba(150%2c 48%2c 112%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(0%2c 0%2c 0%2c 1)' offset='0.92'%3e%3c/stop%3e%3c/radialGradient%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0) rotate(0deg)%7d 33%25%7btransform: translate(-15px%2c -10px) rotate(3deg)%7d 66%25%7btransform: translate(10px%2c -15px) rotate(-3deg)%7d 100%25%7btransform: translate(0%2c 0) rotate(0deg)%7d %7d .triangle-float1 %7b animation: float1 12s ease-in-out infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0) rotate(0deg)%7d 33%25%7btransform: translate(-12px%2c 15px) rotate(-4deg)%7d 66%25%7btransform: translate(15px%2c 10px) rotate(4deg)%7d 100%25%7btransform: translate(0%2c 0) rotate(0deg)%7d %7d .triangle-float2 %7b animation: float2 10s ease-in-out infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0) rotate(0deg) scale(1)%7d 33%25%7btransform: translate(12px%2c -18px) rotate(5deg) scale(1.02)%7d 66%25%7btransform: translate(-10px%2c 12px) rotate(-5deg) scale(0.98)%7d 100%25%7btransform: translate(0%2c 0) rotate(0deg) scale(1)%7d %7d .triangle-float3 %7b animation: float3 14s ease-in-out infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+@media (max-width: 767px) {
+  /* background-attachment: fixed is unreliable on mobile browsers */
+  .ai-background {
+    background-attachment: scroll;
+  }
+}
 
 .ai-title {
   font-family: "Magilio", sans-serif;
@@ -1009,13 +1029,13 @@ a.logo {
 .ai-panel {
   padding: 24px;
   background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(94, 231, 131, 0.15);
+  border: 1px solid rgba(255, 122, 198, 0.15);
   border-radius: 16px;
 }
 
 .ai-panel-title {
   margin: 0 0 14px;
-  color: #9bc1bc;
+  color: #f0a6d2;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 1.5px;
@@ -1025,7 +1045,7 @@ a.logo {
 .ai-scope {
   margin: 16px 0;
   padding-left: 12px;
-  border-left: 2px solid #17784f;
+  border-left: 2px solid #b83280;
   color: #a5a5a5;
   font-size: 13px;
   line-height: 1.6;
@@ -1060,9 +1080,9 @@ a.logo {
 .ai-chip {
   display: inline-block;
   padding: 6px 14px;
-  background: rgba(94, 231, 131, 0.08);
-  color: #9bc1bc;
-  border: 1px solid rgba(94, 231, 131, 0.3);
+  background: rgba(255, 122, 198, 0.08);
+  color: #f0a6d2;
+  border: 1px solid rgba(255, 122, 198, 0.3);
   border-radius: 6px;
   font-size: 0.8rem;
   font-weight: 500;
@@ -1071,9 +1091,9 @@ a.logo {
 }
 
 .ai-chip:hover {
-  background: rgba(94, 231, 131, 0.15);
-  color: #5ee783;
-  border-color: rgba(94, 231, 131, 0.5);
+  background: rgba(255, 122, 198, 0.15);
+  color: #ff7ac6;
+  border-color: rgba(255, 122, 198, 0.5);
   transform: translateY(-2px);
 }
 
@@ -1085,7 +1105,7 @@ a.logo {
   padding: 24px;
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(94, 231, 131, 0.12);
+  border: 1px solid rgba(255, 122, 198, 0.12);
   border-radius: 16px;
   transition:
     border-color 0.4s ease,
@@ -1094,14 +1114,14 @@ a.logo {
 
 .ai-card:hover {
   background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(94, 231, 131, 0.3);
+  border-color: rgba(255, 122, 198, 0.3);
 }
 
 .ai-diagram {
   margin: 0;
   padding: 12px;
   background: rgba(0, 0, 0, 0.28);
-  border: 1px solid rgba(155, 193, 188, 0.15);
+  border: 1px solid rgba(240, 166, 210, 0.15);
   border-radius: 12px;
 }
 
@@ -1113,7 +1133,7 @@ a.logo {
 
 .ai-eyebrow {
   margin: 0 0 6px;
-  color: #9bc1bc;
+  color: #f0a6d2;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 1.5px;
@@ -1155,7 +1175,7 @@ a.logo {
   content: "•";
   position: absolute;
   left: 4px;
-  color: #17784f;
+  color: #b83280;
   font-weight: 700;
 }
 
@@ -1171,7 +1191,7 @@ a.logo {
   align-items: center;
   gap: 10px;
   padding: 10px 18px;
-  background: #17784f;
+  background: #b83280;
   color: #e7e7e7;
   border-radius: 999px;
   font-size: 14px;
@@ -1182,7 +1202,7 @@ a.logo {
 
 .ai-btn:hover,
 .ai-btn:focus-visible {
-  background: #9bc1bc;
+  background: #f0a6d2;
   color: #333333;
 }
 
@@ -1195,8 +1215,8 @@ a.logo {
   margin-top: 12px;
   padding: 8px 14px 8px 8px;
   background: transparent;
-  color: #9bc1bc;
-  border: 1px solid rgba(155, 193, 188, 0.35);
+  color: #f0a6d2;
+  border: 1px solid rgba(240, 166, 210, 0.35);
   border-radius: 10px;
   font: inherit;
   font-size: 14px;
@@ -1212,14 +1232,14 @@ a.logo {
   height: 58px;
   object-fit: cover;
   object-position: top left;
-  border: 1px solid rgba(155, 193, 188, 0.3);
+  border: 1px solid rgba(240, 166, 210, 0.3);
   border-radius: 6px;
 }
 
 .ai-trace-btn:hover,
 .ai-trace-btn:focus-visible {
-  background: rgba(23, 120, 79, 0.2);
-  border-color: #17784f;
+  background: rgba(184, 50, 128, 0.2);
+  border-color: #b83280;
   color: #e7e7e7;
 }
 
@@ -1230,7 +1250,7 @@ a.logo {
   overflow: auto;
   background: #0d0d0d;
   color: #e7e7e7;
-  border: 1px solid rgba(155, 193, 188, 0.3);
+  border: 1px solid rgba(240, 166, 210, 0.3);
   border-radius: 14px;
 }
 
@@ -1253,7 +1273,7 @@ a.logo {
   gap: 12px;
   padding: 10px 14px;
   background: rgba(13, 13, 13, 0.95);
-  border-bottom: 1px solid rgba(155, 193, 188, 0.2);
+  border-bottom: 1px solid rgba(240, 166, 210, 0.2);
   font-size: 13px;
 }
 
@@ -1261,7 +1281,7 @@ a.logo {
   padding: 6px 12px;
   background: transparent;
   color: #e7e7e7;
-  border: 1px solid rgba(155, 193, 188, 0.35);
+  border: 1px solid rgba(240, 166, 210, 0.35);
   border-radius: 8px;
   font: inherit;
   cursor: pointer;
@@ -1270,8 +1290,8 @@ a.logo {
 
 .ai-trace-dialog__close:hover,
 .ai-trace-dialog__close:focus-visible {
-  background: #17784f;
-  border-color: #17784f;
+  background: #b83280;
+  border-color: #b83280;
 }
 
 /* Compact cards (Foundations) */
