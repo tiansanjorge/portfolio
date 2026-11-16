@@ -1487,11 +1487,11 @@ html:has(.ai-page),
 }
 
 .ai-home-title {
-  color: #e7e7e7;
-  font-family: "Magilio", sans-serif;
-  font-size: clamp(48px, 6vw, 84px);
-  font-weight: normal;
-  line-height: 1.05;
+  margin-top: 0;
+}
+
+.ai-home-accent {
+  color: #ff8fa8;
 }
 
 .ai-home-text {
