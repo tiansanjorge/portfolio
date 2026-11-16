@@ -829,3 +829,131 @@ a.logo {
     font-size: 50px;
   }
 }
+
+/* ------ Navbar: Projects dropdown (Fullstack / AI Engineering) ------ */
+
+.nav-dd {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-dd-trigger {
+  position: relative;
+  display: inline-block;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  line-height: inherit;
+  cursor: pointer;
+}
+
+.nav-dd-trigger:focus-visible,
+.nav-dd-link:focus-visible {
+  outline: 2px solid #9bc1bc;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.nav-dd-chevron {
+  display: inline-block;
+  margin-left: 6px;
+  font-size: 0.7em;
+  transition: transform 0.2s ease;
+}
+
+.nav-dd-trigger[aria-expanded="true"] .nav-dd-chevron {
+  transform: rotate(180deg);
+}
+
+/* Desktop: floating panel under the trigger */
+.nav-dd-menu {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 50%;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  min-width: 190px;
+  padding: 6px;
+  background: rgba(18, 18, 18, 0.97);
+  border: 1px solid rgba(155, 193, 188, 0.25);
+  border-radius: 10px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, -6px);
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease,
+    visibility 0.18s;
+}
+
+.nav-dd.open .nav-dd-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+
+.nav-dd-link {
+  display: block;
+  padding: 9px 14px;
+  border-radius: 7px;
+  color: #e7e7e7;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: 0.2s;
+}
+
+.nav-dd-link:hover,
+.nav-dd-link:focus-visible {
+  background: rgba(23, 120, 79, 0.35);
+  color: #9bc1bc;
+}
+
+.nav-dd-link.nav-sub-active {
+  color: #9bc1bc;
+}
+
+.nav-dd-link.nav-sub-active::before {
+  content: "•";
+  margin-right: 8px;
+  color: #17784f;
+}
+
+/* Mobile: collapsible list inside the hamburger menu */
+.nav-sub {
+  display: none;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 4px;
+}
+
+.nav-sub.open {
+  display: flex;
+}
+
+.nav-sub .nav-dd-link {
+  padding: 3px 0;
+  background: none;
+  color: inherit;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.nav-sub .nav-dd-link:hover {
+  color: #17784f;
+}
+
+.nav-sub .nav-dd-link.nav-sub-active {
+  color: #9bc1bc;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-dd-chevron,
+  .nav-dd-menu {
+    transition: none;
+  }
+}
