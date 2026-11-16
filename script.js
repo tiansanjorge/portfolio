@@ -88,16 +88,69 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // AI Engineering page: "View trace" opens the Langfuse screenshot in a native <dialog>
-// (Esc closes it, focus is trapped while open and returns to the button afterwards)
+// (Esc closes it, focus is trapped while open and returns to the button afterwards).
+// The image can be zoomed: buttons, + / - / 0 keys, click, Ctrl+wheel or trackpad pinch,
+// and dragged with the mouse once zoomed in.
 document.addEventListener("DOMContentLoaded", function () {
   const dialog = document.getElementById("trace-dialog");
   if (!dialog || typeof dialog.showModal !== "function") return;
   const img = document.getElementById("trace-dialog-img");
 
+  const MIN_ZOOM = 1;
+  const MAX_ZOOM = 4;
+  const STEPS = [1, 1.5, 2, 3, 4];
+  const levelLabel = dialog.querySelector(".ai-trace-zoom__level");
+  const btnIn = dialog.querySelector('[data-zoom="in"]');
+  const btnOut = dialog.querySelector('[data-zoom="out"]');
+  let zoom = 1;
+
+  function updateUi() {
+    levelLabel.textContent = Math.round(zoom * 100) + "%";
+    btnIn.disabled = zoom >= MAX_ZOOM - 0.001;
+    btnOut.disabled = zoom <= MIN_ZOOM + 0.001;
+  }
+
+  // Zoom keeping the point under (clientX, clientY) in place; defaults to the visible center
+  function applyZoom(next, clientX, clientY) {
+    next = Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, next));
+    if (Math.abs(next - zoom) < 0.001) return;
+    const view = dialog.getBoundingClientRect();
+    const rect = img.getBoundingClientRect();
+    const px = clientX != null ? clientX : view.left + view.width / 2;
+    const py = clientY != null ? clientY : view.top + view.height / 2;
+    const x = px - rect.left;
+    const y = py - rect.top;
+    const factor = next / zoom;
+    zoom = next;
+    img.style.width = zoom === 1 ? "" : zoom * 100 + "%";
+    img.classList.toggle("is-zoomed", zoom > 1);
+    dialog.scrollLeft += x * (factor - 1);
+    dialog.scrollTop += y * (factor - 1);
+    updateUi();
+  }
+
+  function step(direction, clientX, clientY) {
+    const next =
+      direction > 0
+        ? STEPS.find(function (v) { return v > zoom + 0.001; })
+        : STEPS.slice().reverse().find(function (v) { return v < zoom - 0.001; });
+    if (next) applyZoom(next, clientX, clientY);
+  }
+
+  function resetZoom() {
+    zoom = 1;
+    img.style.width = "";
+    img.classList.remove("is-zoomed");
+    dialog.scrollLeft = 0;
+    dialog.scrollTop = 0;
+    updateUi();
+  }
+
   document.querySelectorAll("[data-trace-src]").forEach(function (btn) {
     btn.addEventListener("click", function () {
       img.src = btn.getAttribute("data-trace-src");
       img.alt = btn.getAttribute("data-trace-alt") || "";
+      resetZoom();
       dialog.showModal();
     });
   });
@@ -112,6 +165,64 @@ document.addEventListener("DOMContentLoaded", function () {
   dialog.addEventListener("click", function (e) {
     if (e.target === dialog) dialog.close();
   });
+
+  btnIn.addEventListener("click", function () { step(1); });
+  btnOut.addEventListener("click", function () { step(-1); });
+  dialog.querySelector('[data-zoom="reset"]').addEventListener("click", resetZoom);
+
+  dialog.addEventListener("keydown", function (e) {
+    if (e.key === "+" || e.key === "=") step(1);
+    else if (e.key === "-" || e.key === "_") step(-1);
+    else if (e.key === "0") resetZoom();
+  });
+
+  // Ctrl+wheel and trackpad pinch (browsers send them as ctrl+wheel)
+  dialog.addEventListener(
+    "wheel",
+    function (e) {
+      if (!e.ctrlKey) return;
+      e.preventDefault();
+      applyZoom(zoom * (e.deltaY < 0 ? 1.2 : 1 / 1.2), e.clientX, e.clientY);
+    },
+    { passive: false },
+  );
+
+  // Click toggles between fit and 2x; dragging (mouse) pans when zoomed in
+  let drag = null;
+  let moved = false;
+  img.addEventListener("pointerdown", function (e) {
+    if (e.pointerType !== "mouse" || e.button !== 0) return;
+    drag = { x: e.clientX, y: e.clientY, left: dialog.scrollLeft, top: dialog.scrollTop };
+    moved = false;
+    img.setPointerCapture(e.pointerId);
+  });
+  img.addEventListener("pointermove", function (e) {
+    if (!drag || zoom === 1) return;
+    const dx = e.clientX - drag.x;
+    const dy = e.clientY - drag.y;
+    if (Math.abs(dx) + Math.abs(dy) > 4) {
+      moved = true;
+      img.classList.add("is-dragging");
+    }
+    dialog.scrollLeft = drag.left - dx;
+    dialog.scrollTop = drag.top - dy;
+  });
+  function endDrag() {
+    drag = null;
+    img.classList.remove("is-dragging");
+  }
+  img.addEventListener("pointerup", endDrag);
+  img.addEventListener("pointercancel", endDrag);
+  img.addEventListener("click", function (e) {
+    if (moved) {
+      moved = false;
+      return;
+    }
+    if (zoom === 1) applyZoom(2, e.clientX, e.clientY);
+    else resetZoom();
+  });
+
+  updateUi();
 });
 
 // Scroll-triggered animations

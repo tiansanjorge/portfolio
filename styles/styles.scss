@@ -1733,3 +1733,68 @@ html[data-lang="es"] .yt-crop-player:-webkit-full-screen iframe {
 .yt-crop-player.yt-debug .yt-crop-bar {
   display: none;
 }
+
+/* Trace dialog: zoom controls */
+.ai-trace-dialog__tools {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ai-trace-zoom {
+  display: flex;
+  gap: 4px;
+}
+
+.ai-trace-dialog__btn {
+  min-width: 34px;
+  padding: 6px 10px;
+  background: transparent;
+  color: #e7e7e7;
+  border: 1px solid rgba(244, 166, 184, 0.35);
+  border-radius: 8px;
+  font: inherit;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.ai-trace-dialog__btn:hover,
+.ai-trace-dialog__btn:focus-visible {
+  background: #b02a4f;
+  border-color: #b02a4f;
+}
+
+.ai-trace-dialog__btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+  pointer-events: none;
+}
+
+.ai-trace-zoom__level {
+  min-width: 58px;
+  font-variant-numeric: tabular-nums;
+}
+
+#trace-dialog-img {
+  cursor: zoom-in;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+#trace-dialog-img.is-zoomed {
+  max-width: none;
+  cursor: grab;
+}
+
+#trace-dialog-img.is-dragging {
+  cursor: grabbing;
+}
+
+/* Pink accent for the active indicator of the AI Engineering page */
+.ai-pink {
+  color: #ff8fa8;
+}
+
+.ai-background .nav-dd-link.nav-sub-active::before {
+  color: #ff8fa8;
+}
