@@ -3,47 +3,47 @@
   <desc id="d">Two images go through GPT-4o vision parsing, a contextualization agent and an extraction agent, are validated with Pydantic and returned as JSON, with one Langfuse span per stage.</desc>
   <defs>
     <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M0 0 L10 5 L0 10 z" fill="#f0a6d2"/>
+      <path d="M0 0 L10 5 L0 10 z" fill="#f4a6b8"/>
     </marker>
     <style>
       text { font-family: Satoshi, 'Segoe UI', Roboto, Arial, sans-serif; text-anchor: middle; }
       .t { fill: #e7e7e7; font-size: 14px; font-weight: 700; }
-      .s { fill: #f0a6d2; font-size: 11px; }
-      .b { fill: #f0a6d2; font-size: 12px; }
-      .l { fill: #a5a5a5; font-size: 11px; letter-spacing: 1px; }
+      .s { fill: #f4a6b8; font-size: 11px; }
+      .b { fill: #f4a6b8; font-size: 12px; }
+      .l { fill: #c9c9c9; font-size: 11px; letter-spacing: 1px; }
     </style>
   </defs>
-  <rect x="10" y="24" width="150" height="60" rx="10" fill="#2a0f20" stroke="#b83280" stroke-width="1.6"/>
+  <rect x="10" y="24" width="150" height="60" rx="10" fill="#2a0d14" stroke="#b02a4f" stroke-width="1.6"/>
   <text x="85.0" y="50.0" class="t">Original image</text>
   <text x="85.0" y="69.0" class="s">contract</text>
-  <rect x="10" y="104" width="150" height="60" rx="10" fill="#2a0f20" stroke="#b83280" stroke-width="1.6"/>
+  <rect x="10" y="104" width="150" height="60" rx="10" fill="#2a0d14" stroke="#b02a4f" stroke-width="1.6"/>
   <text x="85.0" y="130.0" class="t">Amendment image</text>
   <text x="85.0" y="149.0" class="s">addendum</text>
-  <rect x="205" y="24" width="150" height="60" rx="10" fill="#2a0f20" stroke="#b83280" stroke-width="1.6"/>
+  <rect x="205" y="24" width="150" height="60" rx="10" fill="#2a0d14" stroke="#b02a4f" stroke-width="1.6"/>
   <text x="280.0" y="50.0" class="t">Vision parsing</text>
   <text x="280.0" y="69.0" class="s">GPT-4o · original</text>
-  <rect x="205" y="104" width="150" height="60" rx="10" fill="#2a0f20" stroke="#b83280" stroke-width="1.6"/>
+  <rect x="205" y="104" width="150" height="60" rx="10" fill="#2a0d14" stroke="#b02a4f" stroke-width="1.6"/>
   <text x="280.0" y="130.0" class="t">Vision parsing</text>
   <text x="280.0" y="149.0" class="s">GPT-4o · amendment</text>
-  <rect x="400" y="64" width="150" height="60" rx="10" fill="#2a0f20" stroke="#ff7ac6" stroke-width="1.6"/>
+  <rect x="400" y="64" width="150" height="60" rx="10" fill="#2a0d14" stroke="#ff7a96" stroke-width="1.6"/>
   <text x="475.0" y="90.0" class="t">Contextualization</text>
   <text x="475.0" y="109.0" class="s">agent · context map</text>
-  <rect x="400" y="190" width="150" height="60" rx="10" fill="#2a0f20" stroke="#ff7ac6" stroke-width="1.6"/>
+  <rect x="400" y="190" width="150" height="60" rx="10" fill="#2a0d14" stroke="#ff7a96" stroke-width="1.6"/>
   <text x="475.0" y="216.0" class="t">Extraction agent</text>
   <text x="475.0" y="235.0" class="s">structured output</text>
-  <rect x="205" y="190" width="150" height="60" rx="10" fill="#2a0f20" stroke="#b83280" stroke-width="1.6"/>
+  <rect x="205" y="190" width="150" height="60" rx="10" fill="#2a0d14" stroke="#b02a4f" stroke-width="1.6"/>
   <text x="280.0" y="216.0" class="t">Validation</text>
   <text x="280.0" y="235.0" class="s">Pydantic · auto-repair</text>
-  <rect x="10" y="190" width="150" height="60" rx="10" fill="#2a0f20" stroke="#ff7ac6" stroke-width="1.6"/>
+  <rect x="10" y="190" width="150" height="60" rx="10" fill="#2a0d14" stroke="#ff7a96" stroke-width="1.6"/>
   <text x="85.0" y="216.0" class="t">JSON output</text>
   <text x="85.0" y="235.0" class="s">ContractChangeOutput</text>
-  <path d="M160 54 H203" fill="none" stroke="#f0a6d2" stroke-width="1.6" marker-end="url(#a)"/>
-  <path d="M160 134 H203" fill="none" stroke="#f0a6d2" stroke-width="1.6" marker-end="url(#a)"/>
-  <path d="M355 54 H378 V84 H398" fill="none" stroke="#f0a6d2" stroke-width="1.6" marker-end="url(#a)"/>
-  <path d="M355 134 H378 V104 H398" fill="none" stroke="#f0a6d2" stroke-width="1.6" marker-end="url(#a)"/>
-  <path d="M475 124 V188" fill="none" stroke="#f0a6d2" stroke-width="1.6" marker-end="url(#a)"/>
-  <path d="M400 220 H357" fill="none" stroke="#f0a6d2" stroke-width="1.6" marker-end="url(#a)"/>
-  <path d="M205 220 H162" fill="none" stroke="#f0a6d2" stroke-width="1.6" marker-end="url(#a)"/>
-  <rect x="10" y="290" width="540" height="44" rx="10" fill="rgba(240,166,210,0.06)" stroke="#f0a6d2" stroke-opacity="0.55" stroke-dasharray="5 4"/>
+  <path d="M160 54 H203" fill="none" stroke="#f4a6b8" stroke-width="1.6" marker-end="url(#a)"/>
+  <path d="M160 134 H203" fill="none" stroke="#f4a6b8" stroke-width="1.6" marker-end="url(#a)"/>
+  <path d="M355 54 H378 V84 H398" fill="none" stroke="#f4a6b8" stroke-width="1.6" marker-end="url(#a)"/>
+  <path d="M355 134 H378 V104 H398" fill="none" stroke="#f4a6b8" stroke-width="1.6" marker-end="url(#a)"/>
+  <path d="M475 124 V188" fill="none" stroke="#f4a6b8" stroke-width="1.6" marker-end="url(#a)"/>
+  <path d="M400 220 H357" fill="none" stroke="#f4a6b8" stroke-width="1.6" marker-end="url(#a)"/>
+  <path d="M205 220 H162" fill="none" stroke="#f4a6b8" stroke-width="1.6" marker-end="url(#a)"/>
+  <rect x="10" y="290" width="540" height="44" rx="10" fill="rgba(244,166,184,0.06)" stroke="#f4a6b8" stroke-opacity="0.55" stroke-dasharray="5 4"/>
   <text x="280.0" y="316.0" class="b">Langfuse trace · one span per stage · tokens, cost, latency</text>
 </svg>

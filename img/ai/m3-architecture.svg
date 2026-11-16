@@ -3,42 +3,42 @@
   <desc id="d">A query goes to a LangGraph orchestrator that routes it to the HR, Tech or Finance RAG agent, each with its own Chroma collection, or to an out-of-scope or human-escalation path. Traced with Langfuse.</desc>
   <defs>
     <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M0 0 L10 5 L0 10 z" fill="#f0a6d2"/>
+      <path d="M0 0 L10 5 L0 10 z" fill="#f4a6b8"/>
     </marker>
     <style>
       text { font-family: Satoshi, 'Segoe UI', Roboto, Arial, sans-serif; text-anchor: middle; }
       .t { fill: #e7e7e7; font-size: 14px; font-weight: 700; }
-      .s { fill: #f0a6d2; font-size: 11px; }
-      .b { fill: #f0a6d2; font-size: 12px; }
-      .l { fill: #a5a5a5; font-size: 11px; letter-spacing: 1px; }
+      .s { fill: #f4a6b8; font-size: 11px; }
+      .b { fill: #f4a6b8; font-size: 12px; }
+      .l { fill: #c9c9c9; font-size: 11px; letter-spacing: 1px; }
     </style>
   </defs>
-  <rect x="10" y="96" width="100" height="60" rx="10" fill="#2a0f20" stroke="#b83280" stroke-width="1.6"/>
+  <rect x="10" y="96" width="100" height="60" rx="10" fill="#2a0d14" stroke="#b02a4f" stroke-width="1.6"/>
   <text x="60.0" y="131.0" class="t">Query</text>
-  <rect x="150" y="84" width="150" height="84" rx="10" fill="#2a0f20" stroke="#ff7ac6" stroke-width="1.6"/>
+  <rect x="150" y="84" width="150" height="84" rx="10" fill="#2a0d14" stroke="#ff7a96" stroke-width="1.6"/>
   <text x="225.0" y="122.0" class="t">Orchestrator</text>
   <text x="225.0" y="141.0" class="s">LangGraph · router</text>
-  <rect x="350" y="12" width="190" height="52" rx="10" fill="#2a0f20" stroke="#b83280" stroke-width="1.6"/>
+  <rect x="350" y="12" width="190" height="52" rx="10" fill="#2a0d14" stroke="#b02a4f" stroke-width="1.6"/>
   <text x="445.0" y="34.0" class="t">HR agent</text>
   <text x="445.0" y="53.0" class="s">RAG · own Chroma collection</text>
-  <rect x="350" y="76" width="190" height="52" rx="10" fill="#2a0f20" stroke="#b83280" stroke-width="1.6"/>
+  <rect x="350" y="76" width="190" height="52" rx="10" fill="#2a0d14" stroke="#b02a4f" stroke-width="1.6"/>
   <text x="445.0" y="98.0" class="t">Tech agent</text>
   <text x="445.0" y="117.0" class="s">RAG · own Chroma collection</text>
-  <rect x="350" y="140" width="190" height="52" rx="10" fill="#2a0f20" stroke="#b83280" stroke-width="1.6"/>
+  <rect x="350" y="140" width="190" height="52" rx="10" fill="#2a0d14" stroke="#b02a4f" stroke-width="1.6"/>
   <text x="445.0" y="162.0" class="t">Finance agent</text>
   <text x="445.0" y="181.0" class="s">RAG · own Chroma collection</text>
-  <rect x="350" y="212" width="190" height="52" rx="10" fill="#2a0f20" stroke="#ff7ac6" stroke-width="1.6"/>
+  <rect x="350" y="212" width="190" height="52" rx="10" fill="#2a0d14" stroke="#ff7a96" stroke-width="1.6"/>
   <text x="445.0" y="234.0" class="t">Answer</text>
   <text x="445.0" y="253.0" class="s">verified, cited sources</text>
-  <rect x="150" y="212" width="150" height="52" rx="10" fill="#2a0f20" stroke="#b83280" stroke-width="1.6" stroke-dasharray="5 4"/>
+  <rect x="150" y="212" width="150" height="52" rx="10" fill="#2a0d14" stroke="#b02a4f" stroke-width="1.6" stroke-dasharray="5 4"/>
   <text x="225.0" y="234.0" class="t">Out of scope</text>
   <text x="225.0" y="253.0" class="s">or escalate to a person</text>
-  <path d="M110 126 H148" fill="none" stroke="#f0a6d2" stroke-width="1.6" marker-end="url(#a)"/>
-  <path d="M300 126 H325 V38 H348" fill="none" stroke="#f0a6d2" stroke-width="1.6" marker-end="url(#a)"/>
-  <path d="M300 126 H348" fill="none" stroke="#f0a6d2" stroke-width="1.6" marker-end="url(#a)"/>
-  <path d="M300 126 H325 V166 H348" fill="none" stroke="#f0a6d2" stroke-width="1.6" marker-end="url(#a)"/>
-  <path d="M225 168 V210" fill="none" stroke="#f0a6d2" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#a)"/>
-  <path d="M540 38 H552 V238 H542" fill="none" stroke="#f0a6d2" stroke-width="1.6" marker-end="url(#a)"/>
-  <rect x="10" y="296" width="540" height="44" rx="10" fill="rgba(240,166,210,0.06)" stroke="#f0a6d2" stroke-opacity="0.55" stroke-dasharray="5 4"/>
+  <path d="M110 126 H148" fill="none" stroke="#f4a6b8" stroke-width="1.6" marker-end="url(#a)"/>
+  <path d="M300 126 H325 V38 H348" fill="none" stroke="#f4a6b8" stroke-width="1.6" marker-end="url(#a)"/>
+  <path d="M300 126 H348" fill="none" stroke="#f4a6b8" stroke-width="1.6" marker-end="url(#a)"/>
+  <path d="M300 126 H325 V166 H348" fill="none" stroke="#f4a6b8" stroke-width="1.6" marker-end="url(#a)"/>
+  <path d="M225 168 V210" fill="none" stroke="#f4a6b8" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#a)"/>
+  <path d="M540 38 H552 V238 H542" fill="none" stroke="#f4a6b8" stroke-width="1.6" marker-end="url(#a)"/>
+  <rect x="10" y="296" width="540" height="44" rx="10" fill="rgba(244,166,184,0.06)" stroke="#f4a6b8" stroke-opacity="0.55" stroke-dasharray="5 4"/>
   <text x="280.0" y="322.0" class="b">Langfuse · traces · routing scores · judge scores</text>
 </svg>
