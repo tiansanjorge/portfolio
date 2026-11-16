@@ -10,7 +10,9 @@ Full Stack Engineer with a Frontend specialization. This repository is the sourc
 
 - **Home** (`index.html`) — introduction, featured work, and skills.
 - **Experience** (`pages/experience.html`) — IPH, Terragene, Freelance, and Henry Bootcamp, as tabs.
-- **Projects** (`pages/works.html`) — FleetOps, Microfrontend Architecture, Rick & Morty Wiki, and Taste Labs.
+- **Projects** — a dropdown in the navbar with two pages:
+  - **Fullstack** (`pages/works.html`) — FleetOps, Microfrontend Architecture, Rick & Morty Wiki, and Taste Labs.
+  - **AI Engineering** (`pages/ai-engineering.html`) — the four integrator projects of the AI Engineering program (LegalMove, Nimbus Desk, NimbusHR, Helpdesk CLI), with architecture diagrams and Langfuse trace screenshots in `img/ai/`.
 - **Case Studies** (`pages/case-studies.html`) — four Problem → Decision → Result write-ups going deeper than the project teasers.
 - **Contact** (`pages/contact.html`) — social links and CV download.
 
