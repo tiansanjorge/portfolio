@@ -15,6 +15,14 @@ function dropdown(trigger) {
     xIcon.classList.add("d-none");
 
     if (trigger) trigger.setAttribute("aria-expanded", "false");
+
+    // Collapse the Projects submenu and drop the height set while it was open
+    dropdownMenu.style.height = "";
+    dropdownMenu.querySelectorAll(".nav-sub.open").forEach(function (sub) {
+      sub.classList.remove("open");
+      const t = document.querySelector('[aria-controls="' + sub.id + '"]');
+      if (t) t.setAttribute("aria-expanded", "false");
+    });
   } else {
     dropdownMenu.classList.add("active");
 
@@ -27,6 +35,84 @@ function dropdown(trigger) {
     if (trigger) trigger.setAttribute("aria-expanded", "true");
   }
 }
+
+// Projects dropdown: floating panel on desktop, collapsible list in the mobile menu
+document.addEventListener("DOMContentLoaded", function () {
+  // Desktop
+  document.querySelectorAll(".nav-dd").forEach(function (dd) {
+    const trigger = dd.querySelector(".nav-dd-trigger");
+    if (!trigger) return;
+
+    const setOpen = function (open) {
+      dd.classList.toggle("open", open);
+      trigger.setAttribute("aria-expanded", String(open));
+    };
+
+    trigger.addEventListener("click", function (e) {
+      e.stopPropagation();
+      setOpen(!dd.classList.contains("open"));
+    });
+
+    dd.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && dd.classList.contains("open")) {
+        setOpen(false);
+        trigger.focus();
+      }
+    });
+
+    // Keyboard users tabbing out of the panel close it (relatedTarget is null on
+    // some mouse clicks, so only act when focus really lands elsewhere)
+    dd.addEventListener("focusout", function (e) {
+      if (e.relatedTarget && !dd.contains(e.relatedTarget)) setOpen(false);
+    });
+
+    document.addEventListener("click", function (e) {
+      if (!dd.contains(e.target)) setOpen(false);
+    });
+  });
+
+  // Mobile: the submenu lives inside the hamburger menu, whose height is fixed in CSS
+  const mobileMenu = document.getElementById("dropdown-menu");
+  document
+    .querySelectorAll('.nav-dd-trigger[aria-controls$="-m"]')
+    .forEach(function (trigger) {
+      const sub = document.getElementById(trigger.getAttribute("aria-controls"));
+      if (!sub || !mobileMenu) return;
+      trigger.addEventListener("click", function () {
+        const open = !sub.classList.contains("open");
+        sub.classList.toggle("open", open);
+        trigger.setAttribute("aria-expanded", String(open));
+        mobileMenu.style.height = open ? mobileMenu.scrollHeight + "px" : "";
+      });
+    });
+});
+
+// AI Engineering page: "View trace" opens the Langfuse screenshot in a native <dialog>
+// (Esc closes it, focus is trapped while open and returns to the button afterwards)
+document.addEventListener("DOMContentLoaded", function () {
+  const dialog = document.getElementById("trace-dialog");
+  if (!dialog || typeof dialog.showModal !== "function") return;
+  const img = document.getElementById("trace-dialog-img");
+
+  document.querySelectorAll("[data-trace-src]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      img.src = btn.getAttribute("data-trace-src");
+      img.alt = btn.getAttribute("data-trace-alt") || "";
+      dialog.showModal();
+    });
+  });
+
+  dialog.querySelectorAll("[data-trace-close]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      dialog.close();
+    });
+  });
+
+  // A click on the backdrop lands on the <dialog> element itself
+  dialog.addEventListener("click", function (e) {
+    if (e.target === dialog) dialog.close();
+  });
+});
 
 // Scroll-triggered animations
 document.addEventListener("DOMContentLoaded", function () {
