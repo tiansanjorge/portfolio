@@ -160,18 +160,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// YouTube embed URL (privacy-enhanced domain). muted is required to autoplay without a gesture
-function ytEmbedSrc(id, muted) {
-  return (
-    "https://www.youtube-nocookie.com/embed/" +
-    id +
-    "?autoplay=1&rel=0&playsinline=1&vq=hd1080" +
-    (muted ? "&mute=1" : "")
-  );
-}
-
-// --- Cropped YouTube player: the presentation is shown in a vertical frame, which crops the
-// landscape video and hides YouTube's own controls, so it gets a small custom control bar ---
+// --- YouTube player with its own control bar, used for every video of the site.
+// YouTube chooses the resolution from the size of its player, so the iframe is rendered larger
+// and scaled back down (see --yt-z in the CSS), which a native control bar would shrink too.
+// The presentation (data-yt-crop) also crops a landscape video into a vertical frame. ---
 let ytApiPromise;
 function loadYtApi() {
   if (window.YT && window.YT.Player) return Promise.resolve();
@@ -190,13 +182,21 @@ function loadYtApi() {
   return ytApiPromise;
 }
 
-function mountCroppedPlayer(facade, muted) {
-  const ids = { en: facade.getAttribute("data-yt-id-en"), es: facade.getAttribute("data-yt-id-es") };
+function mountYtPlayer(facade, muted) {
+  // Presentation: one video per language. Any other video: a single id.
+  const single = facade.getAttribute("data-yt-id");
+  const ids = {
+    en: facade.getAttribute("data-yt-id-en") || single,
+    es: facade.getAttribute("data-yt-id-es") || single,
+  };
+  const vertical = facade.hasAttribute("data-yt-crop");
   const currentLang = function () {
     return document.documentElement.getAttribute("data-lang") === "es" ? "es" : "en";
   };
   const wrap = document.createElement("div");
-  wrap.className = "yt-crop-player";
+  wrap.className = "yt-crop-player" + (vertical ? " yt-crop-vertical" : "");
+  wrap.setAttribute("role", "group");
+  wrap.setAttribute("aria-label", facade.getAttribute("data-yt-title") || "YouTube video");
   // Diagnostics: open the site with ?ytdebug to get YouTube's native player (right click -> Stats for nerds)
   const debug = /[?&]ytdebug/.test(location.search);
   if (debug) wrap.classList.add("yt-debug");
@@ -370,29 +370,7 @@ document.addEventListener("DOMContentLoaded", function () {
         facade.replaceWith(video);
         return;
       }
-      if (facade.hasAttribute("data-yt-crop")) {
-        mountCroppedPlayer(facade, muted);
-        return;
-      }
-      const videoId = facade.getAttribute("data-yt-id");
-      const title = facade.getAttribute("data-yt-title") || "YouTube video";
-      const iframe = document.createElement("iframe");
-      iframe.src = ytEmbedSrc(videoId, muted);
-      // Keep the per-language ids so a language switch can swap the video
-      [
-        ["ytIdEn", "data-yt-id-en"],
-        ["ytIdEs", "data-yt-id-es"],
-      ].forEach(function (pair) {
-        if (facade.hasAttribute(pair[1]))
-          iframe.dataset[pair[0]] = facade.getAttribute(pair[1]);
-      });
-      iframe.title = title;
-      iframe.allow =
-        "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-      iframe.allowFullscreen = true;
-      iframe.style.cssText =
-        "position:absolute;top:0;left:0;width:100%;height:100%;border:0;";
-      facade.replaceWith(iframe);
+      mountYtPlayer(facade, muted);
     }
 
     facade.addEventListener("click", function () {
@@ -490,10 +468,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const ytKey = key === "es" ? "ytIdEs" : "ytIdEn";
     document.querySelectorAll(".yt-crop-player").forEach((el) => {
       if (el.switchVideo) el.switchVideo(el.dataset[ytKey]);
-    });
-    document.querySelectorAll("iframe[data-yt-id-en], iframe[data-yt-id-es]").forEach((fr) => {
-      const id = fr.dataset[ytKey];
-      if (id && fr.src.indexOf("/embed/" + id) === -1) fr.src = ytEmbedSrc(id, false);
     });
     const dsKey = key === "es" ? "srcEs" : "srcEn";
     document.querySelectorAll("video[data-src-en], video[data-src-es]").forEach((v) => {

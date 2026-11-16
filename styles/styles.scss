@@ -1639,7 +1639,7 @@ html:has(.ai-page),
   transform-origin: 0 0;
 }
 
-html[data-lang="es"] .yt-crop-player iframe {
+html[data-lang="es"] .yt-crop-vertical iframe {
   width: calc(550px * 16 / 9 * var(--yt-z));
   height: calc(550px * var(--yt-z));
   left: calc((550px * 16 / 9 - 550px * 9 / 16) * -0.447);
