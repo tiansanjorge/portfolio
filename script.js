@@ -209,12 +209,15 @@ function mountCroppedPlayer(facade, muted) {
   bar.innerHTML =
     '<button type="button" class="yt-crop-btn" data-act="play" aria-label="Play / pause"><i class="fa-solid fa-pause"></i></button>' +
     '<div class="yt-crop-progress"><div class="yt-crop-progress-fill"></div></div>' +
-    '<button type="button" class="yt-crop-btn" data-act="mute" aria-label="Mute / unmute"><i class="fa-solid fa-volume-high"></i></button>';
+    '<button type="button" class="yt-crop-btn" data-act="mute" aria-label="Mute / unmute"><i class="fa-solid fa-volume-high"></i></button>' +
+    '<button type="button" class="yt-crop-btn" data-act="fs" aria-label="Fullscreen"><i class="fa-solid fa-expand"></i></button>';
   wrap.append(slot, hit, bar);
   facade.replaceWith(wrap);
 
   const playIcon = bar.querySelector("[data-act=play] i");
   const muteIcon = bar.querySelector("[data-act=mute] i");
+  const fsBtn = bar.querySelector("[data-act=fs]");
+  const fsIcon = fsBtn.querySelector("i");
   const progress = bar.querySelector(".yt-crop-progress");
   const fill = bar.querySelector(".yt-crop-progress-fill");
   let player = null;
@@ -225,6 +228,19 @@ function mountCroppedPlayer(facade, muted) {
     const playing = player.getPlayerState() === 1;
     playIcon.className = "fa-solid " + (playing ? "fa-pause" : "fa-play");
     muteIcon.className = "fa-solid " + (player.isMuted() ? "fa-volume-xmark" : "fa-volume-high");
+  }
+  // No automatic captions (YouTube may turn them on by itself)
+  function hideCaptions(target) {
+    try {
+      target.unloadModule("captions");
+      target.unloadModule("cc");
+    } catch (err) {
+      /* the module is not loaded: nothing to hide */
+    }
+  }
+  function onState(e) {
+    if (e.data === 1) hideCaptions(e.target);
+    sync();
   }
   function toggle() {
     if (!player) return;
@@ -240,6 +256,29 @@ function mountCroppedPlayer(facade, muted) {
     else player.mute();
     sync();
   });
+  // Fullscreen shows the whole video (no vertical crop). iPhone Safari can only fullscreen
+  // <video> elements, so the button is hidden where the browser cannot do it.
+  const requestFs = wrap.requestFullscreen || wrap.webkitRequestFullscreen;
+  const exitFs = document.exitFullscreen || document.webkitExitFullscreen;
+  const fsElement = function () {
+    return document.fullscreenElement || document.webkitFullscreenElement;
+  };
+  if (!requestFs || !exitFs) fsBtn.hidden = true;
+  fsBtn.addEventListener("click", function () {
+    if (fsElement() === wrap) exitFs.call(document);
+    else requestFs.call(wrap);
+  });
+  const onFsChange = function () {
+    if (!wrap.isConnected) {
+      document.removeEventListener("fullscreenchange", onFsChange);
+      document.removeEventListener("webkitfullscreenchange", onFsChange);
+      return;
+    }
+    fsIcon.className = "fa-solid " + (fsElement() === wrap ? "fa-compress" : "fa-expand");
+  };
+  document.addEventListener("fullscreenchange", onFsChange);
+  document.addEventListener("webkitfullscreenchange", onFsChange);
+
   progress.addEventListener("click", function (e) {
     if (!player || !player.getDuration) return;
     const rect = progress.getBoundingClientRect();
@@ -275,15 +314,17 @@ function mountCroppedPlayer(facade, muted) {
         disablekb: 1,
         fs: 0,
         iv_load_policy: 3,
+        cc_load_policy: 0,
         mute: muted ? 1 : 0,
       },
       events: {
         onReady: function (e) {
           if (muted) e.target.mute();
+          hideCaptions(e.target);
           e.target.playVideo();
           sync();
         },
-        onStateChange: sync,
+        onStateChange: onState,
       },
     });
   });

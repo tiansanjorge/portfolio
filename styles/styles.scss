@@ -1691,3 +1691,24 @@ html[data-lang="es"] .yt-crop-player iframe {
   background: #17784f;
   border-radius: inherit;
 }
+
+/* Fullscreen: show the whole video instead of the vertical crop */
+.yt-crop-player:fullscreen iframe,
+html[data-lang="es"] .yt-crop-player:fullscreen iframe {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.yt-crop-player:-webkit-full-screen iframe,
+html[data-lang="es"] .yt-crop-player:-webkit-full-screen iframe {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.yt-crop-btn[hidden] {
+  display: none;
+}
