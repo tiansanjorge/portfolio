@@ -883,7 +883,7 @@ a.logo {
   border: 1px solid var(--dd-line, rgba(18, 18, 18, 0.12));
   border-radius: 12px;
   box-shadow:
-    0 14px 34px rgba(0, 0, 0, 0.28),
+    0 14px 34px rgba(0, 0, 0, 0.22),
     inset 0 1px 0 var(--dd-edge, rgba(255, 255, 255, 0.35));
   opacity: 0;
   visibility: hidden;
@@ -987,20 +987,20 @@ a.logo {
 /* Per-page tokens: the dropdown is frosted glass tinted with each page's background tone, and
    its text color follows from it (light pages -> dark text, dark pages -> light text) */
 .header-background {
-  --dd-bg: rgba(255, 255, 255, 0.62);
-  --dd-sheen: linear-gradient(135deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.1));
+  --dd-bg: rgba(255, 255, 255, 0.34);
+  --dd-sheen: linear-gradient(135deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.04));
   --dd-fg: #121212;
-  --dd-line: rgba(18, 18, 18, 0.12);
-  --dd-edge: rgba(255, 255, 255, 0.9);
+  --dd-line: rgba(18, 18, 18, 0.05);
+  --dd-edge: rgba(255, 255, 255, 0.5);
   --dd-hover: rgba(18, 18, 18, 0.08);
 }
 
 .contact-background {
-  --dd-bg: rgba(255, 255, 255, 0.45);
-  --dd-sheen: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.08));
+  --dd-bg: rgba(255, 255, 255, 0.24);
+  --dd-sheen: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.03));
   --dd-fg: #354052;
-  --dd-line: rgba(53, 64, 82, 0.18);
-  --dd-edge: rgba(255, 255, 255, 0.85);
+  --dd-line: rgba(53, 64, 82, 0.07);
+  --dd-edge: rgba(255, 255, 255, 0.45);
   --dd-hover: rgba(53, 64, 82, 0.1);
 }
 
@@ -1008,27 +1008,27 @@ a.logo {
 .experience-background,
 .case-studies-background,
 .ai-background {
-  --dd-sheen: linear-gradient(135deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.03));
+  --dd-sheen: linear-gradient(135deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.015));
   --dd-fg: #e7e7e7;
-  --dd-line: rgba(255, 255, 255, 0.18);
-  --dd-edge: rgba(255, 255, 255, 0.3);
+  --dd-line: rgba(255, 255, 255, 0.07);
+  --dd-edge: rgba(255, 255, 255, 0.14);
   --dd-hover: rgba(255, 255, 255, 0.12);
 }
 
 .works-background {
-  --dd-bg: rgba(0, 20, 10, 0.55);
+  --dd-bg: rgba(0, 20, 10, 0.3);
 }
 
 .experience-background {
-  --dd-bg: rgba(13, 40, 59, 0.55);
+  --dd-bg: rgba(13, 40, 59, 0.3);
 }
 
 .case-studies-background {
-  --dd-bg: rgba(39, 24, 65, 0.55);
+  --dd-bg: rgba(39, 24, 65, 0.3);
 }
 
 .ai-background {
-  --dd-bg: rgba(47, 8, 20, 0.55);
+  --dd-bg: rgba(47, 8, 20, 0.3);
 }
 
 /* ------ AI Engineering page ------ */
