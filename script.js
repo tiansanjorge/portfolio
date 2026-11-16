@@ -1,6 +1,6 @@
 // Dropdown navbar button
 
-function dropdown() {
+function dropdown(trigger) {
   const dropdownMenu = document.getElementById("dropdown-menu");
   const barIcon = document.getElementById("bar-icon");
   const xIcon = document.getElementById("x-icon");
@@ -13,63 +13,548 @@ function dropdown() {
 
     xIcon.classList.remove("d-block");
     xIcon.classList.add("d-none");
-    
+
+    if (trigger) trigger.setAttribute("aria-expanded", "false");
+
+    // Collapse the Projects submenu and drop the height set while it was open
+    dropdownMenu.style.height = "";
+    dropdownMenu.querySelectorAll(".nav-sub.open").forEach(function (sub) {
+      sub.classList.remove("open");
+      const t = document.querySelector('[aria-controls="' + sub.id + '"]');
+      if (t) t.setAttribute("aria-expanded", "false");
+    });
   } else {
     dropdownMenu.classList.add("active");
 
-    
     barIcon.classList.remove("d-block");
     barIcon.classList.add("d-none");
 
     xIcon.classList.remove("d-none");
     xIcon.classList.add("d-block");
+
+    if (trigger) trigger.setAttribute("aria-expanded", "true");
   }
 }
 
-
-// Scrolling animation for text banners
+// Projects dropdown: floating panel on desktop, collapsible list in the mobile menu
 document.addEventListener("DOMContentLoaded", function () {
+  // Desktop
+  document.querySelectorAll(".nav-dd").forEach(function (dd) {
+    const trigger = dd.querySelector(".nav-dd-trigger");
+    if (!trigger) return;
 
-  const textBanner = document.getElementById("text-banner");
-  const originalHTML = textBanner.innerHTML;
-  const screenWidth = window.innerWidth;
-  const repeatedHTML = originalHTML.repeat(1000);
-  textBanner.innerHTML = repeatedHTML;
+    const setOpen = function (open) {
+      dd.classList.toggle("open", open);
+      trigger.setAttribute("aria-expanded", String(open));
+    };
 
-  function animateScroll() {
-    requestAnimationFrame(animateScroll);
-    const scrollPos = performance.now() / 15; 
+    trigger.addEventListener("click", function (e) {
+      e.stopPropagation();
+      setOpen(!dd.classList.contains("open"));
+    });
 
-    const displacement = (scrollPos % screenWidth) - screenWidth;
+    dd.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && dd.classList.contains("open")) {
+        setOpen(false);
+        trigger.focus();
+      }
+    });
 
-    textBanner.style.transform = `translateX(${displacement}px)`;
-  }
+    // Keyboard users tabbing out of the panel close it (relatedTarget is null on
+    // some mouse clicks, so only act when focus really lands elsewhere)
+    dd.addEventListener("focusout", function (e) {
+      if (e.relatedTarget && !dd.contains(e.relatedTarget)) setOpen(false);
+    });
 
-  animateScroll();
+    document.addEventListener("click", function (e) {
+      if (!dd.contains(e.target)) setOpen(false);
+    });
+  });
 
-  
+  // Mobile: the submenu lives inside the hamburger menu, whose height is fixed in CSS
+  const mobileMenu = document.getElementById("dropdown-menu");
+  document
+    .querySelectorAll('.nav-dd-trigger[aria-controls$="-m"]')
+    .forEach(function (trigger) {
+      const sub = document.getElementById(trigger.getAttribute("aria-controls"));
+      if (!sub || !mobileMenu) return;
+      trigger.addEventListener("click", function () {
+        const open = !sub.classList.contains("open");
+        sub.classList.toggle("open", open);
+        trigger.setAttribute("aria-expanded", String(open));
+        mobileMenu.style.height = open ? mobileMenu.scrollHeight + "px" : "";
+      });
+    });
 });
 
+// AI Engineering page: "View trace" opens the Langfuse screenshot in a native <dialog>
+// (Esc closes it, focus is trapped while open and returns to the button afterwards)
 document.addEventListener("DOMContentLoaded", function () {
+  const dialog = document.getElementById("trace-dialog");
+  if (!dialog || typeof dialog.showModal !== "function") return;
+  const img = document.getElementById("trace-dialog-img");
 
-  const textBanner2 = document.getElementById("text-banner-2");
-  const originalHTML2 = textBanner2.innerHTML;
-  const screenWidth2 = window.innerWidth;
-  const repeatedHTML2 = originalHTML2.repeat(1000);
-  textBanner2.innerHTML = repeatedHTML2;
+  document.querySelectorAll("[data-trace-src]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      img.src = btn.getAttribute("data-trace-src");
+      img.alt = btn.getAttribute("data-trace-alt") || "";
+      dialog.showModal();
+    });
+  });
 
-  function animateScroll2() {
-    requestAnimationFrame(animateScroll2);
-    const scrollPos2 = performance.now() / 15;
+  dialog.querySelectorAll("[data-trace-close]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      dialog.close();
+    });
+  });
 
-    const displacement2 = (scrollPos2 % screenWidth2) - screenWidth2;
-
-    textBanner2.style.transform = `translateX(${displacement2}px)`;
-  }
-
-  animateScroll2();
-
-  
+  // A click on the backdrop lands on the <dialog> element itself
+  dialog.addEventListener("click", function (e) {
+    if (e.target === dialog) dialog.close();
+  });
 });
 
+// Scroll-triggered animations
+document.addEventListener("DOMContentLoaded", function () {
+  const scrollElements = document.querySelectorAll(".scroll-reveal");
 
+  if (scrollElements.length === 0) return;
+
+  if ("IntersectionObserver" in window) {
+    // Reveals each element once, then stops observing it — avoids
+    // recalculating layout for every element on every scroll event.
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: "0px 0px -15% 0px", threshold: 0 }
+    );
+
+    scrollElements.forEach((el) => observer.observe(el));
+  } else {
+    // Fallback for browsers without IntersectionObserver support
+    const elementInView = (el, percentageScroll = 100) => {
+      const elementTop = el.getBoundingClientRect().top;
+      return (
+        elementTop <=
+        (window.innerHeight || document.documentElement.clientHeight) *
+          (percentageScroll / 100)
+      );
+    };
+
+    const handleScrollAnimation = () => {
+      scrollElements.forEach((el) => {
+        if (elementInView(el, 85)) {
+          el.classList.add("visible");
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScrollAnimation);
+    handleScrollAnimation();
+  }
+});
+
+// YouTube click-to-load facade — avoids loading the embed until the user asks for it
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".yt-facade").forEach(function (facade) {
+    // muted: browsers only allow autoplay without a user gesture if it starts muted
+    function activate(muted) {
+      if (!facade.isConnected) return;
+      const videoSrc = facade.getAttribute("data-video-src");
+      if (videoSrc) {
+        const video = document.createElement("video");
+        video.muted = muted;
+        video.src = videoSrc;
+        video.controls = true;
+        video.autoplay = true;
+        video.playsInline = true;
+        video.title = facade.getAttribute("data-yt-title") || "Video";
+        // Keep the per-language sources so a language switch can swap them
+        [
+          ["srcEn", "data-video-src-en"],
+          ["srcEs", "data-video-src-es"],
+          ["posEn", "data-video-pos-en"],
+          ["posEs", "data-video-pos-es"],
+        ].forEach(function (pair) {
+          if (facade.hasAttribute(pair[1]))
+            video.dataset[pair[0]] = facade.getAttribute(pair[1]);
+        });
+        video.className = "local-video";
+        const pos = facade.getAttribute("data-video-pos");
+        if (pos) video.style.setProperty("--video-pos", pos);
+        video.style.cssText +=
+          "position:absolute;top:0;left:0;width:100%;height:100%;border:0;background:#000;";
+        facade.replaceWith(video);
+        return;
+      }
+      const videoId = facade.getAttribute("data-yt-id");
+      const title = facade.getAttribute("data-yt-title") || "YouTube video";
+      const iframe = document.createElement("iframe");
+      iframe.src =
+        "https://www.youtube.com/embed/" +
+        videoId +
+        "?autoplay=1&vq=hd1080";
+      iframe.title = title;
+      iframe.allow =
+        "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+      iframe.allowFullscreen = true;
+      iframe.style.cssText =
+        "position:absolute;top:0;left:0;width:100%;height:100%;border:0;";
+      facade.replaceWith(iframe);
+    }
+
+    facade.addEventListener("click", function () {
+      activate(false);
+    });
+
+    // Start once when scrolled into view, after the language video has been chosen
+    if (facade.hasAttribute("data-autoplay-on-scroll") && "IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        function (entries) {
+          if (!entries.some((e) => e.isIntersecting)) return;
+          observer.disconnect();
+          const start = function () {
+            activate(true);
+          };
+          if (window.__langVideosReady) start();
+          else {
+            const t = setTimeout(start, 3000);
+            document.addEventListener(
+              "langvideos:ready",
+              function () {
+                clearTimeout(t);
+                start();
+              },
+              { once: true },
+            );
+          }
+        },
+        { threshold: 0.6 },
+      );
+      observer.observe(facade);
+    }
+  });
+});
+
+// --- Simple i18n loader and applier ---
+(function () {
+  const STORAGE_KEY = "site_lang";
+
+  function basePrefix() {
+    // If page is inside /pages/ use ../ else use ./
+    return location.pathname.includes("/pages/") ? "../" : "";
+  }
+
+  async function loadTranslations() {
+    const path = basePrefix() + "i18n/translations.json";
+    try {
+      const res = await fetch(path);
+      if (!res.ok) return null;
+      return await res.json();
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function applyTranslations(translations, lang) {
+    if (!translations || !translations[lang]) return;
+    const nodes = document.querySelectorAll("[data-i18n]");
+    nodes.forEach((el) => {
+      const key = el.getAttribute("data-i18n");
+      const value = translations[lang][key];
+      if (value !== undefined) el.innerHTML = value;
+    });
+    document.documentElement.lang = lang;
+    applyLangVideos(lang);
+  }
+
+  // Swap language-specific local videos (facades and already-playing players)
+  function applyLangVideos(lang) {
+    const key = lang === "es" ? "es" : "en";
+    const prefix = basePrefix();
+    document.querySelectorAll(".yt-facade[data-video-src-" + key + "]").forEach((f) => {
+      f.setAttribute("data-video-src", prefix + f.getAttribute("data-video-src-" + key));
+      const img = f.querySelector("img");
+      const poster = f.getAttribute("data-poster-" + key);
+      if (img && poster) img.src = prefix + poster;
+      const pos = f.getAttribute("data-video-pos-" + key);
+      if (pos) f.setAttribute("data-video-pos", pos);
+      else f.removeAttribute("data-video-pos");
+    });
+    document.querySelectorAll("video.local-video").forEach((v) => {
+      const pos = v.dataset["pos" + (key === "es" ? "Es" : "En")];
+      if (pos) v.style.setProperty("--video-pos", pos);
+      else v.style.removeProperty("--video-pos");
+    });
+    const dsKey = key === "es" ? "srcEs" : "srcEn";
+    document.querySelectorAll("video[data-src-en], video[data-src-es]").forEach((v) => {
+      const next = prefix + v.dataset[dsKey];
+      if (v.dataset[dsKey] && !v.src.endsWith(next.replace(/^\.\.\//, ""))) {
+        // Same element, new source: the old language stops, never two at once
+        v.pause();
+        v.src = next;
+        v.play().catch(() => {});
+      }
+    });
+    if (!window.__langVideosReady) {
+      window.__langVideosReady = true;
+      document.dispatchEvent(new Event("langvideos:ready"));
+    }
+  }
+
+  function setActiveLangUI(lang) {
+    const buttons = document.querySelectorAll(".lang-toggle");
+    buttons.forEach((btn) => {
+      const btnLang =
+        btn.getAttribute("data-lang") ||
+        (btn.id === "lang-en" ? "en" : btn.id === "lang-es" ? "es" : null);
+      if (!btnLang) return;
+      btn.classList.toggle("active-lang", btnLang === lang);
+    });
+  }
+
+  function changeLanguage(translations, lang) {
+    localStorage.setItem(STORAGE_KEY, lang);
+    applyTranslations(translations, lang);
+    setActiveLangUI(lang);
+  }
+
+  // (Removed complex banner animator - using a simple static banner below)
+
+  document.addEventListener("DOMContentLoaded", async () => {
+    const translations = await loadTranslations();
+    if (!translations) return;
+    const saved = localStorage.getItem(STORAGE_KEY) || "en";
+    applyTranslations(translations, saved);
+    setActiveLangUI(saved);
+
+    // Apply translations to common selectors when data-i18n attributes aren't present
+    function applySelectorTranslations(lang) {
+      const t = translations[lang] || {};
+      // nav links: try multiple href patterns
+      const navMap = [
+        { sel: 'a[href$="index.html"]', key: "nav.home" },
+        { sel: 'a[href="#"]', key: "nav.home" },
+        { sel: 'a[href$="experience.html"]', key: "nav.experience" },
+        { sel: 'a[href$="works.html"]', key: "nav.projects" },
+        { sel: 'a[href$="contact.html"]', key: "nav.contact" },
+        { sel: 'a[href$="../index.html"]', key: "nav.home" },
+      ];
+
+      navMap.forEach((m) => {
+        const els = document.querySelectorAll(m.sel);
+        els.forEach((el) => {
+          // Evitar reemplazar el contenido del logo SS
+          if (
+            el &&
+            !el.hasAttribute("data-i18n") &&
+            t[m.key] &&
+            !(
+              el.classList.contains("logo") ||
+              el.classList.contains("contact-logo")
+            ) &&
+            // Evitar sobrescribir el botón flecha del footer
+            !(
+              el.classList.contains("contact-button") ||
+              el.querySelector(".fa-arrow-right")
+            )
+          ) {
+            // Detectar si es la opción activa
+            if (el.classList.contains("active-link")) {
+              // Determinar la clave correcta según la página
+              let correctKey = m.key;
+              if (location.pathname.includes("works"))
+                correctKey = "nav.projects";
+              else if (location.pathname.includes("case-studies"))
+                correctKey = "nav.caseStudies";
+              else if (location.pathname.includes("experience"))
+                correctKey = "nav.experience";
+              else if (location.pathname.includes("contact"))
+                correctKey = "nav.contact";
+              else if (
+                location.pathname.endsWith("index.html") ||
+                location.pathname === "/" ||
+                location.pathname.endsWith("/")
+              )
+                correctKey = "nav.home";
+              el.innerHTML =
+                t[correctKey] +
+                (el.querySelector(".active-dot")
+                  ? ' <span class="active-dot aqua">•</span>'
+                  : "");
+            } else {
+              el.innerHTML =
+                t[m.key] +
+                (m.key === "nav.home" && el.querySelector(".active-dot")
+                  ? ' <span class="active-dot aqua">•</span>'
+                  : "");
+            }
+          }
+        });
+      });
+
+      // Hero and presentation
+      const hero = document.querySelector(".magilio-heading");
+      if (hero && t["hero.h1"] && !hero.hasAttribute("data-i18n"))
+        hero.innerHTML = t["hero.h1"];
+      const pres = document.querySelector(".presentation-description");
+      if (pres && t["hero.title"] && !pres.hasAttribute("data-i18n"))
+        pres.innerHTML = t["hero.title"];
+
+      // Banner content is provided by the HTML (data-i18n) and handled by the
+      // original scrolling animation below; do not override here.
+
+      // Contact page specific: prefer explicit data-i18n targets
+      const contactNameEl =
+        document.querySelector('[data-i18n="contact.headingName"]') ||
+        document.querySelector(".heading-contact");
+      const contactRoleEl =
+        document.querySelector('[data-i18n="contact.headingRole"]') ||
+        document.querySelector(".heading-contact-role");
+      if (contactNameEl && t["contact.headingName"])
+        contactNameEl.innerHTML = t["contact.headingName"];
+      if (contactRoleEl && t["contact.headingRole"])
+        contactRoleEl.innerHTML = t["contact.headingRole"];
+      const letsTalk = document.querySelectorAll(".magilio-contact");
+      if (letsTalk && t["contact.letsTalk"])
+        letsTalk.forEach((e) => (e.innerHTML = t["contact.letsTalk"]));
+      const cv = document.getElementById("cv-download-link");
+      if (cv && t["contact.cv"])
+        cv.innerHTML = "<b>" + t["contact.cv"] + "</b>";
+      // Cambiar href del CV según idioma
+      if (cv) {
+        if (lang === "es") {
+          cv.href =
+            basePrefix() +
+            "pdf/Sebastian_Sanjorge_Fullstack_Engineer_CV_ES.pdf";
+        } else {
+          cv.href =
+            basePrefix() +
+            "pdf/Sebastian_Sanjorge_Fullstack_Engineer_CV_EN.pdf";
+        }
+      }
+    }
+
+    // inject simple language toggle into header if not present
+    function injectToggleUI() {
+      // desktop header
+      const desktopHeader =
+        document.querySelector(".col-10.d-none.d-md-flex") ||
+        document.querySelector("header .row");
+      // Only inject if no language toggle exists on the page to avoid duplicates
+      if (desktopHeader && !document.querySelector(".lang-toggle")) {
+        const wrap = document.createElement("div");
+        wrap.className =
+          "col-2 d-none d-lg-flex justify-content-end align-items-center";
+        wrap.innerHTML =
+          '<button id="lang-en" class="lang-toggle border-0 bg-transparent fs-5 me-2" title="English">🇬🇧</button><button id="lang-es" class="lang-toggle border-0 bg-transparent fs-5" title="Español">🇪🇸</button>';
+        desktopHeader.insertBefore(wrap, desktopHeader.children[1] || null);
+      }
+
+      // mobile dropdown: try to add at end of dropdown menu
+      const dd = document.getElementById("dropdown-menu");
+      if (dd && !document.querySelector(".lang-toggle")) {
+        const node = document.createElement("div");
+        node.className = "pe-2 mt-2 d-flex justify-content-end";
+        node.innerHTML =
+          '<button id="lang-en" class="lang-toggle border-0 bg-transparent fs-5 me-2" title="English">🇬🇧</button><button id="lang-es" class="lang-toggle border-0 bg-transparent fs-5" title="Español">🇪🇸</button>';
+        dd.appendChild(node);
+      }
+    }
+
+    applySelectorTranslations(saved);
+    injectToggleUI();
+    buildMarquee("text-banner");
+    buildMarquee("text-banner-2");
+
+    // Hook UI buttons (attach to all .lang-toggle elements)
+    const langButtons = document.querySelectorAll(".lang-toggle");
+    let currentLang = localStorage.getItem(STORAGE_KEY) || "en";
+    function updateFlags() {
+      langButtons.forEach((btn) => {
+        const btnLang =
+          btn.getAttribute("data-lang") ||
+          (btn.id === "lang-en" ? "en" : btn.id === "lang-es" ? "es" : null);
+        if (!btnLang) return;
+        btn.style.display = btnLang === currentLang ? "none" : "inline-block";
+      });
+    }
+    updateFlags();
+    langButtons.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        const lang = btn.id.split("-")[1];
+        localStorage.setItem(STORAGE_KEY, lang);
+
+        // FIX: sincroniza CSS inmediato
+        document.documentElement.setAttribute("data-lang", lang);
+
+        applyTranslations(translations, lang);
+        applySelectorTranslations(lang);
+        buildMarquee("text-banner");
+        buildMarquee("text-banner-2");
+        currentLang = lang;
+        updateFlags();
+      });
+    });
+  });
+})();
+
+// --- Marquee banner ---
+function buildMarquee(trackId) {
+  const track = document.getElementById(trackId);
+  if (!track) return;
+
+  // Get the template unit — can be loose (first run) or inside a set (language change)
+  const template = track.querySelector(".marquee-unit");
+  if (!template) return;
+
+  // 1. Remove all previous sets and loose units, reset animation
+  track.querySelectorAll(".marquee-set").forEach((el) => el.remove());
+  track.querySelectorAll(".marquee-unit").forEach((el) => el.remove());
+  track.style.animation = "none";
+  track.style.transform = "";
+  void track.offsetWidth;
+
+  // 2. Measure unit width with a clean single insert
+  track.appendChild(template);
+  void track.offsetWidth;
+  const unitWidth = template.getBoundingClientRect().width;
+  track.removeChild(template);
+  if (unitWidth <= 0) return;
+
+  // 3. Build two identical sets — setB is the seamless "second copy"
+  const unitsNeeded = Math.ceil(window.innerWidth / unitWidth) + 2;
+
+  function buildSet() {
+    const set = document.createElement("div");
+    set.className = "marquee-set";
+    for (let i = 0; i < unitsNeeded; i++) {
+      const unit = template.cloneNode(true);
+      if (i > 0) unit.setAttribute("aria-hidden", "true");
+      set.appendChild(unit);
+    }
+    return set;
+  }
+
+  const setA = buildSet();
+  const setB = buildSet();
+  setB.setAttribute("aria-hidden", "true");
+  track.appendChild(setA);
+  track.appendChild(setB);
+
+  // 4. Measure EXACT pixel width of one set after layout
+  void track.offsetWidth;
+  const setWidth = setA.getBoundingClientRect().width;
+
+  // Pixel offset — no subpixel ambiguity, seamless reset guaranteed
+  track.style.setProperty("--marquee-offset", `-${Math.round(setWidth)}px`);
+
+  const duration = setWidth / 40;
+  track.style.animation = `marquee-slide ${duration.toFixed(3)}s linear infinite`;
+}

@@ -1,7 +1,85 @@
+/* YouTube click-to-load facade (avoids loading the embed until requested) */
+.yt-facade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.yt-facade img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.yt-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(23, 120, 79, 0.9);
+  color: #e7e7e7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* Local video: cover in the container (optionally shifted), full frame in fullscreen */
+.local-video {
+  object-fit: cover;
+  object-position: var(--video-pos, center);
+}
+
+.local-video:fullscreen {
+  object-fit: contain;
+  object-position: center;
+}
+
+.local-video:-webkit-full-screen {
+  object-fit: contain;
+  object-position: center;
+}
+
+.yt-facade:hover .yt-play-btn {
+  background: #17784f;
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+/* Efecto de escala en hover para los botones de banderas de idioma */
+.lang-toggle .lang-flag {
+  transition:
+    transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lang-toggle:hover .lang-flag {
+  transform: scale(1.18);
+  box-shadow:
+    0 4px 18px 0 rgba(30, 60, 90, 0.18),
+    0 1.5px 6px 0 rgba(30, 60, 90, 0.12);
+}
+@media screen and (max-width: 767px) {
+  .lang-flag {
+    height: 20px !important;
+    width: 20px !important;
+  }
+}
 /* ------ Importing fonts ----- */
 @font-face {
   font-family: "Satoshi-Variable";
-  src: url("../fonts/Satoshi-Variable.woff2") format("woff2"),
+  src:
+    url("../fonts/Satoshi-Variable.woff2") format("woff2"),
     url("../fonts/Satoshi-Variable.woff") format("woff"),
     url("../fonts/Satoshi-Variable.ttf") format("truetype");
   font-weight: 300 900;
@@ -10,7 +88,8 @@
 }
 @font-face {
   font-family: "Satoshi-VariableItalic";
-  src: url("../fonts/Satoshi-VariableItalic.woff2") format("woff2"),
+  src:
+    url("../fonts/Satoshi-VariableItalic.woff2") format("woff2"),
     url("../fonts/Satoshi-VariableItalic.woff") format("woff"),
     url("../fonts/Satoshi-VariableItalic.ttf") format("truetype");
   font-weight: 300 900;
@@ -19,7 +98,8 @@
 }
 @font-face {
   font-family: "Magilio";
-  src: url("../fonts/Magilio.woff2") format("woff2"),
+  src:
+    url("../fonts/Magilio.woff2") format("woff2"),
     url("../fonts/Magilio.woff") format("woff"),
     url("../fonts/Magilio.ttf") format("truetype");
   font-display: swap;
@@ -27,7 +107,8 @@
 }
 @font-face {
   font-family: "Magilio-slant";
-  src: url("../fonts/Magilio-slant.woff2") format("woff2"),
+  src:
+    url("../fonts/Magilio-slant.woff2") format("woff2"),
     url("../fonts/Magilio-slant.woff") format("woff"),
     url("../fonts/Magilio-slant.ttf") format("truetype");
   font-display: swap;
@@ -40,10 +121,6 @@
 }
 
 /* ------ Text Selection color ------ */
-::-moz-selection {
-  background-color: #17784f;
-  color: #e7e7e7;
-}
 ::selection {
   background-color: #17784f;
   color: #e7e7e7;
@@ -81,31 +158,25 @@
 }
 
 .fs-small {
-  font-size: 10px;
+  font-size: 14px;
 }
 
 .fs-medium {
-  font-size: 13px;
+  font-size: 16px;
 }
 
 .fs-big {
-  font-size: 15px;
+  font-size: 18px;
 }
 
 .magilio-heading {
   font-family: "Magilio", sans-serif;
-  font-size: 50px;
+  font-size: 65px;
 }
 
 .magilio-heading-small {
   font-family: "Magilio", sans-serif;
-  font-size: 25px;
-}
-
-/* ----- Extra Classes ----- */
-
-.dashed-border {
-  border: dashed;
+  font-size: 35px;
 }
 
 /* ------ Colors ----- */
@@ -165,12 +236,28 @@ a.green:hover {
 }
 
 .header-background {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask2168%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='url(%26quot%3b%23SvgjsRadialGradient2169%26quot%3b)'%3e%3c/rect%3e%3cpath d='M187.16 419.03 a102.22 102.22 0 1 0 204.44 0 a102.22 102.22 0 1 0 -204.44 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1070.58 68.83 a122.44 122.44 0 1 0 244.88 0 a122.44 122.44 0 1 0 -244.88 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M272.15 301.31 a150.53 150.53 0 1 0 301.06 0 a150.53 150.53 0 1 0 -301.06 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M-81.67 532.98 a106.69 106.69 0 1 0 213.38 0 a106.69 106.69 0 1 0 -213.38 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask2168'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cradialGradient cx='0%25' cy='50%25' r='1466.97' gradientUnits='userSpaceOnUse' id='SvgjsRadialGradient2169'%3e%3cstop stop-color='rgba(255%2c 255%2c 255%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(231%2c 231%2c 231%2c 1)' offset='0.78'%3e%3c/stop%3e%3c/radialGradient%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask2168%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='url(%26quot%3b%23SvgjsRadialGradient2169%26quot%3b)'%3e%3c/rect%3e%3cpath d='M187.16 419.03 a102.22 102.22 0 1 0 204.44 0 a102.22 102.22 0 1 0 -204.44 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1070.58 68.83 a122.44 122.44 0 1 0 244.88 0 a122.44 122.44 0 1 0 -244.88 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M272.15 301.31 a150.53 150.53 0 1 0 301.06 0 a150.53 150.53 0 1 0 -301.06 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M-81.67 532.98 a106.69 106.69 0 1 0 213.38 0 a106.69 106.69 0 1 0 -213.38 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask2168'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cradialGradient cx='0%25' cy='50%25' r='1466.97' gradientUnits='userSpaceOnUse' id='SvgjsRadialGradient2169'%3e%3cstop stop-color='rgba(255%2c 255%2c 255%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(231%2c 231%2c 231%2c 1)' offset='0.78'%3e%3c/stop%3e%3c/radialGradient%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-35px%2c -25px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s ease-in-out infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-28px%2c -28px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s ease-in-out infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(22px%2c -32px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s ease-in-out infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
   background-size: cover;
+  animation: backgroundPulse 10s ease-in-out infinite;
+}
+
+@keyframes backgroundPulse {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.05);
+  }
 }
 
 .body-background {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1500' height='1300' preserveAspectRatio='none' viewBox='0 0 1500 1300'%3e%3cg mask='url(%26quot%3b%23SvgjsMask2958%26quot%3b)' fill='none'%3e%3crect width='1500' height='1300' x='0' y='0' fill='url(%26quot%3b%23SvgjsLinearGradient2959%26quot%3b)'%3e%3c/rect%3e%3cpath d='M557.27 1099.6 a231.84 231.84 0 1 0 463.68 0 a231.84 231.84 0 1 0 -463.68 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M-229.04 1242 a335.74 335.74 0 1 0 671.48 0 a335.74 335.74 0 1 0 -671.48 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M393.33 420.97 a332.02 332.02 0 1 0 664.04 0 a332.02 332.02 0 1 0 -664.04 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M678.37 867.29 a324.46 324.46 0 1 0 648.92 0 a324.46 324.46 0 1 0 -648.92 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float1'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask2958'%3e%3crect width='1500' height='1300' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='96.67%25' y1='103.85%25' x2='3.33%25' y2='-3.85%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient2959'%3e%3cstop stop-color='rgba(15%2c 80%2c 53%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(0%2c 0%2c 0%2c 1)' offset='0.99'%3e%3c/stop%3e%3c/linearGradient%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1500' height='1300' preserveAspectRatio='none' viewBox='0 0 1500 1300'%3e%3cg mask='url(%26quot%3b%23SvgjsMask2958%26quot%3b)' fill='none'%3e%3crect width='1500' height='1300' x='0' y='0' fill='url(%26quot%3b%23SvgjsLinearGradient2959%26quot%3b)'%3e%3c/rect%3e%3cpath d='M557.27 1099.6 a231.84 231.84 0 1 0 463.68 0 a231.84 231.84 0 1 0 -463.68 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M-229.04 1242 a335.74 335.74 0 1 0 671.48 0 a335.74 335.74 0 1 0 -671.48 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M393.33 420.97 a332.02 332.02 0 1 0 664.04 0 a332.02 332.02 0 1 0 -664.04 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M678.37 867.29 a324.46 324.46 0 1 0 648.92 0 a324.46 324.46 0 1 0 -648.92 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float1'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask2958'%3e%3crect width='1500' height='1300' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='96.67%25' y1='103.85%25' x2='3.33%25' y2='-3.85%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient2959'%3e%3cstop stop-color='rgba(15%2c 80%2c 53%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(0%2c 0%2c 0%2c 1)' offset='0.99'%3e%3c/stop%3e%3c/linearGradient%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-35px%2c -25px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s ease-in-out infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-28px%2c -28px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s ease-in-out infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(22px%2c -32px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s ease-in-out infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
+  background-size: cover;
+}
+
+.projects-background {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1500' height='1300' preserveAspectRatio='none' viewBox='0 0 1500 1300'%3e%3cg mask='url(%26quot%3b%23SvgjsMask2958%26quot%3b)' fill='none'%3e%3crect width='1500' height='1300' x='0' y='0' fill='url(%26quot%3b%23SvgjsLinearGradient2959%26quot%3b)'%3e%3c/rect%3e%3cpath d='M557.27 1099.6 a231.84 231.84 0 1 0 463.68 0 a231.84 231.84 0 1 0 -463.68 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M-229.04 1242 a335.74 335.74 0 1 0 671.48 0 a335.74 335.74 0 1 0 -671.48 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M393.33 420.97 a332.02 332.02 0 1 0 664.04 0 a332.02 332.02 0 1 0 -664.04 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M678.37 867.29 a324.46 324.46 0 1 0 648.92 0 a324.46 324.46 0 1 0 -648.92 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float1'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask2958'%3e%3crect width='1500' height='1300' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='96.67%25' y1='103.85%25' x2='3.33%25' y2='-3.85%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient2959'%3e%3cstop stop-color='rgba(30%2c 95%2c 140%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(0%2c 0%2c 0%2c 1)' offset='0.99'%3e%3c/stop%3e%3c/linearGradient%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-35px%2c -25px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s ease-in-out infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-28px%2c -28px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s ease-in-out infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(22px%2c -32px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s ease-in-out infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
   background-size: cover;
 }
 
@@ -204,7 +291,7 @@ a.logo:hover {
 }
 
 .dd-menu.active {
-  height: 90px;
+  height: 175px;
 }
 
 .active-link {
@@ -237,9 +324,51 @@ a.logo:hover {
   animation: fadeInRight 0.1s;
 }
 
+.terragene-visit-link {
+  color: #9bc1bc;
+  transition: color 0.2s ease;
+}
+
+.terragene-visit-link:hover {
+  color: #17784f;
+}
+
+.iph-link {
+  background-color: #9bc1bc;
+  color: #333333;
+  padding: 5px 14px;
+  border-radius: 20px;
+  display: inline-block;
+  font-size: 0.75rem;
+  font-family: "Satoshi-Variable", sans-serif;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+}
+
+.iph-link:hover {
+  background-color: #17784f;
+  color: #e7e7e7;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.iph-link.no-lift:hover {
+  transform: none;
+}
+
+.iph-logo {
+  max-width: 120px;
+}
+
+@media (min-width: 768px) {
+  .iph-logo {
+    max-width: 160px;
+  }
+}
+
 .presentation-description {
   font-family: "Satoshi-Variable", sans-serif;
-  font-size: 15px;
+  font-size: 18px;
 }
 
 .s-behind {
@@ -281,16 +410,46 @@ a.logo:hover {
   background-color: #04160f;
   color: #e7e7e7;
   overflow: hidden;
-  height: 23px;
-  position: relative;
+  height: 37px;
 }
 
-.text-banner {
-  background-color: #04160f;
-  font-weight: 600;
+.marquee-track {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  will-change: transform;
+}
+
+.marquee-set {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.marquee-unit {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 4px;
   white-space: nowrap;
-  display: inline-block;
-  position: absolute;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.banner-dot {
+  font-size: 10px;
+  opacity: 0.45;
+  line-height: 1;
+}
+
+@keyframes marquee-slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(var(--marquee-offset));
+  }
 }
 
 .skills-background {
@@ -311,6 +470,8 @@ a.logo:hover {
 .contact-button {
   background-color: #17784f;
   color: #e7e7e7;
+  width: 40px;
+  height: 40px;
   transition: 0.2s;
 }
 .contact-button:hover {
@@ -332,7 +493,7 @@ a.logo:hover {
 }
 
 .works-background {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1600' height='1000' preserveAspectRatio='none' viewBox='0 0 1600 1000'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1236%26quot%3b)' fill='none'%3e%3crect width='1600' height='1000' x='0' y='0' fill='url(%26quot%3b%23SvgjsRadialGradient1237%26quot%3b)'%3e%3c/rect%3e%3cpath d='M266.94 996.42 a223.62 223.62 0 1 0 447.24 0 a223.62 223.62 0 1 0 -447.24 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M-124.66 663.93 a192.1 192.1 0 1 0 384.2 0 a192.1 192.1 0 1 0 -384.2 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M47.09 579.79 a226.94 226.94 0 1 0 453.88 0 a226.94 226.94 0 1 0 -453.88 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M738 454.54 a234.47 234.47 0 1 0 468.94 0 a234.47 234.47 0 1 0 -468.94 0z' fill='rgba(155%2c 193%2c 188%2c 0.09)' class='triangle-float2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1236'%3e%3crect width='1600' height='1000' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cradialGradient cx='50%25' cy='50%25' r='943.4' gradientUnits='userSpaceOnUse' id='SvgjsRadialGradient1237'%3e%3cstop stop-color='rgba(0%2c 48%2c 23%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(0%2c 0%2c 0%2c 1)' offset='0.92'%3e%3c/stop%3e%3c/radialGradient%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1600' height='1000' preserveAspectRatio='none' viewBox='0 0 1600 1000'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1236%26quot%3b)' fill='none'%3e%3crect width='1600' height='1000' x='0' y='0' fill='url(%26quot%3b%23SvgjsRadialGradient1237%26quot%3b)'%3e%3c/rect%3e%3cpath d='M266.94 996.42 a223.62 223.62 0 1 0 447.24 0 a223.62 223.62 0 1 0 -447.24 0z' fill='rgba(155%2c 193%2c 188%2c 0.12)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M-124.66 663.93 a192.1 192.1 0 1 0 384.2 0 a192.1 192.1 0 1 0 -384.2 0z' fill='rgba(155%2c 193%2c 188%2c 0.12)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M47.09 579.79 a226.94 226.94 0 1 0 453.88 0 a226.94 226.94 0 1 0 -453.88 0z' fill='rgba(155%2c 193%2c 188%2c 0.12)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M738 454.54 a234.47 234.47 0 1 0 468.94 0 a234.47 234.47 0 1 0 -468.94 0z' fill='rgba(155%2c 193%2c 188%2c 0.12)' class='triangle-float2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1236'%3e%3crect width='1600' height='1000' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cradialGradient cx='50%25' cy='50%25' r='943.4' gradientUnits='userSpaceOnUse' id='SvgjsRadialGradient1237'%3e%3cstop stop-color='rgba(0%2c 48%2c 23%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(0%2c 0%2c 0%2c 1)' offset='0.92'%3e%3c/stop%3e%3c/radialGradient%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0) rotate(0deg)%7d 33%25%7btransform: translate(-15px%2c -10px) rotate(3deg)%7d 66%25%7btransform: translate(10px%2c -15px) rotate(-3deg)%7d 100%25%7btransform: translate(0%2c 0) rotate(0deg)%7d %7d .triangle-float1 %7b animation: float1 12s ease-in-out infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0) rotate(0deg)%7d 33%25%7btransform: translate(-12px%2c 15px) rotate(-4deg)%7d 66%25%7btransform: translate(15px%2c 10px) rotate(4deg)%7d 100%25%7btransform: translate(0%2c 0) rotate(0deg)%7d %7d .triangle-float2 %7b animation: float2 10s ease-in-out infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0) rotate(0deg) scale(1)%7d 33%25%7btransform: translate(12px%2c -18px) rotate(5deg) scale(1.02)%7d 66%25%7btransform: translate(-10px%2c 12px) rotate(-5deg) scale(0.98)%7d 100%25%7btransform: translate(0%2c 0) rotate(0deg) scale(1)%7d %7d .triangle-float3 %7b animation: float3 14s ease-in-out infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
   background-size: cover;
   min-height: 100vh;
 }
@@ -355,6 +516,48 @@ a.logo:hover {
   z-index: 2;
   border-bottom: 1px solid transparent;
   transition: width 0.2s ease-in-out;
+}
+
+/* Language toggle styles */
+.lang-toggle {
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+  background: transparent;
+  border: none;
+  color: inherit;
+  padding: 0;
+  border-radius: 0;
+}
+
+.lang-toggle:focus {
+  outline: none;
+}
+
+.active-lang {
+  background: rgba(155, 193, 188, 0.12);
+  border-radius: 50%;
+  box-shadow: none;
+}
+
+.lang-wrapper {
+  /* Banderas de idioma en header desktop */
+  .lang-flag {
+    height: 32px;
+    width: 32px;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 50%;
+    object-fit: cover;
+    border: none;
+    box-shadow: none;
+  }
+  .lang-flag:hover {
+    border: none;
+  }
+  display: flex;
+  gap: 6px;
+  align-items: center;
 }
 
 .subrayado-works:hover::after {
@@ -386,6 +589,242 @@ a.logo:hover {
   color: #333333;
 }
 
+.experience-background {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1600' height='1000' preserveAspectRatio='none' viewBox='0 0 1600 1000'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1236%26quot%3b)' fill='none'%3e%3crect width='1600' height='1000' x='0' y='0' fill='url(%26quot%3b%23SvgjsRadialGradient1237%26quot%3b)'%3e%3c/rect%3e%3cpath d='M266.94 996.42 a223.62 223.62 0 1 0 447.24 0 a223.62 223.62 0 1 0 -447.24 0z' fill='rgba(155%2c 193%2c 188%2c 0.12)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M-124.66 663.93 a192.1 192.1 0 1 0 384.2 0 a192.1 192.1 0 1 0 -384.2 0z' fill='rgba(155%2c 193%2c 188%2c 0.12)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M47.09 579.79 a226.94 226.94 0 1 0 453.88 0 a226.94 226.94 0 1 0 -453.88 0z' fill='rgba(155%2c 193%2c 188%2c 0.12)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M738 454.54 a234.47 234.47 0 1 0 468.94 0 a234.47 234.47 0 1 0 -468.94 0z' fill='rgba(155%2c 193%2c 188%2c 0.12)' class='triangle-float2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1236'%3e%3crect width='1600' height='1000' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cradialGradient cx='50%25' cy='50%25' r='943.4' gradientUnits='userSpaceOnUse' id='SvgjsRadialGradient1237'%3e%3cstop stop-color='rgba(30%2c 95%2c 140%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(0%2c 0%2c 0%2c 1)' offset='0.92'%3e%3c/stop%3e%3c/radialGradient%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0) rotate(0deg)%7d 33%25%7btransform: translate(-15px%2c -10px) rotate(3deg)%7d 66%25%7btransform: translate(10px%2c -15px) rotate(-3deg)%7d 100%25%7btransform: translate(0%2c 0) rotate(0deg)%7d %7d .triangle-float1 %7b animation: float1 12s ease-in-out infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0) rotate(0deg)%7d 33%25%7btransform: translate(-12px%2c 15px) rotate(-4deg)%7d 66%25%7btransform: translate(15px%2c 10px) rotate(4deg)%7d 100%25%7btransform: translate(0%2c 0) rotate(0deg)%7d %7d .triangle-float2 %7b animation: float2 10s ease-in-out infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0) rotate(0deg) scale(1)%7d 33%25%7btransform: translate(12px%2c -18px) rotate(5deg) scale(1.02)%7d 66%25%7btransform: translate(-10px%2c 12px) rotate(-5deg) scale(0.98)%7d 100%25%7btransform: translate(0%2c 0) rotate(0deg) scale(1)%7d %7d .triangle-float3 %7b animation: float3 14s ease-in-out infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.case-studies-background {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1600' height='1000' preserveAspectRatio='none' viewBox='0 0 1600 1000'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1236%26quot%3b)' fill='none'%3e%3crect width='1600' height='1000' x='0' y='0' fill='url(%26quot%3b%23SvgjsRadialGradient1237%26quot%3b)'%3e%3c/rect%3e%3cpath d='M266.94 996.42 a223.62 223.62 0 1 0 447.24 0 a223.62 223.62 0 1 0 -447.24 0z' fill='rgba(155%2c 193%2c 188%2c 0.12)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M-124.66 663.93 a192.1 192.1 0 1 0 384.2 0 a192.1 192.1 0 1 0 -384.2 0z' fill='rgba(155%2c 193%2c 188%2c 0.12)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M47.09 579.79 a226.94 226.94 0 1 0 453.88 0 a226.94 226.94 0 1 0 -453.88 0z' fill='rgba(155%2c 193%2c 188%2c 0.12)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M738 454.54 a234.47 234.47 0 1 0 468.94 0 a234.47 234.47 0 1 0 -468.94 0z' fill='rgba(155%2c 193%2c 188%2c 0.12)' class='triangle-float2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1236'%3e%3crect width='1600' height='1000' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cradialGradient cx='50%25' cy='50%25' r='943.4' gradientUnits='userSpaceOnUse' id='SvgjsRadialGradient1237'%3e%3cstop stop-color='rgba(93%2c 58%2c 155%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(0%2c 0%2c 0%2c 1)' offset='0.92'%3e%3c/stop%3e%3c/radialGradient%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0) rotate(0deg)%7d 33%25%7btransform: translate(-15px%2c -10px) rotate(3deg)%7d 66%25%7btransform: translate(10px%2c -15px) rotate(-3deg)%7d 100%25%7btransform: translate(0%2c 0) rotate(0deg)%7d %7d .triangle-float1 %7b animation: float1 12s ease-in-out infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0) rotate(0deg)%7d 33%25%7btransform: translate(-12px%2c 15px) rotate(-4deg)%7d 66%25%7btransform: translate(15px%2c 10px) rotate(4deg)%7d 100%25%7btransform: translate(0%2c 0) rotate(0deg)%7d %7d .triangle-float2 %7b animation: float2 10s ease-in-out infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0) rotate(0deg) scale(1)%7d 33%25%7btransform: translate(12px%2c -18px) rotate(5deg) scale(1.02)%7d 66%25%7btransform: translate(-10px%2c 12px) rotate(-5deg) scale(0.98)%7d 100%25%7btransform: translate(0%2c 0) rotate(0deg) scale(1)%7d %7d .triangle-float3 %7b animation: float3 14s ease-in-out infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+@media (max-width: 767px) {
+  /* background-attachment: fixed is unreliable on mobile browsers */
+  .case-studies-background {
+    background-attachment: scroll;
+  }
+}
+
+.experience-header-link:hover {
+  color: #9bc1bc;
+  transition: 0.3s;
+}
+
+.subrayado-experience {
+  position: relative;
+}
+
+.subrayado-experience::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  border-bottom: 1px solid transparent;
+  transition: width 0.2s ease-in-out;
+}
+
+.subrayado-experience:hover::after {
+  width: 100%;
+  border-bottom: 2px solid #17784f;
+  animation: fadeInRight 0.1s;
+}
+
+.experience-overflow {
+  background-color: rgba(18, 18, 18, 0.5019607843);
+  position: relative;
+  height: 80vh;
+  overflow: auto;
+  box-shadow: inset 0px 0px 20px 0px rgba(155, 193, 188, 0.5019607843);
+}
+
+.experience-overflow::-webkit-scrollbar {
+  display: none;
+}
+
+/* ---------- Freelance Icon Badge ---------- */
+.freelance-icon-badge {
+  width: 80px;
+  height: 80px;
+  border-radius: 16px;
+  background: linear-gradient(
+    135deg,
+    rgba(23, 120, 79, 0.18) 0%,
+    rgba(155, 193, 188, 0.08) 100%
+  );
+  border: 1px solid rgba(155, 193, 188, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #9bc1bc;
+}
+
+/* ---------- Experience Tab Switcher ---------- */
+.exp-tabs {
+  border-bottom: 1px solid rgba(155, 193, 188, 0.2);
+  flex-wrap: wrap;
+  row-gap: 0.25rem;
+}
+
+.exp-tab-btn {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 0.4rem 1.25rem;
+  margin-bottom: -1px;
+  color: #a5a5a5;
+  font-family: "Satoshi-Variable", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+@media (max-width: 575px) {
+  .exp-tab-btn {
+    padding: 0.4rem 0.75rem;
+    font-size: 13px;
+  }
+}
+
+.exp-tab-btn:hover {
+  color: #e7e7e7;
+}
+
+.exp-tab-btn.active {
+  color: #9bc1bc;
+  border-bottom-color: #17784f;
+}
+
+.exp-panel {
+  display: none;
+}
+
+.exp-panel.active {
+  display: block;
+  animation: fadeInPanel 0.38s ease both;
+}
+
+@keyframes fadeInPanel {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Freelance Client Cards ---------- */
+.exp-clients-label {
+  border-bottom: 1px solid rgba(155, 193, 188, 0.15);
+  padding-bottom: 0.5rem;
+}
+
+.freelance-client-card {
+  background-color: rgba(18, 18, 18, 0.45);
+  border: 1px solid rgba(155, 193, 188, 0.12);
+  transition:
+    transform 0.22s ease,
+    border-color 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.freelance-client-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(155, 193, 188, 0.35);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+}
+
+.client-img-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 150px;
+}
+
+.client-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.3s ease;
+}
+
+.freelance-client-card:hover .client-img {
+  transform: scale(1.05);
+}
+
+.client-img-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(23, 120, 79, 0.12) 0%,
+    rgba(18, 18, 18, 0.85) 100%
+  );
+}
+
+.client-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.freelance-client-card:hover .client-overlay {
+  opacity: 1;
+}
+
+.client-card-body {
+  background-color: rgba(18, 18, 18, 0.3);
+}
+
+.tech-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  color: #9bc1bc;
+  background: rgba(155, 193, 188, 0.08);
+  border: 1px solid rgba(155, 193, 188, 0.2);
+  border-radius: 4px;
+  padding: 2px 7px;
+  margin-right: 4px;
+  margin-bottom: 4px;
+}
+
+.client-quote {
+  font-style: italic;
+  color: #a5a5a5;
+  line-height: 1.55;
+  padding-left: 0.75rem;
+  border-left: 2px solid rgba(23, 120, 79, 0.5);
+  margin-bottom: 0;
+}
+
+.client-signature {
+  display: block;
+  font-style: normal;
+  font-weight: 600;
+  color: #9bc1bc;
+  margin-top: 0.5rem;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+}
+
 .contact-logo {
   color: #354052;
   cursor: pointer;
@@ -398,7 +837,7 @@ a.logo:hover {
 }
 
 .contact-background {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='1000' preserveAspectRatio='none' viewBox='0 0 1440 1000'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1463%26quot%3b)' fill='none'%3e%3crect width='1440' height='1000' x='0' y='0' fill='url(%26quot%3b%23SvgjsLinearGradient1464%26quot%3b)'%3e%3c/rect%3e%3cpath d='M-283.03 735.54 a324.63 324.63 0 1 0 649.26 0 a324.63 324.63 0 1 0 -649.26 0z' fill='rgba(23%2c 120%2c 79%2c 0.05)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M960.99 41.65 a275.89 275.89 0 1 0 551.78 0 a275.89 275.89 0 1 0 -551.78 0z' fill='rgba(23%2c 120%2c 79%2c 0.05)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M675.21 641.07 a227.93 227.93 0 1 0 455.86 0 a227.93 227.93 0 1 0 -455.86 0z' fill='rgba(23%2c 120%2c 79%2c 0.05)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M898.38 840.96 a297.59 297.59 0 1 0 595.18 0 a297.59 297.59 0 1 0 -595.18 0z' fill='rgba(23%2c 120%2c 79%2c 0.05)' class='triangle-float3'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1463'%3e%3crect width='1440' height='1000' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='92.36%25' y1='-11%25' x2='7.64%25' y2='111%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1464'%3e%3cstop stop-color='rgba(227%2c 234%2c 232%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(155%2c 193%2c 188%2c 1)' offset='1'%3e%3c/stop%3e%3c/linearGradient%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='1000' preserveAspectRatio='none' viewBox='0 0 1440 1000'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1463%26quot%3b)' fill='none'%3e%3crect width='1440' height='1000' x='0' y='0' fill='url(%26quot%3b%23SvgjsLinearGradient1464%26quot%3b)'%3e%3c/rect%3e%3cpath d='M-283.03 735.54 a324.63 324.63 0 1 0 649.26 0 a324.63 324.63 0 1 0 -649.26 0z' fill='rgba(23%2c 120%2c 79%2c 0.05)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M960.99 41.65 a275.89 275.89 0 1 0 551.78 0 a275.89 275.89 0 1 0 -551.78 0z' fill='rgba(23%2c 120%2c 79%2c 0.05)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M675.21 641.07 a227.93 227.93 0 1 0 455.86 0 a227.93 227.93 0 1 0 -455.86 0z' fill='rgba(23%2c 120%2c 79%2c 0.05)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M898.38 840.96 a297.59 297.59 0 1 0 595.18 0 a297.59 297.59 0 1 0 -595.18 0z' fill='rgba(23%2c 120%2c 79%2c 0.05)' class='triangle-float3'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1463'%3e%3crect width='1440' height='1000' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='92.36%25' y1='-11%25' x2='7.64%25' y2='111%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1464'%3e%3cstop stop-color='rgba(227%2c 234%2c 232%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(155%2c 193%2c 188%2c 1)' offset='1'%3e%3c/stop%3e%3c/linearGradient%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-35px%2c -25px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s ease-in-out infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-28px%2c -28px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s ease-in-out infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(22px%2c -32px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s ease-in-out infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
   background-size: cover;
   min-height: 100vh;
 }
@@ -411,6 +850,12 @@ a.logo:hover {
 .contact-profile {
   background-color: rgba(23, 120, 79, 0.4);
   box-shadow: inset 0px 0px 15px 0px #354052;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.contact-profile:hover {
+  transform: scale(1.1);
 }
 
 .magilio-contact {
@@ -423,7 +868,7 @@ a.logo:hover {
   font-size: 18px;
   padding: 14px 19px;
   box-shadow: inset 0px 0px 10px 0px rgba(53, 64, 82, 0.5882352941);
-  transition: 0.5s;
+  transition: 0.2s;
 }
 .contact-link:hover {
   font-size: 22px;
@@ -436,7 +881,7 @@ a.logo:hover {
   font-size: 16px;
   padding: 15px 15px;
   box-shadow: inset 0px 0px 10px 0px rgba(53, 64, 82, 0.5882352941);
-  transition: 0.5s;
+  transition: 0.2s;
 }
 .contact-link2:hover {
   font-size: 20px;
@@ -446,88 +891,85 @@ a.logo:hover {
 
 @media screen and (min-width: 468px) {
   .magilio-heading {
-    font-size: 60px;
-  }
-  .magilio-heading-small {
-    font-size: 30px;
-  }
-  .s-front {
-    left: 4px;
-    top: -7px;
-  }
-  .magilio-contact {
-    font-size: 50px;
-  }
-}
-@media screen and (min-width: 576px) {
-  .fs-small {
-    font-size: 12px;
-  }
-  .fs-medium {
-    font-size: 14px;
-  }
-  .fs-big {
-    font-size: 16px;
-  }
-  a.logo,
-  .contact-logo {
-    font-size: 25px;
-  }
-  .magilio-heading {
-    font-size: 80px;
+    font-size: 75px;
   }
   .magilio-heading-small {
     font-size: 40px;
   }
   .s-front {
     left: 4px;
-    top: -9px;
-  }
-  .text-banner-container {
-    height: 34px;
-  }
-  .heading-contact {
-    font-size: 28px;
+    top: -7px;
   }
   .magilio-contact {
     font-size: 60px;
   }
+}
+@media screen and (min-width: 576px) {
+  .fs-small {
+    font-size: 15px;
+  }
+  .fs-medium {
+    font-size: 17px;
+  }
+  .fs-big {
+    font-size: 19px;
+  }
+  a.logo,
+  .contact-logo {
+    font-size: 28px;
+  }
+  .magilio-heading {
+    font-size: 90px;
+  }
+  .magilio-heading-small {
+    font-size: 50px;
+  }
+  .s-front {
+    left: 4px;
+    top: -9px;
+  }
+  .heading-contact {
+    font-size: 32px;
+  }
+  .magilio-contact {
+    font-size: 70px;
+  }
   .contact-link {
-    font-size: 22px;
+    font-size: 25px;
     padding: 14px 21px;
   }
   .contact-link:hover {
-    font-size: 28px;
+    font-size: 30px;
     padding: 15px 23px;
   }
   .contact-link2 {
-    font-size: 20px;
+    font-size: 23px;
     padding: 16px 16px;
   }
   .contact-link2:hover {
-    font-size: 25px;
+    font-size: 28px;
     padding: 18px 18px;
   }
 }
 @media screen and (min-width: 768px) {
   .fs-small {
-    font-size: 14px;
-  }
-  .fs-medium {
     font-size: 16px;
   }
-  .fs-big {
+  .fs-medium {
     font-size: 18px;
+  }
+  .fs-big {
+    font-size: 20px;
   }
   a.logo,
   .contact-logo {
-    font-size: 27px;
+    font-size: 30px;
   }
   .magilio-heading {
-    font-size: 85px;
+    font-size: 100px;
   }
   .magilio-heading-small {
-    font-size: 45px;
+    font-size: 60px;
   }
   .s-front {
     left: 5px;
@@ -547,69 +989,69 @@ a.logo:hover {
     filter: grayscale(0%);
   }
   .magilio-contact {
-    font-size: 70px;
+    font-size: 85px;
   }
   .contact-link {
-    font-size: 22px;
+    font-size: 25px;
     padding: 14px 21px;
   }
   .contact-link:hover {
-    font-size: 28px;
+    font-size: 30px;
     padding: 15px 23px;
   }
   .contact-link2 {
-    font-size: 20px;
+    font-size: 23px;
     padding: 16px 16px;
   }
   .contact-link2:hover {
-    font-size: 25px;
+    font-size: 28px;
     padding: 18px 18px;
   }
 }
 @media screen and (min-width: 992px) {
   .fs-small {
-    font-size: 15px;
+    font-size: 16px;
   }
   .fs-medium {
-    font-size: 18px;
+    font-size: 19px;
   }
   .fs-big {
-    font-size: 20px;
+    font-size: 21px;
   }
   a.logo,
   .contact-logo {
-    font-size: 30px;
+    font-size: 33px;
   }
   .magilio-heading {
-    font-size: 110px;
+    font-size: 120px;
   }
   .magilio-heading-small {
-    font-size: 55px;
+    font-size: 65px;
   }
   .s-front {
     left: 6px;
     top: -12px;
   }
   .magilio-contact {
-    font-size: 80px;
+    font-size: 90px;
   }
   .heading-contact {
-    font-size: 35px;
+    font-size: 38px;
   }
   .contact-link {
-    font-size: 22px;
+    font-size: 25px;
     padding: 15px 21px;
   }
   .contact-link:hover {
-    font-size: 28px;
+    font-size: 30px;
     padding: 15px 23px;
   }
   .contact-link2 {
-    font-size: 20px;
+    font-size: 23px;
     padding: 16px 16px;
   }
   .contact-link2:hover {
-    font-size: 25px;
+    font-size: 28px;
     padding: 18px 18px;
   }
 }
@@ -693,4 +1135,744 @@ a.logo:hover {
   .heading-contact {
     font-size: 50px;
   }
-} /*# sourceMappingURL=styles.css.map */
+}
+
+/* Projects title mobile adjustments */
+@media screen and (max-width: 767px) {
+  .projects-title {
+    font-size: 55px !important;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .projects-title {
+    font-size: 75px !important;
+  }
+}
+
+/* Divider Banner: igual fondo que text-banner, altura 15px */
+.divider-banner {
+  background-color: #04160f;
+  height: 2px;
+  width: 100%;
+}
+
+/* ------ Navbar: Projects dropdown (Fullstack / AI Engineering) ------ */
+
+.nav-dd {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-dd-trigger {
+  position: relative;
+  display: inline-block;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-family: inherit;
+  line-height: inherit;
+  cursor: pointer;
+}
+
+.nav-dd-trigger:focus-visible,
+.nav-dd-link:focus-visible {
+  outline: 2px solid #9bc1bc;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.nav-dd-chevron {
+  display: inline-block;
+  margin-left: 6px;
+  font-size: 0.7em;
+  transition: transform 0.2s ease;
+}
+
+.nav-dd-trigger[aria-expanded="true"] .nav-dd-chevron {
+  transform: rotate(180deg);
+}
+
+/* Desktop: floating panel under the trigger */
+.nav-dd-menu {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 50%;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  min-width: 170px;
+  padding: 6px;
+  background-color: var(--dd-bg, rgba(231, 231, 231, 0.9));
+  background-image: var(--dd-sheen, none);
+  -webkit-backdrop-filter: blur(16px) saturate(1.5);
+  backdrop-filter: blur(16px) saturate(1.5);
+  border: 1px solid var(--dd-line, rgba(18, 18, 18, 0.12));
+  border-radius: 12px;
+  box-shadow:
+    0 14px 34px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 var(--dd-edge, rgba(255, 255, 255, 0.35));
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, -6px);
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease,
+    visibility 0.18s;
+}
+
+.nav-dd.open .nav-dd-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+
+.nav-dd-link {
+  display: block;
+  padding: 7px 12px;
+  border-radius: 7px;
+  color: var(--dd-fg, #121212);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: 0.2s;
+}
+
+.nav-dd-link:hover,
+.nav-dd-link:focus-visible {
+  background: var(--dd-hover, rgba(18, 18, 18, 0.08));
+  color: var(--dd-fg, #121212);
+}
+
+.nav-dd-link.nav-sub-active {
+  color: var(--dd-fg, #121212);
+  font-weight: 700;
+}
+
+.nav-dd-link.nav-sub-active::before {
+  content: "•";
+  margin-right: 8px;
+  color: #17784f;
+}
+
+@media (min-width: 576px) {
+  .nav-dd-link {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 992px) {
+  .nav-dd-link {
+    font-size: 15px;
+  }
+}
+
+/* Mobile: collapsible list inside the hamburger menu */
+.nav-sub {
+  display: none;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 6px 0 4px auto;
+  padding: 6px 14px;
+  width: fit-content;
+  background-color: var(--dd-bg, rgba(231, 231, 231, 0.9));
+  background-image: var(--dd-sheen, none);
+  -webkit-backdrop-filter: blur(16px) saturate(1.5);
+  backdrop-filter: blur(16px) saturate(1.5);
+  border: 1px solid var(--dd-line, rgba(18, 18, 18, 0.12));
+  border-radius: 12px;
+  box-shadow: inset 0 1px 0 var(--dd-edge, rgba(255, 255, 255, 0.35));
+}
+
+.nav-sub.open {
+  display: flex;
+}
+
+.nav-sub .nav-dd-link {
+  padding: 4px 0;
+  background: none;
+  color: var(--dd-fg, #121212);
+}
+
+.nav-sub .nav-dd-link:hover {
+  background: none;
+  text-decoration: underline;
+}
+
+.nav-sub .nav-dd-link.nav-sub-active {
+  color: var(--dd-fg, #121212);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-dd-chevron,
+  .nav-dd-menu {
+    transition: none;
+  }
+}
+
+/* Per-page tokens: the dropdown is frosted glass tinted with each page's background tone, and
+   its text color follows from it (light pages -> dark text, dark pages -> light text) */
+.header-background {
+  --dd-bg: rgba(255, 255, 255, 0.34);
+  --dd-sheen: linear-gradient(135deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.04));
+  --dd-fg: #121212;
+  --dd-line: rgba(18, 18, 18, 0.05);
+  --dd-edge: rgba(255, 255, 255, 0.5);
+  --dd-hover: rgba(18, 18, 18, 0.08);
+}
+
+.contact-background {
+  --dd-bg: rgba(255, 255, 255, 0.24);
+  --dd-sheen: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.03));
+  --dd-fg: #354052;
+  --dd-line: rgba(53, 64, 82, 0.07);
+  --dd-edge: rgba(255, 255, 255, 0.45);
+  --dd-hover: rgba(53, 64, 82, 0.1);
+}
+
+.works-background,
+.experience-background,
+.case-studies-background,
+.ai-background {
+  --dd-sheen: linear-gradient(135deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.015));
+  --dd-fg: #e7e7e7;
+  --dd-line: rgba(255, 255, 255, 0.07);
+  --dd-edge: rgba(255, 255, 255, 0.14);
+  --dd-hover: rgba(255, 255, 255, 0.12);
+}
+
+.works-background {
+  --dd-bg: rgba(0, 20, 10, 0.3);
+}
+
+.experience-background {
+  --dd-bg: rgba(13, 40, 59, 0.3);
+}
+
+.case-studies-background {
+  --dd-bg: rgba(39, 24, 65, 0.3);
+}
+
+.ai-background {
+  --dd-bg: rgba(47, 8, 20, 0.3);
+}
+
+/* ------ AI Engineering page ------ */
+
+.ai-background {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1600' height='1000' preserveAspectRatio='none' viewBox='0 0 1600 1000'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1236%26quot%3b)' fill='none'%3e%3crect width='1600' height='1000' x='0' y='0' fill='url(%26quot%3b%23SvgjsRadialGradient1237%26quot%3b)'%3e%3c/rect%3e%3cpath d='M266.94 996.42 a223.62 223.62 0 1 0 447.24 0 a223.62 223.62 0 1 0 -447.24 0z' fill='rgba(244%2c166%2c184%2c0.12)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M-124.66 663.93 a192.1 192.1 0 1 0 384.2 0 a192.1 192.1 0 1 0 -384.2 0z' fill='rgba(244%2c166%2c184%2c0.12)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M47.09 579.79 a226.94 226.94 0 1 0 453.88 0 a226.94 226.94 0 1 0 -453.88 0z' fill='rgba(244%2c166%2c184%2c0.12)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M738 454.54 a234.47 234.47 0 1 0 468.94 0 a234.47 234.47 0 1 0 -468.94 0z' fill='rgba(244%2c166%2c184%2c0.12)' class='triangle-float2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1236'%3e%3crect width='1600' height='1000' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cradialGradient cx='50%25' cy='50%25' r='943.4' gradientUnits='userSpaceOnUse' id='SvgjsRadialGradient1237'%3e%3cstop stop-color='rgba(112%2c20%2c48%2c1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(0%2c 0%2c 0%2c 1)' offset='0.92'%3e%3c/stop%3e%3c/radialGradient%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0) rotate(0deg)%7d 33%25%7btransform: translate(-15px%2c -10px) rotate(3deg)%7d 66%25%7btransform: translate(10px%2c -15px) rotate(-3deg)%7d 100%25%7btransform: translate(0%2c 0) rotate(0deg)%7d %7d .triangle-float1 %7b animation: float1 12s ease-in-out infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0) rotate(0deg)%7d 33%25%7btransform: translate(-12px%2c 15px) rotate(-4deg)%7d 66%25%7btransform: translate(15px%2c 10px) rotate(4deg)%7d 100%25%7btransform: translate(0%2c 0) rotate(0deg)%7d %7d .triangle-float2 %7b animation: float2 10s ease-in-out infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0) rotate(0deg) scale(1)%7d 33%25%7btransform: translate(12px%2c -18px) rotate(5deg) scale(1.02)%7d 66%25%7btransform: translate(-10px%2c 12px) rotate(-5deg) scale(0.98)%7d 100%25%7btransform: translate(0%2c 0) rotate(0deg) scale(1)%7d %7d .triangle-float3 %7b animation: float3 14s ease-in-out infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+@media (max-width: 767px) {
+  /* background-attachment: fixed is unreliable on mobile browsers */
+  .ai-background {
+    background-attachment: scroll;
+  }
+}
+
+.ai-title {
+  font-family: "Magilio", sans-serif;
+  font-size: 105px;
+  font-weight: normal;
+  line-height: 1.05;
+}
+
+/* Reveal on scroll (scoped: the Fullstack page keeps its own inline version) */
+@keyframes aiFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ai-page .scroll-reveal {
+  opacity: 0;
+}
+
+.ai-page .scroll-reveal.visible {
+  animation: aiFadeUp 0.7s ease-out both;
+}
+
+/* Intro */
+.ai-intro {
+  display: grid;
+  gap: 24px;
+  margin: 8px 0 48px;
+}
+
+.ai-intro p {
+  margin: 0 0 14px;
+  color: #c9c9c9;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.ai-intro p:first-child {
+  color: #e7e7e7;
+  font-size: 19px;
+}
+
+.ai-panel {
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 122, 150, 0.15);
+  border-radius: 16px;
+}
+
+.ai-panel-title {
+  margin: 0 0 14px;
+  color: #f4a6b8;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.ai-scope {
+  margin: 16px 0;
+  padding-left: 12px;
+  border-left: 2px solid #b02a4f;
+  color: #c9c9c9;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.ai-intro .ai-scope {
+  margin: 0;
+}
+
+/* Section headings */
+.ai-section-title {
+  margin: 0 0 6px;
+  color: #e7e7e7;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.ai-section-desc {
+  margin: 0 0 24px;
+  color: #c9c9c9;
+  font-size: 16px;
+}
+
+/* Chips (same look as the .tech-tag badges of the Fullstack page) */
+.ai-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 4px;
+}
+
+.ai-chip {
+  display: inline-block;
+  padding: 6px 14px;
+  background: rgba(255, 122, 150, 0.08);
+  color: #f4a6b8;
+  border: 1px solid rgba(255, 122, 150, 0.3);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  transition: all 0.3s ease;
+}
+
+.ai-chip:hover {
+  background: rgba(255, 122, 150, 0.15);
+  color: #ff7a96;
+  border-color: rgba(255, 122, 150, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Cards */
+.ai-card {
+  display: grid;
+  gap: 24px;
+  margin-bottom: 32px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 122, 150, 0.12);
+  border-radius: 16px;
+  transition:
+    border-color 0.4s ease,
+    background 0.4s ease;
+}
+
+.ai-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 122, 150, 0.3);
+}
+
+.ai-diagram {
+  margin: 0;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(244, 166, 184, 0.15);
+  border-radius: 12px;
+}
+
+.ai-diagram img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ai-eyebrow {
+  margin: 0 0 6px;
+  color: #f4a6b8;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.ai-card__title {
+  margin: 0 0 12px;
+  color: #e7e7e7;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.ai-card__desc {
+  margin: 0 0 16px;
+  color: #c9c9c9;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.ai-metrics {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 18px;
+  padding: 0;
+  list-style: none;
+}
+
+.ai-metrics li {
+  position: relative;
+  padding-left: 20px;
+  color: #e7e7e7;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.ai-metrics li::before {
+  content: "•";
+  position: absolute;
+  left: 4px;
+  color: #b02a4f;
+  font-weight: 700;
+}
+
+.ai-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.ai-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  background: #b02a4f;
+  color: #e7e7e7;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.ai-btn:hover,
+.ai-btn:focus-visible {
+  background: #f4a6b8;
+  color: #333333;
+}
+
+/* "View trace": thumbnail that opens the Langfuse screenshot in a dialog */
+.ai-trace-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  margin-top: 12px;
+  padding: 8px 14px 8px 8px;
+  background: transparent;
+  color: #f4a6b8;
+  border: 1px solid rgba(244, 166, 184, 0.35);
+  border-radius: 10px;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.ai-trace-btn img {
+  flex: none;
+  width: 92px;
+  height: 58px;
+  object-fit: cover;
+  object-position: top left;
+  border: 1px solid rgba(244, 166, 184, 0.3);
+  border-radius: 6px;
+}
+
+.ai-trace-btn:hover,
+.ai-trace-btn:focus-visible {
+  background: rgba(176, 42, 79, 0.2);
+  border-color: #b02a4f;
+  color: #e7e7e7;
+}
+
+.ai-trace-dialog {
+  margin: auto;
+  width: min(1100px, 94vw);
+  max-height: 92vh;
+  padding: 0;
+  overflow: auto;
+  background: #0d0d0d;
+  color: #e7e7e7;
+  border: 1px solid rgba(244, 166, 184, 0.3);
+  border-radius: 14px;
+}
+
+.ai-trace-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.78);
+}
+
+.ai-trace-dialog img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ai-trace-dialog__bar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 14px;
+  background: rgba(13, 13, 13, 0.95);
+  border-bottom: 1px solid rgba(244, 166, 184, 0.2);
+  font-size: 14px;
+}
+
+.ai-trace-dialog__close {
+  padding: 6px 12px;
+  background: transparent;
+  color: #e7e7e7;
+  border: 1px solid rgba(244, 166, 184, 0.35);
+  border-radius: 8px;
+  font: inherit;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.ai-trace-dialog__close:hover,
+.ai-trace-dialog__close:focus-visible {
+  background: #b02a4f;
+  border-color: #b02a4f;
+}
+
+/* Refined scrollbar: slim rounded thumb with a rose gradient (page + trace dialog) */
+html:has(.ai-page),
+.ai-trace-dialog {
+  scrollbar-width: thin;
+  scrollbar-color: #d4476b rgba(255, 255, 255, 0.04);
+}
+
+@supports selector(::-webkit-scrollbar) {
+  html:has(.ai-page),
+  .ai-trace-dialog {
+    scrollbar-width: auto;
+    scrollbar-color: auto;
+  }
+
+  html:has(.ai-page)::-webkit-scrollbar,
+  .ai-trace-dialog::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+
+  html:has(.ai-page)::-webkit-scrollbar-track,
+  .ai-trace-dialog::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  html:has(.ai-page)::-webkit-scrollbar-thumb,
+  .ai-trace-dialog::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #ff7a96, #b02a4f);
+    border: 3px solid transparent;
+    border-radius: 999px;
+    background-clip: padding-box;
+  }
+
+  html:has(.ai-page)::-webkit-scrollbar-thumb:hover,
+  .ai-trace-dialog::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #ff9db2, #d4476b);
+    border: 3px solid transparent;
+    background-clip: padding-box;
+  }
+
+  html:has(.ai-page)::-webkit-scrollbar-corner,
+  .ai-trace-dialog::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+}
+
+/* Compact cards (Foundations) */
+.ai-grid {
+  display: grid;
+  gap: 24px;
+}
+
+.ai-grid .ai-card {
+  margin-bottom: 0;
+}
+
+.ai-card--compact .ai-card__title {
+  font-size: 20px;
+}
+
+.ai-card--compact .ai-card__desc {
+  font-size: 15px;
+}
+
+@media (min-width: 992px) {
+  .ai-intro {
+    grid-template-columns: 1.4fr 1fr;
+    align-items: start;
+    gap: 40px;
+  }
+
+  .ai-card--featured {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 40px;
+    padding: 32px;
+  }
+
+  .ai-card--reverse .ai-card__visual {
+    order: 2;
+  }
+
+  .ai-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 575px) {
+  .ai-card {
+    padding: 16px;
+  }
+
+  .ai-card__title {
+    font-size: 21px;
+  }
+
+  .ai-trace-btn img {
+    width: 72px;
+    height: 46px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ai-page .scroll-reveal {
+    opacity: 1;
+  }
+
+  .ai-page .scroll-reveal.visible {
+    animation: none;
+  }
+
+  .ai-chip:hover {
+    transform: none;
+  }
+}
+
+/* ------ Home: AI Engineering section ------ */
+
+.ai-home-background {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1500' height='1300' preserveAspectRatio='none' viewBox='0 0 1500 1300'%3e%3cg mask='url(%26quot%3b%23SvgjsMask2958%26quot%3b)' fill='none'%3e%3crect width='1500' height='1300' x='0' y='0' fill='url(%26quot%3b%23SvgjsLinearGradient2959%26quot%3b)'%3e%3c/rect%3e%3cpath d='M557.27 1099.6 a231.84 231.84 0 1 0 463.68 0 a231.84 231.84 0 1 0 -463.68 0z' fill='rgba(244%2c166%2c184%2c0.09)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M-229.04 1242 a335.74 335.74 0 1 0 671.48 0 a335.74 335.74 0 1 0 -671.48 0z' fill='rgba(244%2c166%2c184%2c0.09)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M393.33 420.97 a332.02 332.02 0 1 0 664.04 0 a332.02 332.02 0 1 0 -664.04 0z' fill='rgba(244%2c166%2c184%2c0.09)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M678.37 867.29 a324.46 324.46 0 1 0 648.92 0 a324.46 324.46 0 1 0 -648.92 0z' fill='rgba(244%2c166%2c184%2c0.09)' class='triangle-float1'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask2958'%3e%3crect width='1500' height='1300' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='96.67%25' y1='103.85%25' x2='3.33%25' y2='-3.85%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient2959'%3e%3cstop stop-color='rgba(112%2c20%2c48%2c1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(0%2c 0%2c 0%2c 1)' offset='0.99'%3e%3c/stop%3e%3c/linearGradient%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-35px%2c -25px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s ease-in-out infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-28px%2c -28px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s ease-in-out infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(22px%2c -32px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s ease-in-out infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
+  background-size: cover;
+}
+
+.ai-home-title {
+  margin-top: 0;
+}
+
+.ai-home-accent {
+  color: #ff8fa8;
+}
+
+.ai-home-text {
+  margin: 0 0 20px;
+  color: #c9c9c9;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.ai-home-visual {
+  margin: 0;
+  padding: 14px;
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(244, 166, 184, 0.2);
+  border-radius: 16px;
+}
+
+.ai-home-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ai-home-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 22px;
+  background: #b02a4f;
+  color: #e7e7e7;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.ai-home-cta i {
+  transition: transform 0.2s;
+}
+
+.ai-home-cta:hover,
+.ai-home-cta:focus-visible {
+  background: #f4a6b8;
+  color: #333333;
+}
+
+.ai-home-cta:hover i,
+.ai-home-cta:focus-visible i {
+  transform: translateX(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ai-home-cta i {
+    transition: none;
+  }
+}

@@ -1,40 +1,52 @@
-♦ SEBASTIAN SANJORGE´S PORTFOLIO ♦
-Welcome to my online portfolio! Here, you'll find an overview of who I am, my educational background, professional experiences, and how you can get in touch with me.
+# Sebastián Sanjorge — Portfolio
 
-• ABOUT ME
-Hello, I'm Sebastián Sanjorge. I'm passionate about web development and interface design. I love blending my creativity with technical skills to create engaging and functional digital experiences.
+Full Stack Engineer with a Frontend specialization. This repository is the source code of my personal portfolio: a static, multi-page site (no framework, no build step) covering my experience, projects, and case studies.
 
-• EDUCATION
+**Live site:** https://ssanjorge.netlify.app/
 
-EMBA - Sound and music production technician (2014 - 2016)
-ELAC - Leadership & coaching (2017 - 2018)
-CODERHOUSE - Front-End development (2018 - 2020)
-Self-taught practice projects and freelance jobs (2021 - 2022)
+---
 
-• EXPERIENCE
+## Pages
 
-Front-End developer - Freelance Jobs (2021 - Present)
-Website development and upload to server for Law Firm,Professional Psychologists, etc. Portfolio and commercialsites. Aesthetics, practicality and contact functions.
-References: • ejer.com.ar - Emiliano R. +54 9 11 6502 8946   • artechstore.netlify.app - Fictional e-commerce "ArTech" (Personal project)
+- **Home** (`index.html`) — introduction, featured work, and skills.
+- **Experience** (`pages/experience.html`) — IPH, Terragene, Freelance, and Henry Bootcamp, as tabs.
+- **Projects** — a dropdown in the navbar with two pages:
+  - **Full Stack** (`pages/works.html`) — FleetOps, Microfrontend Architecture, Rick & Morty Wiki, and Taste Labs.
+  - **AI Engineering** (`pages/ai-engineering.html`) — the four integrator projects of the AI Engineering program (LegalMove, Nimbus Desk, NimbusHR, Helpdesk CLI), with architecture diagrams and Langfuse trace screenshots in `img/ai/`.
+- **Case Studies** (`pages/case-studies.html`) — four Problem → Decision → Result write-ups going deeper than the project teasers.
+- **Contact** (`pages/contact.html`) — social links and CV download.
 
-Administrative secretary - Escuela Latinoamericana de Coaching (2019 - Present)
-Generation and registration of invoices and receipts,monitoring of suppliers and customers, spacemaintenance and coordination with teachers andstudents, cash management. Great predisposition tooffer assistance in emergent tasks of any kind.
-Reference: • Principal Luciano Giordano +54 9 11 5161-1107
+## Experience
 
-Waiter - The Taco Box (2015 - 2019)
-Helpful personalized customer service: efficiency andcharisma when it comes to providing what is requested.Strong teamwork coordinating actions under pressure.
+- **IPH (Spain)** — Frontend Engineer on a real-time geolocation and traceability platform for mining operations, inside a microfrontend architecture. Designed and implemented the platform's RBAC system from scratch.
+- **Terragene** — Freelance. Rebuilt the corporate web platform as a Next.js frontend on a WordPress Headless architecture, owning Frontend architecture, integration, and delivery.
+- **Freelance** — Two production clients (a law firm and a mental health practice), plus Terragene above.
+- **Henry Bootcamp** — Graduation project (VetsForPets), technical lead on a 9-person full-stack team.
 
-Technical support and customer service - Samsung Electronics (2014 - 2014)
-Telephone technical support for all Samsung appliancesand customer service. Empathy and tact to handledifferent conversational scenarios.
+Full narratives for IPH, Terragene, and two personal projects (FleetOps, Taste Labs) are in [Case Studies](https://ssanjorge.netlify.app/pages/case-studies.html).
 
-• CONTACT
+## Projects
 
-I'm excited to connect with you! Whether you're interested in discussing opportunities, collaborations, or simply having a chat, feel free to reach out:
+| Project | Stack | Link |
+|---|---|---|
+| FleetOps | Next.js, React, TypeScript, Zustand, React Query, MSW, Leaflet | [Live](https://fleetoperations.vercel.app/) · [Repo](https://github.com/tiansanjorge/fleet-ops) |
+| Microfrontend Architecture | React, TypeScript, Webpack Module Federation | [Repo](https://github.com/tiansanjorge/microfrontends-architecture) |
+| Rick & Morty Wiki | Next.js, TypeScript, Vitest, React Testing Library | [Live](https://rickandmortyexp.netlify.app/) · [Repo](https://github.com/tiansanjorge/intramed-challenge) |
+| Taste Labs Assessment | React, Tailwind, WebGL2, GLSL, Claude Code | [Live](https://lambda-ai-clone.vercel.app/) · [Repo](https://github.com/tiansanjorge/lambda-ai-clone) |
 
-whatsapp: +54 9 11 6006 9979
-Email: sanjorgesebastian@gmail.com
-LinkedIn: https://www.linkedin.com/in/sebasti%C3%A1n-sanjorge-60a943130/
-Portfolio: https://ssanjorge.netlify.app/
-GitHub: https://github.com/tiansanjorge
+## Tech stack of this site
 
-Thank you for visiting my portfolio, and I look forward to hearing from you soon!
+- HTML, CSS, and vanilla JavaScript — no build tool, no framework.
+- Bootstrap 5 (CDN) for the grid and base utilities.
+- Custom i18n: `i18n/translations.json` + `data-i18n` attributes, applied at runtime via `fetch()` in `script.js`.
+- Tab/accordion interactions (experience tabs, project grid, case studies) are plain JS, no library.
+
+### Running locally
+
+Because translations are loaded with `fetch()`, opening `index.html` directly (`file://`) will fail silently due to CORS. Serve the folder with any static server, e.g. VS Code's Live Server extension.
+
+## Contact
+
+- GitHub: https://github.com/tiansanjorge
+- LinkedIn: https://www.linkedin.com/in/sebastian-sanjorge-fullstack-engineer/
+- Portfolio: https://ssanjorge.netlify.app/

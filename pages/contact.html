@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,8 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Professional Portfolio • Sebastián Sanjorge Fullstack Developer"
+      content="Get in touch with Sebastián Sanjorge, Full Stack Engineer — React, Next.js, TypeScript."
     />
+    <link
+      rel="canonical"
+      href="https://ssanjorge.netlify.app/pages/contact.html"
+    />
+
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://ssanjorge.netlify.app/pages/contact.html"
+    />
+    <meta property="og:title" content="Sanjorge • Contact" />
+    <meta
+      property="og:description"
+      content="Get in touch with Sebastián Sanjorge, Full Stack Engineer — React, Next.js, TypeScript."
+    />
+    <meta
+      property="og:image"
+      content="https://ssanjorge.netlify.app/img/perfil.jpg"
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sanjorge • Contact" />
+    <meta
+      name="twitter:description"
+      content="Get in touch with Sebastián Sanjorge, Full Stack Engineer — React, Next.js, TypeScript."
+    />
+    <meta
+      name="twitter:image"
+      content="https://ssanjorge.netlify.app/img/perfil.jpg"
+    />
+    <script>
+      (function () {
+        try {
+          var lang = localStorage.getItem("site_lang") || "en";
+          document.documentElement.setAttribute("data-lang", lang);
+        } catch (e) {
+          document.documentElement.setAttribute("data-lang", "en");
+        }
+      })();
+    </script>
+
+    <style>
+      html[data-lang="en"] #lang-en,
+      html[data-lang="es"] #lang-es {
+        display: none !important;
+      }
+    </style>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -24,7 +71,65 @@
     <link rel="stylesheet" href="../styles/animate.css" />
     <link rel="stylesheet" href="../styles/styles.css" />
     <link rel="icon" type="image/png" href="../img/favicon.png" />
-    <title>Sanjorge • Front End Developer</title>
+    <title>Sanjorge • Contact</title>
+    <style>
+      /* Scroll reveal animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInScale {
+        from {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .scroll-reveal {
+        opacity: 0;
+      }
+
+      .scroll-reveal.animate-fade-up {
+        transform: translateY(30px);
+      }
+
+      .scroll-reveal.animate-scale {
+        transform: scale(0.95);
+      }
+
+      .scroll-reveal.visible {
+        animation-play-state: running;
+      }
+
+      .animate-fade-up.visible {
+        animation: fadeInUp 0.8s ease-out both;
+      }
+
+      .animate-scale.visible {
+        animation: fadeInScale 0.8s ease-out both;
+      }
+
+      .delay-1 {
+        animation-delay: 0.1s;
+      }
+      .delay-2 {
+        animation-delay: 0.2s;
+      }
+      .delay-3 {
+        animation-delay: 0.3s;
+      }
+    </style>
   </head>
 
   <body>
@@ -43,12 +148,46 @@
                 ><b>SS<span class="green">.</span></b></a
               >
             </div>
-            <div class="col-2 d-flex justify-content-end pe-2">
-              <button class="border-0 nav-button" onclick="dropdown()">
-                <i class="d-block fa-solid fa-bars fs-5 blue" id="bar-icon"></i>
-                <i class="d-none fa-solid fa-xmark fs-5 green" id="x-icon"></i>
-              </button>
+
+            <div class="col-3 d-flex justify-content-evenly align-items-center">
+              <div
+                class="d-flex justify-content-center align-items-center lang-wrapper"
+              >
+                <button id="lang-en" class="lang-toggle" title="English">
+                  <img
+                    src="../img/flags/en.jpg"
+                    alt="English"
+                    class="lang-flag"
+                  />
+                </button>
+                <button id="lang-es" class="lang-toggle" title="Español">
+                  <img
+                    src="../img/flags/es.jpg"
+                    alt="Español"
+                    class="lang-flag"
+                  />
+                </button>
+              </div>
+              <div class="pt-2">
+                <button
+                  class="border-0 nav-button"
+                  onclick="dropdown(this)"
+                  aria-expanded="false"
+                  aria-controls="dropdown-menu"
+                  aria-label="Menu"
+                >
+                  <i
+                    class="d-block fa-solid fa-bars fs-5 blue"
+                    id="bar-icon"
+                  ></i>
+                  <i
+                    class="d-none fa-solid fa-xmark fs-5 green"
+                    id="x-icon"
+                  ></i>
+                </button>
+              </div>
             </div>
+
             <div
               class="dd-menu col-12 d-flex flex-column text-end"
               id="dropdown-menu"
@@ -57,21 +196,33 @@
                 <a
                   class="fs-medium text-decoration-none subrayado blue fw-600"
                   href="../index.html"
-                  >Home</a
-                >
+                  ><span data-i18n="nav.home"></span
+                ></a>
               </div>
               <div class="pe-2 my-1">
                 <a
                   class="fs-medium text-decoration-none subrayado blue fw-600"
-                  href="works.html"
-                  >Works</a
-                >
+                  href="experience.html"
+                  ><span data-i18n="nav.experience"></span
+                ></a>
+              </div>
+              <div class="pe-2 my-1">
+                <button type="button" class="nav-dd-trigger fs-medium text-decoration-none subrayado blue fw-600" aria-expanded="false" aria-controls="projects-menu-m"><span data-i18n="nav.projects">Projects</span><i class="fa-solid fa-chevron-down nav-dd-chevron" aria-hidden="true"></i></button>
+                <div class="nav-sub blue" id="projects-menu-m"><a class="nav-dd-link" href="works.html" data-i18n="nav.fullstack">Full Stack</a><a class="nav-dd-link" href="ai-engineering.html" data-i18n="nav.ai">AI Engineering</a></div>
+              </div>
+              <div class="pe-2 my-1">
+                <a
+                  class="fs-medium text-decoration-none subrayado blue fw-600"
+                  href="case-studies.html"
+                  ><span data-i18n="nav.caseStudies"></span
+                ></a>
               </div>
               <div class="pe-2 mt-1">
                 <a
                   class="fs-medium text-decoration-none green fw-600 active-link"
                   href="#"
-                  >Contact <span class="active-dot aqua">•</span></a
+                  ><span data-i18n="nav.contact"></span>
+                  <span class="active-dot aqua">•</span></a
                 >
               </div>
             </div>
@@ -85,24 +236,55 @@
                 ><b>SS<span class="green">.</span></b></a
               >
             </div>
+
             <div
-              class="col-6 col-lg-5 col-xl-4 d-flex justify-content-between align-items-center"
+              class="col-9 col-lg-8 col-xl-7 d-flex justify-content-between align-items-center"
             >
               <a
                 class="fs-medium text-decoration-none subrayado blue fw-600"
                 href="../index.html"
-                >Home</a
-              >
+                ><span data-i18n="nav.home"></span
+              ></a>
               <a
                 class="fs-medium text-decoration-none subrayado blue fw-600"
-                href="works.html"
-                >Works</a
-              >
+                href="experience.html"
+                ><span data-i18n="nav.experience"></span
+              ></a>
+              <div class="nav-dd"><button type="button" class="nav-dd-trigger fs-medium text-decoration-none subrayado blue fw-600" aria-expanded="false" aria-controls="projects-menu-d" aria-haspopup="true"><span data-i18n="nav.projects">Projects</span><i class="fa-solid fa-chevron-down nav-dd-chevron" aria-hidden="true"></i></button><div class="nav-dd-menu" id="projects-menu-d"><a class="nav-dd-link" href="works.html" data-i18n="nav.fullstack">Full Stack</a><a class="nav-dd-link" href="ai-engineering.html" data-i18n="nav.ai">AI Engineering</a></div></div>
+              <a
+                class="fs-medium text-decoration-none subrayado blue fw-600"
+                href="case-studies.html"
+                ><span data-i18n="nav.caseStudies"></span
+              ></a>
               <a
                 class="fs-medium text-decoration-none green fw-600 active-link"
                 href="#"
-                >Contact <span class="active-dot aqua">•</span></a
+                ><span data-i18n="nav.contact"></span>
+                <span class="active-dot aqua">•</span></a
               >
+            </div>
+            <div
+              class="col-2 d-flex justify-content-end align-items-center lang-wrapper"
+            >
+              <button
+                id="lang-en"
+                class="lang-toggle"
+                title="English"
+                style="display: none"
+              >
+                <img
+                  src="../img/flags/en.jpg"
+                  alt="English"
+                  class="lang-flag"
+                />
+              </button>
+              <button id="lang-es" class="lang-toggle" title="Español">
+                <img
+                  src="../img/flags/es.jpg"
+                  alt="Español"
+                  class="lang-flag"
+                />
+              </button>
             </div>
           </div>
         </div>
@@ -115,7 +297,9 @@
           <div
             class="col-10 d-flex flex-column justify-content-between justify-content-lg-around justify-content-xl-evenly px-0 vh-80 px-lg-3 px-xl-5"
           >
-            <div class="col-12 d-flex flex-row rounded-circle text-center blue">
+            <div
+              class="col-12 d-flex flex-row rounded-circle text-center blue scroll-reveal animate-scale delay-1"
+            >
               <div class="col-6 d-none d-lg-flex flex-column"></div>
               <div class="col-12 col-lg-6 d-flex flex-column pb-3">
                 <img
@@ -123,20 +307,23 @@
                   class="contact-profile col-6 col-sm-4 col-lg-6 img-fluid rounded-circle mx-auto mb-2 p-3 p-xl-4"
                   alt="Sebastian Sanjorge"
                 />
-                <h1 class="heading-contact text-center py-2 m-0">
-                  Sebastián Sanjorge
-                </h1>
-                <h2 class="fs-big fw-600 text-center pt-1 m-0">
-                  <span class="green">Full Stack</span> Developer
-                </h2>
+                <h1
+                  class="heading-contact text-center py-2 m-0"
+                  data-i18n="contact.headingName"
+                ></h1>
+                <h2
+                  class="fs-big fw-600 text-center pt-1 m-0"
+                  data-i18n="contact.headingRole"
+                ></h2>
               </div>
             </div>
             <div
-              class="col-12 d-flex flex-column flex-lg-row justify-content-between mt-xl-4 mt-xxl-3"
+              class="col-12 d-flex flex-column flex-lg-row justify-content-between mt-xl-4 mt-xxl-3 scroll-reveal animate-fade-up delay-2"
             >
-              <p class="magilio-contact d-none d-lg-flex col-6 blue m-0">
-                Let’s Talk<span class="green">.</span>
-              </p>
+              <p
+                class="magilio-contact d-none d-lg-flex col-6 blue m-0"
+                data-i18n="contact.letsTalk"
+              ></p>
               <div
                 class="col-12 col-sm-10 col-md-8 col-lg-6 d-flex justify-content-around align-items-start pt-lg-3 pt-xxl-4 my-4 my-lg-0 mx-auto mx-lg-0"
               >
@@ -144,50 +331,44 @@
                   class="white contact-link rounded-circle"
                   href="https://wa.link/rehzl5"
                   target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="WhatsApp"
                   ><i class="fa-brands fa-whatsapp"></i>
                 </a>
 
                 <a
                   class="white contact-link rounded-circle"
-                  href="https://www.linkedin.com/in/sebastian-sanjorge-frontend-developer"
-                  ><i class="fa-brands fa-linkedin" target="_blank"></i
+                  href="https://www.linkedin.com/in/sebastian-sanjorge-fullstack-engineer"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  ><i class="fa-brands fa-linkedin"></i
                 ></a>
 
                 <a
                   class="white contact-link rounded-circle"
                   href="https://github.com/tiansanjorge"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub"
                   ><i class="fa-brands fa-github"></i
                 ></a>
 
                 <a
+                  id="cv-download-link"
                   class="white contact-link2 rounded-circle text-decoration-none fs-big fw-600"
-                  href="../pdf/Fullstack-Sebastian Sanjorge.pdf"
+                  href="../pdf/Sebastian_Sanjorge_Fullstack_Engineer_CV_EN.pdf"
                   target="_blank"
+                  rel="noopener noreferrer"
                   download
-                  ><b>CV</b></a
-                >
+                  data-i18n="contact.cv"
+                ></a>
               </div>
             </div>
-            <div class="col-12 d-lg-none">
+            <div class="col-12 d-lg-none scroll-reveal animate-fade-up delay-3">
               <p class="magilio-contact text-center blue m-0 mt-2 mt-lg-0">
                 Let’s Talk<span class="green">.</span>
               </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Footer  -->
-
-      <section class="container-fluid">
-        <div class="row justify-content-evenly pb-2 pb-md-3">
-          <div
-            class="col-10 d-flex justify-content-between align-items-center p-0"
-          >
-            <div class="col-2">
-              <a class="contact-logo text-decoration-none white" href="#"
-                ><b>SS<span class="green">.</span></b></a
-              >
             </div>
           </div>
         </div>
